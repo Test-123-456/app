@@ -5,6 +5,9 @@ on:
     - cron: '0 3 * * *'   # 3 AM UTC = 8 AM Pakistan time
   workflow_dispatch:        # allow manual run from GitHub UI
 
+permissions:
+  contents: write
+
 jobs:
   scrape-deploy:
     runs-on: ubuntu-latest
