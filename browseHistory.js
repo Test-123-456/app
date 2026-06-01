@@ -637,7 +637,22 @@ const RD  = ${embeddedRoad};
 const $   = id => document.getElementById(id);
 const esc = s  => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const pkr = n  => n==null?'—':(n<0?'-₨':'₨')+Math.abs(Math.round(n)).toLocaleString();
-const dist= (a,b) => RD[a+'|'+b]||RD[b+'|'+a]||null;
+// Build full distance matrix via Floyd-Warshall so indirect routes (e.g. Jhelum→Lahore→Khanewal) work
+const _RDfull=(function(rd){
+  const cities=new Set();
+  for(const k of Object.keys(rd)){const[a,b]=k.split('|');cities.add(a);cities.add(b);}
+  const ca=[...cities],n=ca.length,idx={};
+  ca.forEach((c,i)=>idx[c]=i);
+  const m=Array.from({length:n},()=>Array(n).fill(Infinity));
+  for(let i=0;i<n;i++) m[i][i]=0;
+  for(const[k,v] of Object.entries(rd)){const[a,b]=k.split('|');const i=idx[a],j=idx[b];m[i][j]=v;m[j][i]=v;}
+  for(let k=0;k<n;k++) for(let i=0;i<n;i++) for(let j=0;j<n;j++)
+    if(m[i][k]+m[k][j]<m[i][j]) m[i][j]=m[i][k]+m[k][j];
+  const r={};
+  for(let i=0;i<n;i++) for(let j=i+1;j<n;j++) if(m[i][j]<Infinity) r[ca[i]+'|'+ca[j]]=m[i][j];
+  return r;
+})(RD);
+const dist=(a,b)=>_RDfull[a+'|'+b]||_RDfull[b+'|'+a]||null;
 
 // ── TRUCK PRESETS ─────────────────────────────────────────────────────────────
 // Truck rates: fuel cost per km ÷ payload (kg) × 100, then +20% levy
