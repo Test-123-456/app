@@ -443,6 +443,21 @@ td{padding:7px 10px;vertical-align:middle}
         <button id="qw60" onclick="setWin(60)">60d</button>
         <button id="qwA"  onclick="setWin(0)">All</button>
       </div></div>
+    <div class="cg"><label>Sort</label>
+      <select id="pSort" onchange="renderPrices()">
+        <option value="def">Default</option>
+        <option value="asc">Price ↑ cheapest</option>
+        <option value="desc">Price ↓ costliest</option>
+        <option value="fresh">Freshest first</option>
+      </select></div>
+    <div class="cg"><label>Max age</label>
+      <select id="pMaxAge" onchange="renderPrices()">
+        <option value="99">Show all</option>
+        <option value="1">Today only</option>
+        <option value="2">≤ 2d old</option>
+        <option value="3">≤ 3d old</option>
+        <option value="5">≤ 5d old</option>
+      </select></div>
     <button class="btn-csv" onclick="downloadCsv()">⬇ Excel</button>
   </div>
   <div id="pStats" class="sg"></div>
@@ -784,16 +799,24 @@ function renderPrices(){
       return;
     }
     // Scorecards — one per commodity that has data for this city
-    $('pStats').innerHTML=D.commodities.map((cm_name,i)=>{
+    const pSort=$('pSort')?.value||'def',pMaxAge=parseInt($('pMaxAge')?.value||'99');
+    let commsToShow=D.commodities.filter(cm_name=>{
       const pts=(D.priceMap[cm_name]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
-      if(!pts.length) return '';
+      if(!pts.length) return false;
+      return pMaxAge>=99||ageD(cm_name,city)<=pMaxAge;
+    });
+    if(pSort==='asc') commsToShow.sort((a,b)=>(latPx(a,city)||0)-(latPx(b,city)||0));
+    else if(pSort==='desc') commsToShow.sort((a,b)=>(latPx(b,city)||0)-(latPx(a,city)||0));
+    else if(pSort==='fresh') commsToShow.sort((a,b)=>ageD(a,city)-ageD(b,city));
+    $('pStats').innerHTML=commsToShow.map((cm_name,i)=>{
+      const pts=(D.priceMap[cm_name]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
       const pr=pts.map(p=>p.p),avg=pr.reduce((s,v)=>s+v,0)/pr.length;
       const mn=Math.min(...pr),mx=Math.max(...pr);
       const tr=trend(cm_name,city),vl=vol(cm_name,city,0);
       const ts=tr.p!=null?\`\${tr.a} \${Math.abs(tr.p).toFixed(1)}%\`:tr.a;
       const vs=vl?\`<span class="vol-b \${vl.c}">\${vl.b}</span>\`:'';
       return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}">
-        <div class="sb-lbl">\${esc(cm_name)}</div>
+        <div class="sb-lbl">\${esc(cm_name)}\${ageTag(cm_name,city)}</div>
         <span class="tr-badge \${tr.c}">\${ts}</span>
         <div class="sb-val">\${(avg/100).toFixed(2)}<span class="sb-unit"> ₨/kg</span></div>
         <div class="sb-sub">min ₨\${(mn/100).toFixed(2)} · max ₨\${(mx/100).toFixed(2)}</div>
@@ -843,16 +866,24 @@ function renderPrices(){
   const show=city==='all'?Object.keys(cm):[city];
   const winD=from?Math.round((new Date(to||new Date())-new Date(from))/86400000):0;
 
-  $('pStats').innerHTML=show.map((c,i)=>{
+  const pSort2=$('pSort')?.value||'def',pMaxAge2=parseInt($('pMaxAge')?.value||'99');
+  let citiesToShow=show.filter(c=>{
     const pts=(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
-    if(!pts.length) return '';
+    if(!pts.length) return false;
+    return pMaxAge2>=99||ageD(comm,c)<=pMaxAge2;
+  });
+  if(pSort2==='asc') citiesToShow.sort((a,b)=>(latPx(comm,a)||0)-(latPx(comm,b)||0));
+  else if(pSort2==='desc') citiesToShow.sort((a,b)=>(latPx(comm,b)||0)-(latPx(comm,a)||0));
+  else if(pSort2==='fresh') citiesToShow.sort((a,b)=>ageD(comm,a)-ageD(comm,b));
+  $('pStats').innerHTML=citiesToShow.map((c,i)=>{
+    const pts=(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
     const pr=pts.map(p=>p.p),avg=pr.reduce((s,v)=>s+v,0)/pr.length;
     const mn=Math.min(...pr),mx=Math.max(...pr);
     const tr=trend(comm,c),vl=vol(comm,c,winD);
     const ts=tr.p!=null?\`\${tr.a} \${Math.abs(tr.p).toFixed(1)}%\`:tr.a;
     const vs=vl?\`<span class="vol-b \${vl.c}">\${vl.b} \${vl.cv.toFixed(0)}%</span>\`:'';
     return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}">
-      <div class="sb-lbl">\${esc(c)}</div>
+      <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}</div>
       <span class="tr-badge \${tr.c}">\${ts}</span>
       <div class="sb-val">\${(avg/100).toFixed(2)}<span class="sb-unit"> ₨/kg</span></div>
       <div class="sb-sub">min ₨\${(mn/100).toFixed(2)} · max ₨\${(mx/100).toFixed(2)}</div>
@@ -1409,14 +1440,21 @@ function renderArb(sc){
       const via=net!=null?net>0:null;
       if(filt==='profitable'&&via!==true) continue;
       if(filt==='known'&&via===null) continue;
-      rows.push({comm,buyC,buyP,sellC,sellP,sp,spPct,d,tk,net,bk,con,rc,via});
+      const maxAge=Math.max(ageD(comm,buyC),ageD(comm,sellC));
+      rows.push({comm,buyC,buyP,sellC,sellP,sp,spPct,d,tk,net,bk,con,rc,via,maxAge});
     }
   }
   const sf={comm:(a,b)=>a.comm.localeCompare(b.comm)*_as.dir,
     sp:(a,b)=>(a.sp-b.sp)*_as.dir,net:(a,b)=>((a.net??a.sp)-(b.net??b.sp))*_as.dir,
     bk:(a,b)=>(a.bk-b.bk)*_as.dir,con:(a,b)=>((a.con??0)-(b.con??0))*_as.dir,
     rc:(a,b)=>((a.rc?.hit/a.rc?.total||0)-(b.rc?.hit/b.rc?.total||0))*_as.dir};
-  rows.sort((a,b)=>{if(a.via&&!b.via)return -1;if(!a.via&&b.via)return 1;return sf[_as.col]?sf[_as.col](a,b):(b.net??b.sp)-(a.net??a.sp);});
+  const freshTierA=r=>r.maxAge<=1?0:r.maxAge<=3?1:2;
+  rows.sort((a,b)=>{
+    if(a.via&&!b.via)return -1;if(!a.via&&b.via)return 1;
+    if(sf[_as.col]) return sf[_as.col](a,b);
+    const td=freshTierA(a)-freshTierA(b);
+    return td!==0?td:(b.net??b.sp)-(a.net??a.sp);
+  });
   const viab=rows.filter(r=>r.via===true).length;
   $('aStats').innerHTML=\`
     <div class="sb"><div class="sb-lbl">Profitable</div><div class="sb-val" style="font-size:1.3em">\${viab}</div><div class="sb-sub">after truck</div></div>
