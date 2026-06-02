@@ -1383,17 +1383,20 @@ function renderPrices(){
   else if(pSort2==='fresh') citiesToShow.sort((a,b)=>ageD(comm,a)-ageD(comm,b));
   $('pStats').innerHTML=citiesToShow.map((c,i)=>{
     const pts=(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
-    const pr=pts.map(p=>p.p),avg=pr.reduce((s,v)=>s+v,0)/pr.length;
+    const vpts=pts.filter(p=>!p.flagged),usePts=vpts.length?vpts:pts;
+    const latFlagged=pts.length&&pts[pts.length-1].flagged;
+    const pr=usePts.map(p=>p.p),avg=pr.reduce((s,v)=>s+v,0)/pr.length;
     const mn=Math.min(...pr),mx=Math.max(...pr);
     const tr=trend(comm,c),vl=vol(comm,c,winD);
     const ts=tr.p!=null?\`\${tr.a} \${Math.abs(tr.p).toFixed(1)}%\`:tr.a;
     const vs=vl?\`<span class="vol-b \${vl.c}">\${vl.b} \${vl.cv.toFixed(0)}%</span>\`:'';
-    return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}">
-      <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}\${uploadTag(c)}</div>
+    const flagNote=latFlagged?\` <span title="Latest reading suspect (>5× peer median)" style="color:#f59e0b">⚠</span>\`:'';
+    return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}\${latFlagged?';opacity:.8':''}">
+      <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}\${uploadTag(c)}\${flagNote}</div>
       <span class="tr-badge \${tr.c}">\${ts}</span>
       <div class="sb-val">\${(avg/100).toFixed(2)}<span class="sb-unit"> ₨/kg</span></div>
       <div class="sb-sub">min ₨\${(mn/100).toFixed(2)} · max ₨\${(mx/100).toFixed(2)}</div>
-      <div class="sb-sub">\${pts.length} readings · range \${mn>0?((mx-mn)/mn*100).toFixed(0)+'%':''}</div>
+      <div class="sb-sub">\${vpts.length<pts.length?pts.length+' readings ('+( pts.length-vpts.length)+' suspect)':pts.length+' readings'} · range \${mn>0?((mx-mn)/mn*100).toFixed(0)+'%':''}</div>
       \${vs}
     </div>\`;
   }).join('');
@@ -1424,10 +1427,12 @@ function renderPrices(){
   const rows=dates.map(date=>{
     const cells=fC.map(c=>{
       const pt=(cm[c]||[]).find(p=>p.date===date); if(!pt) return '<td style="color:var(--muted)">—</td>';
-      const prev=(cm[c]||[]).slice().reverse().find(p=>p.date<date);
-      const chg=prev?((pt.p-prev.p)/prev.p*100):null;
+      const prev=(cm[c]||[]).slice().reverse().find(p=>p.date<date&&!p.flagged);
+      const chg=(!pt.flagged&&prev)?((pt.p-prev.p)/prev.p*100):null;
       const cs=chg!=null?\`<small style="color:\${chg>2?'var(--up)':chg<-2?'var(--dn)':'var(--muted)'}">\${chg>0?'▲':'▼'}\${Math.abs(chg).toFixed(1)}%</small>\`:'';
-      return \`<td>₨\${(pt.p/100).toFixed(2)}\${cs}\${pt.min?\`<br><small style="color:var(--muted)">\${(pt.min/100).toFixed(2)}–\${((pt.max||pt.min)/100).toFixed(2)}</small>\`:''}</td>\`;
+      const flagBadge=pt.flagged?\`<span title="Suspect: ₨\${(pt.p/100).toFixed(0)}/kg is >5× or <0.2× the peer median on this date. Possible data-entry error — excluded from route calculations." style="color:#f59e0b;cursor:help"> ⚠</span>\`:'';
+      const tdBg=pt.flagged?'background:rgba(245,158,11,.07);':'';
+      return \`<td style="\${tdBg}">₨\${(pt.p/100).toFixed(2)}\${flagBadge}\${cs}\${pt.min?\`<br><small style="color:var(--muted)">\${(pt.min/100).toFixed(2)}–\${((pt.max||pt.min)/100).toFixed(2)}</small>\`:''}</td>\`;
     }).join('');
     return \`<tr><td>\${date}</td>\${cells}</tr>\`;
   }).join('');
