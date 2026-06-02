@@ -1887,7 +1887,7 @@ function renderBriefing(){
             <div style="\${r.dir==='up'?'color:var(--up)':'color:var(--dn)'};font-weight:600;font-size:.85em">\${r.dir==='up'?'▲':'▼'} ₨\${(Math.abs(r.change)/100).toFixed(2)} (\${r.yesterday>0?(Math.abs(r.change)/r.yesterday*100).toFixed(1)+'%':'—'})</div>
           </div>\`;
           return \`
-            \${secHdr('📊','Today\'s Market Movers','Biggest price changes today vs yesterday (from AMIS Daily Market Changes)','#065f46','#ecfdf5','#6ee7b7')}
+            \${secHdr('📊',"Today's Market Movers","Biggest price changes vs yesterday (AMIS Daily Market Changes)",'#065f46','#ecfdf5','#6ee7b7')}
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
               <div>
                 <div style="font-size:.75em;font-weight:700;color:var(--up);margin-bottom:5px;letter-spacing:.05em">▲ RISING</div>
@@ -1912,7 +1912,7 @@ function renderBriefing(){
             return \`<span style="display:inline-flex;align-items:center;gap:3px;background:\${col};border-radius:99px;padding:2px 8px;font-size:.72em;margin:2px">\${esc(city[0].toUpperCase()+city.slice(1))} <span style="font-weight:700">\${time}</span></span>\`;
           }).join('');
           return \`
-            \${secHdr('📤','Rate Submission Times','When each city uploaded today\'s rates (green = before 9 AM, yellow = after 12 PM)','#1e3a8a','#eff6ff','#93c5fd')}
+            \${secHdr('📤','Rate Submission Times',"When each city uploaded today's rates (green = before 9 AM, yellow = after 12 PM)",'#1e3a8a','#eff6ff','#93c5fd')}
             <div style="margin-bottom:16px;line-height:2">\${chips}</div>\`;
         })()}
 
