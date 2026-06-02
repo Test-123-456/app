@@ -117,6 +117,94 @@ const ROAD_KM = {
   'Multan|Bahawalpur':100,'Multan|RahimYarKhan':200,'Multan|Khanewal':55,
   'Sargodha|Chiniot':60,'Sargodha|Jhang':90,'Gujranwala|Sialkot':80,
   'Gujranwala|Gujrat':55,'Gujrat|Jhelum':75,'Sialkot|Narowal':60,
+  // ── Extended city coverage ────────────────────────────────────────────────
+  // Rawalpindi / Attock area
+  'GujarKhan|Rawalpindi':65,'GujarKhan|Jhelum':85,
+  'TALAGANG|Chakwal':45,'TALAGANG|Rawalpindi':125,
+  // Gujrat / Mandi Bahauddin
+  'LalaMusa|Gujrat':30,'LalaMusa|MandiBahaudin':20,
+  'MandiBahaudin|Gujrat':45,'MandiBahaudin|Gujranwala':70,'MandiBahaudin|Sargodha':100,
+  'Sraialamgir|Gujrat':35,'Sraialamgir|Jhelum':45,
+  'Qadirpurrawan|Gujranwala':40,'Qadirpurrawan|Gujrat':35,
+  // Sialkot / Narowal
+  'Daska|Sialkot':25,'Daska|Gujranwala':40,
+  'Sambrial|Sialkot':20,'Sambrial|Daska':15,
+  'Pasroor|Sialkot':30,'Pasroor|Narowal':50,
+  'Shakargarh|Narowal':35,'Shakargarh|Sialkot':65,
+  // Lahore / Sheikhupura belt
+  'Sanglahill|Sheikhupura':15,'Sanglahill|Lahore':45,
+  'Muridke|Lahore':30,'Muridke|Sheikhupura':15,'Muridke|Gujranwala':45,
+  'Safdarabad|Sheikhupura':40,'Safdarabad|Hafizabad':35,
+  'Farooqabad|Sheikhupura':40,'Farooqabad|Hafizabad':55,
+  // Hafizabad / Chiniot
+  'Pindibhattian|Hafizabad':25,'Pindibhattian|Chiniot':45,
+  // Sargodha belt
+  'Jauharabad|Sargodha':90,'Jauharabad|Lahore':190,
+  'Bhalwal|Sargodha':25,'Bhalwal|Chiniot':80,
+  'kotmoman|Sargodha':50,'kotmoman|Bhalwal':30,
+  'Sillanwali|Sargodha':50,
+  'Phularwan|Sargodha':40,
+  // Mianwali / Bhakhar / Layyah
+  'Mianwali|Sargodha':180,'Mianwali|Bhakhar':80,'Mianwali|TALAGANG':110,
+  'Bhakhar|Layyah':110,'Bhakhar|Kalurkot':40,
+  'Kalurkot|Mianwali':60,
+  // Faisalabad belt
+  'ChackJhumra|Faisalabad':30,'ChackJhumra|Chiniot':65,
+  'Jaranwala|Faisalabad':40,'Jaranwala|TTSingh':45,
+  'Summandri|Faisalabad':35,'Summandri|Jhang':65,
+  'Tandlianwala|Faisalabad':45,'Tandlianwala|TTSingh':35,
+  'Mamunkanjan|Faisalabad':55,'Mamunkanjan|Sahiwal':75,
+  'Kamalia|TTSingh':40,'Kamalia|Sahiwal':75,
+  'PirMahal|Jhang':60,'PirMahal|TTSingh':50,
+  'Shorkot|Jhang':35,'Shorkot|TTSingh':40,
+  // Kasur / Lahore south
+  'Chunian|Kasur':40,'Chunian|Okara':75,
+  'HujraShahmuqeem|Kasur':30,'HujraShahmuqeem|Okara':60,
+  'Khudian|Kasur':25,'Khudian|Lahore':70,
+  'PhoolNagar|Kasur':35,'PhoolNagar|Lahore':55,
+  'Kotradhakishan|Kasur':30,
+  'Patoki|Kasur':25,'Patoki|Okara':75,
+  // Okara belt
+  'Depalpur|Okara':30,'Depalpur|Lahore':100,
+  'Basirpur|Kasur':35,'Basirpur|Okara':45,
+  'RenalaKhurd|Okara':25,'RenalaKhurd|Sahiwal':70,
+  'Kanganpur|Sahiwal':50,'Kanganpur|Okara':55,
+  // Sahiwal / Pakpattan
+  'PakPattan|Sahiwal':70,'PakPattan|Okara':100,
+  'ArifWala|PakPattan':40,'ArifWala|Sahiwal':80,
+  'Pinanwal|TTSingh':30,'Pinanwal|Sahiwal':110,
+  // Khanewal / Multan area
+  'Burewala|Sahiwal':100,'Burewala|Khanewal':65,
+  'Vehari|Multan':70,'Vehari|Burewala':25,
+  'Mailsi|Vehari':35,'Mailsi|Lodhran':80,
+  'MianChannu|Khanewal':30,'MianChannu|Multan':85,
+  'KabirWala|Khanewal':40,'KabirWala|Multan':65,
+  'Jahanian|Khanewal':60,'Jahanian|Multan':95,
+  'Abdulhakim|Khanewal':40,'Abdulhakim|Multan':85,
+  'DunyaPur|Lodhran':30,'DunyaPur|Multan':80,
+  'jalalpurpirwala|Multan':65,'jalalpurpirwala|DunyaPur':35,
+  // DG Khan / Muzaffargarh / Layyah
+  'MuzafarGhar|Multan':35,'MuzafarGhar|Layyah':60,
+  'KotAdu|MuzafarGhar':60,'KotAdu|Layyah':60,
+  'DGKHAN|MuzafarGhar':80,'DGKHAN|KotAdu':120,
+  'Layyah|Bhakhar':110,
+  'RajanPur|RahimYarKhan':100,'RajanPur|MuzafarGhar':120,
+  'JamPur|RajanPur':60,'JamPur|MuzafarGhar':80,
+  'Taunsasharif|DGKHAN':60,'Taunsasharif|KotAdu':85,
+  // Rahim Yar Khan area
+  'LiaqatPur|RahimYarKhan':50,
+  'SadiqAbad|RahimYarKhan':80,'SadiqAbad|LiaqatPur':30,
+  'KhanPur|RahimYarKhan':90,'KhanPur|SadiqAbad':50,
+  'Khanpur|RahimYarKhan':90,'Khanpur|SadiqAbad':50,
+  // Bahawalpur division (also fix capitalisation alias)
+  'BahawalPur|Multan':100,'BahawalPur|RahimYarKhan':200,'BahawalPur|Lodhran':115,
+  'Chistian|BahawalPur':100,'Chistian|RahimYarKhan':100,
+  'HaroonAbad|BahawalPur':70,'HaroonAbad|BahawalNagar':40,
+  'BahawalNagar|BahawalPur':110,'BahawalNagar|Chistian':50,
+  'AhmadPurEast|BahawalPur':55,'AhmadPurEast|RahimYarKhan':125,
+  'Fortabas|BahawalNagar':25,'Fortabas|BahawalPur':90,
+  'Yazman|BahawalPur':65,'Yazman|BahawalNagar':65,
+  'KachaKhu|RahimYarKhan':40,'KachaKhu|SadiqAbad':55,
 };
 
 function getDistance(a, b) {
@@ -1466,9 +1554,11 @@ function renderArb(sc){
   const freshTierA=r=>r.maxAge<=1?0:r.maxAge<=3?1:2;
   rows.sort((a,b)=>{
     if(a.via&&!b.via)return -1;if(!a.via&&b.via)return 1;
-    if(sf[_as.col]) return sf[_as.col](a,b);
+    // Fresh tier is always primary — 0-1d before 2-3d before 4d+
     const td=freshTierA(a)-freshTierA(b);
-    return td!==0?td:(b.net??b.sp)-(a.net??a.sp);
+    if(td!==0) return td;
+    // Within same tier, sort by selected column
+    return sf[_as.col]?sf[_as.col](a,b):(b.net??b.sp)-(a.net??a.sp);
   });
   const viab=rows.filter(r=>r.via===true).length;
   $('aStats').innerHTML=\`
