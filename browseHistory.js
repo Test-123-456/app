@@ -973,7 +973,7 @@ td{padding:7px 10px;vertical-align:middle}
 <div id="p-paper" class="panel">
   <div class="ctr">
     <h3 style="margin:16px 0 8px;color:var(--fg)">📜 Paper Trading Simulator</h3>
-    <p style="color:var(--muted);font-size:.88em;margin-bottom:12px">Buy at today's spot price in the buy city. Sell the next available day at the sell city's actual price. Uses your truck type from the selector above.</p>
+    <p style="color:var(--muted);font-size:.88em;margin-bottom:12px">Buy at today's spot price in the buy city. Sell at today's sell city spot price. Capital is locked in transit for the settlement period before it can be redeployed. Uses your truck type from the selector above.</p>
     <div class="bar" style="flex-wrap:wrap;gap:8px;margin-bottom:16px">
       <div class="cg"><label>Start Capital (₨)</label><input type="number" id="ptCapital" value="500000" step="50000" style="width:120px"></div>
       <div class="cg"><label>From date</label><input type="date" id="ptFrom" style="width:140px"></div>
@@ -985,11 +985,11 @@ td{padding:7px 10px;vertical-align:middle}
           <option value="3">3</option>
         </select></div>
       <div class="cg"><label>Min net profit/kg</label><input type="number" id="ptMinNet" value="50" step="10" style="width:80px"></div>
-      <div class="cg"><label>Sell window</label>
+      <div class="cg"><label title="How many days capital is locked while goods are in transit">Transit days</label>
         <select id="ptSellWin">
-          <option value="1">Next day only</option>
-          <option value="2" selected>Within 2 days</option>
-          <option value="3">Within 3 days</option>
+          <option value="1">1 day</option>
+          <option value="2" selected>2 days</option>
+          <option value="3">3 days</option>
         </select></div>
       <div class="cg"><label title="How much of your balance to risk each day">Risk mode</label>
         <select id="ptRisk">
@@ -1949,7 +1949,7 @@ function runPaperTrade(){
   const toDate=$('ptTo').value||TODAY;
   const nTrades=parseInt($('ptTrades').value)||2;
   const minNetRs=parseFloat($('ptMinNet').value)||0;
-  const sellWin=parseInt($('ptSellWin').value)||2;
+  const settleDays=parseInt($('ptSellWin').value)||2; // days capital is locked in transit
   const riskMode=$('ptRisk')?.value||'moderate';
   const payload=(parseFloat($('cpTons')?.value)||1.3)*1000; // kg
 
@@ -1962,21 +1962,30 @@ function runPaperTrade(){
   const allDates=[...dateSet].sort();
   if(allDates.length<2){$('ptSummary').innerHTML='<p style="color:var(--dn)">Not enough data in date range.</p>';return;}
 
-  let balance=startCap;
-  const trades=[];
-  const equity=[{date:allDates[0],v:balance}];
+  // Portfolio state
+  let available=startCap;                // cash free to deploy right now
+  const inTransit=[];                    // [{settleDate, returnAmt}] — capital locked on trucks
+  const getTotal=()=>available+inTransit.reduce((s,x)=>s+x.returnAmt,0);
 
-  for(let di=0;di<allDates.length-1;di++){
+  const trades=[];
+  const equity=[{date:allDates[0],v:startCap}];
+
+  for(let di=0;di<allDates.length;di++){
     const buyDate=allDates[di];
 
-    // Find best routes using that day's SPOT prices
+    // Release matured in-transit lots back to available cash
+    for(let k=inTransit.length-1;k>=0;k--){
+      if(inTransit[k].settleDate<=buyDate){
+        available+=inTransit[k].returnAmt;
+        inTransit.splice(k,1);
+      }
+    }
+
+    // Find best routes using THIS DAY'S spot prices only — no look-ahead
     const routes=[];
     for(const comm of D.commodities){
       const cm=D.priceMap[comm]||{};
-      const cities=Object.keys(cm).filter(c=>{
-        const pt=cm[c].find(p=>p.date===buyDate);
-        return pt!=null;
-      });
+      const cities=Object.keys(cm).filter(c=>cm[c].some(p=>p.date===buyDate));
       for(let i=0;i<cities.length;i++) for(let j=i+1;j<cities.length;j++){
         const cA=cities[i],cB=cities[j];
         const pA=cm[cA].find(p=>p.date===buyDate)?.p;
@@ -1985,26 +1994,22 @@ function runPaperTrade(){
         const[buyC,buyP,sellC,sellP]=pA<=pB?[cA,pA,cB,pB]:[cB,pB,cA,pA];
         const d=dist(buyC,sellC); if(!d) continue;
         const tk=trk100(d);
-        const net=(sellP-buyP-tk)/100; // ₨/kg
+        const net=(sellP-buyP-tk)/100; // ₨/kg net after truck
         if(net<minNetRs) continue;
-        // Find sell price within sell window
-        const sellPts=(cm[sellC]||[]).filter(p=>p.date>buyDate&&p.date<=allDates[Math.min(di+sellWin,allDates.length-1)]);
-        if(!sellPts.length) continue;
-        const sellRec=sellPts[0]; // earliest available
-        routes.push({comm,buyC,buyP,sellC,sellP,net,d,tk,sellDate:sellRec.date,actualSellP:sellRec.p});
+        routes.push({comm,buyC,buyP,sellC,sellP,net,d,tk});
       }
     }
 
     routes.sort((a,b)=>b.net-a.net);
     const selected=routes.slice(0,nTrades);
-    if(!selected.length){equity.push({date:buyDate,v:balance});continue;}
+    const total=getTotal();
+    if(!selected.length||available<1){equity.push({date:buyDate,v:total});continue;}
 
-    // Risk mode: decide how much capital to deploy today
+    // Risk mode: fraction of available cash to deploy today
     let deployPct=1.0;
     if(riskMode==='moderate') deployPct=0.70;
     else if(riskMode==='conservative') deployPct=0.50;
     else if(riskMode==='smart'){
-      // Score each route's confidence: freshness + consistency
       const scores=selected.map(r=>{
         const rc=recentCons(r.comm,r.buyC,r.sellC,7);
         const conScore=rc?rc.hit/rc.total:0.3;
@@ -2012,36 +2017,42 @@ function runPaperTrade(){
         return conScore*(fresh?1.2:0.7);
       });
       const avgScore=scores.reduce((a,b)=>a+b,0)/scores.length;
-      // Map 0→0.3 (very low confidence) to 1→0.85 (very high confidence)
       deployPct=Math.min(0.85,Math.max(0.20,avgScore*0.85));
-      // Store per-route confidence for display
       selected.forEach((r,i)=>r._conf=scores[i]);
     }
 
-    const deployable=balance*deployPct;
+    // allocPerTrade sized so that buyCost + truckCost never exceeds available
+    const deployable=available*deployPct;
     const allocPerTrade=deployable/selected.length;
+    const sellDate=allDates[Math.min(di+settleDays,allDates.length-1)];
 
     let dayPL=0;
     for(const r of selected){
       const buyPriceRs=r.buyP/100;
-      const qty=Math.min(Math.floor(allocPerTrade/buyPriceRs),payload);
+      const tkRs=r.tk/100;
+      // Size qty so total cost (buy + truck) fits within this trade's allocation
+      const qty=Math.min(Math.floor(allocPerTrade/(buyPriceRs+tkRs)),payload);
       if(qty<=0) continue;
       const buyCost=qty*buyPriceRs;
-      const truckCostRs=qty*(r.tk/100);
-      const sellRevRs=qty*(r.actualSellP/100);
+      const truckCostRs=qty*tkRs;
+      const sellRevRs=qty*(r.sellP/100); // sell at today's sell-city price — no future data used
       const profit=sellRevRs-buyCost-truckCostRs;
-      balance+=profit;
+
+      // Lock capital: buy cost + truck paid now; sell revenue returns after transit
+      available-=(buyCost+truckCostRs);
+      inTransit.push({settleDate:sellDate, returnAmt:sellRevRs});
+
       dayPL+=profit;
       const conf=riskMode==='smart'?Math.round((r._conf||0)*100):null;
-      trades.push({buyDate,sellDate:r.sellDate,comm:r.comm,buyC:r.buyC,sellC:r.sellC,
-        buyP:buyPriceRs,sellP:r.actualSellP/100,qty,buyCost,truckCostRs,sellRevRs,profit,balance,
-        deployPct,conf});
+      trades.push({buyDate,sellDate,comm:r.comm,buyC:r.buyC,sellC:r.sellC,
+        buyP:buyPriceRs,sellP:r.sellP/100,qty,buyCost,truckCostRs,sellRevRs,profit,
+        balance:getTotal(),deployPct,conf});
     }
-    equity.push({date:buyDate,v:balance,dayPL,deployPct});
+    equity.push({date:buyDate,v:getTotal(),dayPL,deployPct});
   }
-  equity.push({date:allDates[allDates.length-1],v:balance});
+  equity.push({date:allDates[allDates.length-1],v:getTotal()});
 
-  renderPaperResult({trades,equity,startCap,balance,fromDate,toDate});
+  renderPaperResult({trades,equity,startCap,balance:getTotal(),fromDate,toDate});
 }
 
 function renderPaperResult({trades,equity,startCap,balance,fromDate,toDate}){
