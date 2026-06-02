@@ -1968,9 +1968,9 @@ function runPaperTrade(){
   // deployedCapital = actual cash outlay (buyCost+truckCost); profit only books on settlement
   const inTransit=[]; // [{settleDate,returnAmt,deployedCapital,comm,buyC,sellC,qty,profit,buyDate,buyP,sellP}]
   // During transit: track capital AT COST so balance stays flat until goods sell
+  // Capital at cost: available cash + what's deployed on trucks (no unrealised profit)
+  // Profit only enters this number when a position settles (goods arrive and are sold)
   const getTotal=()=>available+inTransit.reduce((s,x)=>s+x.deployedCapital,0);
-  // Expected final value including unrealised profits (used for summary + equity)
-  const getExpected=()=>available+inTransit.reduce((s,x)=>s+x.returnAmt,0);
 
   const trades=[];
   const equity=[];   // one entry per date, no duplicates
@@ -1980,11 +1980,13 @@ function runPaperTrade(){
     const buyDate=allDates[di];
     const availAtOpen=available;
 
-    // Release matured in-transit lots back to available cash
+    // Settle matured in-transit lots — P&L recognised HERE (on arrival day, not purchase day)
     const settledToday=[];
+    let dayPL=0; // P&L is from settlements, not from today's purchases
     for(let k=inTransit.length-1;k>=0;k--){
       if(inTransit[k].settleDate<=buyDate){
         available+=inTransit[k].returnAmt;
+        dayPL+=inTransit[k].profit;   // book profit when goods arrive, not when dispatched
         settledToday.push(Object.assign({},inTransit[k]));
         inTransit.splice(k,1);
       }
@@ -2011,7 +2013,7 @@ function runPaperTrade(){
     routes.sort((a,b)=>b.net-a.net);
     const selected=routes.slice(0,nTrades);
 
-    let routeReason='',deployPct=1.0,dayPL=0;
+    let routeReason='',deployPct=1.0;
     const deployedToday=[];
 
     if(!selected.length){
@@ -2046,31 +2048,29 @@ function runPaperTrade(){
         if(qty<=0) continue;
         const buyCost=qty*buyPriceRs;
         const truckCostRs=qty*tkRs;
-        const sellRevRs=qty*(r.sellP/100); // sell at today's sell-city price — no future data used
+        const sellRevRs=qty*(r.sellP/100); // locked-in sell price from today's data
         const profit=sellRevRs-buyCost-truckCostRs;
 
         available-=(buyCost+truckCostRs);
-        // Store rich info so open positions panel has everything it needs
         inTransit.push({settleDate:sellDate,returnAmt:sellRevRs,deployedCapital:buyCost+truckCostRs,
           comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,buyDate,buyP:buyPriceRs,sellP:r.sellP/100});
         deployedToday.push({comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,sellDate,net:r.net});
+        // dayPL NOT updated here — profit only recognised on settle day
 
-        dayPL+=profit;
         const conf=riskMode==='smart'?Math.round((r._conf||0)*100):null;
-        // balance column = capital at cost (not inflated by unrealised profits)
         trades.push({buyDate,sellDate,comm:r.comm,buyC:r.buyC,sellC:r.sellC,
           buyP:buyPriceRs,sellP:r.sellP/100,qty,buyCost,truckCostRs,sellRevRs,profit,
           balance:getTotal(),deployPct,conf});
       }
     }
 
-    diary.push({date:buyDate,availAtOpen,settled:settledToday,deployed:deployedToday,routeReason,totalEquity:getExpected(),dayPL});
-    equity.push({date:buyDate,v:getExpected(),dayPL,deployPct});
+    diary.push({date:buyDate,availAtOpen,settled:settledToday,deployed:deployedToday,routeReason,totalEquity:getTotal(),dayPL});
+    equity.push({date:buyDate,v:getTotal(),dayPL,deployPct});
   }
 
   // Positions still on trucks at simulation end (sell date = last date, settle on close)
   const openPositions=[...inTransit];
-  renderPaperResult({trades,equity,startCap,balance:getExpected(),fromDate,toDate,diary,openPositions,minNetRs});
+  renderPaperResult({trades,equity,startCap,balance:getTotal(),fromDate,toDate,diary,openPositions,minNetRs});
 }
 
 function renderPaperResult({trades,equity,startCap,balance,fromDate,toDate,diary,openPositions,minNetRs}){
