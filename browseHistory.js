@@ -26,8 +26,10 @@ const path    = require('path');
 const BASE_URL  = 'http://www.amis.pk';
 const BROWSE_URL = `${BASE_URL}/BrowsePrices.aspx?searchType=0`;
 const VIEW_URL  = `${BASE_URL}/ViewPrices.aspx`;
-const DATA_FILE = path.join(__dirname, 'data', 'price-history.json');
-const PLAN_FILE = path.join(__dirname, 'reports', 'planner.html');
+const DATA_FILE    = path.join(__dirname, 'data', 'price-history.json');
+const ARRIVAL_FILE = path.join(__dirname, 'data', 'arrival-history.json');
+const PLAN_FILE    = path.join(__dirname, 'reports', 'planner.html');
+const ARRIVAL_URL  = `${BASE_URL}/Arrivalreports/ArrivalDatewise.aspx`;
 const DELAY_MS  = 700;
 const TIMEOUT   = 20_000;
 
@@ -361,9 +363,133 @@ function mergeAndSave(freshRecords, existing) {
   return merged;
 }
 
+// ─── Step 4b: Arrivals scraper ────────────────────────────────────────────────
+
+async function scrapeArrivals(days) {
+  log('Scraping AMIS arrival reports…');
+  let sessionCookie;
+  let vs, vsg, cityCount;
+
+  try {
+    const getResp = await axios.get(ARRIVAL_URL, {
+      headers: { ...HEADERS, Referer: ARRIVAL_URL },
+      timeout: TIMEOUT,
+    });
+    sessionCookie = (getResp.headers['set-cookie'] || []).map(c => c.split(';')[0]).join('; ');
+    const $ = cheerio.load(getResp.data);
+    vs  = $('input[name=__VIEWSTATE]').val();
+    vsg = $('input[name=__VIEWSTATEGENERATOR]').val();
+    cityCount = 0;
+    $('input[name*="ctl09$divDropDown"]').each((_, el) => {
+      const label = $('label[for="' + $(el).attr('id') + '"]').text().trim();
+      if (label && label !== '(Select All)') cityCount++;
+    });
+    if (!vs || cityCount < 10) throw new Error('Could not parse form state');
+    log(`  Arrival form: ${cityCount} cities, ViewState ${vs.length} chars`);
+  } catch (err) {
+    warn(`Cannot reach AMIS Arrivals: ${err.message}`);
+    return [];
+  }
+
+  const today  = new Date();
+  const dStart = new Date(Date.now() - days * 86_400_000);
+  const fmt    = d => `${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}/${d.getFullYear()}`;
+
+  const commIndices = Array.from({ length: 18 }, (_, i) => i).join(',');
+  const cityIndices = Array.from({ length: cityCount }, (_, i) => i).join(',');
+
+  const params = new URLSearchParams();
+  params.set('__EVENTTARGET', '');  params.set('__EVENTARGUMENT', '');
+  params.set('__VIEWSTATE', vs);    params.set('__VIEWSTATEGENERATOR', vsg);
+  params.set('ReportViewer1$ctl03$ctl00', ''); params.set('ReportViewer1$ctl03$ctl01', '');
+  params.set('ReportViewer1$isReportViewerInVs', '');
+  params.set('ReportViewer1$ctl14', ''); params.set('ReportViewer1$ctl15', '');
+  params.set('ReportViewer1$AsyncWait$HiddenCancelField', 'False');
+  params.set('ReportViewer1$ctl08$ctl03$txtValue', fmt(dStart));
+  params.set('ReportViewer1$ctl08$ctl05$txtValue', fmt(today));
+  params.set('ReportViewer1$ctl08$ctl07$txtValue', 'Select All');
+  params.set('ReportViewer1$ctl08$ctl07$divDropDown$ctl00', 'on');
+  for (let i = 2; i <= 19; i++) params.set(`ReportViewer1$ctl08$ctl07$divDropDown$ctl${String(i).padStart(2,'0')}`, 'on');
+  params.set('ReportViewer1$ctl08$ctl07$divDropDown$ctl01$HiddenIndices', commIndices);
+  params.set('ReportViewer1$ctl08$ctl09$txtValue', 'Select All');
+  params.set('ReportViewer1$ctl08$ctl09$divDropDown$ctl00', 'on');
+  for (let i = 2; i <= cityCount + 1; i++) params.set(`ReportViewer1$ctl08$ctl09$divDropDown$ctl${i}`, 'on');
+  params.set('ReportViewer1$ctl08$ctl09$divDropDown$ctl01$HiddenIndices', cityIndices);
+  params.set('ReportViewer1$ctl08$ctl00', 'View Report');
+  params.set('ReportViewer1$ToggleParam$store', ''); params.set('ReportViewer1$ToggleParam$collapse', 'false');
+  params.set('ReportViewer1$ctl12$ClientClickedId', '');
+  params.set('ReportViewer1$ctl11$store', ''); params.set('ReportViewer1$ctl11$collapse', 'false');
+  params.set('ReportViewer1$ctl13$VisibilityState$ctl00', 'None');
+  params.set('ReportViewer1$ctl13$ScrollPosition', '');
+  params.set('ReportViewer1$ctl13$ReportControl$ctl02', ''); params.set('ReportViewer1$ctl13$ReportControl$ctl03', '');
+  params.set('ReportViewer1$ctl13$ReportControl$ctl04', '100');
+
+  let reportSession, controlId;
+  try {
+    const postResp = await axios.post(ARRIVAL_URL, params.toString(), {
+      headers: { ...HEADERS, 'Content-Type': 'application/x-www-form-urlencoded', Cookie: sessionCookie, Referer: ARRIVAL_URL },
+      timeout: 30_000,
+    });
+    const rsMatch = postResp.data.match(/ReportSession=([a-z0-9]+)/);
+    const ciMatch = postResp.data.match(/ControlID=([a-f0-9]+)/);
+    reportSession = rsMatch?.[1];
+    controlId     = ciMatch?.[1];
+    if (!reportSession) throw new Error('No ReportSession in POST response');
+    log(`  ReportSession: ${reportSession}`);
+  } catch (err) {
+    warn(`Arrival POST failed: ${err.message}`);
+    return [];
+  }
+
+  const csvUrl = `${BASE_URL}/Reserved.ReportViewerWebControl.axd?ReportSession=${reportSession}&Culture=1033&CultureOverrides=True&UICulture=1033&UICultureOverrides=True&ReportStack=1&ControlID=${controlId}&OpType=Export&FileName=DatewiseArrival&ContentDisposition=OnlyHtmlInline&Format=CSV`;
+
+  try {
+    const csvResp = await axios.get(csvUrl, {
+      headers: { ...HEADERS, Cookie: sessionCookie, Referer: ARRIVAL_URL },
+      timeout: 60_000,
+    });
+    const lines = csvResp.data.split('\n').filter(l => l.trim());
+    const records = [];
+    for (const line of lines.slice(1)) {       // skip header
+      const [city, dateRaw, commodity, qtyRaw] = line.split(',');
+      if (!city || !dateRaw || !commodity) continue;
+      const qty = parseInt(qtyRaw || '0');
+      // Convert MM/DD/YYYY → YYYY-MM-DD
+      const [mm, dd, yyyy] = dateRaw.trim().split('/');
+      if (!yyyy) continue;
+      const date = `${yyyy}-${mm.padStart(2,'0')}-${dd.padStart(2,'0')}`;
+      records.push({ date, city: city.trim(), commodity: commodity.trim(), qty });
+    }
+    log(`  Arrivals scraped: ${records.length} records (${lines.length - 1} raw rows)`);
+    return records;
+  } catch (err) {
+    warn(`Arrival CSV export failed: ${err.message}`);
+    return [];
+  }
+}
+
+function loadExistingArrivals() {
+  try {
+    if (!fs.existsSync(ARRIVAL_FILE)) return [];
+    return JSON.parse(fs.readFileSync(ARRIVAL_FILE, 'utf8')).records || [];
+  } catch { return []; }
+}
+
+function mergeAndSaveArrivals(freshRecords, existing) {
+  const key = r => `${r.date}|${r.commodity}|${r.city}`;
+  const seen = new Set(existing.map(key));
+  const added = freshRecords.filter(r => !seen.has(key(r)));
+  const merged = [...existing, ...added].sort((a, b) => b.date.localeCompare(a.date));
+  const dir = path.dirname(ARRIVAL_FILE);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(ARRIVAL_FILE, JSON.stringify({ updatedAt: new Date().toISOString(), records: merged }, null, 2), 'utf8');
+  log(`Arrivals saved ${merged.length} records (+${added.length} new) → ${ARRIVAL_FILE}`);
+  return merged;
+}
+
 // ─── Step 5: Generate interactive planner HTML ────────────────────────────────
 
-function generatePlannerHtml(records) {
+function generatePlannerHtml(records, arrivalRecords) {
   const priceMap = {};
   const citySet  = new Set();
   for (const r of records) {
@@ -385,6 +511,26 @@ function generatePlannerHtml(records) {
   const cities      = [...citySet].sort();
   const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString() });
   const embeddedRoad = JSON.stringify(ROAD_KM);
+
+  // Build arrival map: arrivalMap[arrComm][city] = [{date, qty}] (last 30 days only, sorted asc)
+  const arrivalMap = {};
+  const arrCutoff  = new Date(Date.now() - 30 * 86_400_000).toISOString().slice(0, 10);
+  for (const r of (arrivalRecords || [])) {
+    if (!r.date || !r.city || !r.commodity || r.date < arrCutoff) continue;
+    if (!arrivalMap[r.commodity]) arrivalMap[r.commodity] = {};
+    if (!arrivalMap[r.commodity][r.city]) arrivalMap[r.commodity][r.city] = [];
+    arrivalMap[r.commodity][r.city].push({ date: r.date, qty: r.qty });
+  }
+  for (const cm of Object.values(arrivalMap)) {
+    for (const arr of Object.values(cm)) {
+      const seen = {};
+      for (const pt of arr) if (!seen[pt.date] || pt.qty > seen[pt.date].qty) seen[pt.date] = pt;
+      arr.length = 0;
+      arr.push(...Object.values(seen).sort((a, b) => a.date.localeCompare(b.date)));
+    }
+  }
+  const arrivalComms = Object.keys(arrivalMap).sort();
+  const embeddedArrivals = JSON.stringify({ arrivalComms, arrivalMap, arrUpdatedAt: new Date().toISOString() });
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -514,6 +660,7 @@ td{padding:7px 10px;vertical-align:middle}
   <div class="tab"        onclick="tab('route')">🚛 Route Planner</div>
   <div class="tab"        onclick="tab('whatif')">🔮 What-If</div>
   <div class="tab"        onclick="tab('brief')" style="background:#166534;color:#fff">📊 Briefing</div>
+  <div class="tab"        onclick="tab('paper')" style="background:#1e3a5f;color:#fff">📜 Paper Trade</div>
 </div>
 
 <!-- PRICES -->
@@ -719,9 +866,47 @@ td{padding:7px 10px;vertical-align:middle}
   </div>
 </div>
 
+<!-- PAPER TRADE -->
+<div id="p-paper" class="panel">
+  <div class="ctr">
+    <h3 style="margin:16px 0 8px;color:var(--fg)">📜 Paper Trading Simulator</h3>
+    <p style="color:var(--muted);font-size:.88em;margin-bottom:12px">Buy at today's spot price in the buy city. Sell the next available day at the sell city's actual price. Uses your truck type from the selector above.</p>
+    <div class="bar" style="flex-wrap:wrap;gap:8px;margin-bottom:16px">
+      <div class="cg"><label>Start Capital (₨)</label><input type="number" id="ptCapital" value="500000" step="50000" style="width:120px"></div>
+      <div class="cg"><label>From date</label><input type="date" id="ptFrom" style="width:140px"></div>
+      <div class="cg"><label>To date</label><input type="date" id="ptTo" style="width:140px"></div>
+      <div class="cg"><label>Trades/day</label>
+        <select id="ptTrades">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+        </select></div>
+      <div class="cg"><label>Min net profit/kg</label><input type="number" id="ptMinNet" value="50" step="10" style="width:80px"></div>
+      <div class="cg"><label>Sell window</label>
+        <select id="ptSellWin">
+          <option value="1">Next day only</option>
+          <option value="2" selected>Within 2 days</option>
+          <option value="3">Within 3 days</option>
+        </select></div>
+      <div class="cg"><label title="How much of your balance to risk each day">Risk mode</label>
+        <select id="ptRisk">
+          <option value="aggressive">Aggressive — 100% deployed</option>
+          <option value="moderate" selected>Moderate — 70% deployed</option>
+          <option value="conservative">Conservative — 50% deployed</option>
+          <option value="smart">Smart — auto based on confidence</option>
+        </select></div>
+      <button class="btn" onclick="runPaperTrade()" style="background:#1e3a5f;color:#fff;padding:6px 18px">▶ Run Simulation</button>
+    </div>
+    <div id="ptSummary"></div>
+    <div id="ptChart" style="margin:16px 0"><canvas id="ptEquityChart" height="120"></canvas></div>
+    <div id="ptLog"></div>
+  </div>
+</div>
+
 <script>
 const D   = ${embeddedData};
 const RD  = ${embeddedRoad};
+const AR  = ${embeddedArrivals};
 const $   = id => document.getElementById(id);
 const esc = s  => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const pkr = n  => n==null?'—':(n<0?'-₨':'₨')+Math.abs(Math.round(n)).toLocaleString();
@@ -843,6 +1028,57 @@ function rcBadge(rc,days){
   return \`<span class="chip \${cls}">\${rc.hit}/\${rc.total}d</span>\`;
 }
 
+// ── Supply / Arrivals ─────────────────────────────────────────────────────────
+// Map from AMIS arrival commodity name → price commodity name patterns (lowercase)
+const ARR_PRICE_MAP={
+  'Tomato':['tomato'],'Potato':['potato fresh','potato store','potato'],
+  'Onion':['onion','green onion'],'Apple':['apple (golden)','apple (ammre)','apple golden'],
+  'Mango':['mango (sindhri)','mango sindhri','mango (chounsa)','mango chounsa','mango desi','mango saharni'],
+  'Chilli(Green)':['green chilli','green chili'],
+  'Gram':['gram white (local)','gram pulse'],'Wheat':['wheat'],
+  'Rice':['paddy basmati','rice basmati','paddy (irri)','rice (irri)'],
+  'Paddy':['paddy basmati','paddy (irri)'],
+  'Maize':['maize'],'Banana':['banana'],'Citrus Fruit':['citrus fruit'],
+  'Masoor':['masoor'],'Mash':['mash'],'Moong':['moong'],
+};
+// reverse map: price comm (lowercase) → arrival comm name
+const _arrRevMap={};
+for(const[ak,pats] of Object.entries(ARR_PRICE_MAP)) for(const p of pats) _arrRevMap[p]=ak;
+
+// Get arrival commodity name for a price commodity name
+function arrCommFor(priceComm){ return _arrRevMap[priceComm.toLowerCase()]||null; }
+
+// Recent arrivals for a city+arrComm over last N days (returns {qty7,avg30,level} or null)
+function supplyOf(arrComm,city,days7){
+  const series=AR.arrivalMap[arrComm]?.[city]; if(!series||!series.length) return null;
+  const cut7=new Date(Date.now()-days7*86400000).toISOString().slice(0,10);
+  const cut30=new Date(Date.now()-30*86400000).toISOString().slice(0,10);
+  const recent=series.filter(p=>p.date>=cut7);
+  const month=series.filter(p=>p.date>=cut30);
+  if(!recent.length) return null;
+  const qty7=recent.reduce((s,p)=>s+p.qty,0);
+  const avg30=month.length?month.reduce((s,p)=>s+p.qty,0)/month.length:qty7/days7;
+  // Percentile: compare recent daily avg vs 30d daily avg
+  const dailyRecent=qty7/days7, dailyAvg30=avg30;
+  const ratio=dailyAvg30>0?dailyRecent/dailyAvg30:1;
+  const level=ratio>=1.3?'H':ratio>=0.7?'M':'L';
+  return{qty7,dailyRecent:Math.round(dailyRecent),level,ratio:+ratio.toFixed(2)};
+}
+
+// Supply badge HTML for a city, for use in arb table (role='buy'|'sell')
+function supplyBadge(arrComm,city,role){
+  if(!arrComm) return '';
+  const s=supplyOf(arrComm,city,7); if(!s) return '';
+  // For buy city: HIGH supply = good (cheap/plentiful) → green
+  // For sell city: LOW supply = good (scarcity = high sell price) → green
+  const good=(role==='buy'?s.level==='H':s.level==='L');
+  const ok=(role==='buy'?s.level==='M':s.level==='M');
+  const cls=good?'con-h':ok?'':'con-l';
+  const icon=s.level==='H'?'↑':s.level==='L'?'↓':'→';
+  const label=s.dailyRecent>=1000?(s.dailyRecent/1000).toFixed(1)+'k':s.dailyRecent;
+  return \`<br><small class="chip \${cls}" style="font-size:.62em;padding:1px 5px" title="\${s.qty7} Mnd/7d vs avg \${Math.round(s.ratio*100)}% of 30d">\${icon}\${label}Mnd</small>\`;
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 function init(){
   const pts=D.commodities.reduce((s,c)=>s+Object.values(D.priceMap[c]||{}).reduce((ss,a)=>ss+a.length,0),0);
@@ -866,11 +1102,11 @@ function init(){
   if(D.cities.includes('Rawalpindi')){$('rTo').value='Rawalpindi';$('wiTo').value='Rawalpindi';}
   if(D.cities.includes('Khanewal'))$('cpB').value='Khanewal';
   else if(D.cities.length>1)$('cpB').value=D.cities.find(c=>c!==$('cpA').value)||D.cities[1];
-  autoFillDist(); renderPrices(); renderArb(); renderPair(); renderWiHist();
+  autoFillDist(); renderPrices(); renderArb(); renderPair(); renderWiHist(); initPtDates();
 }
 
 function tab(n){
-  const ns=['prices','pair','arb','route','whatif','brief'];
+  const ns=['prices','pair','arb','route','whatif','brief','paper'];
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',ns[i]===n));
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='p-'+n));
   if(n==='brief') renderBriefing();
@@ -1522,6 +1758,197 @@ function copyWa(){
     .catch(()=>{prompt('Copy this:',_bfWaText);});
 }
 
+// ── PAPER TRADE ───────────────────────────────────────────────────────────────
+let _ptChart=null;
+
+function initPtDates(){
+  const today=TODAY;
+  const d30=new Date(Date.now()-30*86400000).toISOString().slice(0,10);
+  if($('ptFrom')&&!$('ptFrom').value){$('ptFrom').value=d30;$('ptTo').value=today;}
+}
+
+function runPaperTrade(){
+  initPtDates();
+  const startCap=parseFloat($('ptCapital').value)||500000;
+  const fromDate=$('ptFrom').value;
+  const toDate=$('ptTo').value||TODAY;
+  const nTrades=parseInt($('ptTrades').value)||2;
+  const minNetRs=parseFloat($('ptMinNet').value)||0;
+  const sellWin=parseInt($('ptSellWin').value)||2;
+  const riskMode=$('ptRisk')?.value||'moderate';
+  const payload=(parseFloat($('cpTons')?.value)||1.3)*1000; // kg
+
+  // Collect all dates in range
+  const dateSet=new Set();
+  for(const comm of D.commodities)
+    for(const city of D.cities)
+      for(const p of (D.priceMap[comm]?.[city]||[]))
+        if(p.date>=fromDate&&p.date<=toDate) dateSet.add(p.date);
+  const allDates=[...dateSet].sort();
+  if(allDates.length<2){$('ptSummary').innerHTML='<p style="color:var(--dn)">Not enough data in date range.</p>';return;}
+
+  let balance=startCap;
+  const trades=[];
+  const equity=[{date:allDates[0],v:balance}];
+
+  for(let di=0;di<allDates.length-1;di++){
+    const buyDate=allDates[di];
+
+    // Find best routes using that day's SPOT prices
+    const routes=[];
+    for(const comm of D.commodities){
+      const cm=D.priceMap[comm]||{};
+      const cities=Object.keys(cm).filter(c=>{
+        const pt=cm[c].find(p=>p.date===buyDate);
+        return pt!=null;
+      });
+      for(let i=0;i<cities.length;i++) for(let j=i+1;j<cities.length;j++){
+        const cA=cities[i],cB=cities[j];
+        const pA=cm[cA].find(p=>p.date===buyDate)?.p;
+        const pB=cm[cB].find(p=>p.date===buyDate)?.p;
+        if(!pA||!pB) continue;
+        const[buyC,buyP,sellC,sellP]=pA<=pB?[cA,pA,cB,pB]:[cB,pB,cA,pA];
+        const d=dist(buyC,sellC); if(!d) continue;
+        const tk=trk100(d);
+        const net=(sellP-buyP-tk)/100; // ₨/kg
+        if(net<minNetRs) continue;
+        // Find sell price within sell window
+        const sellPts=(cm[sellC]||[]).filter(p=>p.date>buyDate&&p.date<=allDates[Math.min(di+sellWin,allDates.length-1)]);
+        if(!sellPts.length) continue;
+        const sellRec=sellPts[0]; // earliest available
+        routes.push({comm,buyC,buyP,sellC,sellP,net,d,tk,sellDate:sellRec.date,actualSellP:sellRec.p});
+      }
+    }
+
+    routes.sort((a,b)=>b.net-a.net);
+    const selected=routes.slice(0,nTrades);
+    if(!selected.length){equity.push({date:buyDate,v:balance});continue;}
+
+    // Risk mode: decide how much capital to deploy today
+    let deployPct=1.0;
+    if(riskMode==='moderate') deployPct=0.70;
+    else if(riskMode==='conservative') deployPct=0.50;
+    else if(riskMode==='smart'){
+      // Score each route's confidence: freshness + consistency
+      const scores=selected.map(r=>{
+        const rc=recentCons(r.comm,r.buyC,r.sellC,7);
+        const conScore=rc?rc.hit/rc.total:0.3;
+        const fresh=ageD(r.comm,r.buyC)<=1&&ageD(r.comm,r.sellC)<=1;
+        return conScore*(fresh?1.2:0.7);
+      });
+      const avgScore=scores.reduce((a,b)=>a+b,0)/scores.length;
+      // Map 0→0.3 (very low confidence) to 1→0.85 (very high confidence)
+      deployPct=Math.min(0.85,Math.max(0.20,avgScore*0.85));
+      // Store per-route confidence for display
+      selected.forEach((r,i)=>r._conf=scores[i]);
+    }
+
+    const deployable=balance*deployPct;
+    const allocPerTrade=deployable/selected.length;
+
+    let dayPL=0;
+    for(const r of selected){
+      const buyPriceRs=r.buyP/100;
+      const qty=Math.min(Math.floor(allocPerTrade/buyPriceRs),payload);
+      if(qty<=0) continue;
+      const buyCost=qty*buyPriceRs;
+      const truckCostRs=qty*(r.tk/100);
+      const sellRevRs=qty*(r.actualSellP/100);
+      const profit=sellRevRs-buyCost-truckCostRs;
+      balance+=profit;
+      dayPL+=profit;
+      const conf=riskMode==='smart'?Math.round((r._conf||0)*100):null;
+      trades.push({buyDate,sellDate:r.sellDate,comm:r.comm,buyC:r.buyC,sellC:r.sellC,
+        buyP:buyPriceRs,sellP:r.actualSellP/100,qty,buyCost,truckCostRs,sellRevRs,profit,balance,
+        deployPct,conf});
+    }
+    equity.push({date:buyDate,v:balance,dayPL,deployPct});
+  }
+  equity.push({date:allDates[allDates.length-1],v:balance});
+
+  renderPaperResult({trades,equity,startCap,balance,fromDate,toDate});
+}
+
+function renderPaperResult({trades,equity,startCap,balance,fromDate,toDate}){
+  const totalPL=balance-startCap;
+  const wins=trades.filter(t=>t.profit>0).length;
+  const pct=trades.length?Math.round(wins/trades.length*100):0;
+  const best=trades.length?trades.reduce((a,b)=>b.profit>a.profit?b:a):null;
+  const worst=trades.length?trades.reduce((a,b)=>b.profit<a.profit?b:a):null;
+  const clr=totalPL>=0?'var(--up)':'var(--dn)';
+
+  $('ptSummary').innerHTML=\`
+    <div class="sg" style="margin-bottom:12px">
+      <div class="sb"><div class="sb-lbl">Final Balance</div><div class="sb-val" style="color:\${clr}">₨\${Math.round(balance).toLocaleString()}</div><div class="sb-sub">\${totalPL>=0?'+':''}\${Math.round(totalPL).toLocaleString()}</div></div>
+      <div class="sb"><div class="sb-lbl">Total Trades</div><div class="sb-val">\${trades.length}</div><div class="sb-sub">\${fromDate} → \${toDate}</div></div>
+      <div class="sb"><div class="sb-lbl">Win Rate</div><div class="sb-val">\${pct}%</div><div class="sb-sub">\${wins} wins / \${trades.length-wins} losses</div></div>
+      <div class="sb"><div class="sb-lbl">Return</div><div class="sb-val" style="color:\${clr}">\${((totalPL/startCap)*100).toFixed(1)}%</div><div class="sb-sub">on ₨\${startCap.toLocaleString()}</div></div>
+      \${best?\`<div class="sb"><div class="sb-lbl">Best Trade</div><div class="sb-val" style="color:var(--up);font-size:.95em">₨\${Math.round(best.profit).toLocaleString()}</div><div class="sb-sub">\${esc(best.comm)} \${esc(best.buyC)}→\${esc(best.sellC)} on \${best.buyDate}</div></div>\`:''}
+      \${worst?\`<div class="sb"><div class="sb-lbl">Worst Trade</div><div class="sb-val" style="color:var(--dn);font-size:.95em">₨\${Math.round(worst.profit).toLocaleString()}</div><div class="sb-sub">\${esc(worst.comm)} \${esc(worst.buyC)}→\${esc(worst.sellC)} on \${worst.buyDate}</div></div>\`:''}
+    </div>\`;
+
+  // Equity chart
+  if(_ptChart){_ptChart.destroy();_ptChart=null;}
+  _ptChart=new Chart($('ptEquityChart'),{type:'line',
+    data:{labels:equity.map(e=>e.date),datasets:[{
+      label:'Portfolio Value',spanGaps:true,tension:.3,
+      borderColor:'#3b82f6',backgroundColor:'#3b82f622',fill:true,pointRadius:1,
+      data:equity.map(e=>Math.round(e.v))
+    },{
+      label:'Start Capital',borderColor:'#94a3b8',borderDash:[4,4],pointRadius:0,
+      data:equity.map(()=>startCap)
+    }]},
+    options:{responsive:true,animation:false,
+      plugins:{legend:{display:true,labels:{font:{size:9},boxWidth:10}}},
+      scales:{x:{ticks:{maxTicksLimit:10,font:{size:9}}},
+              y:{ticks:{callback:v=>'₨'+Math.round(v/1000)+'k',font:{size:9}}}}}});
+
+  // Daily summary
+  const byDay={};
+  for(const t of trades){
+    if(!byDay[t.buyDate]) byDay[t.buyDate]={pl:0,trades:0,deployPct:t.deployPct};
+    byDay[t.buyDate].pl+=t.profit;
+    byDay[t.buyDate].trades++;
+  }
+  const dayRows=Object.entries(byDay).sort((a,b)=>a[0].localeCompare(b[0])).map(([date,d])=>{
+    const c=d.pl>=0?'var(--up)':'var(--dn)';
+    const riskLabel=d.deployPct>=0.95?'100%':d.deployPct>=0.65?'70%':d.deployPct>=0.45?'50%':Math.round(d.deployPct*100)+'%';
+    return \`<tr>
+      <td>\${date}</td>
+      <td>\${d.trades} trade\${d.trades>1?'s':''}</td>
+      <td><span style="font-size:.8em;color:var(--muted)">\${riskLabel} deployed</span></td>
+      <td style="color:\${c};font-weight:600">\${d.pl>=0?'+':''}₨\${Math.round(d.pl).toLocaleString()}</td>
+    </tr>\`;
+  }).join('');
+  $('ptLog').innerHTML=\`
+    <div class="sec">Day-by-Day Summary</div>
+    <div class="tw" style="margin-bottom:20px">
+      <table style="max-width:500px"><thead><tr><th>Date</th><th>Trades</th><th>Risk</th><th>Day P&amp;L</th></tr></thead>
+      <tbody>\${dayRows}</tbody></table></div>
+
+    <div class="sec">Full Trade Log</div><div class="tw">
+    <table><thead><tr>
+      <th>Buy Date</th><th>Sell Date</th><th>Commodity</th><th>Buy City</th><th></th><th>Sell City</th>
+      <th>Qty</th><th>Buy ₨/kg</th><th>Sell ₨/kg</th><th>Truck Cost</th>
+      \${trades[0]?.conf!=null?'<th>Confidence</th>':''}
+      <th>P&amp;L</th><th>Balance</th>
+    </tr></thead><tbody>\${trades.map(t=>{
+      const c=t.profit>=0?'var(--up)':'var(--dn)';
+      return \`<tr>
+        <td>\${t.buyDate}</td><td>\${t.sellDate}</td>
+        <td><strong>\${esc(t.comm)}</strong></td>
+        <td><span class="pill">\${esc(t.buyC)}</span></td><td style="color:var(--muted)">→</td>
+        <td><span class="pill pill-g">\${esc(t.sellC)}</span></td>
+        <td>\${Math.round(t.qty).toLocaleString()} kg</td>
+        <td>₨\${t.buyP.toFixed(2)}</td><td>₨\${t.sellP.toFixed(2)}</td>
+        <td>₨\${Math.round(t.truckCostRs).toLocaleString()}</td>
+        \${t.conf!=null?\`<td><span class="chip \${t.conf>=70?'con-h':t.conf>=40?'con-m':'con-l'}">\${t.conf}%</span></td>\`:''}
+        <td style="color:\${c};font-weight:600">\${t.profit>=0?'+':''}₨\${Math.round(t.profit).toLocaleString()}</td>
+        <td style="color:\${c}">₨\${Math.round(t.balance).toLocaleString()}</td>
+      </tr>\`;
+    }).join('')}</tbody></table></div>\`;
+}
+
 // ── ARBITRAGE ─────────────────────────────────────────────────────────────────
 let _as={col:'net',dir:-1};
 function renderArb(sc){
@@ -1544,7 +1971,8 @@ function renderArb(sc){
       if(filt==='profitable'&&via!==true) continue;
       if(filt==='known'&&via===null) continue;
       const maxAge=Math.max(ageD(comm,buyC),ageD(comm,sellC));
-      rows.push({comm,buyC,buyP,sellC,sellP,sp,spPct,d,tk,net,bk,con,rc,via,maxAge});
+      const arrComm=arrCommFor(comm);
+      rows.push({comm,buyC,buyP,sellC,sellP,sp,spPct,d,tk,net,bk,con,rc,via,maxAge,arrComm});
     }
   }
   const sf={comm:(a,b)=>a.comm.localeCompare(b.comm)*_as.dir,
@@ -1576,10 +2004,12 @@ function renderArb(sc){
     const ns=r.net!=null?(r.net>=0?\`<strong class="pos">₨\${(r.net/100).toFixed(2)}</strong>\`:\`<span class="neg">-₨\${(Math.abs(r.net)/100).toFixed(2)}</span>\`):'—';
     const cs=r.con!=null?\`<span class="chip \${r.con>=70?'con-h':r.con>=40?'con-m':'con-l'}">\${r.con}%</span>\`:'—';
     const rv=vd>0?rcBadge(r.rc,vd):'';
+    const buySup=supplyBadge(r.arrComm,r.buyC,'buy');
+    const sellSup=supplyBadge(r.arrComm,r.sellC,'sell');
     return \`<tr>
       <td><strong>\${esc(r.comm)}</strong></td>
-      <td><span class="pill">\${esc(r.buyC)}</span></td><td style="color:var(--muted)">→</td>
-      <td><span class="pill pill-g">\${esc(r.sellC)}</span></td>
+      <td><span class="pill">\${esc(r.buyC)}</span>\${buySup}</td><td style="color:var(--muted)">→</td>
+      <td><span class="pill pill-g">\${esc(r.sellC)}</span>\${sellSup}</td>
       <td>₨\${(r.buyP/100).toFixed(2)}\${ageTag(r.comm,r.buyC)}</td><td>₨\${(r.sellP/100).toFixed(2)}\${ageTag(r.comm,r.sellC)}</td>
       <td>₨\${(r.sp/100).toFixed(2)} <small style="color:var(--muted)">(\${r.spPct.toFixed(0)}%)</small></td>
       <td>\${r.d!=null?r.d+' km':'—'}</td><td>\${r.tk!=null?'₨'+(r.tk/100).toFixed(2):'—'}</td>
@@ -1590,7 +2020,8 @@ function renderArb(sc){
     </tr>\`;
   }).join('');
   $('aTable').innerHTML=\`<table><thead><tr>
-    \${th('Commodity','comm')}<th>Buy City</th><th></th><th>Sell City</th>
+    \${th('Commodity','comm')}<th title="↑/↓ Maunds/day arrived in last 7d vs 30d avg. 🟢=high supply (buy=good/cheap, sell=risky/glut). 🔴=low supply (buy=risky/dear, sell=good/scarcity). Hover chip for detail." style="cursor:help">Buy City</th><th></th>
+    <th title="Supply at sell city: 🟢=low arrivals=scarcity=high sell price. 🔴=high arrivals=glut." style="cursor:help">Sell City</th>
     <th>Buy ₨/kg</th><th>Sell ₨/kg</th>\${th('Spread/kg','sp')}
     <th>km</th><th>Truck/kg</th>\${th('Net/kg','net')}
     \${th('Max viable km','bk','How far you could truck it before profit hits zero = Spread ÷ truck rate (set by Vehicle selector). Higher = safer trade. Any Pakistan route is under ~1,500 km.')}
@@ -1782,10 +2213,18 @@ async function main() {
   let records = loadExisting();
   log(`Existing records: ${records.length}`);
 
+  let arrivalRecords = loadExistingArrivals();
+  log(`Existing arrival records: ${arrivalRecords.length}`);
+
   if (!planOnly) {
     const fresh = await scrapeHistory(days, fetchAll);
     if (fresh.length > 0) records = mergeAndSave(fresh, records);
     else log('No new records scraped — generating planner from existing data.');
+
+    // Scrape arrivals: last 14 days (more than price days to build a good avg baseline)
+    const freshArrivals = await scrapeArrivals(Math.max(days, 14));
+    if (freshArrivals.length > 0) arrivalRecords = mergeAndSaveArrivals(freshArrivals, arrivalRecords);
+    else log('No new arrival records scraped.');
   }
 
   // Prune old records to keep file size manageable (--prune=90 keeps last 90 days)
@@ -1797,6 +2236,14 @@ async function main() {
       log(`Pruned ${before - records.length} records older than ${cutoff} (keeping last ${pruneDays} days)`);
       mergeAndSave([], records); // re-save pruned data
     }
+    // Prune arrivals too (keep 30 days — plenty for % calc)
+    const arrivalCutoff = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
+    const arrBefore = arrivalRecords.length;
+    arrivalRecords = arrivalRecords.filter(r => r.date >= arrivalCutoff);
+    if (arrivalRecords.length < arrBefore) {
+      log(`Pruned ${arrBefore - arrivalRecords.length} arrival records older than ${arrivalCutoff}`);
+      mergeAndSaveArrivals([], arrivalRecords);
+    }
   }
 
   if (records.length === 0) {
@@ -1805,7 +2252,7 @@ async function main() {
   }
 
   log('Generating planner.html…');
-  const html = generatePlannerHtml(records);
+  const html = generatePlannerHtml(records, arrivalRecords);
   const dir  = path.dirname(PLAN_FILE);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(PLAN_FILE, html, 'utf8');
@@ -1817,4 +2264,4 @@ async function main() {
 
 main().catch(err => { console.error('[browse] Fatal:', err.message); process.exit(1); });
 
-module.exports = { generatePlannerHtml, scrapeHistory, loadExisting, mergeAndSave };
+module.exports = { generatePlannerHtml, scrapeHistory, loadExisting, mergeAndSave, scrapeArrivals, loadExistingArrivals, mergeAndSaveArrivals };
