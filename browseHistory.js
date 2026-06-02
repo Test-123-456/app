@@ -26,10 +26,14 @@ const path    = require('path');
 const BASE_URL  = 'http://www.amis.pk';
 const BROWSE_URL = `${BASE_URL}/BrowsePrices.aspx?searchType=0`;
 const VIEW_URL  = `${BASE_URL}/ViewPrices.aspx`;
-const DATA_FILE    = path.join(__dirname, 'data', 'price-history.json');
-const ARRIVAL_FILE = path.join(__dirname, 'data', 'arrival-history.json');
-const PLAN_FILE    = path.join(__dirname, 'reports', 'planner.html');
-const ARRIVAL_URL  = `${BASE_URL}/Arrivalreports/ArrivalDatewise.aspx`;
+const DATA_FILE      = path.join(__dirname, 'data', 'price-history.json');
+const ARRIVAL_FILE   = path.join(__dirname, 'data', 'arrival-history.json');
+const UPLOAD_FILE    = path.join(__dirname, 'data', 'upload-times.json');
+const CHANGES_FILE   = path.join(__dirname, 'data', 'daily-changes.json');
+const PLAN_FILE      = path.join(__dirname, 'reports', 'planner.html');
+const ARRIVAL_URL    = `${BASE_URL}/Arrivalreports/ArrivalDatewise.aspx`;
+const RATE_STATS_URL = `${BASE_URL}/RateStatistics.aspx`;
+const CHANGES_URL    = `${BASE_URL}/Daily%20Market%20Changes.aspx`;
 const DELAY_MS  = 700;
 const TIMEOUT   = 20_000;
 
@@ -487,9 +491,93 @@ function mergeAndSaveArrivals(freshRecords, existing) {
   return merged;
 }
 
+// ─── Step 4c: Daily Rate Upload Time scraper ──────────────────────────────────
+
+async function scrapeRateStats() {
+  log('Scraping rate upload times…');
+  try {
+    const r = await axios.get(RATE_STATS_URL, { headers: HEADERS, timeout: TIMEOUT });
+    const $ = cheerio.load(r.data);
+    const today = new Date().toISOString().slice(0, 10);
+    const uploadTimes = [];
+    $('#ctl00_cphPage_GridView1 tr').slice(1).each((i, row) => {
+      const cells = $(row).find('td').map((j, c) => $(c).text().trim()).get();
+      if (cells.length < 3) return;
+      const city = cells[1].trim();
+      // "02 Jun 2026 08:32:20" → extract "HH:MM"
+      const m = cells[2].match(/(\d{2}:\d{2}):\d{2}\s*$/);
+      if (!m) return;
+      uploadTimes.push({ city, time: m[1] });
+    });
+    log(`  Upload times scraped: ${uploadTimes.length} cities`);
+    return { date: today, uploadTimes };
+  } catch (err) {
+    warn(`Rate stats scrape failed: ${err.message}`);
+    return null;
+  }
+}
+
+function loadUploadTimes() {
+  try {
+    if (!fs.existsSync(UPLOAD_FILE)) return null;
+    return JSON.parse(fs.readFileSync(UPLOAD_FILE, 'utf8'));
+  } catch { return null; }
+}
+
+function saveUploadTimes(data) {
+  const dir = path.dirname(UPLOAD_FILE);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(UPLOAD_FILE, JSON.stringify({ updatedAt: new Date().toISOString(), ...data }, null, 2), 'utf8');
+  return data;
+}
+
+// ─── Step 4d: Daily Market Changes scraper ────────────────────────────────────
+
+async function scrapeDailyChanges() {
+  log('Scraping daily market changes…');
+  try {
+    const r = await axios.get(CHANGES_URL, { headers: HEADERS, timeout: TIMEOUT });
+    const $ = cheerio.load(r.data);
+    const today = new Date().toISOString().slice(0, 10);
+    const records = [];
+    $('#ctl00_cphPage_GridView1 tr').slice(1).each((i, row) => {
+      const cells = $(row).find('td');
+      if (cells.length < 5) return;
+      const city      = $(cells[0]).text().trim();
+      const commodity = $(cells[1]).text().trim();
+      const todayP    = parseInt($(cells[2]).text().trim()) || 0;
+      const yesterP   = parseInt($(cells[3]).text().trim()) || 0;
+      const change    = parseInt($(cells[4]).text().trim()) || 0;
+      const img       = $(cells[5]).find('img').attr('src') || '';
+      const dir       = img.includes('green-up') ? 'up' : img.includes('red-down') ? 'down' : 'flat';
+      if (!city || !commodity || !todayP) return;
+      records.push({ city, commodity, today: todayP, yesterday: yesterP, change, dir });
+    });
+    log(`  Daily changes scraped: ${records.length} rows`);
+    return { date: today, records };
+  } catch (err) {
+    warn(`Daily changes scrape failed: ${err.message}`);
+    return null;
+  }
+}
+
+function loadDailyChanges() {
+  try {
+    if (!fs.existsSync(CHANGES_FILE)) return null;
+    return JSON.parse(fs.readFileSync(CHANGES_FILE, 'utf8'));
+  } catch { return null; }
+}
+
+function saveDailyChanges(data) {
+  const dir = path.dirname(CHANGES_FILE);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(CHANGES_FILE, JSON.stringify({ updatedAt: new Date().toISOString(), ...data }, null, 2), 'utf8');
+  return data;
+}
+
 // ─── Step 5: Generate interactive planner HTML ────────────────────────────────
 
-function generatePlannerHtml(records, arrivalRecords) {
+function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
   const priceMap = {};
   const citySet  = new Set();
   for (const r of records) {
@@ -531,6 +619,20 @@ function generatePlannerHtml(records, arrivalRecords) {
   }
   const arrivalComms = Object.keys(arrivalMap).sort();
   const embeddedArrivals = JSON.stringify({ arrivalComms, arrivalMap, arrUpdatedAt: new Date().toISOString() });
+
+  // Build live data: upload times + daily changes (today only)
+  const todayStr = new Date().toISOString().slice(0, 10);
+  // uploadMap: normalised-city-lowercase → "HH:MM"
+  const uploadMap = {};
+  if (uploadData && uploadData.date === todayStr && uploadData.uploadTimes) {
+    for (const { city, time } of uploadData.uploadTimes) uploadMap[city.toLowerCase()] = time;
+  }
+  // Daily changes records (today only, prices in PKR/100kg)
+  const dailyChanges = (changesData && changesData.date === todayStr)
+    ? (changesData.records || []) : [];
+  const embeddedLive = JSON.stringify({ uploadMap, dailyChanges, liveDate: todayStr,
+    uploadUpdatedAt: uploadData?.updatedAt || null,
+    changesUpdatedAt: changesData?.updatedAt || null });
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -630,6 +732,7 @@ td{padding:7px 10px;vertical-align:middle}
     <span class="hbadge" id="hbCities">—</span>
     <span class="hbadge" id="hbComm">—</span>
     <span class="hbadge" id="hbDate">—</span>
+    <span class="hbadge" id="hbUpload" style="display:none">—</span>
   </div>
 </header>
 <!-- GLOBAL TRUCK SELECTOR -->
@@ -906,8 +1009,9 @@ td{padding:7px 10px;vertical-align:middle}
 <script>
 const D   = ${embeddedData};
 const RD  = ${embeddedRoad};
-const AR  = ${embeddedArrivals};
-const $   = id => document.getElementById(id);
+const AR   = ${embeddedArrivals};
+const LIVE = ${embeddedLive};
+const $    = id => document.getElementById(id);
 const esc = s  => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const pkr = n  => n==null?'—':(n<0?'-₨':'₨')+Math.abs(Math.round(n)).toLocaleString();
 // Build full distance matrix via Floyd-Warshall so indirect routes (e.g. Jhelum→Lahore→Khanewal) work
@@ -978,6 +1082,18 @@ function ageTag(comm,city){
   const days=Math.round((new Date(TODAY)-new Date(d))/86400000);
   if(days===0) return '';
   return \`<br><small style="color:\${days<=1?'var(--muted)':'var(--dn)'};font-size:.7em">\${days}d old</small>\`;
+}
+// Upload time tag — shows "📤 06:37" when city submitted rates today
+const _uploadMapNorm={}; // city lowercase → time "HH:MM"
+for(const[k,v] of Object.entries(LIVE.uploadMap)) _uploadMapNorm[k.toLowerCase()]=v;
+function uploadTime(city){return _uploadMapNorm[city.toLowerCase()]||null;}
+function uploadTag(city){
+  const t=uploadTime(city); if(!t) return '';
+  const[h,m]=t.split(':').map(Number);
+  const mins=h*60+m;
+  // before 9AM=fresh(green), 9-12=ok(muted), after 12=late(orange)
+  const col=mins<9*60?'var(--up)':mins<12*60?'var(--muted)':'#f59e0b';
+  return \`<br><small style="color:\${col};font-size:.68em" title="Rate submitted at \${t} today">📤\${t}</small>\`;
 }
 function oldPx(comm,city,n){
   const s=D.priceMap[comm]?.[city]; if(!s||!s.length) return null;
@@ -1086,6 +1202,8 @@ function init(){
   $('hbCities').textContent=D.cities.length+' cities';
   $('hbComm').textContent=D.commodities.length+' commodities';
   $('hbDate').textContent='Updated '+D.updatedAt.slice(0,10);
+  const upCnt=Object.keys(LIVE.uploadMap).length;
+  if(upCnt>0){const hbu=$('hbUpload');hbu.style.display='';hbu.textContent=upCnt+' cities today 📤';}
   const cO=D.commodities.map(c=>\`<option value="\${esc(c)}">\${esc(c)}</option>\`).join('');
   const ctO=D.cities.map(c=>\`<option value="\${esc(c)}">\${esc(c)}</option>\`).join('');
   $('pCity').innerHTML='<option value="all">All cities</option>'+ctO;
@@ -1161,7 +1279,7 @@ function renderPrices(){
       const ts=tr.p!=null?\`\${tr.a} \${Math.abs(tr.p).toFixed(1)}%\`:tr.a;
       const vs=vl?\`<span class="vol-b \${vl.c}">\${vl.b}</span>\`:'';
       return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}">
-        <div class="sb-lbl">\${esc(cm_name)}\${ageTag(cm_name,city)}</div>
+        <div class="sb-lbl">\${esc(cm_name)}\${ageTag(cm_name,city)}\${uploadTag(city)}</div>
         <span class="tr-badge \${tr.c}">\${ts}</span>
         <div class="sb-val">\${(avg/100).toFixed(2)}<span class="sb-unit"> ₨/kg</span></div>
         <div class="sb-sub">min ₨\${(mn/100).toFixed(2)} · max ₨\${(mx/100).toFixed(2)}</div>
@@ -1233,7 +1351,7 @@ function renderPrices(){
     const ts=tr.p!=null?\`\${tr.a} \${Math.abs(tr.p).toFixed(1)}%\`:tr.a;
     const vs=vl?\`<span class="vol-b \${vl.c}">\${vl.b} \${vl.cv.toFixed(0)}%</span>\`:'';
     return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}">
-      <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}</div>
+      <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}\${uploadTag(c)}</div>
       <span class="tr-badge \${tr.c}">\${ts}</span>
       <div class="sb-val">\${(avg/100).toFixed(2)}<span class="sb-unit"> ₨/kg</span></div>
       <div class="sb-sub">min ₨\${(mn/100).toFixed(2)} · max ₨\${(mx/100).toFixed(2)}</div>
@@ -1756,6 +1874,48 @@ function renderBriefing(){
             </div>\`).join('')}
         </div>\`:'<p style="color:var(--muted);padding:6px 0 12px">No unusual price movements detected.</p>'}
 
+        \${(()=>{
+          // ── Today's Movers (from Daily Market Changes page) ──
+          const ch=LIVE.dailyChanges||[];
+          if(!ch.length) return '';
+          const sorted=[...ch].sort((a,b)=>Math.abs(b.change)-Math.abs(a.change)).slice(0,30);
+          const ups=sorted.filter(r=>r.dir==='up').slice(0,8);
+          const dns=sorted.filter(r=>r.dir==='down').slice(0,8);
+          const row=r=>\`<div style="padding:5px 10px;border-left:3px solid \${r.dir==='up'?'var(--up)':'var(--dn)'};margin-bottom:4px;background:#fff;border-radius:0 6px 6px 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <div style="flex:1;min-width:130px"><strong>\${esc(r.commodity)}</strong> · <span style="color:var(--muted);font-size:.82em">\${esc(r.city)}</span></div>
+            <div style="font-size:.85em">₨\${(r.today/100).toFixed(2)}/kg</div>
+            <div style="\${r.dir==='up'?'color:var(--up)':'color:var(--dn)'};font-weight:600;font-size:.85em">\${r.dir==='up'?'▲':'▼'} ₨\${(Math.abs(r.change)/100).toFixed(2)} (\${r.yesterday>0?(Math.abs(r.change)/r.yesterday*100).toFixed(1)+'%':'—'})</div>
+          </div>\`;
+          return \`
+            \${secHdr('📊','Today\'s Market Movers','Biggest price changes today vs yesterday (from AMIS Daily Market Changes)','#065f46','#ecfdf5','#6ee7b7')}
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+              <div>
+                <div style="font-size:.75em;font-weight:700;color:var(--up);margin-bottom:5px;letter-spacing:.05em">▲ RISING</div>
+                \${ups.map(row).join('')}
+              </div>
+              <div>
+                <div style="font-size:.75em;font-weight:700;color:var(--dn);margin-bottom:5px;letter-spacing:.05em">▼ FALLING</div>
+                \${dns.map(row).join('')}
+              </div>
+            </div>\`;
+        })()}
+
+        \${(()=>{
+          // ── Rate Submission Status ──
+          const up=Object.entries(LIVE.uploadMap);
+          if(!up.length) return '';
+          const sorted=[...up].sort((a,b)=>a[1].localeCompare(b[1]));
+          const chips=sorted.map(([city,time])=>{
+            const[h,m]=time.split(':').map(Number);
+            const mins=h*60+m;
+            const col=mins<9*60?'#dcfce7;color:#166534':mins<12*60?'#f1f5f9;color:#475569':'#fef3c7;color:#92400e';
+            return \`<span style="display:inline-flex;align-items:center;gap:3px;background:\${col};border-radius:99px;padding:2px 8px;font-size:.72em;margin:2px">\${esc(city[0].toUpperCase()+city.slice(1))} <span style="font-weight:700">\${time}</span></span>\`;
+          }).join('');
+          return \`
+            \${secHdr('📤','Rate Submission Times','When each city uploaded today\'s rates (green = before 9 AM, yellow = after 12 PM)','#1e3a8a','#eff6ff','#93c5fd')}
+            <div style="margin-bottom:16px;line-height:2">\${chips}</div>\`;
+        })()}
+
         <div style="color:var(--muted);font-size:.78em;margin-top:16px;padding:10px 12px;background:#f8fafc;border-radius:6px">
           <strong>How scores work:</strong> Profit pts (0–40) + Consistency (0–30) + Data freshness (0–20, −5 per stale day) + Spread trend (±10) ·
           <strong>Spread Δ7d:</strong> recent 4-day avg spread vs 7–11 days ago ·
@@ -2023,8 +2183,8 @@ function renderArb(sc){
     const sellSup=supplyBadge(r.arrComm,r.sellC,'sell');
     return \`<tr>
       <td><strong>\${esc(r.comm)}</strong></td>
-      <td><span class="pill">\${esc(r.buyC)}</span>\${buySup}</td><td style="color:var(--muted)">→</td>
-      <td><span class="pill pill-g">\${esc(r.sellC)}</span>\${sellSup}</td>
+      <td><span class="pill">\${esc(r.buyC)}</span>\${buySup}\${uploadTag(r.buyC)}</td><td style="color:var(--muted)">→</td>
+      <td><span class="pill pill-g">\${esc(r.sellC)}</span>\${sellSup}\${uploadTag(r.sellC)}</td>
       <td>₨\${(r.buyP/100).toFixed(2)}\${ageTag(r.comm,r.buyC)}</td><td>₨\${(r.sellP/100).toFixed(2)}\${ageTag(r.comm,r.sellC)}</td>
       <td>₨\${(r.sp/100).toFixed(2)} <small style="color:var(--muted)">(\${r.spPct.toFixed(0)}%)</small></td>
       <td>\${r.d!=null?r.d+' km':'—'}</td><td>\${r.tk!=null?'₨'+(r.tk/100).toFixed(2):'—'}</td>
@@ -2231,6 +2391,9 @@ async function main() {
   let arrivalRecords = loadExistingArrivals();
   log(`Existing arrival records: ${arrivalRecords.length}`);
 
+  let uploadData  = loadUploadTimes();
+  let changesData = loadDailyChanges();
+
   if (!planOnly) {
     const fresh = await scrapeHistory(days, fetchAll);
     if (fresh.length > 0) records = mergeAndSave(fresh, records);
@@ -2240,6 +2403,14 @@ async function main() {
     const freshArrivals = await scrapeArrivals(Math.max(days, 14));
     if (freshArrivals.length > 0) arrivalRecords = mergeAndSaveArrivals(freshArrivals, arrivalRecords);
     else log('No new arrival records scraped.');
+
+    // Scrape rate upload times (today only — always refresh)
+    const freshUpload = await scrapeRateStats();
+    if (freshUpload) { saveUploadTimes(freshUpload); uploadData = freshUpload; }
+
+    // Scrape daily market changes (today only — always refresh)
+    const freshChanges = await scrapeDailyChanges();
+    if (freshChanges) { saveDailyChanges(freshChanges); changesData = freshChanges; }
   }
 
   // Prune old records to keep file size manageable (--prune=90 keeps last 90 days)
@@ -2267,7 +2438,7 @@ async function main() {
   }
 
   log('Generating planner.html…');
-  const html = generatePlannerHtml(records, arrivalRecords);
+  const html = generatePlannerHtml(records, arrivalRecords, uploadData, changesData);
   const dir  = path.dirname(PLAN_FILE);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(PLAN_FILE, html, 'utf8');
@@ -2279,4 +2450,4 @@ async function main() {
 
 main().catch(err => { console.error('[browse] Fatal:', err.message); process.exit(1); });
 
-module.exports = { generatePlannerHtml, scrapeHistory, loadExisting, mergeAndSave, scrapeArrivals, loadExistingArrivals, mergeAndSaveArrivals };
+module.exports = { generatePlannerHtml, scrapeHistory, loadExisting, mergeAndSave, scrapeArrivals, loadExistingArrivals, mergeAndSaveArrivals, scrapeRateStats, scrapeDailyChanges, loadUploadTimes, saveUploadTimes, loadDailyChanges, saveDailyChanges };
