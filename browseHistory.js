@@ -2057,7 +2057,7 @@ function runPaperTrade(){
         available-=(buyCost+truckCostRs);
         inTransit.push({settleDate:sellDate,returnAmt:sellRevRs,deployedCapital:buyCost+truckCostRs,
           comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,buyDate,buyP:buyPriceRs,sellP:r.sellP/100});
-        deployedToday.push({comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,sellDate,net:r.net});
+        deployedToday.push({comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,sellDate,net:r.net,capitalOut:buyCost+truckCostRs});
         // dayPL NOT updated here — profit only recognised on settle day
 
         const conf=riskMode==='smart'?Math.round((r._conf||0)*100):null;
@@ -2132,8 +2132,10 @@ function renderPaperResult({trades,equity,startCap,balance,fromDate,toDate,diary
     const settleText=hasSettle
       ? d.settled.map(s=>\`<span style="font-size:.78em;color:var(--up)">+₨\${Math.round(s.returnAmt).toLocaleString()} \${esc(s.comm||'')} \${esc(s.buyC||'')}→\${esc(s.sellC||'')}</span>\`).join('<br>')
       : '<span style="color:var(--muted);font-size:.8em">—</span>';
+    const totalCapOut=hasDeploy?d.deployed.reduce((s,dp)=>s+(dp.capitalOut||0),0):0;
     const actText=hasDeploy
-      ? d.deployed.map(dp=>\`<span style="font-size:.78em"><strong>\${esc(dp.comm)}</strong> <span class="pill">\${esc(dp.buyC)}</span>→<span class="pill pill-g">\${esc(dp.sellC)}</span> \${Math.round(dp.qty).toLocaleString()} kg · ₨\${dp.net.toFixed(0)}/kg · settles \${dp.sellDate}</span>\`).join('<br>')
+      ? d.deployed.map(dp=>\`<span style="font-size:.78em"><strong>\${esc(dp.comm)}</strong> <span class="pill">\${esc(dp.buyC)}</span>→<span class="pill pill-g">\${esc(dp.sellC)}</span> \${Math.round(dp.qty).toLocaleString()} kg · ₨\${dp.net.toFixed(0)}/kg · settles \${dp.sellDate} · <span style="color:#f59e0b">−₨\${Math.round(dp.capitalOut||0).toLocaleString()}</span></span>\`).join('<br>')
+        +\`<br><span style="font-size:.75em;color:#f59e0b;font-weight:600">Total deployed: ₨\${Math.round(totalCapOut).toLocaleString()}</span>\`
       : \`<span style="font-size:.8em;color:var(--muted)">\${esc(d.routeReason||'—')}</span>\`;
     const plColor=(d.dayPL||0)>=0?'var(--up)':'var(--dn)';
     const plText=hasDeploy
