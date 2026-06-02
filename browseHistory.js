@@ -1144,8 +1144,14 @@ function renderPrices(){
       if(!pts.length) return false;
       return pMaxAge>=99||ageD(cm_name,city)<=pMaxAge;
     });
-    if(pSort==='asc') commsToShow.sort((a,b)=>(latPx(a,city)||0)-(latPx(b,city)||0));
-    else if(pSort==='desc') commsToShow.sort((a,b)=>(latPx(b,city)||0)-(latPx(a,city)||0));
+    // Pre-compute window average for each commodity (matches what scorecards display)
+    const _wAvgC={};
+    for(const c of commsToShow){
+      const pts=(D.priceMap[c]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
+      _wAvgC[c]=pts.length?pts.reduce((s,p)=>s+p.p,0)/pts.length:0;
+    }
+    if(pSort==='asc') commsToShow.sort((a,b)=>(_wAvgC[a]||0)-(_wAvgC[b]||0));
+    else if(pSort==='desc') commsToShow.sort((a,b)=>(_wAvgC[b]||0)-(_wAvgC[a]||0));
     else if(pSort==='fresh') commsToShow.sort((a,b)=>ageD(a,city)-ageD(b,city));
     $('pStats').innerHTML=commsToShow.map((cm_name,i)=>{
       const pts=(D.priceMap[cm_name]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
@@ -1162,9 +1168,8 @@ function renderPrices(){
         \${vs}
       </div>\`;
     }).join('');
-    // Chart — top 8 commodities by latest price
-    const topComms=D.commodities.filter(c=>(D.priceMap[c]?.[city]||[]).length>0)
-      .sort((a,b)=>(latPx(b,city)||0)-(latPx(a,city)||0)).slice(0,8);
+    // Chart — top 8 commodities from filtered+sorted list
+    const topComms=commsToShow.slice(0,8);
     const allDates=[...new Set(topComms.flatMap(c=>(D.priceMap[c]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))].sort();
     $('chartTitle').textContent='All commodities — '+city+' (₨/kg)';
     if(_chart){_chart.destroy();_chart=null;}
@@ -1180,8 +1185,8 @@ function renderPrices(){
           scales:{x:{ticks:{maxTicksLimit:12,font:{size:10}},grid:{color:'#f1f5f9'}},
                   y:{ticks:{callback:v=>'₨'+v,font:{size:10}},grid:{color:'#f1f5f9'}}}}});
     }
-    // Wide table: rows = commodities, cols = dates (matches CSV layout)
-    const allCommsWithData=D.commodities.filter(c=>(D.priceMap[c]?.[city]||[]).some(p=>(!from||p.date>=from)&&(!to||p.date<=to)));
+    // Wide table: rows = commodities (in sorted order), cols = dates
+    const allCommsWithData=commsToShow; // already filtered & sorted
     const dates=[...new Set(allCommsWithData.flatMap(c=>(D.priceMap[c]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))].sort();
     if(!dates.length){$('pTable').innerHTML='<p style="padding:16px;color:var(--muted)">No data for '+city+'.</p>';return;}
     $('chartTitle').textContent='All commodities — '+city+' (₨/kg, top 8 shown in chart)';
@@ -1211,8 +1216,14 @@ function renderPrices(){
     if(!pts.length) return false;
     return pMaxAge2>=99||ageD(comm,c)<=pMaxAge2;
   });
-  if(pSort2==='asc') citiesToShow.sort((a,b)=>(latPx(comm,a)||0)-(latPx(comm,b)||0));
-  else if(pSort2==='desc') citiesToShow.sort((a,b)=>(latPx(comm,b)||0)-(latPx(comm,a)||0));
+  // Pre-compute window average for each city (matches what scorecards display)
+  const _wAvg={};
+  for(const c of citiesToShow){
+    const pts=(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
+    _wAvg[c]=pts.length?pts.reduce((s,p)=>s+p.p,0)/pts.length:0;
+  }
+  if(pSort2==='asc') citiesToShow.sort((a,b)=>(_wAvg[a]||0)-(_wAvg[b]||0));
+  else if(pSort2==='desc') citiesToShow.sort((a,b)=>(_wAvg[b]||0)-(_wAvg[a]||0));
   else if(pSort2==='fresh') citiesToShow.sort((a,b)=>ageD(comm,a)-ageD(comm,b));
   $('pStats').innerHTML=citiesToShow.map((c,i)=>{
     const pts=(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
@@ -1231,26 +1242,26 @@ function renderPrices(){
     </div>\`;
   }).join('');
 
-  const allDates=[...new Set(show.flatMap(c=>(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))].sort();
+  const allDates=[...new Set(citiesToShow.flatMap(c=>(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))].sort();
   $('chartTitle').textContent=comm+(city!=='all'?' — '+city:' — all cities')+' (₨/kg)';
   if(_chart){_chart.destroy();_chart=null;}
   if(allDates.length){
     _chart=new Chart($('priceChart'),{type:'line',
-      data:{labels:allDates,datasets:show.slice(0,8).map((c,i)=>({
+      data:{labels:allDates,datasets:citiesToShow.slice(0,8).map((c,i)=>({
         label:c,spanGaps:true,tension:.3,
         pointRadius:allDates.length>30?2:4,
         borderColor:CLR[i%CLR.length],backgroundColor:CLR[i%CLR.length]+'22',
         data:allDates.map(d=>{const pt=(cm[c]||[]).find(p=>p.date===d);return pt?+(pt.p/100).toFixed(2):null;})
       }))},
       options:{responsive:true,animation:false,
-        plugins:{legend:{display:show.length>1}},
+        plugins:{legend:{display:citiesToShow.length>1}},
         scales:{
           x:{ticks:{maxTicksLimit:12,font:{size:10}},grid:{color:'#f1f5f9'}},
           y:{ticks:{callback:v=>'₨'+v,font:{size:10}},grid:{color:'#f1f5f9'}}
         }}});
   }
 
-  const fC=show.filter(c=>(cm[c]||[]).some(p=>(!from||p.date>=from)&&(!to||p.date<=to)));
+  const fC=citiesToShow; // already filtered & sorted by the sort control above
   const dates=[...new Set(fC.flatMap(c=>(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))].sort((a,b)=>b.localeCompare(a));
   if(!dates.length){$('pTable').innerHTML='<p style="padding:16px;color:var(--muted)">No data.</p>';return;}
   const head='<tr><th>Date</th>'+fC.map(c=>\`<th>\${esc(c)}</th>\`).join('')+'</tr>';
@@ -1286,7 +1297,7 @@ function downloadCsv(){
   // Decide row-label columns
   const labelCols=allComm&&!allCity?['Commodity']:
                   !allComm&&allCity?['City']:
-                  !allComm&&!allCity?['City']:
+                  !allComm&&!allCity?['Commodity']:  // single comm+city: label by commodity
                   ['Commodity','City'];
 
   // Build data rows: array of {labels:[], data:[]}
@@ -1294,15 +1305,17 @@ function downloadCsv(){
   function addItem(labels, priceData){
     const vals=dates.flatMap(d=>{
       const pt=priceData.find(p=>p.date===d);
-      return [pt&&pt.min!=null?(pt.min/100).toFixed(2):'',
-              pt&&pt.max!=null?(pt.max/100).toFixed(2):''];
+      // Fall back to FQP (pt.p) when min/max not reported by AMIS
+      const lo=pt?(pt.min!=null?pt.min:pt.p):null;
+      const hi=pt?(pt.max!=null?pt.max:pt.p):null;
+      return [lo!=null?(lo/100).toFixed(2):'', hi!=null?(hi/100).toFixed(2):''];
     });
     if(vals.every(v=>!v)) return;
     dataRows.push({labels,vals});
   }
   if(allComm&&!allCity)      comms.forEach(c=>addItem([c],D.priceMap[c]?.[city]||[]));
   else if(!allComm&&allCity) cityList.forEach(c=>addItem([c],D.priceMap[comm]?.[c]||[]));
-  else if(!allComm&&!allCity) addItem([city],D.priceMap[comm]?.[city]||[]);
+  else if(!allComm&&!allCity) addItem([comm],D.priceMap[comm]?.[city]||[]);
   else comms.forEach(cm=>cityList.forEach(c=>addItem([cm,c],D.priceMap[cm]?.[c]||[])));
 
   if(!dataRows.length){alert('No data for the selected filters.');return;}
@@ -1329,7 +1342,7 @@ function downloadCsv(){
 
   // Row 1: label cols (rowspan=3) + month headers (colspan = dates×2 per month)
   const hdr1=labelCols.map(l=>THLBL(esc(l),3)).join('')+
-    monthGroups.map(mg=>TH(\`<b>\${mg.name}</b>\`.replace('<b>','').replace('</b>','')+ (mg.dates.length>1?'':'')).replace('>',\` colspan="\${mg.dates.length*2}">\`)).join('');
+    monthGroups.map(mg=>TH(mg.name).replace('>',\` colspan="\${mg.dates.length*2}">\`)).join('');
   // Row 2: day numbers (colspan=2 each)
   const hdr2=dates.map(d=>TH2(parseInt(d.split('-')[2])+'').replace('>',\` colspan="2">\`)).join('');
   // Row 3: Low / High per date
@@ -1342,7 +1355,9 @@ function downloadCsv(){
     return \`<tr>\${r.labels.map(TD).join('')}\${r.vals.map(TDN).join('')}</tr>\`;
   }).join('\\n');
 
-  const title=(!allCity?city:(!allComm?comm:'All commodities'))+
+  const title=(!allComm&&!allCity?comm+' — '+city:
+               !allCity?city:
+               !allComm?comm:'All commodities')+
     (from?\` · \${from} to \${to||'today'}\`:'');
 
   const html=\`<html xmlns:o="urn:schemas-microsoft-com:office:office"
