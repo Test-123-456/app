@@ -2039,7 +2039,10 @@ function runPaperTrade(){
       // allocPerTrade sized so that buyCost + truckCost never exceeds available
       const deployable=available*deployPct;
       const allocPerTrade=deployable/selected.length;
-      const sellDate=allDates[Math.min(di+settleDays,allDates.length-1)];
+      // Use real calendar arithmetic — never clamp to data range
+      const _sd=new Date(buyDate+'T00:00:00Z');
+      _sd.setUTCDate(_sd.getUTCDate()+settleDays);
+      const sellDate=_sd.toISOString().slice(0,10);
 
       for(const r of selected){
         const buyPriceRs=r.buyP/100;
