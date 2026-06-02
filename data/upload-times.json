@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-02T03:43:23.349Z",
+  "updatedAt": "2026-06-02T04:57:26.609Z",
   "date": "2026-06-02",
   "uploadTimes": [
     {
@@ -189,6 +189,98 @@
     {
       "city": "Kalurkot",
       "time": "08:40"
+    },
+    {
+      "city": "TALAGANG",
+      "time": "08:40"
+    },
+    {
+      "city": "Layyah",
+      "time": "08:43"
+    },
+    {
+      "city": "LiaqatPur",
+      "time": "08:46"
+    },
+    {
+      "city": "Khudian",
+      "time": "08:47"
+    },
+    {
+      "city": "Pindibhattian",
+      "time": "08:53"
+    },
+    {
+      "city": "Khanewal",
+      "time": "08:59"
+    },
+    {
+      "city": "Mamunkanjan",
+      "time": "09:00"
+    },
+    {
+      "city": "Okara",
+      "time": "09:06"
+    },
+    {
+      "city": "Jauharabad",
+      "time": "09:07"
+    },
+    {
+      "city": "Chistian",
+      "time": "09:13"
+    },
+    {
+      "city": "Sanglahill",
+      "time": "09:17"
+    },
+    {
+      "city": "Kamalia",
+      "time": "09:17"
+    },
+    {
+      "city": "Multan",
+      "time": "09:19"
+    },
+    {
+      "city": "KachaKhu",
+      "time": "09:20"
+    },
+    {
+      "city": "Yazman",
+      "time": "09:21"
+    },
+    {
+      "city": "ArifWala",
+      "time": "09:33"
+    },
+    {
+      "city": "Jaranwala",
+      "time": "09:34"
+    },
+    {
+      "city": "Summandri",
+      "time": "09:36"
+    },
+    {
+      "city": "MandiBahaudin",
+      "time": "09:39"
+    },
+    {
+      "city": "RenalaKhurd",
+      "time": "09:42"
+    },
+    {
+      "city": "PakPattan",
+      "time": "09:43"
+    },
+    {
+      "city": "Gujranwala",
+      "time": "09:47"
+    },
+    {
+      "city": "RajanPur",
+      "time": "09:53"
     }
   ]
 }
