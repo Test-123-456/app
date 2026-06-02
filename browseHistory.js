@@ -595,9 +595,42 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
       arr.push(...Object.values(seen).sort((a,b) => a.date.localeCompare(b.date)));
     }
   }
+  // ── Cross-city outlier filter ────────────────────────────────────────────────
+  // For each commodity × date, compute peer median across all cities.
+  // Flag records where fqp > 5× median or < 0.2× median — these are almost always
+  // reporter data-entry errors (extra/missing zero, e.g. ₨670 instead of ₨67).
+  // Require ≥4 peer cities so thin-market commodities aren't over-flagged.
+  let nFlagged = 0;
+  {
+    // Build peer index: 'comm|date' → [fqp, ...]
+    const peer = {};
+    for (const [comm, cities] of Object.entries(priceMap))
+      for (const pts of Object.values(cities))
+        for (const pt of pts) {
+          const k = comm + '|' + pt.date;
+          (peer[k] = peer[k] || []).push(pt.p);
+        }
+    // Compute medians
+    const med = {};
+    for (const [k, arr] of Object.entries(peer)) {
+      if (arr.length < 4) continue;
+      arr.sort((a, b) => a - b);
+      const m = Math.floor(arr.length / 2);
+      med[k] = arr.length % 2 ? arr[m] : (arr[m-1] + arr[m]) / 2;
+    }
+    // Stamp outliers
+    for (const [comm, cities] of Object.entries(priceMap))
+      for (const pts of Object.values(cities))
+        for (const pt of pts) {
+          const m = med[comm + '|' + pt.date];
+          if (m && (pt.p > m * 5 || pt.p < m * 0.2)) { pt.flagged = true; nFlagged++; }
+        }
+    if (nFlagged) console.log(`[build] Cross-city outlier filter: ${nFlagged} suspect prices flagged`);
+  }
+
   const commodities = Object.keys(priceMap).sort();
   const cities      = [...citySet].sort();
-  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString() });
+  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged });
   const embeddedRoad = JSON.stringify(ROAD_KM);
 
   // Build arrival map: arrivalMap[arrComm][city] = [{date, qty}] (last 30 days only, sorted asc)
@@ -733,6 +766,7 @@ td{padding:7px 10px;vertical-align:middle}
     <span class="hbadge" id="hbComm">—</span>
     <span class="hbadge" id="hbDate">—</span>
     <span class="hbadge" id="hbUpload" style="display:none">—</span>
+    <span class="hbadge" id="hbFlagged" style="display:none;background:#7f1d1d;color:#fca5a5">—</span>
   </div>
 </header>
 <!-- GLOBAL TRUCK SELECTOR -->
@@ -1071,11 +1105,11 @@ function setTruck(){
 function avgPx(comm,city,days){
   const s=D.priceMap[comm]?.[city]; if(!s||!s.length) return null;
   const cut=days>0?new Date(Date.now()-days*86400000).toISOString().slice(0,10):'';
-  const f=days>0?s.filter(p=>p.date>=cut):s;
+  const f=days>0?s.filter(p=>p.date>=cut&&!p.flagged):s.filter(p=>!p.flagged);
   return f.length?f.reduce((a,x)=>a+x.p,0)/f.length:null;
 }
-function latPx(comm,city){const s=D.priceMap[comm]?.[city];return s&&s.length?s[s.length-1].p:null;}
-function latDate(comm,city){const s=D.priceMap[comm]?.[city];return s&&s.length?s[s.length-1].date:null;}
+function latPx(comm,city){const s=D.priceMap[comm]?.[city];return s&&s.length?s.filter(p=>!p.flagged).at(-1)?.p??null:null;}
+function latDate(comm,city){const s=D.priceMap[comm]?.[city];return s&&s.length?s.filter(p=>!p.flagged).at(-1)?.date??null:null;}
 const TODAY=new Date().toISOString().slice(0,10);
 function ageTag(comm,city){
   const d=latDate(comm,city); if(!d) return '';
@@ -1098,7 +1132,7 @@ function uploadTag(city){
 function oldPx(comm,city,n){
   const s=D.priceMap[comm]?.[city]; if(!s||!s.length) return null;
   const cut=new Date(Date.now()-n*86400000).toISOString().slice(0,10);
-  return [...s].reverse().find(p=>p.date<=cut)?.p??null;
+  return [...s].reverse().find(p=>p.date<=cut&&!p.flagged)?.p??null;
 }
 function trend(comm,city){
   const l=latPx(comm,city),o=oldPx(comm,city,7);
@@ -1202,6 +1236,10 @@ function init(){
   $('hbCities').textContent=D.cities.length+' cities';
   $('hbComm').textContent=D.commodities.length+' commodities';
   $('hbDate').textContent='Updated '+D.updatedAt.slice(0,10);
+  if(D.suspectPrices>0){
+    const hbf=$('hbFlagged');
+    if(hbf){hbf.style.display='';hbf.textContent=D.suspectPrices+' suspect prices filtered ⚠️';}
+  }
   const upCnt=Object.keys(LIVE.uploadMap).length;
   if(upCnt>0){const hbu=$('hbUpload');hbu.style.display='';hbu.textContent=upCnt+' cities today 📤';}
   const cO=D.commodities.map(c=>\`<option value="\${esc(c)}">\${esc(c)}</option>\`).join('');
@@ -1999,8 +2037,8 @@ function runPaperTrade(){
       const cities=Object.keys(cm).filter(c=>cm[c].some(p=>p.date===buyDate));
       for(let i=0;i<cities.length;i++) for(let j=i+1;j<cities.length;j++){
         const cA=cities[i],cB=cities[j];
-        const pA=cm[cA].find(p=>p.date===buyDate)?.p;
-        const pB=cm[cB].find(p=>p.date===buyDate)?.p;
+        const pA=cm[cA].find(p=>p.date===buyDate&&!p.flagged)?.p;
+        const pB=cm[cB].find(p=>p.date===buyDate&&!p.flagged)?.p;
         if(!pA||!pB) continue;
         const[buyC,buyP,sellC,sellP]=pA<=pB?[cA,pA,cB,pB]:[cB,pB,cA,pA];
         const d=dist(buyC,sellC); if(!d) continue;
