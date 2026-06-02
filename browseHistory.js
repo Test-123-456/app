@@ -1951,7 +1951,7 @@ function runPaperTrade(){
   const minNetRs=parseFloat($('ptMinNet').value)||0;
   const settleDays=parseInt($('ptSellWin').value)||2; // days capital is locked in transit
   const riskMode=$('ptRisk')?.value||'moderate';
-  const payload=(parseFloat($('cpTons')?.value)||1.3)*1000; // kg
+  // payload selected per-trade based on available capital (see bestTruck logic below)
 
   // Collect all dates in range
   const dateSet=new Set();
@@ -2046,8 +2046,16 @@ function runPaperTrade(){
 
       for(const r of selected){
         const buyPriceRs=r.buyP/100;
-        const tkRs=r.tk/100;
-        const qty=Math.min(Math.floor(allocPerTrade/(buyPriceRs+tkRs)),payload);
+        // Auto-select best truck: iterate all types, pick whichever maximises total P&L
+        let bestPf=-Infinity,qty=0,tkRs=0,truckLabel='Shehzore';
+        for(const _t of TRUCKS){
+          if(!_t.payload||!_t.rate) continue;
+          const _tRs=_t.rate*r.d/100;
+          const _tQty=Math.min(Math.floor(allocPerTrade/(buyPriceRs+_tRs)),Math.round(_t.payload*1000));
+          if(_tQty<=0) continue;
+          const _tPf=_tQty*(r.sellP/100-buyPriceRs-_tRs);
+          if(_tPf>bestPf){bestPf=_tPf;qty=_tQty;tkRs=_tRs;truckLabel=_t.label;}
+        }
         if(qty<=0) continue;
         const buyCost=qty*buyPriceRs;
         const truckCostRs=qty*tkRs;
@@ -2056,14 +2064,14 @@ function runPaperTrade(){
 
         available-=(buyCost+truckCostRs);
         inTransit.push({settleDate:sellDate,returnAmt:sellRevRs,deployedCapital:buyCost+truckCostRs,
-          comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,buyDate,buyP:buyPriceRs,sellP:r.sellP/100});
-        deployedToday.push({comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,sellDate,net:r.net,capitalOut:buyCost+truckCostRs});
+          comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,buyDate,buyP:buyPriceRs,sellP:r.sellP/100,truckLabel});
+        deployedToday.push({comm:r.comm,buyC:r.buyC,sellC:r.sellC,qty,profit,sellDate,net:r.net,capitalOut:buyCost+truckCostRs,truckLabel});
         // dayPL NOT updated here — profit only recognised on settle day
 
         const conf=riskMode==='smart'?Math.round((r._conf||0)*100):null;
         trades.push({buyDate,sellDate,comm:r.comm,buyC:r.buyC,sellC:r.sellC,
           buyP:buyPriceRs,sellP:r.sellP/100,qty,buyCost,truckCostRs,sellRevRs,profit,
-          balance:getTotal(),deployPct,conf});
+          balance:getTotal(),deployPct,conf,truckLabel});
       }
     }
 
@@ -2108,7 +2116,7 @@ function renderPaperResult({trades,equity,startCap,balance,fromDate,toDate,diary
     options:{responsive:true,animation:false,
       plugins:{legend:{display:true,labels:{font:{size:9},boxWidth:10}}},
       scales:{x:{ticks:{maxTicksLimit:10,font:{size:9}}},
-              y:{ticks:{callback:v=>'₨'+Math.round(v/1000)+'k',font:{size:9}}}}}});
+              y:{min:0,ticks:{callback:v=>v>=1000000?'₨'+(v/1000000).toFixed(1)+'M':'₨'+Math.round(v/1000)+'k',font:{size:9}}}}}});
 
   // Open Positions — capital still on trucks at end of simulation
   const openHtml=(openPositions&&openPositions.length)?\`
@@ -2160,7 +2168,7 @@ function renderPaperResult({trades,equity,startCap,balance,fromDate,toDate,diary
     <div class="sec">Full Trade Log</div><div class="tw">
     <table><thead><tr>
       <th>Buy Date</th><th>Sell Date</th><th>Commodity</th><th>Buy City</th><th></th><th>Sell City</th>
-      <th>Qty</th><th>Buy ₨/kg</th><th>Sell ₨/kg</th><th>Net ₨/kg</th><th>Truck Cost</th>
+      <th>Qty</th><th>Buy ₨/kg</th><th>Sell ₨/kg</th><th>Net ₨/kg</th><th>Truck</th><th>Truck Cost</th><th>Buy Total</th><th>Revenue</th>
       \${trades[0]?.conf!=null?'<th>Confidence</th>':''}
       <th>P&amp;L</th><th>Balance</th>
     </tr></thead><tbody>\${trades.map(t=>{
@@ -2174,8 +2182,11 @@ function renderPaperResult({trades,equity,startCap,balance,fromDate,toDate,diary
         <td>\${Math.round(t.qty).toLocaleString()} kg</td>
         <td>₨\${t.buyP.toFixed(2)}</td><td>₨\${t.sellP.toFixed(2)}</td>
         <td style="color:var(--up);font-size:.85em">+₨\${netKg.toFixed(1)}</td>
+        <td style="font-size:.78em;color:var(--muted)">\${t.truckLabel||'—'}</td>
         <td>₨\${Math.round(t.truckCostRs).toLocaleString()}</td>
         \${t.conf!=null?\`<td><span class="chip \${t.conf>=70?'con-h':t.conf>=40?'con-m':'con-l'}">\${t.conf}%</span></td>\`:''}
+        <td>₨\${Math.round(t.buyCost).toLocaleString()}</td>
+        <td style="color:var(--up)">₨\${Math.round(t.sellRevRs).toLocaleString()}</td>
         <td style="color:\${c};font-weight:600">\${t.profit>=0?'+':''}₨\${Math.round(t.profit).toLocaleString()}</td>
         <td style="color:\${c}">₨\${Math.round(t.balance).toLocaleString()}</td>
       </tr>\`;
