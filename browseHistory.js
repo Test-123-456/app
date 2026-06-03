@@ -818,8 +818,8 @@ td{padding:7px 10px;vertical-align:middle}
     <div class="cg"><label>Sort</label>
       <select id="pSort" onchange="renderPrices()">
         <option value="def">Default</option>
-        <option value="asc">Price ↑ cheapest</option>
-        <option value="desc">Price ↓ costliest</option>
+        <option value="asc">Range ↑ narrowest</option>
+        <option value="desc">Range ↓ widest</option>
         <option value="fresh">Freshest first</option>
       </select></div>
     <div class="cg"><label>Max age</label>
@@ -1300,14 +1300,16 @@ function renderPrices(){
       if(!pts.length) return false;
       return pMaxAge>=99||ageD(cm_name,city)<=pMaxAge;
     });
-    // Pre-compute window average for each commodity (matches what scorecards display)
-    const _wAvgC={};
+    // Pre-compute price range (max-min) for each commodity — used for sort
+    const _wRangeC={};
     for(const c of commsToShow){
       const pts=(D.priceMap[c]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
-      _wAvgC[c]=pts.length?pts.reduce((s,p)=>s+p.p,0)/pts.length:0;
+      if(!pts.length){_wRangeC[c]=0;continue;}
+      const pr=pts.map(p=>p.p);
+      _wRangeC[c]=Math.max(...pr)-Math.min(...pr);
     }
-    if(pSort==='asc') commsToShow.sort((a,b)=>(_wAvgC[a]||0)-(_wAvgC[b]||0));
-    else if(pSort==='desc') commsToShow.sort((a,b)=>(_wAvgC[b]||0)-(_wAvgC[a]||0));
+    if(pSort==='asc') commsToShow.sort((a,b)=>(_wRangeC[a]||0)-(_wRangeC[b]||0));
+    else if(pSort==='desc') commsToShow.sort((a,b)=>(_wRangeC[b]||0)-(_wRangeC[a]||0));
     else if(pSort==='fresh') commsToShow.sort((a,b)=>ageD(a,city)-ageD(b,city));
     $('pStats').innerHTML=commsToShow.map((cm_name,i)=>{
       const pts=(D.priceMap[cm_name]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
@@ -1319,8 +1321,8 @@ function renderPrices(){
       return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}">
         <div class="sb-lbl">\${esc(cm_name)}\${ageTag(cm_name,city)}\${uploadTag(city)}</div>
         <span class="tr-badge \${tr.c}">\${ts}</span>
-        <div class="sb-val">\${(avg/100).toFixed(2)}<span class="sb-unit"> ₨/kg</span></div>
-        <div class="sb-sub">min ₨\${(mn/100).toFixed(2)} · max ₨\${(mx/100).toFixed(2)}</div>
+        <div class="sb-val">₨\${(mn/100).toFixed(2)} – ₨\${(mx/100).toFixed(2)}</div>
+        <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg</div>
         \${vs}
       </div>\`;
     }).join('');
@@ -1372,14 +1374,16 @@ function renderPrices(){
     if(!pts.length) return false;
     return pMaxAge2>=99||ageD(comm,c)<=pMaxAge2;
   });
-  // Pre-compute window average for each city (matches what scorecards display)
-  const _wAvg={};
+  // Pre-compute price range (max-min) for each city — used for sort
+  const _wRange={};
   for(const c of citiesToShow){
     const pts=(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
-    _wAvg[c]=pts.length?pts.reduce((s,p)=>s+p.p,0)/pts.length:0;
+    if(!pts.length){_wRange[c]=0;continue;}
+    const pr=pts.map(p=>p.p);
+    _wRange[c]=Math.max(...pr)-Math.min(...pr);
   }
-  if(pSort2==='asc') citiesToShow.sort((a,b)=>(_wAvg[a]||0)-(_wAvg[b]||0));
-  else if(pSort2==='desc') citiesToShow.sort((a,b)=>(_wAvg[b]||0)-(_wAvg[a]||0));
+  if(pSort2==='asc') citiesToShow.sort((a,b)=>(_wRange[a]||0)-(_wRange[b]||0));
+  else if(pSort2==='desc') citiesToShow.sort((a,b)=>(_wRange[b]||0)-(_wRange[a]||0));
   else if(pSort2==='fresh') citiesToShow.sort((a,b)=>ageD(comm,a)-ageD(comm,b));
   $('pStats').innerHTML=citiesToShow.map((c,i)=>{
     const pts=(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
@@ -1394,9 +1398,9 @@ function renderPrices(){
     return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}\${latFlagged?';opacity:.8':''}">
       <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}\${uploadTag(c)}\${flagNote}</div>
       <span class="tr-badge \${tr.c}">\${ts}</span>
-      <div class="sb-val">\${(avg/100).toFixed(2)}<span class="sb-unit"> ₨/kg</span></div>
-      <div class="sb-sub">min ₨\${(mn/100).toFixed(2)} · max ₨\${(mx/100).toFixed(2)}</div>
-      <div class="sb-sub">\${vpts.length<pts.length?pts.length+' readings ('+( pts.length-vpts.length)+' suspect)':pts.length+' readings'} · range \${mn>0?((mx-mn)/mn*100).toFixed(0)+'%':''}</div>
+      <div class="sb-val">₨\${(mn/100).toFixed(2)} – ₨\${(mx/100).toFixed(2)}</div>
+      <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg · spread \${mn>0?((mx-mn)/mn*100).toFixed(0)+'%':''}</div>
+      <div class="sb-sub">\${vpts.length<pts.length?pts.length+' readings ('+( pts.length-vpts.length)+' suspect)':pts.length+' readings'}</div>
       \${vs}
     </div>\`;
   }).join('');
@@ -2090,12 +2094,16 @@ function runPaperTrade(){
       for(const r of selected){
         const buyPriceRs=r.buyP/100;
         // Auto-select best truck: iterate all types, pick whichever maximises total P&L
+        // Minimum fill thresholds — don't assign tiny loads to large trucks
+        const TRUCK_MIN_KG={shehzore:0,mazda_t3:500,mazda_20:1200,bedford:3000};
         let bestPf=-Infinity,qty=0,tkRs=0,truckLabel='Shehzore';
         for(const _t of TRUCKS){
           if(!_t.payload||!_t.rate) continue;
           const _tRs=_t.rate*r.d/100;
           const _tQty=Math.min(Math.floor(allocPerTrade/(buyPriceRs+_tRs)),Math.round(_t.payload*1000));
           if(_tQty<=0) continue;
+          // Skip truck if load is below its minimum sensible fill
+          if(_tQty<(TRUCK_MIN_KG[_t.id]??0)) continue;
           const _tPf=_tQty*(r.sellP/100-buyPriceRs-_tRs);
           if(_tPf>bestPf){bestPf=_tPf;qty=_tQty;tkRs=_tRs;truckLabel=_t.label;}
         }
