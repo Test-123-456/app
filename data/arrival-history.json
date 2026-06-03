@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T02:00:28.658Z",
+  "updatedAt": "2026-06-03T02:12:35.232Z",
   "records": [
     {
       "date": "2026-06-03",
@@ -864,6 +864,222 @@
       "city": "TTSingh",
       "commodity": "Wheat",
       "qty": 170
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Apple",
+      "qty": 2
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Banana",
+      "qty": 3
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Chilli(Green)",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Citrus Fruit",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Cotton",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Dates",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Gram",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Maize",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Mango",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Mash",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Masoor",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Moong",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Onion",
+      "qty": 47
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Paddy",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Potato",
+      "qty": 25
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Rice",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Tomato",
+      "qty": 18
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Hafizabad",
+      "commodity": "Wheat",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Apple",
+      "qty": 200
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Banana",
+      "qty": 100
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Chilli(Green)",
+      "qty": 70
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Citrus Fruit",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Cotton",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Dates",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Gram",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Maize",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Mango",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Mash",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Masoor",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Moong",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Onion",
+      "qty": 400
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Paddy",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Potato",
+      "qty": 400
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Rice",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Tomato",
+      "qty": 310
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Sargodha",
+      "commodity": "Wheat",
+      "qty": 0
     },
     {
       "date": "2026-06-02",

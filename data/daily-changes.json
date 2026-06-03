@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T02:00:29.210Z",
+  "updatedAt": "2026-06-03T02:12:35.745Z",
   "date": "2026-06-03",
   "records": [
     {
@@ -1057,6 +1057,110 @@
       "yesterday": 3450,
       "change": -100,
       "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Potato Fresh",
+      "today": 2050,
+      "yesterday": 1950,
+      "change": 100,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Onion",
+      "today": 7000,
+      "yesterday": 7250,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Garlic (China)",
+      "today": 31950,
+      "yesterday": 32850,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 5650,
+      "yesterday": 5200,
+      "change": 450,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Cauliflower",
+      "today": 10350,
+      "yesterday": 10850,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Peas",
+      "today": 12650,
+      "yesterday": 13050,
+      "change": -400,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Apple (Golden)",
+      "today": 22950,
+      "yesterday": 22050,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Ginger (Thai)",
+      "today": 26150,
+      "yesterday": 25250,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Mango (Malda)",
+      "today": 13050,
+      "yesterday": 12650,
+      "change": 400,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 8800,
+      "yesterday": 9700,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Lemon (Desi)",
+      "today": 29250,
+      "yesterday": 30150,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Cocoyam(اروی)",
+      "today": 13950,
+      "yesterday": 14850,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Carrot China",
+      "today": 8800,
+      "yesterday": 8350,
+      "change": 450,
+      "dir": "up"
     }
   ]
 }

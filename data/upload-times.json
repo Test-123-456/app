@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T02:00:28.931Z",
+  "updatedAt": "2026-06-03T02:12:35.484Z",
   "date": "2026-06-03",
   "uploadTimes": [
     {
@@ -45,6 +45,10 @@
     {
       "city": "DunyaPur",
       "time": "06:48"
+    },
+    {
+      "city": "Jhelum",
+      "time": "07:07"
     }
   ]
 }
