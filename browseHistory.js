@@ -772,7 +772,7 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
       }
     }
     const allD = [...new Set(Object.values(priceMap).flatMap(cm => Object.values(cm).flatMap(pts => pts.map(p => p.date))))].sort();
-    const cutoff = new Date(Date.now() - 60 * 86400000).toISOString().slice(0,10);
+    const cutoff = new Date(Date.now() - 730 * 86400000).toISOString().slice(0,10);
 
     // Route-level aggregates — keyed by comm|buyCity|sellCity
     const rStats = {}; // {days,hits,sumPred,sumActual,lastDate,lastSpPct}
@@ -856,7 +856,7 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
 
     return { trackRecord: picks, routeStats: rsArr };
   })();
-  console.log(`[build] Track record: ${trackRecord.length} daily picks, ${routeStats.length} routes embedded (top ${routeStats.length}, ≥5 days seen, active last 7d) — full universe analysed across 60 days`);
+  console.log(`[build] Track record: ${trackRecord.length} daily picks, ${routeStats.length} routes embedded (top ${routeStats.length}, ≥5 days seen, active last 7d) — full universe analysed across 730 days`);
 
   // ── Write docs/data/prices.json (last 90 days for browser display) ───────────
   // The full priceMap (which may span years) is used above for analytics;
