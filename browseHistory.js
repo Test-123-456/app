@@ -630,7 +630,64 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
 
   const commodities = Object.keys(priceMap).sort();
   const cities      = [...citySet].sort();
-  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged });
+
+  // ── Track Record: top daily picks vs next-day actuals (last 60 days) ──────────
+  const trackRecord = (() => {
+    // Build fast date-indexed lookup (skip flagged)
+    const idx = {};
+    for (const [comm, citiesMap] of Object.entries(priceMap)) {
+      idx[comm] = {};
+      for (const [city, pts] of Object.entries(citiesMap)) {
+        idx[comm][city] = {};
+        for (const pt of pts) if (!pt.flagged) idx[comm][city][pt.date] = pt;
+      }
+    }
+    // Sorted unique dates
+    const allD = [...new Set(Object.values(priceMap).flatMap(cm => Object.values(cm).flatMap(pts => pts.map(p => p.date))))].sort();
+    const cutoff = new Date(Date.now() - 60 * 86400000).toISOString().slice(0,10);
+    const picks = [];
+    for (let di = 0; di < allD.length - 1; di++) {
+      const date = allD[di];
+      if (date < cutoff) continue;
+      const nextDate = allD[di + 1];
+      if ((new Date(nextDate) - new Date(date)) > 3 * 86400000) continue; // skip big gaps
+      const routes = [];
+      for (const comm of commodities) {
+        const cm = idx[comm] || {};
+        const activeCities = Object.keys(cm).filter(c => cm[c][date]);
+        for (const buyCity of activeCities) {
+          const buyP = cm[buyCity][date].p;
+          for (const sellCity of activeCities) {
+            if (buyCity === sellCity) continue;
+            const sellP = cm[sellCity][date].p;
+            const spPct = (sellP - buyP) / buyP * 100;
+            if (spPct < 5) continue;
+            routes.push({ comm, buyCity, sellCity, buyP, predictedSellP: sellP, spPct });
+          }
+        }
+      }
+      // Top 8 by spread, deduplicated
+      routes.sort((a, b) => b.spPct - a.spPct);
+      const seen = new Set(); let count = 0;
+      for (const r of routes) {
+        if (count >= 8) break;
+        const key = r.comm + '|' + r.buyCity + '|' + r.sellCity;
+        if (seen.has(key)) continue;
+        seen.add(key); count++;
+        const nxt = idx[r.comm]?.[r.sellCity]?.[nextDate];
+        if (!nxt) continue;
+        const predictedNet = r.predictedSellP - r.buyP;
+        const actualNet    = nxt.p - r.buyP;
+        picks.push({ date, nextDate, comm: r.comm, buyCity: r.buyCity, sellCity: r.sellCity,
+          buyP: r.buyP, predictedSellP: r.predictedSellP, actualSellP: nxt.p,
+          predictedNet, actualNet, spPct: Math.round(r.spPct * 10) / 10 });
+      }
+    }
+    return picks;
+  })();
+  console.log(`[build] Track record: ${trackRecord.length} pick outcomes computed`);
+
+  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged, trackRecord });
   const embeddedRoad = JSON.stringify(ROAD_KM);
 
   // Build arrival map: arrivalMap[arrComm][city] = [{date, qty}] (last 30 days only, sorted asc)
@@ -798,6 +855,7 @@ td{padding:7px 10px;vertical-align:middle}
   <div class="tab"        onclick="tab('whatif')">🔮 What-If</div>
   <div class="tab"        onclick="tab('brief')" style="background:#166534;color:#fff">📊 Briefing</div>
   <div class="tab"        onclick="tab('paper')" style="background:#1e3a5f;color:#fff">📜 Paper Trade</div>
+  <div class="tab"        onclick="tab('track')" style="background:#3b0764;color:#fff">🎯 Track Record</div>
 </div>
 
 <!-- PRICES -->
@@ -1040,6 +1098,33 @@ td{padding:7px 10px;vertical-align:middle}
   </div>
 </div>
 
+<!-- TRACK RECORD -->
+<div id="p-track" class="panel">
+  <div class="ctr">
+    <h3 style="margin:16px 0 8px;color:var(--fg)">🎯 Track Record — Did the bot's picks work out?</h3>
+    <p style="color:var(--muted);font-size:.88em;margin-bottom:12px">For each day, the top 8 arbitrage spreads are identified. The next day's actual sell price is checked to see if the spread held. No truck costs — pure price movement accuracy.</p>
+    <div class="bar" style="flex-wrap:wrap;gap:8px;margin-bottom:16px">
+      <div class="cg"><label>Look back</label>
+        <select id="trDays" onchange="renderTrackRecord()">
+          <option value="7">7 days</option>
+          <option value="14">14 days</option>
+          <option value="30" selected>30 days</option>
+          <option value="60">60 days</option>
+        </select></div>
+      <div class="cg"><label>Commodity</label>
+        <select id="trComm" onchange="renderTrackRecord()"><option value="all">All</option></select></div>
+      <div class="cg"><label>Min spread</label>
+        <select id="trMinSp" onchange="renderTrackRecord()">
+          <option value="5">≥ 5%</option>
+          <option value="10">≥ 10%</option>
+          <option value="20">≥ 20%</option>
+        </select></div>
+    </div>
+    <div id="trScoreCards" class="sbs" style="margin-bottom:16px"></div>
+    <div id="trTable"></div>
+  </div>
+</div>
+
 <script>
 const D   = ${embeddedData};
 const RD  = ${embeddedRoad};
@@ -1261,14 +1346,21 @@ function init(){
   if(D.cities.includes('Rawalpindi')){$('rTo').value='Rawalpindi';$('wiTo').value='Rawalpindi';}
   if(D.cities.includes('Khanewal'))$('cpB').value='Khanewal';
   else if(D.cities.length>1)$('cpB').value=D.cities.find(c=>c!==$('cpA').value)||D.cities[1];
+  // Populate Track Record commodity dropdown
+  const trComm=$('trComm');
+  if(trComm){
+    const trComms=[...new Set((D.trackRecord||[]).map(p=>p.comm))].sort();
+    trComms.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;trComm.appendChild(o);});
+  }
   autoFillDist(); renderPrices(); renderArb(); renderPair(); renderWiHist(); initPtDates();
 }
 
 function tab(n){
-  const ns=['prices','pair','arb','route','whatif','brief','paper'];
+  const ns=['prices','pair','arb','route','whatif','brief','paper','track'];
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',ns[i]===n));
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='p-'+n));
   if(n==='brief') renderBriefing();
+  if(n==='track') renderTrackRecord();
 }
 
 function setWin(d){
@@ -1618,12 +1710,21 @@ function renderOneCity(city,dir,days,tons){
   const label=isImport?\`📥 Best to import into \${esc(city)}\`:\`📦 Best to export from \${esc(city)}\`;
   $('sec1c').textContent=label+\` — \${rows.length} profitable routes\`;
   if(!rows.length){$('cp1Tbl').innerHTML='<p style="padding:16px;color:var(--muted)">No profitable routes with known distances found. Try wider window.</p>';return;}
+  // Pre-compute track record badges per route (last 30 days)
+  const _trMap={};
+  for(const p of (D.trackRecord||[])){
+    const k=p.comm+'|'+p.buyCity+'|'+p.sellCity;
+    if(!_trMap[k]) _trMap[k]={h:0,t:0};
+    _trMap[k].t++; if(p.actualNet>0) _trMap[k].h++;
+  }
   const trs=rows.slice(0,60).map(r=>{
     const bk=brkKm(r.sp);
     const cs=r.con!=null?\`<span class="chip \${r.con>=70?'con-h':r.con>=40?'con-m':'con-l'}">\${r.con}%</span>\`:'—';
+    const trk=_trMap[r.comm+'|'+r.buyC+'|'+r.sellC];
+    const trkBadge=trk&&trk.t>=2?\`<br><small style="color:\${trk.h/trk.t>=0.6?'var(--up)':'#f59e0b'}" title="Track record: \${trk.h}/\${trk.t} days profitable next day">🎯\${trk.h}/\${trk.t}</small>\`:'';
     return \`<tr>
       <td><strong>\${esc(r.comm)}</strong></td>
-      <td><span class="pill">\${esc(isImport?r.buyC:r.sellC)}</span></td>
+      <td><span class="pill">\${esc(isImport?r.buyC:r.sellC)}</span>\${trkBadge}</td>
       <td>₨\${(r.buyP/100).toFixed(2)}\${ageTag(r.comm,r.buyC)}</td>
       <td>₨\${(r.sellP/100).toFixed(2)}\${ageTag(r.comm,r.sellC)}</td>
       <td>₨\${(r.sp/100).toFixed(2)} <small style="color:var(--muted)">(\${r.spPct.toFixed(0)}%)</small></td>
@@ -1803,6 +1904,93 @@ function routeScore(net,con,maxAge,spTrend){
   // Freshness multiplier — stale data tanks the score regardless of profit
   const fm=maxAge===0?1.0:maxAge===1?0.85:maxAge===2?0.60:maxAge===3?0.35:0.10;
   return Math.round(base*fm);
+}
+
+// ── TRACK RECORD ──────────────────────────────────────────────────────────────
+function renderTrackRecord(){
+  const picks=D.trackRecord||[];
+  if(!picks.length){
+    $('trScoreCards').innerHTML='';
+    $('trTable').innerHTML=\`<p style="padding:24px;color:var(--muted)">No track record data yet — needs at least 2 days of price history.</p>\`;
+    return;
+  }
+  const days=parseInt($('trDays')?.value||'30');
+  const comm=$('trComm')?.value||'all';
+  const minSp=parseFloat($('trMinSp')?.value||'5');
+  const cutoff=new Date(Date.now()-days*86400000).toISOString().slice(0,10);
+  const filt=picks.filter(p=>p.date>=cutoff&&(comm==='all'||p.comm===comm)&&p.spPct>=minSp);
+  if(!filt.length){
+    $('trScoreCards').innerHTML='';
+    $('trTable').innerHTML=\`<p style="padding:24px;color:var(--muted)">No picks match the selected filters.</p>\`;
+    return;
+  }
+  const hits=filt.filter(p=>p.actualNet>0);
+  const hitRate=hits.length/filt.length*100;
+  const avgPred=filt.reduce((s,p)=>s+p.predictedNet,0)/filt.length;
+  const avgAct=filt.reduce((s,p)=>s+p.actualNet,0)/filt.length;
+  const accuracy=avgPred>0?avgAct/avgPred*100:null;
+  // Per-route hit rates for badge
+  const routeHits={},routeTotal={};
+  for(const p of filt){
+    const k=p.comm+'|'+p.buyCity+'|'+p.sellCity;
+    routeHits[k]=(routeHits[k]||0)+(p.actualNet>0?1:0);
+    routeTotal[k]=(routeTotal[k]||0)+1;
+  }
+  const bestRoute=Object.entries(routeTotal).sort((a,b)=>(routeHits[b[0]]/b[1])-(routeHits[a[0]]/a[1]))[0];
+  const brParts=bestRoute?bestRoute[0].split('|'):null;
+  const brRate=bestRoute?(routeHits[bestRoute[0]]/bestRoute[1]*100).toFixed(0)+'%':null;
+  const clrHit=hitRate>=60?'var(--up)':'var(--dn)';
+  const clrAcc=accuracy!=null&&accuracy>=80?'var(--up)':accuracy!=null&&accuracy>=50?'#f59e0b':'var(--dn)';
+  $('trScoreCards').innerHTML=\`
+    <div class="sb"><div class="sb-lbl">Hit Rate</div>
+      <div class="sb-val" style="color:\${clrHit}">\${hitRate.toFixed(0)}%</div>
+      <div class="sb-sub">\${hits.length} profitable of \${filt.length} picks</div></div>
+    <div class="sb"><div class="sb-lbl">Avg Predicted</div>
+      <div class="sb-val">₨\${(avgPred/100).toFixed(2)}/kg</div>
+      <div class="sb-sub">spread identified</div></div>
+    <div class="sb"><div class="sb-lbl">Avg Actual</div>
+      <div class="sb-val" style="color:\${avgAct>=0?'var(--up)':'var(--dn)'}">₨\${(avgAct/100).toFixed(2)}/kg</div>
+      <div class="sb-sub">next-day realised</div></div>
+    <div class="sb"><div class="sb-lbl">Price Accuracy</div>
+      <div class="sb-val" style="color:\${clrAcc}">\${accuracy!=null?accuracy.toFixed(0)+'%':'—'}</div>
+      <div class="sb-sub">of predicted gain held</div></div>
+    \${brParts?\`<div class="sb"><div class="sb-lbl">Best Route</div>
+      <div class="sb-val" style="font-size:.9em;color:var(--up)">\${esc(brParts[0])}</div>
+      <div class="sb-sub">\${esc(brParts[1])}→\${esc(brParts[2])} · \${brRate} hit rate</div></div>\`:''}
+  \`;
+  // Table: recent first
+  const sorted=[...filt].sort((a,b)=>b.date.localeCompare(a.date)||b.spPct-a.spPct);
+  const rows=sorted.map(p=>{
+    const hit=p.actualNet>0;
+    const slip=p.actualNet-p.predictedNet;
+    const bigSlip=Math.abs(slip)>p.predictedNet*0.5&&p.predictedNet>0;
+    const verdict=hit?(bigSlip?'⚠️ Got less':'✅'):'❌';
+    const bg=hit?(bigSlip?'rgba(245,158,11,.06)':'rgba(22,101,52,.06)'):'rgba(185,28,28,.06)';
+    const actCol=hit?'var(--up)':'var(--dn)';
+    const slipCol=slip>=0?'var(--up)':'var(--dn)';
+    return \`<tr style="background:\${bg}">
+      <td style="white-space:nowrap">\${p.date}</td>
+      <td><strong>\${esc(p.comm)}</strong></td>
+      <td>\${esc(p.buyCity)} → \${esc(p.sellCity)}</td>
+      <td>₨\${(p.buyP/100).toFixed(2)}</td>
+      <td>₨\${(p.predictedSellP/100).toFixed(2)}</td>
+      <td>₨\${(p.actualSellP/100).toFixed(2)}</td>
+      <td style="color:\${actCol};font-weight:700">\${p.actualNet>=0?'+':''}₨\${(p.actualNet/100).toFixed(2)}</td>
+      <td style="color:\${slipCol}">\${slip>=0?'+':''}₨\${(slip/100).toFixed(2)}</td>
+      <td style="font-size:1.15em;text-align:center">\${verdict}</td>
+    </tr>\`;
+  }).join('');
+  $('trTable').innerHTML=\`<div style="overflow-x:auto"><table>
+    <thead><tr>
+      <th>Date</th><th>Commodity</th><th>Route</th>
+      <th>Buy ₨/kg</th><th>Predicted Sell</th><th>Actual Sell</th>
+      <th>Net ₨/kg</th><th>vs Predicted</th><th>Result</th>
+    </tr></thead>
+    <tbody>\${rows}</tbody>
+  </table></div>
+  <p style="padding:8px 0;color:var(--muted);font-size:.8em">
+    ✅ Profitable next day · ⚠️ Profitable but got ≤50% of predicted · ❌ Loss. No truck costs included — pure price movement.
+  </p>\`;
 }
 
 let _bfWaText='';
