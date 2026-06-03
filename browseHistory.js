@@ -36,8 +36,8 @@ const DOCS_DATA_DIR  = path.join(__dirname, 'docs', 'data');
 const ARRIVAL_URL    = `${BASE_URL}/Arrivalreports/ArrivalDatewise.aspx`;
 const RATE_STATS_URL = `${BASE_URL}/RateStatistics.aspx`;
 const CHANGES_URL    = `${BASE_URL}/Daily%20Market%20Changes.aspx`;
-const DELAY_MS  = 700;
-const TIMEOUT   = 20_000;
+const DELAY_MS  = 350;  // 350ms between requests — fast enough, polite enough
+const TIMEOUT   = 8_000; // 8s timeout — fast fail on dead connections
 
 const HEADERS = {
   'User-Agent'     : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36',
@@ -401,40 +401,61 @@ async function scrapeBackfill(fromDateStr) {
     try { pageState = await fetchCommodityPage(id); }
     catch (err) { warn(`  GET failed: ${err.message}`); await sleep(2000); continue; }
 
-    let fetched = 0, skippedHave = 0, skippedEmpty = 0;
+    // Build list of dates that actually need fetching for this commodity
+    let skippedHave = 0, skippedEmpty = 0;
+    const datesToFetch = [];
     for (let d = 0; d < totalDays; d++) {
-      const date    = new Date(today.getTime() - d * 86_400_000);
+      const date = new Date(today.getTime() - d * 86_400_000);
       if (date < fromDate) break;
       const isoDate = toIsoDate(date);
       const pairKey = `${name}|${isoDate}`;
-
-      if (haveSet.has(pairKey))   { skippedHave++;  continue; }  // already in storage
-      if (emptySet.has(pairKey))  { skippedEmpty++; continue; }  // known empty, skip
-
-      const dateStr = toAmisFmt(date);
-      try {
-        const html    = await fetchCommodityForDate(id, dateStr, pageState);
-        const records = parseViewTable(html);
-        if (records.length === 0) {
-          // AMIS returned nothing — mark as known-empty so we never fetch it again
-          emptySet.add(pairKey);
-          newEmptyCount++;
-        } else {
-          for (const r of records)
-            allRecords.push({ date: isoDate, commodityId: id, commodity: name, key: key || name, ...r });
-          fetched++;
-        }
-        // Log progress every 25 fetched days so the user can see activity
-        if (fetched > 0 && fetched % 25 === 0)
-          log(`  ${name}: ${fetched} days done, ${isoDate} … (${allRecords.length.toLocaleString()} total records)`);
-      } catch (err) { warn(`  ${dateStr}: ${err.message}`); }
-      await sleep(DELAY_MS);
+      if (haveSet.has(pairKey))  { skippedHave++;  continue; }
+      if (emptySet.has(pairKey)) { skippedEmpty++; continue; }
+      datesToFetch.push({ date, isoDate, pairKey, dateStr: toAmisFmt(date) });
     }
-    log(`  ${name}: ${fetched} new days fetched, ${skippedHave} already had, ${skippedEmpty} known-empty skipped`);
 
-    // Save empty-dates after each commodity so progress survives interruption
-    if (newEmptyCount > 0) { saveEmptyDates(emptySet); newEmptyCount = 0; }
-    await sleep(DELAY_MS * 2);
+    // Fetch with concurrency limit — 20 simultaneous requests max
+    const CONCURRENCY = 20;
+    let fetched = 0;
+    const results = [];
+    for (let b = 0; b < datesToFetch.length; b += CONCURRENCY) {
+      const batch = datesToFetch.slice(b, b + CONCURRENCY);
+      const batchResults = await Promise.all(batch.map(async ({ isoDate, pairKey, dateStr }) => {
+        try {
+          const html    = await fetchCommodityForDate(id, dateStr, pageState);
+          const records = parseViewTable(html);
+          return { isoDate, pairKey, records };
+        } catch (err) {
+          warn(`  ${dateStr}: ${err.message}`);
+          return { isoDate, pairKey, records: null };
+        }
+      }));
+      results.push(...batchResults);
+      if (results.length % 100 === 0)
+        log(`  ${name}: ${results.length}/${datesToFetch.length} dates processed…`);
+    }
+    for (const { isoDate, pairKey, records } of results) {
+      if (records === null) continue;
+      if (records.length === 0) {
+        emptySet.add(pairKey); newEmptyCount++;
+      } else {
+        for (const r of records)
+          allRecords.push({ date: isoDate, commodityId: id, commodity: name, key: key||name, ...r });
+        fetched++;
+      }
+    }
+    log(`  ${name}: ${fetched} days fetched, ${skippedHave} skipped (had), ${skippedEmpty} skipped (empty)`);
+
+    // Save after EVERY commodity — fast now since each completes in seconds
+    saveEmptyDates(emptySet); newEmptyCount = 0;
+    if (allRecords.length > 0) {
+      log(`  Saving ${allRecords.length.toLocaleString()} records to disk…`);
+      const snap = loadExisting();
+      mergeAndSave(allRecords, snap);
+      for (const r of allRecords) haveSet.add(`${r.commodity}|${r.date}`);
+      allRecords.length = 0;
+      log(`  Saved. ✓`);
+    }
   }
 
   saveEmptyDates(emptySet);  // final save
