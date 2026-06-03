@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-02T23:57:55.583Z",
-  "date": "2026-06-02",
+  "updatedAt": "2026-06-03T00:32:32.309Z",
+  "date": "2026-06-03",
   "records": [
     {
       "city": "Lahore",
@@ -96,6 +96,206 @@
       "today": 23500,
       "yesterday": 25100,
       "change": -1600,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Gram White(local)",
+      "today": 20600,
+      "yesterday": 20650,
+      "change": -50,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Gram Black",
+      "today": 19600,
+      "yesterday": 19650,
+      "change": -50,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Mash Pulse(Imported) washed",
+      "today": 41600,
+      "yesterday": 34600,
+      "change": 7000,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Maize",
+      "today": 7150,
+      "yesterday": 7300,
+      "change": -150,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Potato Fresh",
+      "today": 1700,
+      "yesterday": 1800,
+      "change": -100,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Brinjal",
+      "today": 4300,
+      "yesterday": 4000,
+      "change": 300,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 5300,
+      "yesterday": 5000,
+      "change": 300,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 4850,
+      "yesterday": 4650,
+      "change": 200,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Tinda Desi",
+      "today": 11850,
+      "yesterday": 11600,
+      "change": 250,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Peas",
+      "today": 14700,
+      "yesterday": 14650,
+      "change": 50,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Apple Kala Kullu (Pahari)",
+      "today": 32950,
+      "yesterday": 32900,
+      "change": 50,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Apple (Golden)",
+      "today": 23850,
+      "yesterday": 23750,
+      "change": 100,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Banana(DOZEN)",
+      "today": 155,
+      "yesterday": 163,
+      "change": -8,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Mango(Sindhri)",
+      "today": 19850,
+      "yesterday": 19400,
+      "change": 450,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Jaggery (گڑ)",
+      "today": 17160,
+      "yesterday": 17100,
+      "change": 60,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Mash Pulse(local)",
+      "today": 41100,
+      "yesterday": 34150,
+      "change": 6950,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Garlic (Local)",
+      "today": 11350,
+      "yesterday": 11400,
+      "change": -50,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Apple Kala Kullu (Madani)",
+      "today": 23300,
+      "yesterday": 23500,
+      "change": -200,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 12400,
+      "yesterday": 11750,
+      "change": 650,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Peach Special",
+      "today": 22700,
+      "yesterday": 22850,
+      "change": -150,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 3000,
+      "yesterday": 2650,
+      "change": 350,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 5300,
+      "yesterday": 5050,
+      "change": 250,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Cocoyam(اروی)",
+      "today": 11750,
+      "yesterday": 11850,
+      "change": -100,
+      "dir": "down"
+    },
+    {
+      "city": "Chakwal",
+      "commodity": "Potato Fresh",
+      "today": 2050,
+      "yesterday": 1750,
+      "change": 300,
+      "dir": "up"
+    },
+    {
+      "city": "Chakwal",
+      "commodity": "Tomato",
+      "today": 3350,
+      "yesterday": 3450,
+      "change": -100,
       "dir": "down"
     }
   ]

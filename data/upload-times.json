@@ -1,10 +1,18 @@
 {
-  "updatedAt": "2026-06-02T23:57:55.289Z",
-  "date": "2026-06-02",
+  "updatedAt": "2026-06-03T00:32:32.014Z",
+  "date": "2026-06-03",
   "uploadTimes": [
     {
       "city": "Lahore",
       "time": "03:19"
+    },
+    {
+      "city": "Chakwal",
+      "time": "04:55"
+    },
+    {
+      "city": "Sahiwal",
+      "time": "05:26"
     }
   ]
 }
