@@ -646,8 +646,8 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
   const commodities = Object.keys(priceMap).sort();
   const cities      = [...citySet].sort();
 
-  // ── Track Record: top daily picks vs next-day actuals (last 60 days) ──────────
-  const trackRecord = (() => {
+  // ── Track Record: analyse EVERY route across all 60 days ─────────────────────
+  const { trackRecord, routeStats } = (() => {
     // Build fast date-indexed lookup (skip flagged)
     const idx = {};
     for (const [comm, citiesMap] of Object.entries(priceMap)) {
@@ -657,16 +657,21 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
         for (const pt of pts) if (!pt.flagged) idx[comm][city][pt.date] = pt;
       }
     }
-    // Sorted unique dates
     const allD = [...new Set(Object.values(priceMap).flatMap(cm => Object.values(cm).flatMap(pts => pts.map(p => p.date))))].sort();
     const cutoff = new Date(Date.now() - 60 * 86400000).toISOString().slice(0,10);
+
+    // Route-level aggregates — keyed by comm|buyCity|sellCity
+    const rStats = {}; // {days,hits,sumPred,sumActual,lastDate,lastSpPct}
+    // Individual picks for the daily-view table (top 20/day)
     const picks = [];
+
     for (let di = 0; di < allD.length - 1; di++) {
       const date = allD[di];
       if (date < cutoff) continue;
       const nextDate = allD[di + 1];
-      if ((new Date(nextDate) - new Date(date)) > 3 * 86400000) continue; // skip big gaps
-      const routes = [];
+      if ((new Date(nextDate) - new Date(date)) > 3 * 86400000) continue;
+
+      const dayRoutes = []; // collect all for daily top-20
       for (const comm of commodities) {
         const cm = idx[comm] || {};
         const activeCities = Object.keys(cm).filter(c => cm[c][date]);
@@ -677,39 +682,63 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
             const sellP = cm[sellCity][date].p;
             const spPct = (sellP - buyP) / buyP * 100;
             if (spPct < 5) continue;
-            routes.push({ comm, buyCity, sellCity, buyP, predictedSellP: sellP, spPct });
+            const nxt = idx[comm]?.[sellCity]?.[nextDate];
+            if (!nxt) continue;
+            const predictedNet = sellP - buyP;
+            const actualNet = nxt.p - buyP;
+            const key = comm + '|' + buyCity + '|' + sellCity;
+            // Always update route-level stats
+            if (!rStats[key]) rStats[key] = { comm, buyCity, sellCity, days:0, hits:0, sumPred:0, sumActual:0, lastDate:'', lastSpPct:0 };
+            const rs = rStats[key];
+            rs.days++; rs.sumPred += predictedNet; rs.sumActual += actualNet;
+            if (actualNet > 0) rs.hits++;
+            if (date > rs.lastDate) { rs.lastDate = date; rs.lastSpPct = Math.round(spPct*10)/10; }
+            dayRoutes.push({ comm, buyCity, sellCity, buyP, predictedSellP: sellP, actualSellP: nxt.p, predictedNet, actualNet, spPct, date, nextDate });
           }
         }
       }
-      // Top 8 by spread, deduplicated
-      routes.sort((a, b) => b.spPct - a.spPct);
-      const seen = new Set(); let count = 0;
-      for (const r of routes) {
-        if (count >= 8) break;
-        const key = r.comm + '|' + r.buyCity + '|' + r.sellCity;
-        if (seen.has(key)) continue;
-        seen.add(key); count++;
-        const nxt = idx[r.comm]?.[r.sellCity]?.[nextDate];
-        if (!nxt) continue;
-        const predictedNet = r.predictedSellP - r.buyP;
-        const actualNet    = nxt.p - r.buyP;
-        picks.push({ date, nextDate, comm: r.comm, buyCity: r.buyCity, sellCity: r.sellCity,
-          buyP: r.buyP, predictedSellP: r.predictedSellP, actualSellP: nxt.p,
-          predictedNet, actualNet, spPct: Math.round(r.spPct * 10) / 10 });
+      // Keep top 20 per day (by spread) for daily view
+      dayRoutes.sort((a,b) => b.spPct - a.spPct);
+      for (let i = 0; i < Math.min(20, dayRoutes.length); i++) {
+        const r = dayRoutes[i];
+        picks.push({ date: r.date, nextDate: r.nextDate, comm: r.comm,
+          buyCity: r.buyCity, sellCity: r.sellCity,
+          buyP: r.buyP, predictedSellP: r.predictedSellP, actualSellP: r.actualSellP,
+          predictedNet: r.predictedNet, actualNet: r.actualNet,
+          spPct: Math.round(r.spPct*10)/10 });
       }
     }
-    // Merge with saved long-term outcomes (dedup by date+comm+buyCity+sellCity)
-    const seen = new Set(picks.map(p=>`${p.date}|${p.comm}|${p.buyCity}|${p.sellCity}`));
+
+    // Merge saved outcomes into picks for long-term daily view
+    const seenPicks = new Set(picks.map(p=>`${p.date}|${p.comm}|${p.buyCity}|${p.sellCity}`));
     for (const o of _savedOutcomes) {
       const k = `${o.date}|${o.comm}|${o.buyCity}|${o.sellCity}`;
-      if (!seen.has(k)) { seen.add(k); picks.push(o); }
+      if (!seenPicks.has(k)) { seenPicks.add(k); picks.push(o); }
     }
     picks.sort((a,b) => a.date.localeCompare(b.date));
-    return picks;
-  })();
-  console.log(`[build] Track record: ${trackRecord.length} pick outcomes (incl. ${_savedOutcomes.length} saved)`);
 
-  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged, trackRecord, cityFlagCount });
+    // Convert route stats map to sorted array.
+    // We analysed the full universe above; now filter down to what's worth embedding:
+    //   (a) seen ≥ 5 times         → enough data to trust the hit-rate
+    //   (b) active last 7 days     → relevant right now (not stale seasonal)
+    //   (c) cap at top 3 000       → keeps HTML under ~2 MB total
+    // Sorted by hit-rate desc, then days desc so the most reliable routes surface first.
+    const cutoff7 = new Date(Date.now() - 7 * 86400000).toISOString().slice(0,10);
+    const rsArr = Object.values(rStats)
+      .filter(r => r.days >= 5 && r.lastDate >= cutoff7)
+      .map(r => ({ comm:r.comm, buyCity:r.buyCity, sellCity:r.sellCity,
+        days:r.days, hits:r.hits, hitRate:Math.round(r.hits/r.days*100),
+        avgPred:Math.round(r.sumPred/r.days), avgActual:Math.round(r.sumActual/r.days),
+        accuracy:r.sumPred>0?Math.round(r.sumActual/r.sumPred*100):null,
+        lastDate:r.lastDate, lastSpPct:r.lastSpPct }))
+      .sort((a,b) => b.hitRate - a.hitRate || b.days - a.days)
+      .slice(0, 3000);
+
+    return { trackRecord: picks, routeStats: rsArr };
+  })();
+  console.log(`[build] Track record: ${trackRecord.length} daily picks, ${routeStats.length} routes embedded (top ${routeStats.length}, ≥5 days seen, active last 7d) — full universe analysed across 60 days`);
+
+  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged, trackRecord, routeStats, cityFlagCount });
   const embeddedRoad = JSON.stringify(ROAD_KM);
 
   // Build arrival map: arrivalMap[arrComm][city] = [{date, qty}] (last 30 days only, sorted asc)
@@ -1123,23 +1152,29 @@ td{padding:7px 10px;vertical-align:middle}
 <!-- TRACK RECORD -->
 <div id="p-track" class="panel">
   <div class="ctr">
-    <h3 style="margin:16px 0 8px;color:var(--fg)">🎯 Track Record — Did the bot's picks work out?</h3>
-    <p style="color:var(--muted);font-size:.88em;margin-bottom:12px">For each day, the top 8 arbitrage spreads are identified. The next day's actual sell price is checked to see if the spread held. No truck costs — pure price movement accuracy.</p>
-    <div class="bar" style="flex-wrap:wrap;gap:8px;margin-bottom:16px">
-      <div class="cg"><label>Look back</label>
-        <select id="trDays" onchange="renderTrackRecord()">
-          <option value="7">7 days</option>
-          <option value="14">14 days</option>
-          <option value="30" selected>30 days</option>
-          <option value="60">60 days</option>
+    <h3 style="margin:16px 0 8px;color:var(--fg)">🎯 Track Record — Every route, 60 days of history</h3>
+    <p style="color:var(--muted);font-size:.88em;margin-bottom:10px">Every commodity route with ≥5% spread is checked: did the price hold the next day? No truck costs — pure price movement. All routes analysed, not just top picks.</p>
+    <div class="bar" style="flex-wrap:wrap;gap:8px;margin-bottom:12px">
+      <div class="cg"><label>View</label>
+        <select id="trView" onchange="renderTrackRecord()">
+          <option value="routes">Route Summary (all routes)</option>
+          <option value="daily">Daily Picks (top 20/day)</option>
         </select></div>
       <div class="cg"><label>Commodity</label>
         <select id="trComm" onchange="renderTrackRecord()"><option value="all">All</option></select></div>
-      <div class="cg"><label>Min spread</label>
-        <select id="trMinSp" onchange="renderTrackRecord()">
-          <option value="5">≥ 5%</option>
-          <option value="10">≥ 10%</option>
-          <option value="20">≥ 20%</option>
+      <div class="cg"><label>Min days seen</label>
+        <select id="trMinDays" onchange="renderTrackRecord()">
+          <option value="2">≥ 2 days</option>
+          <option value="5" selected>≥ 5 days</option>
+          <option value="10">≥ 10 days</option>
+          <option value="20">≥ 20 days</option>
+        </select></div>
+      <div class="cg" id="trDailyFilters">
+        <label>Look back</label>
+        <select id="trDays" onchange="renderTrackRecord()">
+          <option value="14">14 days</option>
+          <option value="30" selected>30 days</option>
+          <option value="60">60 days</option>
         </select></div>
     </div>
     <div id="trScoreCards" class="sbs" style="margin-bottom:16px"></div>
@@ -1977,114 +2012,126 @@ function routeScore(net,con,maxAge,spTrend){
 }
 
 // ── TRACK RECORD ──────────────────────────────────────────────────────────────
-let _trSort={col:'date',asc:false}; // default: newest first
-function trSortBy(col){
-  if(_trSort.col===col) _trSort.asc=!_trSort.asc;
-  else{_trSort.col=col;_trSort.asc=col==='date'?false:col==='comm'||col==='buyCity'||col==='sellCity'?true:false;}
-  renderTrackRecord();
-}
 function renderTrackRecord(){
-  const picks=D.trackRecord||[];
-  if(!picks.length){
+  const view=$('trView')?.value||'routes';
+  const comm=$('trComm')?.value||'all';
+  const minDays=parseInt($('trMinDays')?.value||'5');
+  // Show/hide daily-only filters
+  if($('trDailyFilters')) $('trDailyFilters').style.display=view==='daily'?'':'none';
+
+  if(view==='routes') renderRouteStats(comm,minDays);
+  else renderDailyPicks(comm);
+}
+
+function renderRouteStats(comm,minDays){
+  const rs=(D.routeStats||[]).filter(r=>(comm==='all'||r.comm===comm)&&r.days>=minDays);
+  if(!rs.length){
     $('trScoreCards').innerHTML='';
-    $('trTable').innerHTML=\`<p style="padding:24px;color:var(--muted)">No track record data yet — needs at least 2 days of price history.</p>\`;
+    $('trTable').innerHTML=\`<p style="padding:24px;color:var(--muted)">No routes match filters.</p>\`;
     return;
   }
+  const totalDays=rs.reduce((s,r)=>s+r.days,0);
+  const totalHits=rs.reduce((s,r)=>s+r.hits,0);
+  const overallHit=totalHits/totalDays*100;
+  const avgAcc=rs.filter(r=>r.accuracy!=null).reduce((s,r)=>s+r.accuracy,0)/rs.filter(r=>r.accuracy!=null).length;
+  const reliable=rs.filter(r=>r.hitRate>=70&&r.days>=5);
+  const best=rs[0];
+  $('trScoreCards').innerHTML=\`
+    <div class="sb"><div class="sb-lbl">Routes Analysed</div>
+      <div class="sb-val">\${rs.length}</div>
+      <div class="sb-sub">\${totalDays.toLocaleString()} route-days checked</div></div>
+    <div class="sb"><div class="sb-lbl">Overall Hit Rate</div>
+      <div class="sb-val" style="color:\${overallHit>=60?'var(--up)':'var(--dn)'}">\${overallHit.toFixed(0)}%</div>
+      <div class="sb-sub">next-day price held</div></div>
+    <div class="sb"><div class="sb-lbl">Avg Accuracy</div>
+      <div class="sb-val" style="color:\${avgAcc>=70?'var(--up)':'#f59e0b'}">\${avgAcc.toFixed(0)}%</div>
+      <div class="sb-sub">of predicted gain realised</div></div>
+    <div class="sb"><div class="sb-lbl">Reliable Routes</div>
+      <div class="sb-val" style="color:var(--up)">\${reliable.length}</div>
+      <div class="sb-sub">≥70% hit rate, ≥5 days</div></div>
+    \${best?\`<div class="sb"><div class="sb-lbl">Top Route</div>
+      <div class="sb-val" style="font-size:.85em;color:var(--up)">\${esc(best.comm)}</div>
+      <div class="sb-sub">\${esc(best.buyCity)}→\${esc(best.sellCity)} · \${best.hitRate}% · \${best.days}d</div></div>\`:''}
+  \`;
+  const rows=rs.map(r=>{
+    const hc=r.hitRate>=70?'var(--up)':r.hitRate>=50?'#f59e0b':'var(--dn)';
+    const ac=r.accuracy!=null?(r.accuracy>=80?'var(--up)':r.accuracy>=50?'#f59e0b':'var(--dn)'):'var(--muted)';
+    return \`<tr>
+      <td><strong>\${esc(r.comm)}</strong></td>
+      <td>\${esc(r.buyCity)}</td><td>\${esc(r.sellCity)}</td>
+      <td style="color:\${hc};font-weight:700">\${r.hitRate}%</td>
+      <td>\${r.hits}/\${r.days}</td>
+      <td>₨\${(r.avgPred/100).toFixed(2)}</td>
+      <td style="color:\${r.avgActual>=0?'var(--up)':'var(--dn)'}">₨\${(r.avgActual/100).toFixed(2)}</td>
+      <td style="color:\${ac}">\${r.accuracy!=null?r.accuracy+'%':'—'}</td>
+      <td style="color:var(--muted);font-size:.85em">\${r.lastDate}</td>
+      <td>\${r.lastSpPct}%</td>
+    </tr>\`;
+  }).join('');
+  $('trTable').innerHTML=\`<div style="overflow-x:auto"><table>
+    <thead><tr>
+      <th>Commodity</th><th>Buy City</th><th>Sell City</th>
+      <th>Hit Rate</th><th>Hits/Days</th>
+      <th>Avg Predicted</th><th>Avg Actual</th><th>Accuracy</th>
+      <th>Last Seen</th><th>Last Spread</th>
+    </tr></thead>
+    <tbody>\${rows}</tbody>
+  </table></div>
+  <p style="padding:8px 0;color:var(--muted);font-size:.8em">Hit Rate = next day price still profitable. Accuracy = avg actual ÷ avg predicted gain. Sorted by hit rate.</p>\`;
+  makeSortable($('trTable'));
+}
+
+function renderDailyPicks(comm){
+  const picks=D.trackRecord||[];
   const days=parseInt($('trDays')?.value||'30');
-  const comm=$('trComm')?.value||'all';
-  const minSp=parseFloat($('trMinSp')?.value||'5');
   const cutoff=new Date(Date.now()-days*86400000).toISOString().slice(0,10);
-  const filt=picks.filter(p=>p.date>=cutoff&&(comm==='all'||p.comm===comm)&&p.spPct>=minSp);
+  const filt=picks.filter(p=>p.date>=cutoff&&(comm==='all'||p.comm===comm));
   if(!filt.length){
     $('trScoreCards').innerHTML='';
-    $('trTable').innerHTML=\`<p style="padding:24px;color:var(--muted)">No picks match the selected filters.</p>\`;
+    $('trTable').innerHTML=\`<p style="padding:24px;color:var(--muted)">No picks in range.</p>\`;
     return;
   }
   const hits=filt.filter(p=>p.actualNet>0);
   const hitRate=hits.length/filt.length*100;
   const avgPred=filt.reduce((s,p)=>s+p.predictedNet,0)/filt.length;
   const avgAct=filt.reduce((s,p)=>s+p.actualNet,0)/filt.length;
-  const accuracy=avgPred>0?avgAct/avgPred*100:null;
-  // Per-route hit rates for badge
-  const routeHits={},routeTotal={};
-  for(const p of filt){
-    const k=p.comm+'|'+p.buyCity+'|'+p.sellCity;
-    routeHits[k]=(routeHits[k]||0)+(p.actualNet>0?1:0);
-    routeTotal[k]=(routeTotal[k]||0)+1;
-  }
-  const bestRoute=Object.entries(routeTotal).sort((a,b)=>(routeHits[b[0]]/b[1])-(routeHits[a[0]]/a[1]))[0];
-  const brParts=bestRoute?bestRoute[0].split('|'):null;
-  const brRate=bestRoute?(routeHits[bestRoute[0]]/bestRoute[1]*100).toFixed(0)+'%':null;
-  const clrHit=hitRate>=60?'var(--up)':'var(--dn)';
-  const clrAcc=accuracy!=null&&accuracy>=80?'var(--up)':accuracy!=null&&accuracy>=50?'#f59e0b':'var(--dn)';
   $('trScoreCards').innerHTML=\`
+    <div class="sb"><div class="sb-lbl">Picks</div><div class="sb-val">\${filt.length}</div><div class="sb-sub">top 20/day</div></div>
     <div class="sb"><div class="sb-lbl">Hit Rate</div>
-      <div class="sb-val" style="color:\${clrHit}">\${hitRate.toFixed(0)}%</div>
-      <div class="sb-sub">\${hits.length} profitable of \${filt.length} picks</div></div>
-    <div class="sb"><div class="sb-lbl">Avg Predicted</div>
-      <div class="sb-val">₨\${(avgPred/100).toFixed(2)}/kg</div>
-      <div class="sb-sub">spread identified</div></div>
+      <div class="sb-val" style="color:\${hitRate>=60?'var(--up)':'var(--dn)'}">\${hitRate.toFixed(0)}%</div>
+      <div class="sb-sub">\${hits.length} profitable</div></div>
+    <div class="sb"><div class="sb-lbl">Avg Predicted</div><div class="sb-val">₨\${(avgPred/100).toFixed(2)}/kg</div></div>
     <div class="sb"><div class="sb-lbl">Avg Actual</div>
-      <div class="sb-val" style="color:\${avgAct>=0?'var(--up)':'var(--dn)'}">₨\${(avgAct/100).toFixed(2)}/kg</div>
-      <div class="sb-sub">next-day realised</div></div>
-    <div class="sb"><div class="sb-lbl">Price Accuracy</div>
-      <div class="sb-val" style="color:\${clrAcc}">\${accuracy!=null?accuracy.toFixed(0)+'%':'—'}</div>
-      <div class="sb-sub">of predicted gain held</div></div>
-    \${brParts?\`<div class="sb"><div class="sb-lbl">Best Route</div>
-      <div class="sb-val" style="font-size:.9em;color:var(--up)">\${esc(brParts[0])}</div>
-      <div class="sb-sub">\${esc(brParts[1])}→\${esc(brParts[2])} · \${brRate} hit rate</div></div>\`:''}
+      <div class="sb-val" style="color:\${avgAct>=0?'var(--up)':'var(--dn)'}">₨\${(avgAct/100).toFixed(2)}/kg</div></div>
   \`;
-  // Table: recent first
-  // Sort
-  const _sc=_trSort.col,_sa=_trSort.asc,_sd=_sa?1:-1;
-  const sortFns={
-    date:(a,b)=>_sd*a.date.localeCompare(b.date),
-    comm:(a,b)=>_sd*a.comm.localeCompare(b.comm),
-    buyCity:(a,b)=>_sd*a.buyCity.localeCompare(b.buyCity),
-    sellCity:(a,b)=>_sd*a.sellCity.localeCompare(b.sellCity),
-    buyP:(a,b)=>_sd*(a.buyP-b.buyP),
-    predictedSellP:(a,b)=>_sd*(a.predictedSellP-b.predictedSellP),
-    actualSellP:(a,b)=>_sd*(a.actualSellP-b.actualSellP),
-    actualNet:(a,b)=>_sd*(a.actualNet-b.actualNet),
-    slip:(a,b)=>_sd*((a.actualNet-a.predictedNet)-(b.actualNet-b.predictedNet)),
-    hit:(a,b)=>_sd*((a.actualNet>0?1:0)-(b.actualNet>0?1:0)),
-    spPct:(a,b)=>_sd*(a.spPct-b.spPct)
-  };
-  const sorted=[...filt].sort(sortFns[_sc]||((a,b)=>_sd*a.date.localeCompare(b.date)));
-  // Header helper
-  const th=(label,col)=>{const active=_trSort.col===col,arrow=active?(_trSort.asc?'▲':'▼'):'⇅';
-    return \`<th style="cursor:pointer;white-space:nowrap\${active?';color:var(--green)':''}" onclick="trSortBy('\${col}')">\${label} <span style="font-size:.7em;opacity:\${active?1:.4}">\${arrow}</span></th>\`;};
+  const sorted=[...filt].sort((a,b)=>b.date.localeCompare(a.date)||b.spPct-a.spPct);
   const rows=sorted.map(p=>{
     const hit=p.actualNet>0;
     const slip=p.actualNet-p.predictedNet;
-    const bigSlip=Math.abs(slip)>p.predictedNet*0.5&&p.predictedNet>0;
-    const verdict=hit?(bigSlip?'⚠️ Got less':'✅'):'❌';
-    const bg=hit?(bigSlip?'rgba(245,158,11,.06)':'rgba(22,101,52,.06)'):'rgba(185,28,28,.06)';
-    const actCol=hit?'var(--up)':'var(--dn)';
-    const slipCol=slip>=0?'var(--up)':'var(--dn)';
+    const verdict=hit?(Math.abs(slip)>p.predictedNet*0.5?'⚠️':'✅'):'❌';
+    const bg=hit?'rgba(22,101,52,.05)':'rgba(185,28,28,.05)';
     return \`<tr style="background:\${bg}">
       <td style="white-space:nowrap">\${p.date}</td>
       <td><strong>\${esc(p.comm)}</strong></td>
       <td>\${esc(p.buyCity)} → \${esc(p.sellCity)}</td>
-      <td>₨\${(p.buyP/100).toFixed(2)}</td>
+      <td>\${p.spPct}%</td>
       <td>₨\${(p.predictedSellP/100).toFixed(2)}</td>
       <td>₨\${(p.actualSellP/100).toFixed(2)}</td>
-      <td style="color:\${actCol};font-weight:700">\${p.actualNet>=0?'+':''}₨\${(p.actualNet/100).toFixed(2)}</td>
-      <td style="color:\${slipCol}">\${slip>=0?'+':''}₨\${(slip/100).toFixed(2)}</td>
-      <td style="font-size:1.15em;text-align:center">\${verdict}</td>
+      <td style="color:\${p.actualNet>=0?'var(--up)':'var(--dn)'};font-weight:700">\${p.actualNet>=0?'+':''}₨\${(p.actualNet/100).toFixed(2)}</td>
+      <td style="color:\${slip>=0?'var(--up)':'var(--dn)'}">\${slip>=0?'+':''}₨\${(slip/100).toFixed(2)}</td>
+      <td style="font-size:1.1em;text-align:center">\${verdict}</td>
     </tr>\`;
   }).join('');
   $('trTable').innerHTML=\`<div style="overflow-x:auto"><table>
     <thead><tr>
-      \${th('Date','date')}\${th('Commodity','comm')}<th>Route</th>
-      \${th('Buy ₨/kg','buyP')}\${th('Predicted Sell','predictedSellP')}\${th('Actual Sell','actualSellP')}
-      \${th('Net ₨/kg','actualNet')}\${th('vs Predicted','slip')}\${th('Result','hit')}
+      <th>Date</th><th>Commodity</th><th>Route</th><th>Spread</th>
+      <th>Predicted Sell</th><th>Actual Sell</th>
+      <th>Net ₨/kg</th><th>vs Predicted</th><th>Result</th>
     </tr></thead>
     <tbody>\${rows}</tbody>
   </table></div>
-  <p style="padding:8px 0;color:var(--muted);font-size:.8em">
-    ✅ Profitable next day · ⚠️ Profitable but got ≤50% of predicted · ❌ Loss. No truck costs included — pure price movement.
-  </p>\`;
+  <p style="padding:8px 0;color:var(--muted);font-size:.8em">Top 20 picks/day by spread. ✅ Profitable · ⚠️ Got ≤50% of predicted · ❌ Loss</p>\`;
+  makeSortable($('trTable'));
 }
 
 let _bfWaText='';
