@@ -30,6 +30,7 @@ const DATA_FILE      = path.join(__dirname, 'data', 'price-history.json');
 const ARRIVAL_FILE   = path.join(__dirname, 'data', 'arrival-history.json');
 const UPLOAD_FILE    = path.join(__dirname, 'data', 'upload-times.json');
 const CHANGES_FILE   = path.join(__dirname, 'data', 'daily-changes.json');
+const TRACK_FILE     = path.join(__dirname, 'data', 'track-record.json');
 const PLAN_FILE      = path.join(__dirname, 'reports', 'planner.html');
 const ARRIVAL_URL    = `${BASE_URL}/Arrivalreports/ArrivalDatewise.aspx`;
 const RATE_STATS_URL = `${BASE_URL}/RateStatistics.aspx`;
@@ -578,6 +579,13 @@ function saveDailyChanges(data) {
 // ─── Step 5: Generate interactive planner HTML ────────────────────────────────
 
 function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
+  // Load persisted track record outcomes (the long-term learning file)
+  let _savedOutcomes = [];
+  try {
+    if (fs.existsSync(TRACK_FILE))
+      _savedOutcomes = JSON.parse(fs.readFileSync(TRACK_FILE, 'utf8')).outcomes || [];
+  } catch(e) {}
+
   const priceMap = {};
   const citySet  = new Set();
   for (const r of records) {
@@ -683,9 +691,16 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
           predictedNet, actualNet, spPct: Math.round(r.spPct * 10) / 10 });
       }
     }
+    // Merge with saved long-term outcomes (dedup by date+comm+buyCity+sellCity)
+    const seen = new Set(picks.map(p=>`${p.date}|${p.comm}|${p.buyCity}|${p.sellCity}`));
+    for (const o of _savedOutcomes) {
+      const k = `${o.date}|${o.comm}|${o.buyCity}|${o.sellCity}`;
+      if (!seen.has(k)) { seen.add(k); picks.push(o); }
+    }
+    picks.sort((a,b) => a.date.localeCompare(b.date));
     return picks;
   })();
-  console.log(`[build] Track record: ${trackRecord.length} pick outcomes computed`);
+  console.log(`[build] Track record: ${trackRecord.length} pick outcomes (incl. ${_savedOutcomes.length} saved)`);
 
   const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged, trackRecord });
   const embeddedRoad = JSON.stringify(ROAD_KM);
@@ -1907,6 +1922,12 @@ function routeScore(net,con,maxAge,spTrend){
 }
 
 // ── TRACK RECORD ──────────────────────────────────────────────────────────────
+let _trSort={col:'date',asc:false}; // default: newest first
+function trSortBy(col){
+  if(_trSort.col===col) _trSort.asc=!_trSort.asc;
+  else{_trSort.col=col;_trSort.asc=col==='date'?false:col==='comm'||col==='buyCity'||col==='sellCity'?true:false;}
+  renderTrackRecord();
+}
 function renderTrackRecord(){
   const picks=D.trackRecord||[];
   if(!picks.length){
@@ -1959,7 +1980,25 @@ function renderTrackRecord(){
       <div class="sb-sub">\${esc(brParts[1])}→\${esc(brParts[2])} · \${brRate} hit rate</div></div>\`:''}
   \`;
   // Table: recent first
-  const sorted=[...filt].sort((a,b)=>b.date.localeCompare(a.date)||b.spPct-a.spPct);
+  // Sort
+  const _sc=_trSort.col,_sa=_trSort.asc,_sd=_sa?1:-1;
+  const sortFns={
+    date:(a,b)=>_sd*a.date.localeCompare(b.date),
+    comm:(a,b)=>_sd*a.comm.localeCompare(b.comm),
+    buyCity:(a,b)=>_sd*a.buyCity.localeCompare(b.buyCity),
+    sellCity:(a,b)=>_sd*a.sellCity.localeCompare(b.sellCity),
+    buyP:(a,b)=>_sd*(a.buyP-b.buyP),
+    predictedSellP:(a,b)=>_sd*(a.predictedSellP-b.predictedSellP),
+    actualSellP:(a,b)=>_sd*(a.actualSellP-b.actualSellP),
+    actualNet:(a,b)=>_sd*(a.actualNet-b.actualNet),
+    slip:(a,b)=>_sd*((a.actualNet-a.predictedNet)-(b.actualNet-b.predictedNet)),
+    hit:(a,b)=>_sd*((a.actualNet>0?1:0)-(b.actualNet>0?1:0)),
+    spPct:(a,b)=>_sd*(a.spPct-b.spPct)
+  };
+  const sorted=[...filt].sort(sortFns[_sc]||((a,b)=>_sd*a.date.localeCompare(b.date)));
+  // Header helper
+  const th=(label,col)=>{const active=_trSort.col===col,arrow=active?(_trSort.asc?'▲':'▼'):'⇅';
+    return \`<th style="cursor:pointer;white-space:nowrap\${active?';color:var(--green)':''}" onclick="trSortBy('\${col}')">\${label} <span style="font-size:.7em;opacity:\${active?1:.4}">\${arrow}</span></th>\`;};
   const rows=sorted.map(p=>{
     const hit=p.actualNet>0;
     const slip=p.actualNet-p.predictedNet;
@@ -1982,9 +2021,9 @@ function renderTrackRecord(){
   }).join('');
   $('trTable').innerHTML=\`<div style="overflow-x:auto"><table>
     <thead><tr>
-      <th>Date</th><th>Commodity</th><th>Route</th>
-      <th>Buy ₨/kg</th><th>Predicted Sell</th><th>Actual Sell</th>
-      <th>Net ₨/kg</th><th>vs Predicted</th><th>Result</th>
+      \${th('Date','date')}\${th('Commodity','comm')}<th>Route</th>
+      \${th('Buy ₨/kg','buyP')}\${th('Predicted Sell','predictedSellP')}\${th('Actual Sell','actualSellP')}
+      \${th('Net ₨/kg','actualNet')}\${th('vs Predicted','slip')}\${th('Result','hit')}
     </tr></thead>
     <tbody>\${rows}</tbody>
   </table></div>
@@ -2759,6 +2798,78 @@ async function main() {
     warn('No data available. The planner will open but show empty tables.');
     warn('Run again without --plan-only once AMIS is reachable.');
   }
+
+  // ── Persist track record outcomes (accumulates indefinitely) ─────────────────
+  // Compute yesterday's picks vs today's actuals, append to TRACK_FILE
+  (() => {
+    try {
+      const allDates = [...new Set(records.map(r => r.date))].sort();
+      if (allDates.length < 2) return;
+      const today = allDates[allDates.length - 1];
+      const yesterday = allDates[allDates.length - 2];
+      if ((new Date(today) - new Date(yesterday)) > 3 * 86400000) return;
+      // Load existing file
+      let existing = [];
+      if (fs.existsSync(TRACK_FILE)) {
+        try { existing = JSON.parse(fs.readFileSync(TRACK_FILE, 'utf8')).outcomes || []; } catch(e) {}
+      }
+      // Skip if today's outcomes already saved
+      if (existing.some(o => o.date === yesterday && o.nextDate === today)) {
+        log('Track record: outcomes for ' + yesterday + '→' + today + ' already saved.');
+        return;
+      }
+      // Build fast lookup for yesterday & today (unflagged)
+      const idx = {};
+      for (const r of records) {
+        if (r.date !== yesterday && r.date !== today) continue;
+        const comm = r.commodity, city = r.city, p = r.fqp;
+        if (!p || (r.date === yesterday)) {
+          // flag check: use same 5x/0.2x peer logic (simplified: skip obvious outliers)
+        }
+        if (!idx[comm]) idx[comm] = {};
+        if (!idx[comm][city]) idx[comm][city] = {};
+        idx[comm][city][r.date] = r.fqp;
+      }
+      // Find top routes on yesterday, check today's prices
+      const comms = [...new Set(records.map(r => r.commodity))];
+      const routes = [];
+      for (const comm of comms) {
+        const cm = idx[comm] || {};
+        const activeCities = Object.keys(cm).filter(c => cm[c][yesterday]);
+        for (const buyCity of activeCities) {
+          const buyP = cm[buyCity][yesterday];
+          for (const sellCity of activeCities) {
+            if (buyCity === sellCity) continue;
+            const sellP = cm[sellCity][yesterday];
+            const spPct = (sellP - buyP) / buyP * 100;
+            if (spPct < 5) continue;
+            routes.push({ comm, buyCity, sellCity, buyP, predictedSellP: sellP, spPct });
+          }
+        }
+      }
+      routes.sort((a, b) => b.spPct - a.spPct);
+      const seen = new Set(); let count = 0;
+      const newOutcomes = [];
+      for (const r of routes) {
+        if (count >= 8) break;
+        const key = r.comm + '|' + r.buyCity + '|' + r.sellCity;
+        if (seen.has(key)) continue;
+        seen.add(key); count++;
+        const actualSellP = idx[r.comm]?.[r.sellCity]?.[today];
+        if (!actualSellP) continue;
+        newOutcomes.push({ date: yesterday, nextDate: today, comm: r.comm,
+          buyCity: r.buyCity, sellCity: r.sellCity,
+          buyP: r.buyP, predictedSellP: r.predictedSellP, actualSellP,
+          predictedNet: r.predictedSellP - r.buyP, actualNet: actualSellP - r.buyP,
+          spPct: Math.round(r.spPct * 10) / 10 });
+      }
+      if (newOutcomes.length) {
+        const merged = [...existing, ...newOutcomes];
+        fs.writeFileSync(TRACK_FILE, JSON.stringify({ updatedAt: new Date().toISOString(), outcomes: merged }, null, 2), 'utf8');
+        log(`Track record: saved ${newOutcomes.length} new outcomes (total ${merged.length})`);
+      }
+    } catch(e) { log('Track record save skipped: ' + e.message); }
+  })();
 
   log('Generating planner.html…');
   const html = generatePlannerHtml(records, arrivalRecords, uploadData, changesData);
