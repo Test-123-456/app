@@ -424,8 +424,9 @@ async function scrapeBackfill(fromDateStr) {
             allRecords.push({ date: isoDate, commodityId: id, commodity: name, key: key || name, ...r });
           fetched++;
         }
-        if (allRecords.length > 0 && allRecords.length % 2000 === 0)
-          log(`  ${allRecords.length.toLocaleString()} records collected so far…`);
+        // Log progress every 25 fetched days so the user can see activity
+        if (fetched > 0 && fetched % 25 === 0)
+          log(`  ${name}: ${fetched} days done, ${isoDate} … (${allRecords.length.toLocaleString()} total records)`);
       } catch (err) { warn(`  ${dateStr}: ${err.message}`); }
       await sleep(DELAY_MS);
     }
@@ -3146,6 +3147,19 @@ async function main() {
   console.log(`  ✅  Planner ready → ${PLAN_FILE}`);
   console.log('─'.repeat(58) + '\n');
 }
+
+process.on('uncaughtException', err => {
+  const msg = `[CRASH] uncaughtException: ${err.stack||err.message}\n`;
+  process.stderr.write(msg);
+  fs.appendFileSync(path.join(__dirname, 'backfill-crash.log'), new Date().toISOString()+'\n'+msg);
+  process.exit(1);
+});
+process.on('unhandledRejection', (reason) => {
+  const msg = `[CRASH] unhandledRejection: ${reason?.stack||reason}\n`;
+  process.stderr.write(msg);
+  fs.appendFileSync(path.join(__dirname, 'backfill-crash.log'), new Date().toISOString()+'\n'+msg);
+  process.exit(1);
+});
 
 main().catch(err => { console.error('[browse] Fatal:', err.message); process.exit(1); });
 
