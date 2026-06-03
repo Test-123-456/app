@@ -636,6 +636,13 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
     if (nFlagged) console.log(`[build] Cross-city outlier filter: ${nFlagged} suspect prices flagged`);
   }
 
+  // Count flags per city — used to show reliability badge in UI
+  const cityFlagCount = {};
+  for (const cities_ of Object.values(priceMap))
+    for (const [city, pts] of Object.entries(cities_))
+      for (const pt of pts)
+        if (pt.flagged) cityFlagCount[city] = (cityFlagCount[city] || 0) + 1;
+
   const commodities = Object.keys(priceMap).sort();
   const cities      = [...citySet].sort();
 
@@ -702,7 +709,7 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
   })();
   console.log(`[build] Track record: ${trackRecord.length} pick outcomes (incl. ${_savedOutcomes.length} saved)`);
 
-  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged, trackRecord });
+  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged, trackRecord, cityFlagCount });
   const embeddedRoad = JSON.stringify(ROAD_KM);
 
   // Build arrival map: arrivalMap[arrComm][city] = [{date, qty}] (last 30 days only, sorted asc)
@@ -1211,6 +1218,50 @@ function avgPx(comm,city,days){
 function latPx(comm,city){const s=D.priceMap[comm]?.[city];return s&&s.length?s.filter(p=>!p.flagged).at(-1)?.p??null:null;}
 function latDate(comm,city){const s=D.priceMap[comm]?.[city];return s&&s.length?s.filter(p=>!p.flagged).at(-1)?.date??null:null;}
 const TODAY=new Date().toISOString().slice(0,10);
+
+// Generic sortable-column handler — call after any table render
+function makeSortable(containerEl){
+  if(!containerEl) return;
+  const tbl=containerEl.tagName==='TABLE'?containerEl:containerEl.querySelector('table');
+  if(!tbl) return;
+  const tbody=tbl.querySelector('tbody'); if(!tbody) return;
+  tbl.querySelectorAll('thead th').forEach((th,ci)=>{
+    if(th.dataset.ms) return; // already wired
+    th.dataset.ms='1'; th.style.cursor='pointer';
+    const sa=document.createElement('span');
+    sa.className='sa'; sa.textContent=' ⇅';
+    sa.style.cssText='font-size:.63em;opacity:.3;margin-left:2px;user-select:none';
+    th.appendChild(sa);
+    th.addEventListener('click',()=>{
+      const dir=th._sd===1?-1:1; th._sd=dir;
+      tbl.querySelectorAll('thead th[data-ms]').forEach((t,j)=>{
+        if(j!==ci){t._sd=0;const s=t.querySelector('.sa');if(s){s.textContent=' ⇅';s.style.opacity='.3';}t.style.color='';}
+      });
+      sa.textContent=dir===1?' ▲':' ▼'; sa.style.opacity='1'; th.style.color='var(--green)';
+      const rows=[...tbody.querySelectorAll('tr')];
+      const sample=rows.find(r=>r.cells[ci]?.textContent.trim())?.cells[ci]?.textContent.trim()||'';
+      const isNum=!isNaN(parseFloat(sample.replace(/[₨,+%▲▼↑↓→←\s✅❌⚠️]/g,'')));
+      rows.sort((a,b)=>{
+        const ta=(a.cells[ci]?.textContent||'').replace(/[₨,+%▲▼↑↓→←✅❌⚠️]/g,'').trim();
+        const tb=(b.cells[ci]?.textContent||'').replace(/[₨,+%▲▼↑↓→←✅❌⚠️]/g,'').trim();
+        if(isNum){const na=parseFloat(ta)||0,nb=parseFloat(tb)||0;return dir*(na-nb);}
+        return dir*ta.localeCompare(tb);
+      });
+      rows.forEach(r=>tbody.appendChild(r));
+    });
+  });
+}
+
+// City reliability tag — shown in scorecards for cities with repeated data errors
+function cityReliabilityTag(city){
+  const n=D.cityFlagCount?.[city]||0; if(!n) return '';
+  const col=n>=5?'#ef4444':n>=3?'#f97316':'#f59e0b';
+  const title=n>=5?\`⚠ \${n} suspect entries from \${city} — likely habitual data-entry errors\`:
+               n>=3?\`⚠ \${n} suspect entries — tighten scrutiny on this city\'s prices\`:
+               \`⚠ \${n} suspect entry\`;
+  return \`<span title="\${title}" style="color:\${col};font-size:.68em;cursor:help"> ⚠\${n}×</span>\`;
+}
+
 function ageTag(comm,city){
   const d=latDate(comm,city); if(!d) return '';
   const days=Math.round((new Date(TODAY)-new Date(d))/86400000);
@@ -1476,6 +1527,7 @@ function renderPrices(){
       return \`<tr><td><strong>\${esc(cm_name)}</strong></td>\${cells}</tr>\`;
     }).join('');
     $('pTable').innerHTML=\`<table><thead>\${head}</thead><tbody>\${trows}</tbody></table>\`;
+    makeSortable($('pTable'));
     return;
   }
 
@@ -1514,8 +1566,9 @@ function renderPrices(){
     const ts=tr.p!=null?\`\${tr.a} \${Math.abs(tr.p).toFixed(1)}%\`:tr.a;
     const vs=vl?\`<span class="vol-b \${vl.c}">\${vl.b} \${vl.cv.toFixed(0)}%</span>\`:'';
     const flagNote=latFlagged?\` <span title="Latest reading suspect (>5× peer median)" style="color:#f59e0b">⚠</span>\`:'';
+    const relTag=cityReliabilityTag(c);
     return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}\${latFlagged?';opacity:.8':''}">
-      <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}\${uploadTag(c)}\${flagNote}</div>
+      <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}\${uploadTag(c)}\${flagNote}\${relTag}</div>
       <span class="tr-badge \${tr.c}">\${ts}</span>
       <div class="sb-val">\${latLo===latHi?'₨'+(latLo/100).toFixed(2):'₨'+(latLo/100).toFixed(2)+' – ₨'+(latHi/100).toFixed(2)}</div>
       <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg\${wmn<wmx?' · window ₨'+(wmn/100).toFixed(0)+'–₨'+(wmx/100).toFixed(0):''}</div>
@@ -1563,6 +1616,7 @@ function renderPrices(){
     return \`<tr><td>\${date}</td>\${cells}</tr>\`;
   }).join('');
   $('pTable').innerHTML=\`<table><thead>\${head}</thead><tbody>\${rows}</tbody></table>\`;
+  makeSortable($('pTable'));
 }
 
 function downloadCsv(){
@@ -1761,6 +1815,7 @@ function renderOneCity(city,dir,days,tons){
     <th></th>
   </tr></thead><tbody>\${trs}</tbody></table>
   \${rows.length>60?\`<p style="padding:8px 16px;color:var(--muted);font-size:.85em">Showing top 60 of \${rows.length} routes.</p>\`:''}\`;
+  makeSortable($('cp1Tbl'));
 }
 
 function renderPair(){
@@ -2714,6 +2769,7 @@ function renderWiHist(){
     <th>Date</th><th>Buy ₨/kg (\${esc(fr)})</th><th>Sell ₨/kg (\${esc(to)})</th>
     <th>Spread/kg</th><th>Truck/kg</th><th>Net/kg</th>
   </tr></thead><tbody>\${rows}</tbody></table>\`;
+  makeSortable($('wiHistTbl'));
 }
 
 document.addEventListener('DOMContentLoaded', init);
