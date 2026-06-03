@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T00:32:32.014Z",
+  "updatedAt": "2026-06-03T01:11:10.057Z",
   "date": "2026-06-03",
   "uploadTimes": [
     {
@@ -13,6 +13,22 @@
     {
       "city": "Sahiwal",
       "time": "05:26"
+    },
+    {
+      "city": "kotmoman",
+      "time": "05:47"
+    },
+    {
+      "city": "BahawalPur",
+      "time": "05:50"
+    },
+    {
+      "city": "Kahrorpacca",
+      "time": "06:04"
+    },
+    {
+      "city": "Lodhran",
+      "time": "06:06"
     }
   ]
 }
