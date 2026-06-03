@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T01:50:02.184Z",
+  "updatedAt": "2026-06-03T02:00:28.931Z",
   "date": "2026-06-03",
   "uploadTimes": [
     {
@@ -33,6 +33,18 @@
     {
       "city": "TTSingh",
       "time": "06:15"
+    },
+    {
+      "city": "Rawalpindi",
+      "time": "06:47"
+    },
+    {
+      "city": "Chichawatni",
+      "time": "06:48"
+    },
+    {
+      "city": "DunyaPur",
+      "time": "06:48"
     }
   ]
 }

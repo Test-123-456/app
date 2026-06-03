@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T01:50:01.939Z",
+  "updatedAt": "2026-06-03T02:00:28.658Z",
   "records": [
     {
       "date": "2026-06-03",
@@ -756,6 +756,114 @@
       "city": "Lodhran",
       "commodity": "Wheat",
       "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Apple",
+      "qty": 62
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Banana",
+      "qty": 105
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Chilli(Green)",
+      "qty": 47
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Citrus Fruit",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Cotton",
+      "qty": 70
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Dates",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Gram",
+      "qty": 315
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Maize",
+      "qty": 70
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Mango",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Mash",
+      "qty": 220
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Masoor",
+      "qty": 210
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Moong",
+      "qty": 200
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Onion",
+      "qty": 380
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Paddy",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Potato",
+      "qty": 374
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Rice",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Tomato",
+      "qty": 57
+    },
+    {
+      "date": "2026-06-03",
+      "city": "TTSingh",
+      "commodity": "Wheat",
+      "qty": 170
     },
     {
       "date": "2026-06-02",
