@@ -731,7 +731,13 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
         avgPred:Math.round(r.sumPred/r.days), avgActual:Math.round(r.sumActual/r.days),
         accuracy:r.sumPred>0?Math.round(r.sumActual/r.sumPred*100):null,
         lastDate:r.lastDate, lastSpPct:r.lastSpPct }))
-      .sort((a,b) => b.hitRate - a.hitRate || b.days - a.days)
+      .sort((a,b) => {
+        // Sort by expected value: (hitRate% × avgActual) — rewards routes that are
+        // both reliable AND profitable, so high-net ₨200+ routes rank alongside 100% routes
+        const evA = (a.hitRate/100) * Math.max(a.avgActual, 0);
+        const evB = (b.hitRate/100) * Math.max(b.avgActual, 0);
+        return evB - evA || b.days - a.days;
+      })
       .slice(0, 3000);
 
     return { trackRecord: picks, routeStats: rsArr };
