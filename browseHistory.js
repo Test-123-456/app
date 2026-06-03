@@ -1115,7 +1115,10 @@ function ageTag(comm,city){
   const d=latDate(comm,city); if(!d) return '';
   const days=Math.round((new Date(TODAY)-new Date(d))/86400000);
   if(days===0) return '';
-  return \`<br><small style="color:\${days<=1?'var(--muted)':'var(--dn)'};font-size:.7em">\${days}d old</small>\`;
+  const col=days<=1?'var(--muted)':'var(--dn)';
+  // ≤7 days: show "3d old"; older: show actual date "Apr 15" so user doesn't do maths
+  const label=days<=7?days+'d old':new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+  return \`<br><small style="color:\${col};font-size:.7em">\${label}</small>\`;
 }
 // Upload time tag — shows "📤 06:37" when city submitted rates today
 const _uploadMapNorm={}; // city lowercase → time "HH:MM"
