@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T01:11:09.762Z",
+  "updatedAt": "2026-06-03T01:50:01.939Z",
   "records": [
     {
       "date": "2026-06-03",
@@ -430,6 +430,330 @@
     {
       "date": "2026-06-03",
       "city": "Sheikhupura",
+      "commodity": "Wheat",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Apple",
+      "qty": 35
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Banana",
+      "qty": 14
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Chilli(Green)",
+      "qty": 168
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Citrus Fruit",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Cotton",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Dates",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Gram",
+      "qty": 30
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Maize",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Mango",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Mash",
+      "qty": 35
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Masoor",
+      "qty": 25
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Moong",
+      "qty": 40
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Onion",
+      "qty": 405
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Paddy",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Potato",
+      "qty": 693
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Rice",
+      "qty": 45
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Tomato",
+      "qty": 150
+    },
+    {
+      "date": "2026-06-03",
+      "city": "BahawalPur",
+      "commodity": "Wheat",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Apple",
+      "qty": 180
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Banana",
+      "qty": 650
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Chilli(Green)",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Citrus Fruit",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Cotton",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Dates",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Gram",
+      "qty": 150
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Maize",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Mango",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Mash",
+      "qty": 110
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Masoor",
+      "qty": 140
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Moong",
+      "qty": 120
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Onion",
+      "qty": 340
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Paddy",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Potato",
+      "qty": 365
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Rice",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Tomato",
+      "qty": 370
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujrat",
+      "commodity": "Wheat",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Apple",
+      "qty": 5
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Banana",
+      "qty": 40
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Chilli(Green)",
+      "qty": 10
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Citrus Fruit",
+      "qty": 7
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Cotton",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Dates",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Gram",
+      "qty": 115
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Maize",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Mango",
+      "qty": 18
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Mash",
+      "qty": 100
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Masoor",
+      "qty": 80
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Moong",
+      "qty": 110
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Onion",
+      "qty": 225
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Paddy",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Potato",
+      "qty": 235
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Rice",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
+      "commodity": "Tomato",
+      "qty": 205
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Lodhran",
       "commodity": "Wheat",
       "qty": 0
     },

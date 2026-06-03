@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T01:11:10.057Z",
+  "updatedAt": "2026-06-03T01:50:02.184Z",
   "date": "2026-06-03",
   "uploadTimes": [
     {
@@ -29,6 +29,10 @@
     {
       "city": "Lodhran",
       "time": "06:06"
+    },
+    {
+      "city": "TTSingh",
+      "time": "06:15"
     }
   ]
 }

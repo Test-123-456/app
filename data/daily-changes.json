@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T01:11:10.358Z",
+  "updatedAt": "2026-06-03T01:50:02.429Z",
   "date": "2026-06-03",
   "records": [
     {
@@ -260,6 +260,14 @@
     },
     {
       "city": "Sahiwal",
+      "commodity": "Apricot Yellow",
+      "today": 30000,
+      "yesterday": 27850,
+      "change": 2150,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
       "commodity": "Bottle Gourd (کدو)",
       "today": 3000,
       "yesterday": 2650,
@@ -281,6 +289,14 @@
       "yesterday": 11850,
       "change": -100,
       "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Loquat",
+      "today": 17300,
+      "yesterday": 15850,
+      "change": 1450,
+      "dir": "up"
     },
     {
       "city": "BahawalPur",
@@ -384,6 +400,46 @@
       "today": 3450,
       "yesterday": 2900,
       "change": 550,
+      "dir": "up"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Dates (Aseel)",
+      "today": 33950,
+      "yesterday": 33450,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 14100,
+      "yesterday": 12200,
+      "change": 1900,
+      "dir": "up"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Peach",
+      "today": 16900,
+      "yesterday": 16000,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 4650,
+      "yesterday": 5600,
+      "change": -950,
+      "dir": "down"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Tindian",
+      "today": 9400,
+      "yesterday": 8450,
+      "change": 950,
       "dir": "up"
     },
     {
