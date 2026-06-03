@@ -1,0 +1,31 @@
+{
+  "updatedAt": "2026-06-03T03:11:32.735Z",
+  "outcomes": [
+    {
+      "date": "2026-06-02",
+      "nextDate": "2026-06-03",
+      "comm": "Capsicum (شملہ مرچ)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "JamPur",
+      "buyP": 2750,
+      "predictedSellP": 15000,
+      "actualSellP": 15000,
+      "predictedNet": 12250,
+      "actualNet": 12250,
+      "spPct": 445.5
+    },
+    {
+      "date": "2026-06-02",
+      "nextDate": "2026-06-03",
+      "comm": "Potato Fresh",
+      "buyCity": "Vehari",
+      "sellCity": "JamPur",
+      "buyP": 1200,
+      "predictedSellP": 6200,
+      "actualSellP": 6700,
+      "predictedNet": 5000,
+      "actualNet": 5500,
+      "spPct": 416.7
+    }
+  ]
+}

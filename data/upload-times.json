@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T02:12:35.484Z",
+  "updatedAt": "2026-06-03T03:11:32.333Z",
   "date": "2026-06-03",
   "uploadTimes": [
     {
@@ -49,6 +49,98 @@
     {
       "city": "Jhelum",
       "time": "07:07"
+    },
+    {
+      "city": "Hazro",
+      "time": "07:12"
+    },
+    {
+      "city": "Burewala",
+      "time": "07:13"
+    },
+    {
+      "city": "Sraialamgir",
+      "time": "07:16"
+    },
+    {
+      "city": "Hasanabdal",
+      "time": "07:17"
+    },
+    {
+      "city": "LalaMusa",
+      "time": "07:23"
+    },
+    {
+      "city": "Mailsi",
+      "time": "07:24"
+    },
+    {
+      "city": "ArifWala",
+      "time": "07:25"
+    },
+    {
+      "city": "Patoki",
+      "time": "07:25"
+    },
+    {
+      "city": "Narowal",
+      "time": "07:27"
+    },
+    {
+      "city": "Shakargarh",
+      "time": "07:27"
+    },
+    {
+      "city": "Gujrat",
+      "time": "07:27"
+    },
+    {
+      "city": "Hafizabad",
+      "time": "07:31"
+    },
+    {
+      "city": "Sargodha",
+      "time": "07:31"
+    },
+    {
+      "city": "RahimYarKhan",
+      "time": "07:32"
+    },
+    {
+      "city": "Bhakhar",
+      "time": "07:36"
+    },
+    {
+      "city": "JamPur",
+      "time": "07:44"
+    },
+    {
+      "city": "Tandlianwala",
+      "time": "07:52"
+    },
+    {
+      "city": "Vehari",
+      "time": "07:53"
+    },
+    {
+      "city": "Sanglahill",
+      "time": "07:53"
+    },
+    {
+      "city": "MuzafarGhar",
+      "time": "07:55"
+    },
+    {
+      "city": "Jauharabad",
+      "time": "07:57"
+    },
+    {
+      "city": "Fortabas",
+      "time": "08:04"
+    },
+    {
+      "city": "Kasur",
+      "time": "08:04"
     }
   ]
 }
