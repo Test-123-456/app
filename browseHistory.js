@@ -32,6 +32,7 @@ const UPLOAD_FILE    = path.join(__dirname, 'data', 'upload-times.json');
 const CHANGES_FILE   = path.join(__dirname, 'data', 'daily-changes.json');
 const TRACK_FILE     = path.join(__dirname, 'data', 'track-record.json');
 const PLAN_FILE      = path.join(__dirname, 'reports', 'planner.html');
+const DOCS_DATA_DIR  = path.join(__dirname, 'docs', 'data');
 const ARRIVAL_URL    = `${BASE_URL}/Arrivalreports/ArrivalDatewise.aspx`;
 const RATE_STATS_URL = `${BASE_URL}/RateStatistics.aspx`;
 const CHANGES_URL    = `${BASE_URL}/Daily%20Market%20Changes.aspx`;
@@ -346,6 +347,63 @@ async function scrapeHistory(days, fetchAll) {
     await sleep(DELAY_MS * 2);
   }
   log(`Total scraped: ${allRecords.length} price points`);
+  return allRecords;
+}
+
+// ─── Backfill: smart historical scrape from a given date ─────────────────────
+// Skips (commodity, date) pairs already present in data/price-history.json.
+// Usage: node browseHistory.js --backfill=2024-01-01
+async function scrapeBackfill(fromDateStr) {
+  const fromDate = new Date(fromDateStr);
+  if (isNaN(fromDate)) { warn(`Invalid backfill date: ${fromDateStr}`); return []; }
+
+  const existing = loadExisting();
+  // Build a Set of "commodity|date" pairs we already have
+  const haveSet = new Set(existing.map(r => `${r.commodity}|${r.date}`));
+  log(`Backfill: ${haveSet.size} existing (commodity, date) pairs — will skip these`);
+
+  let commodities;
+  try { commodities = await discoverCommodities(); }
+  catch (err) { warn(`Cannot reach AMIS: ${err.message}`); return []; }
+
+  const targets = commodities.filter(c => c.key !== null);
+  const today   = new Date();
+  const totalDays = Math.ceil((today - fromDate) / 86400000) + 1;
+  log(`Backfill: ${targets.length} commodities × up to ${totalDays} days (${fromDateStr} → today)`);
+
+  const allRecords = [];
+  for (let ci = 0; ci < targets.length; ci++) {
+    const { id, name, key } = targets[ci];
+    log(`[${ci + 1}/${targets.length}] ${name} (id=${id})…`);
+
+    let pageState;
+    try { pageState = await fetchCommodityPage(id); }
+    catch (err) { warn(`  GET failed: ${err.message}`); await sleep(2000); continue; }
+
+    let fetched = 0, skipped = 0;
+    for (let d = 0; d < totalDays; d++) {
+      const date    = new Date(today.getTime() - d * 86_400_000);
+      if (date < fromDate) break;
+      const isoDate = toIsoDate(date);
+      // Skip dates we already have for this commodity
+      if (haveSet.has(`${name}|${isoDate}`)) { skipped++; continue; }
+
+      const dateStr = toAmisFmt(date);
+      try {
+        const html    = await fetchCommodityForDate(id, dateStr, pageState);
+        const records = parseViewTable(html);
+        for (const r of records)
+          allRecords.push({ date: isoDate, commodityId: id, commodity: name, key: key || name, ...r });
+        fetched++;
+        if (allRecords.length > 0 && allRecords.length % 2000 === 0)
+          log(`  ${allRecords.length.toLocaleString()} new records so far…`);
+      } catch (err) { warn(`  ${dateStr}: ${err.message}`); }
+      await sleep(DELAY_MS);
+    }
+    log(`  ${name}: fetched ${fetched} new days, skipped ${skipped} (already had)`);
+    await sleep(DELAY_MS * 2);
+  }
+  log(`Backfill complete: ${allRecords.length.toLocaleString()} new records`);
   return allRecords;
 }
 
@@ -744,8 +802,18 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
   })();
   console.log(`[build] Track record: ${trackRecord.length} daily picks, ${routeStats.length} routes embedded (top ${routeStats.length}, ≥5 days seen, active last 7d) — full universe analysed across 60 days`);
 
-  const embeddedData = JSON.stringify({ commodities, cities, priceMap, updatedAt: new Date().toISOString(), suspectPrices: nFlagged, trackRecord, routeStats, cityFlagCount });
-  const embeddedRoad = JSON.stringify(ROAD_KM);
+  // ── Write docs/data/prices.json (last 90 days for browser display) ───────────
+  // The full priceMap (which may span years) is used above for analytics;
+  // the browser only needs recent data to render price cards and charts.
+  const _displayCutoff = new Date(Date.now() - 90 * 86400000).toISOString().slice(0,10);
+  const _displayMap = {};
+  for (const [comm, citiesM] of Object.entries(priceMap)) {
+    _displayMap[comm] = {};
+    for (const [city, pts] of Object.entries(citiesM)) {
+      const recent = pts.filter(p => p.date >= _displayCutoff);
+      if (recent.length) _displayMap[comm][city] = recent;
+    }
+  }
 
   // Build arrival map: arrivalMap[arrComm][city] = [{date, qty}] (last 30 days only, sorted asc)
   const arrivalMap = {};
@@ -765,7 +833,6 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
     }
   }
   const arrivalComms = Object.keys(arrivalMap).sort();
-  const embeddedArrivals = JSON.stringify({ arrivalComms, arrivalMap, arrUpdatedAt: new Date().toISOString() });
 
   // Build live data: upload times + daily changes (today only)
   const todayStr = new Date().toISOString().slice(0, 10);
@@ -777,9 +844,24 @@ function generatePlannerHtml(records, arrivalRecords, uploadData, changesData) {
   // Daily changes records (today only, prices in PKR/100kg)
   const dailyChanges = (changesData && changesData.date === todayStr)
     ? (changesData.records || []) : [];
-  const embeddedLive = JSON.stringify({ uploadMap, dailyChanges, liveDate: todayStr,
-    uploadUpdatedAt: uploadData?.updatedAt || null,
-    changesUpdatedAt: changesData?.updatedAt || null });
+  // ── Write all docs/data/*.json files for fetch-based loading ────────────────
+  try {
+    if (!fs.existsSync(DOCS_DATA_DIR)) fs.mkdirSync(DOCS_DATA_DIR, { recursive: true });
+    fs.writeFileSync(path.join(DOCS_DATA_DIR, 'prices.json'),
+      JSON.stringify({ priceMap: _displayMap, commodities, cities,
+        updatedAt: new Date().toISOString(), suspectPrices: nFlagged, cityFlagCount }), 'utf8');
+    fs.writeFileSync(path.join(DOCS_DATA_DIR, 'analytics.json'),
+      JSON.stringify({ trackRecord, routeStats }), 'utf8');
+    fs.writeFileSync(path.join(DOCS_DATA_DIR, 'arrivals.json'),
+      JSON.stringify({ arrivalComms, arrivalMap, arrUpdatedAt: new Date().toISOString() }), 'utf8');
+    fs.writeFileSync(path.join(DOCS_DATA_DIR, 'live.json'),
+      JSON.stringify({ uploadMap, dailyChanges, liveDate: todayStr,
+        uploadUpdatedAt: uploadData?.updatedAt || null,
+        changesUpdatedAt: changesData?.updatedAt || null }), 'utf8');
+    fs.writeFileSync(path.join(DOCS_DATA_DIR, 'road.json'),
+      JSON.stringify(ROAD_KM), 'utf8');
+    console.log('[build] docs/data/ written: prices, analytics, arrivals, live, road');
+  } catch(e) { console.warn('[build] Could not write docs/data/:', e.message); }
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -1189,10 +1271,29 @@ td{padding:7px 10px;vertical-align:middle}
 </div>
 
 <script>
-const D   = ${embeddedData};
-const RD  = ${embeddedRoad};
-const AR   = ${embeddedArrivals};
-const LIVE = ${embeddedLive};
+// Data is loaded via fetch from docs/data/*.json (served by GitHub Pages).
+// Using separate files lets the history grow to years without bloating the HTML.
+let D, RD, AR, LIVE;
+async function _loadData() {
+  const scr = document.getElementById('_loadScr');
+  const errEl = document.getElementById('_loadErr');
+  try {
+    [D, AR, LIVE, RD] = await Promise.all([
+      fetch('data/prices.json').then(r=>{ if(!r.ok) throw new Error('prices '+r.status); return r.json(); }),
+      fetch('data/arrivals.json').then(r=>{ if(!r.ok) throw new Error('arrivals '+r.status); return r.json(); }),
+      fetch('data/live.json').then(r=>{ if(!r.ok) throw new Error('live '+r.status); return r.json(); }),
+      fetch('data/road.json').then(r=>{ if(!r.ok) throw new Error('road '+r.status); return r.json(); }),
+    ]);
+    const an = await fetch('data/analytics.json').then(r=>{ if(!r.ok) throw new Error('analytics '+r.status); return r.json(); });
+    D.trackRecord = an.trackRecord || [];
+    D.routeStats  = an.routeStats  || [];
+  } catch(e) {
+    if(errEl) errEl.textContent = 'Could not load data: ' + e.message + '. Try refreshing or open from GitHub Pages.';
+    return;
+  }
+  if(scr) scr.style.display = 'none';
+  init();
+}
 const $    = id => document.getElementById(id);
 const esc = s  => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const pkr = n  => n==null?'—':(n<0?'-₨':'₨')+Math.abs(Math.round(n)).toLocaleString();
@@ -2825,8 +2926,13 @@ function renderWiHist(){
   makeSortable($('wiHistTbl'));
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', _loadData);
 </script>
+<div id="_loadScr" style="position:fixed;inset:0;background:#f1f5f9;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;gap:14px">
+  <div style="color:#01411C;font-size:1.6em;font-weight:800;letter-spacing:-.02em">🚚 AMIS Planner</div>
+  <div style="color:#64748b;font-size:.95em">Loading market data…</div>
+  <div id="_loadErr" style="color:#dc2626;font-size:.85em;max-width:380px;text-align:center;padding:0 16px"></div>
+</div>
 </body>
 </html>`;
 }
@@ -2834,18 +2940,34 @@ document.addEventListener('DOMContentLoaded', init);
 // ─── Entry point ──────────────────────────────────────────────────────────────
 
 async function main() {
-  const args      = process.argv.slice(2);
-  const probeOnly = args.includes('--probe');
-  const planOnly  = args.includes('--plan-only');
-  const fetchAll  = args.includes('--all');
-  const daysArg   = args.find(a => /^--days[=\s]/.test(a));
-  const days      = daysArg ? parseInt(daysArg.replace(/^--days[=\s]/, '')) : 60;
-  const pruneArg  = args.find(a => /^--prune[=\s]/.test(a));
-  const pruneDays = pruneArg ? parseInt(pruneArg.replace(/^--prune[=\s]/, '')) : 0;
+  const args        = process.argv.slice(2);
+  const probeOnly   = args.includes('--probe');
+  const planOnly    = args.includes('--plan-only');
+  const fetchAll    = args.includes('--all');
+  const daysArg     = args.find(a => /^--days[=\s]/.test(a));
+  const days        = daysArg ? parseInt(daysArg.replace(/^--days[=\s]/, '')) : 60;
+  const pruneArg    = args.find(a => /^--prune[=\s]/.test(a));
+  const pruneDays   = pruneArg ? parseInt(pruneArg.replace(/^--prune[=\s]/, '')) : 0;
+  const backfillArg = args.find(a => /^--backfill=/.test(a));
 
   console.log('\n' + '─'.repeat(58));
   console.log('  🚚  AMIS Historical Arbitrage Planner');
   console.log('─'.repeat(58) + '\n');
+
+  // ── Backfill mode: fetch historical data from a given date ──────────────────
+  if (backfillArg) {
+    const fromDate = backfillArg.replace('--backfill=', '');
+    log(`Backfill mode: fetching from ${fromDate} to today (skipping existing data)`);
+    const fresh = await scrapeBackfill(fromDate);
+    if (fresh.length > 0) {
+      const existing = loadExisting();
+      mergeAndSave(fresh, existing);
+      log(`Backfill complete. Run --plan-only to regenerate HTML with the new data.`);
+    } else {
+      log('No new records fetched — data may already be up to date for this range.');
+    }
+    return;
+  }
 
   if (probeOnly) {
     try {
