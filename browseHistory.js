@@ -1317,15 +1317,18 @@ function renderPrices(){
     $('pStats').innerHTML=commsToShow.map((cm_name,i)=>{
       const pts=(D.priceMap[cm_name]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to));
       const pr=pts.map(p=>p.p),avg=pr.reduce((s,v)=>s+v,0)/pr.length;
-      const mn=Math.min(...pr),mx=Math.max(...pr);
+      const wmn=Math.min(...pr),wmx=Math.max(...pr);
+      // Latest reading's daily low/high (AMIS reports a range per day)
+      const latPt=pts[pts.length-1];
+      const latLo=latPt?.min??latPt?.p,latHi=latPt?.max??latPt?.p;
       const tr=trend(cm_name,city),vl=vol(cm_name,city,0);
       const ts=tr.p!=null?\`\${tr.a} \${Math.abs(tr.p).toFixed(1)}%\`:tr.a;
       const vs=vl?\`<span class="vol-b \${vl.c}">\${vl.b}</span>\`:'';
       return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}">
         <div class="sb-lbl">\${esc(cm_name)}\${ageTag(cm_name,city)}\${uploadTag(city)}</div>
         <span class="tr-badge \${tr.c}">\${ts}</span>
-        <div class="sb-val">\${mn===mx?'₨'+(mn/100).toFixed(2):'₨'+(mn/100).toFixed(2)+' – ₨'+(mx/100).toFixed(2)}</div>
-        <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg</div>
+        <div class="sb-val">\${latLo===latHi?'₨'+(latLo/100).toFixed(2):'₨'+(latLo/100).toFixed(2)+' – ₨'+(latHi/100).toFixed(2)}</div>
+        <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg\${wmn<wmx?' · window ₨'+(wmn/100).toFixed(0)+'–₨'+(wmx/100).toFixed(0):''}</div>
         \${vs}
       </div>\`;
     }).join('');
@@ -1396,7 +1399,10 @@ function renderPrices(){
     const vpts=pts.filter(p=>!p.flagged),usePts=vpts.length?vpts:pts;
     const latFlagged=pts.length&&pts[pts.length-1].flagged;
     const pr=usePts.map(p=>p.p),avg=pr.reduce((s,v)=>s+v,0)/pr.length;
-    const mn=Math.min(...pr),mx=Math.max(...pr);
+    const wmn=Math.min(...pr),wmx=Math.max(...pr);
+    // Latest reading's daily low/high (AMIS reports a range per day)
+    const latPt=usePts[usePts.length-1];
+    const latLo=latPt?.min??latPt?.p,latHi=latPt?.max??latPt?.p;
     const tr=trend(comm,c),vl=vol(comm,c,winD);
     const ts=tr.p!=null?\`\${tr.a} \${Math.abs(tr.p).toFixed(1)}%\`:tr.a;
     const vs=vl?\`<span class="vol-b \${vl.c}">\${vl.b} \${vl.cv.toFixed(0)}%</span>\`:'';
@@ -1404,8 +1410,8 @@ function renderPrices(){
     return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}\${latFlagged?';opacity:.8':''}">
       <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}\${uploadTag(c)}\${flagNote}</div>
       <span class="tr-badge \${tr.c}">\${ts}</span>
-      <div class="sb-val">\${mn===mx?'₨'+(mn/100).toFixed(2):'₨'+(mn/100).toFixed(2)+' – ₨'+(mx/100).toFixed(2)}</div>
-      <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg\${mn<mx?' · spread '+((mx-mn)/mn*100).toFixed(0)+'%':''}</div>
+      <div class="sb-val">\${latLo===latHi?'₨'+(latLo/100).toFixed(2):'₨'+(latLo/100).toFixed(2)+' – ₨'+(latHi/100).toFixed(2)}</div>
+      <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg\${wmn<wmx?' · window ₨'+(wmn/100).toFixed(0)+'–₨'+(wmx/100).toFixed(0):''}</div>
       <div class="sb-sub">\${vpts.length<pts.length?pts.length+' readings ('+( pts.length-vpts.length)+' suspect)':pts.length+' readings'}</div>
       \${vs}
     </div>\`;
