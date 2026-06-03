@@ -4,3 +4,4 @@ reports/
 *.log
 cache/
 amis-planner/
+data/empty-dates.json

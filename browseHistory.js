@@ -352,26 +352,47 @@ async function scrapeHistory(days, fetchAll) {
 
 // ─── Backfill: smart historical scrape from a given date ─────────────────────
 // Skips (commodity, date) pairs already present in data/price-history.json.
+// Also persists "known-empty" dates to data/empty-dates.json so they are
+// never re-fetched (saves hours on resumption / future runs).
 // Usage: node browseHistory.js --backfill=2024-01-01
+const EMPTY_FILE = path.join(__dirname, 'data', 'empty-dates.json');
+
+function loadEmptyDates() {
+  try {
+    if (!fs.existsSync(EMPTY_FILE)) return new Set();
+    const obj = JSON.parse(fs.readFileSync(EMPTY_FILE, 'utf8'));
+    // stored as { "commodity|date": true, ... }
+    return new Set(Object.keys(obj));
+  } catch { return new Set(); }
+}
+
+function saveEmptyDates(emptySet) {
+  const obj = {};
+  for (const k of emptySet) obj[k] = 1;
+  fs.writeFileSync(EMPTY_FILE, JSON.stringify(obj), 'utf8');
+}
+
 async function scrapeBackfill(fromDateStr) {
   const fromDate = new Date(fromDateStr);
   if (isNaN(fromDate)) { warn(`Invalid backfill date: ${fromDateStr}`); return []; }
 
-  const existing = loadExisting();
-  // Build a Set of "commodity|date" pairs we already have
-  const haveSet = new Set(existing.map(r => `${r.commodity}|${r.date}`));
-  log(`Backfill: ${haveSet.size} existing (commodity, date) pairs — will skip these`);
+  const existing  = loadExisting();
+  const haveSet   = new Set(existing.map(r => `${r.commodity}|${r.date}`));
+  const emptySet  = loadEmptyDates();  // known-empty (commodity, date) pairs — skip immediately
+  log(`Backfill: ${haveSet.size} existing pairs, ${emptySet.size} known-empty pairs`);
 
   let commodities;
   try { commodities = await discoverCommodities(); }
   catch (err) { warn(`Cannot reach AMIS: ${err.message}`); return []; }
 
-  const targets = commodities.filter(c => c.key !== null);
-  const today   = new Date();
+  const targets   = commodities.filter(c => c.key !== null);
+  const today     = new Date();
   const totalDays = Math.ceil((today - fromDate) / 86400000) + 1;
   log(`Backfill: ${targets.length} commodities × up to ${totalDays} days (${fromDateStr} → today)`);
 
   const allRecords = [];
+  let newEmptyCount = 0;
+
   for (let ci = 0; ci < targets.length; ci++) {
     const { id, name, key } = targets[ci];
     log(`[${ci + 1}/${targets.length}] ${name} (id=${id})…`);
@@ -380,29 +401,42 @@ async function scrapeBackfill(fromDateStr) {
     try { pageState = await fetchCommodityPage(id); }
     catch (err) { warn(`  GET failed: ${err.message}`); await sleep(2000); continue; }
 
-    let fetched = 0, skipped = 0;
+    let fetched = 0, skippedHave = 0, skippedEmpty = 0;
     for (let d = 0; d < totalDays; d++) {
       const date    = new Date(today.getTime() - d * 86_400_000);
       if (date < fromDate) break;
       const isoDate = toIsoDate(date);
-      // Skip dates we already have for this commodity
-      if (haveSet.has(`${name}|${isoDate}`)) { skipped++; continue; }
+      const pairKey = `${name}|${isoDate}`;
+
+      if (haveSet.has(pairKey))   { skippedHave++;  continue; }  // already in storage
+      if (emptySet.has(pairKey))  { skippedEmpty++; continue; }  // known empty, skip
 
       const dateStr = toAmisFmt(date);
       try {
         const html    = await fetchCommodityForDate(id, dateStr, pageState);
         const records = parseViewTable(html);
-        for (const r of records)
-          allRecords.push({ date: isoDate, commodityId: id, commodity: name, key: key || name, ...r });
-        fetched++;
+        if (records.length === 0) {
+          // AMIS returned nothing — mark as known-empty so we never fetch it again
+          emptySet.add(pairKey);
+          newEmptyCount++;
+        } else {
+          for (const r of records)
+            allRecords.push({ date: isoDate, commodityId: id, commodity: name, key: key || name, ...r });
+          fetched++;
+        }
         if (allRecords.length > 0 && allRecords.length % 2000 === 0)
-          log(`  ${allRecords.length.toLocaleString()} new records so far…`);
+          log(`  ${allRecords.length.toLocaleString()} records collected so far…`);
       } catch (err) { warn(`  ${dateStr}: ${err.message}`); }
       await sleep(DELAY_MS);
     }
-    log(`  ${name}: fetched ${fetched} new days, skipped ${skipped} (already had)`);
+    log(`  ${name}: ${fetched} new days fetched, ${skippedHave} already had, ${skippedEmpty} known-empty skipped`);
+
+    // Save empty-dates after each commodity so progress survives interruption
+    if (newEmptyCount > 0) { saveEmptyDates(emptySet); newEmptyCount = 0; }
     await sleep(DELAY_MS * 2);
   }
+
+  saveEmptyDates(emptySet);  // final save
   log(`Backfill complete: ${allRecords.length.toLocaleString()} new records`);
   return allRecords;
 }
