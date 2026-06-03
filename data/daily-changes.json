@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T03:11:32.687Z",
+  "updatedAt": "2026-06-03T03:22:42.084Z",
   "date": "2026-06-03",
   "records": [
     {
@@ -1739,6 +1739,22 @@
       "dir": "up"
     },
     {
+      "city": "DGKHAN",
+      "commodity": "Potato Fresh",
+      "today": 2000,
+      "yesterday": 2100,
+      "change": -100,
+      "dir": "down"
+    },
+    {
+      "city": "DGKHAN",
+      "commodity": "Tomato",
+      "today": 3750,
+      "yesterday": 3400,
+      "change": 350,
+      "dir": "up"
+    },
+    {
       "city": "LalaMusa",
       "commodity": "Rice Basmati Super (New)",
       "today": 30000,
@@ -2283,6 +2299,70 @@
       "dir": "up"
     },
     {
+      "city": "Kalurkot",
+      "commodity": "Wheat",
+      "today": 9900,
+      "yesterday": 9650,
+      "change": 250,
+      "dir": "up"
+    },
+    {
+      "city": "Kalurkot",
+      "commodity": "Moong",
+      "today": 19250,
+      "yesterday": 19000,
+      "change": 250,
+      "dir": "up"
+    },
+    {
+      "city": "Kalurkot",
+      "commodity": "Pumpkin",
+      "today": 4300,
+      "yesterday": 5200,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Kalurkot",
+      "commodity": "Cabbage",
+      "today": 6300,
+      "yesterday": 7100,
+      "change": -800,
+      "dir": "down"
+    },
+    {
+      "city": "Kalurkot",
+      "commodity": "Watermelon",
+      "today": 2200,
+      "yesterday": 2300,
+      "change": -100,
+      "dir": "down"
+    },
+    {
+      "city": "Kalurkot",
+      "commodity": "Mango Desi",
+      "today": 16600,
+      "yesterday": 12500,
+      "change": 4100,
+      "dir": "up"
+    },
+    {
+      "city": "Kalurkot",
+      "commodity": "Apricot White",
+      "today": 35200,
+      "yesterday": 26800,
+      "change": 8400,
+      "dir": "up"
+    },
+    {
+      "city": "Kalurkot",
+      "commodity": "Rice Kainat (New)",
+      "today": 26250,
+      "yesterday": 28250,
+      "change": -2000,
+      "dir": "down"
+    },
+    {
       "city": "Fortabas",
       "commodity": "Lady Finger/Okra (بھنڈی توری)",
       "today": 5250,
@@ -2609,6 +2689,38 @@
       "yesterday": 14500,
       "change": 250,
       "dir": "up"
+    },
+    {
+      "city": "Pindibhattian",
+      "commodity": "Tinda Desi",
+      "today": 10800,
+      "yesterday": 11300,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Pindibhattian",
+      "commodity": "Mango(Desahri)",
+      "today": 19800,
+      "yesterday": 25800,
+      "change": -6000,
+      "dir": "down"
+    },
+    {
+      "city": "Pindibhattian",
+      "commodity": "Melon",
+      "today": 11800,
+      "yesterday": 11300,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Pindibhattian",
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 3800,
+      "yesterday": 4750,
+      "change": -950,
+      "dir": "down"
     },
     {
       "city": "Shakargarh",

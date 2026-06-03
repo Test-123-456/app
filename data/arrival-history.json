@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T03:11:32.012Z",
+  "updatedAt": "2026-06-03T03:22:41.498Z",
   "records": [
     {
       "date": "2026-06-03",
@@ -2592,6 +2592,222 @@
       "city": "Vehari",
       "commodity": "Wheat",
       "qty": 250
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Apple",
+      "qty": 30
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Banana",
+      "qty": 400
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Chilli(Green)",
+      "qty": 96
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Citrus Fruit",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Cotton",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Dates",
+      "qty": 10
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Gram",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Maize",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Mango",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Mash",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Masoor",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Moong",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Onion",
+      "qty": 250
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Paddy",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Potato",
+      "qty": 240
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Rice",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Tomato",
+      "qty": 110
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Chiniot",
+      "commodity": "Wheat",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Apple",
+      "qty": 900
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Banana",
+      "qty": 200
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Chilli(Green)",
+      "qty": 400
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Citrus Fruit",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Cotton",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Dates",
+      "qty": 100
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Gram",
+      "qty": 81
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Maize",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Mango",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Mash",
+      "qty": 6
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Masoor",
+      "qty": 42
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Moong",
+      "qty": 7
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Onion",
+      "qty": 5700
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Paddy",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Potato",
+      "qty": 4800
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Rice",
+      "qty": 0
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Tomato",
+      "qty": 1800
+    },
+    {
+      "date": "2026-06-03",
+      "city": "Gujranwala",
+      "commodity": "Wheat",
+      "qty": 0
     },
     {
       "date": "2026-06-02",

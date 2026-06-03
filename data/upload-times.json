@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T03:11:32.333Z",
+  "updatedAt": "2026-06-03T03:22:41.775Z",
   "date": "2026-06-03",
   "uploadTimes": [
     {
@@ -141,6 +141,22 @@
     {
       "city": "Kasur",
       "time": "08:04"
+    },
+    {
+      "city": "Pindibhattian",
+      "time": "08:09"
+    },
+    {
+      "city": "DGKHAN",
+      "time": "08:10"
+    },
+    {
+      "city": "Mianwali",
+      "time": "08:16"
+    },
+    {
+      "city": "Kalurkot",
+      "time": "08:19"
     }
   ]
 }
