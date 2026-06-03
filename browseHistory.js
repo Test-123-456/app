@@ -1321,7 +1321,7 @@ function renderPrices(){
       return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}">
         <div class="sb-lbl">\${esc(cm_name)}\${ageTag(cm_name,city)}\${uploadTag(city)}</div>
         <span class="tr-badge \${tr.c}">\${ts}</span>
-        <div class="sb-val">₨\${(mn/100).toFixed(2)} – ₨\${(mx/100).toFixed(2)}</div>
+        <div class="sb-val">\${mn===mx?'₨'+(mn/100).toFixed(2):'₨'+(mn/100).toFixed(2)+' – ₨'+(mx/100).toFixed(2)}</div>
         <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg</div>
         \${vs}
       </div>\`;
@@ -1345,7 +1345,10 @@ function renderPrices(){
     }
     // Wide table: rows = commodities (in sorted order), cols = dates
     const allCommsWithData=commsToShow; // already filtered & sorted
-    const dates=[...new Set(allCommsWithData.flatMap(c=>(D.priceMap[c]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))].sort();
+    const _allDatesC=[...new Set(allCommsWithData.flatMap(c=>(D.priceMap[c]?.[city]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))];
+    // Only show dates where ≥2 commodities have data — removes sparse old dates
+    const _minComms=Math.min(2,allCommsWithData.length);
+    const dates=_allDatesC.filter(d=>allCommsWithData.filter(c=>(D.priceMap[c]?.[city]||[]).some(p=>p.date===d)).length>=_minComms).sort();
     if(!dates.length){$('pTable').innerHTML='<p style="padding:16px;color:var(--muted)">No data for '+city+'.</p>';return;}
     $('chartTitle').textContent='All commodities — '+city+' (₨/kg, top 8 shown in chart)';
     const head='<tr><th>Commodity</th>'+dates.map(d=>\`<th>\${d}</th>\`).join('')+'</tr>';
@@ -1398,8 +1401,8 @@ function renderPrices(){
     return \`<div class="sb" style="border-left:3px solid \${CLR[i%CLR.length]}\${latFlagged?';opacity:.8':''}">
       <div class="sb-lbl">\${esc(c)}\${ageTag(comm,c)}\${uploadTag(c)}\${flagNote}</div>
       <span class="tr-badge \${tr.c}">\${ts}</span>
-      <div class="sb-val">₨\${(mn/100).toFixed(2)} – ₨\${(mx/100).toFixed(2)}</div>
-      <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg · spread \${mn>0?((mx-mn)/mn*100).toFixed(0)+'%':''}</div>
+      <div class="sb-val">\${mn===mx?'₨'+(mn/100).toFixed(2):'₨'+(mn/100).toFixed(2)+' – ₨'+(mx/100).toFixed(2)}</div>
+      <div class="sb-sub">avg ₨\${(avg/100).toFixed(2)} /kg\${mn<mx?' · spread '+((mx-mn)/mn*100).toFixed(0)+'%':''}</div>
       <div class="sb-sub">\${vpts.length<pts.length?pts.length+' readings ('+( pts.length-vpts.length)+' suspect)':pts.length+' readings'}</div>
       \${vs}
     </div>\`;
@@ -1425,7 +1428,10 @@ function renderPrices(){
   }
 
   const fC=citiesToShow; // already filtered & sorted by the sort control above
-  const dates=[...new Set(fC.flatMap(c=>(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))].sort((a,b)=>b.localeCompare(a));
+  const _allDates=[...new Set(fC.flatMap(c=>(cm[c]||[]).filter(p=>(!from||p.date>=from)&&(!to||p.date<=to)).map(p=>p.date)))];
+  // Only show dates where ≥2 cities have data — removes sparse/isolated old readings
+  const _minCities=Math.min(2,fC.length);
+  const dates=_allDates.filter(d=>fC.filter(c=>(cm[c]||[]).some(p=>p.date===d)).length>=_minCities).sort((a,b)=>b.localeCompare(a));
   if(!dates.length){$('pTable').innerHTML='<p style="padding:16px;color:var(--muted)">No data.</p>';return;}
   const head='<tr><th>Date</th>'+fC.map(c=>\`<th>\${esc(c)}</th>\`).join('')+'</tr>';
   const rows=dates.map(date=>{
