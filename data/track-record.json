@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-04T07:32:42.655Z",
+  "updatedAt": "2026-06-05T07:17:04.921Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -130,6 +130,58 @@
       "predictedNet": 5150,
       "actualNet": 3250,
       "spPct": 332.3
+    },
+    {
+      "date": "2026-06-04",
+      "nextDate": "2026-06-05",
+      "comm": "Watermelon",
+      "buyCity": "Shorkot",
+      "sellCity": "Gujranwala",
+      "buyP": 1500,
+      "predictedSellP": 10500,
+      "actualSellP": 4500,
+      "predictedNet": 9000,
+      "actualNet": 3000,
+      "spPct": 600
+    },
+    {
+      "date": "2026-06-04",
+      "nextDate": "2026-06-05",
+      "comm": "Watermelon",
+      "buyCity": "Shorkot",
+      "sellCity": "Summandri",
+      "buyP": 1500,
+      "predictedSellP": 10350,
+      "actualSellP": 3375,
+      "predictedNet": 8850,
+      "actualNet": 1875,
+      "spPct": 590
+    },
+    {
+      "date": "2026-06-04",
+      "nextDate": "2026-06-05",
+      "comm": "Watermelon",
+      "buyCity": "HujraShahmuqeem",
+      "sellCity": "Gujranwala",
+      "buyP": 1800,
+      "predictedSellP": 10500,
+      "actualSellP": 4500,
+      "predictedNet": 8700,
+      "actualNet": 2700,
+      "spPct": 483.3
+    },
+    {
+      "date": "2026-06-04",
+      "nextDate": "2026-06-05",
+      "comm": "Watermelon",
+      "buyCity": "HujraShahmuqeem",
+      "sellCity": "Summandri",
+      "buyP": 1800,
+      "predictedSellP": 10350,
+      "actualSellP": 3375,
+      "predictedNet": 8550,
+      "actualNet": 1575,
+      "spPct": 475
     }
   ]
 }

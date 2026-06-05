@@ -1,306 +1,298 @@
 {
-  "updatedAt": "2026-06-04T07:32:38.914Z",
-  "date": "2026-06-04",
+  "updatedAt": "2026-06-05T07:17:01.752Z",
+  "date": "2026-06-05",
   "uploadTimes": [
     {
       "city": "Lahore",
-      "time": "04:46"
+      "time": "02:46"
     },
     {
       "city": "Chakwal",
-      "time": "05:00"
+      "time": "05:01"
     },
     {
       "city": "Sahiwal",
-      "time": "05:34"
+      "time": "05:27"
     },
     {
       "city": "BahawalPur",
-      "time": "05:37"
-    },
-    {
-      "city": "Qadirpurrawan",
-      "time": "05:57"
-    },
-    {
-      "city": "Kahrorpacca",
-      "time": "06:20"
-    },
-    {
-      "city": "kotmoman",
-      "time": "06:27"
+      "time": "05:43"
     },
     {
       "city": "Lodhran",
-      "time": "06:33"
+      "time": "06:14"
     },
     {
       "city": "Rawalpindi",
-      "time": "06:34"
+      "time": "06:46"
     },
     {
       "city": "Chichawatni",
-      "time": "06:50"
-    },
-    {
-      "city": "Jhelum",
-      "time": "07:02"
-    },
-    {
-      "city": "Sillanwali",
-      "time": "07:02"
-    },
-    {
-      "city": "Hafizabad",
-      "time": "07:03"
-    },
-    {
-      "city": "Bhakhar",
-      "time": "07:05"
-    },
-    {
-      "city": "Tandlianwala",
-      "time": "07:12"
-    },
-    {
-      "city": "Hazro",
-      "time": "07:16"
-    },
-    {
-      "city": "Jhang",
-      "time": "07:16"
-    },
-    {
-      "city": "RahimYarKhan",
-      "time": "07:20"
-    },
-    {
-      "city": "Sraialamgir",
-      "time": "07:20"
-    },
-    {
-      "city": "Faisalabad",
-      "time": "07:23"
-    },
-    {
-      "city": "Hasanabdal",
-      "time": "07:24"
-    },
-    {
-      "city": "TTSingh",
-      "time": "07:25"
-    },
-    {
-      "city": "Pindibhattian",
-      "time": "07:32"
-    },
-    {
-      "city": "LalaMusa",
-      "time": "07:33"
-    },
-    {
-      "city": "Mailsi",
-      "time": "07:33"
-    },
-    {
-      "city": "Narowal",
-      "time": "07:38"
-    },
-    {
-      "city": "Shakargarh",
-      "time": "07:38"
-    },
-    {
-      "city": "Gujrat",
-      "time": "07:38"
-    },
-    {
-      "city": "KotAdu",
-      "time": "07:39"
-    },
-    {
-      "city": "Khanpur",
-      "time": "07:40"
-    },
-    {
-      "city": "Sargodha",
-      "time": "07:42"
-    },
-    {
-      "city": "Burewala",
-      "time": "07:50"
-    },
-    {
-      "city": "Vehari",
-      "time": "07:54"
-    },
-    {
-      "city": "GujarKhan",
-      "time": "08:10"
-    },
-    {
-      "city": "Nankana",
-      "time": "08:17"
-    },
-    {
-      "city": "JamPur",
-      "time": "08:18"
-    },
-    {
-      "city": "DGKHAN",
-      "time": "08:23"
-    },
-    {
-      "city": "Jahanian",
-      "time": "08:27"
-    },
-    {
-      "city": "Patoki",
-      "time": "08:34"
-    },
-    {
-      "city": "Sanglahill",
-      "time": "08:40"
-    },
-    {
-      "city": "Mianwali",
-      "time": "08:41"
-    },
-    {
-      "city": "Taunsasharif",
-      "time": "08:44"
-    },
-    {
-      "city": "RajanPur",
-      "time": "08:48"
-    },
-    {
-      "city": "Sambrial",
-      "time": "08:49"
-    },
-    {
-      "city": "Abdulhakim",
-      "time": "08:52"
-    },
-    {
-      "city": "TALAGANG",
-      "time": "08:55"
-    },
-    {
-      "city": "Daska",
-      "time": "08:56"
-    },
-    {
-      "city": "Chiniot",
-      "time": "08:57"
-    },
-    {
-      "city": "HujraShahmuqeem",
-      "time": "08:58"
-    },
-    {
-      "city": "Okara",
-      "time": "09:00"
-    },
-    {
-      "city": "Bhalwal",
-      "time": "09:01"
-    },
-    {
-      "city": "Layyah",
-      "time": "09:15"
-    },
-    {
-      "city": "PirMahal",
-      "time": "09:18"
-    },
-    {
-      "city": "Yazman",
-      "time": "09:21"
+      "time": "06:48"
     },
     {
       "city": "DunyaPur",
-      "time": "09:21"
+      "time": "06:56"
     },
     {
-      "city": "Multan",
-      "time": "09:28"
+      "city": "Bhakhar",
+      "time": "07:08"
     },
     {
-      "city": "LiaqatPur",
-      "time": "09:29"
+      "city": "Chiniot",
+      "time": "07:16"
     },
     {
-      "city": "ArifWala",
-      "time": "09:30"
+      "city": "Burewala",
+      "time": "07:17"
+    },
+    {
+      "city": "Jhelum",
+      "time": "07:21"
+    },
+    {
+      "city": "Yazman",
+      "time": "07:26"
+    },
+    {
+      "city": "Sraialamgir",
+      "time": "07:31"
+    },
+    {
+      "city": "JamPur",
+      "time": "07:38"
+    },
+    {
+      "city": "Hafizabad",
+      "time": "07:39"
+    },
+    {
+      "city": "RahimYarKhan",
+      "time": "07:39"
+    },
+    {
+      "city": "Sanglahill",
+      "time": "07:41"
+    },
+    {
+      "city": "Hazro",
+      "time": "07:41"
+    },
+    {
+      "city": "Kahrorpacca",
+      "time": "07:44"
     },
     {
       "city": "Jauharabad",
-      "time": "09:30"
+      "time": "07:46"
     },
     {
-      "city": "Jaranwala",
-      "time": "09:35"
+      "city": "Narowal",
+      "time": "07:48"
+    },
+    {
+      "city": "Hasanabdal",
+      "time": "07:48"
+    },
+    {
+      "city": "Nankana",
+      "time": "07:50"
+    },
+    {
+      "city": "Jhang",
+      "time": "07:54"
+    },
+    {
+      "city": "Vehari",
+      "time": "07:57"
     },
     {
       "city": "Khudian",
-      "time": "09:41"
+      "time": "07:57"
+    },
+    {
+      "city": "TTSingh",
+      "time": "08:05"
+    },
+    {
+      "city": "ArifWala",
+      "time": "08:15"
+    },
+    {
+      "city": "HujraShahmuqeem",
+      "time": "08:16"
+    },
+    {
+      "city": "GujarKhan",
+      "time": "08:17"
+    },
+    {
+      "city": "Kalurkot",
+      "time": "08:22"
+    },
+    {
+      "city": "Sargodha",
+      "time": "08:22"
+    },
+    {
+      "city": "Sialkot",
+      "time": "08:23"
+    },
+    {
+      "city": "Layyah",
+      "time": "08:27"
+    },
+    {
+      "city": "DGKHAN",
+      "time": "08:35"
+    },
+    {
+      "city": "Daska",
+      "time": "08:44"
+    },
+    {
+      "city": "BahawalNagar",
+      "time": "08:44"
+    },
+    {
+      "city": "Jahanian",
+      "time": "08:46"
+    },
+    {
+      "city": "LiaqatPur",
+      "time": "08:46"
+    },
+    {
+      "city": "Abdulhakim",
+      "time": "08:48"
+    },
+    {
+      "city": "KotAdu",
+      "time": "08:49"
+    },
+    {
+      "city": "Mianwali",
+      "time": "08:49"
+    },
+    {
+      "city": "Taunsasharif",
+      "time": "08:53"
+    },
+    {
+      "city": "Tandlianwala",
+      "time": "08:53"
+    },
+    {
+      "city": "TALAGANG",
+      "time": "09:00"
+    },
+    {
+      "city": "PirMahal",
+      "time": "09:08"
+    },
+    {
+      "city": "RajanPur",
+      "time": "09:10"
+    },
+    {
+      "city": "Shorkot",
+      "time": "09:14"
     },
     {
       "city": "Kamalia",
-      "time": "09:43"
+      "time": "09:19"
+    },
+    {
+      "city": "Okara",
+      "time": "09:33"
     },
     {
       "city": "Mamunkanjan",
-      "time": "09:43"
+      "time": "09:37"
+    },
+    {
+      "city": "Pindibhattian",
+      "time": "09:38"
+    },
+    {
+      "city": "Multan",
+      "time": "09:39"
+    },
+    {
+      "city": "Qadirpurrawan",
+      "time": "09:39"
+    },
+    {
+      "city": "Safdarabad",
+      "time": "09:40"
+    },
+    {
+      "city": "Sillanwali",
+      "time": "09:41"
+    },
+    {
+      "city": "Bhalwal",
+      "time": "09:45"
+    },
+    {
+      "city": "Faisalabad",
+      "time": "09:46"
     },
     {
       "city": "PakPattan",
       "time": "09:49"
     },
     {
-      "city": "Khanewal",
+      "city": "Muridke",
       "time": "09:49"
     },
     {
-      "city": "SadiqAbad",
-      "time": "09:50"
-    },
-    {
-      "city": "Gujranwala",
-      "time": "09:54"
-    },
-    {
-      "city": "KachaKhu",
-      "time": "09:54"
+      "city": "Patoki",
+      "time": "09:51"
     },
     {
       "city": "Summandri",
       "time": "09:55"
     },
     {
-      "city": "Sialkot",
-      "time": "09:55"
+      "city": "PhoolNagar",
+      "time": "09:58"
     },
     {
-      "city": "MandiBahaudin",
-      "time": "10:06"
+      "city": "Jaranwala",
+      "time": "10:02"
+    },
+    {
+      "city": "Gujranwala",
+      "time": "10:03"
+    },
+    {
+      "city": "Khanewal",
+      "time": "10:04"
+    },
+    {
+      "city": "KachaKhu",
+      "time": "10:05"
+    },
+    {
+      "city": "Sheikhupura",
+      "time": "10:11"
     },
     {
       "city": "ChackJhumra",
-      "time": "10:12"
+      "time": "10:25"
     },
     {
-      "city": "Muridke",
-      "time": "11:02"
+      "city": "kotmoman",
+      "time": "11:44"
     },
     {
-      "city": "Chistian",
-      "time": "11:05"
+      "city": "Chunian",
+      "time": "11:58"
     },
     {
-      "city": "Shorkot",
-      "time": "11:13"
+      "city": "Mailsi",
+      "time": "12:08"
     }
   ]
 }
