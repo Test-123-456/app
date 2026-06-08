@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-07T07:12:43.343Z",
+  "updatedAt": "2026-06-08T08:18:32.169Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -221,6 +221,110 @@
       "predictedNet": 21750,
       "actualNet": 21250,
       "spPct": 1450
+    },
+    {
+      "date": "2026-06-07",
+      "nextDate": "2026-06-08",
+      "comm": "Green Chilli",
+      "buyCity": "Mailsi",
+      "sellCity": "Sraialamgir",
+      "buyP": 5250,
+      "predictedSellP": 75000,
+      "actualSellP": 7500,
+      "predictedNet": 69750,
+      "actualNet": 2250,
+      "spPct": 1328.6
+    },
+    {
+      "date": "2026-06-07",
+      "nextDate": "2026-06-08",
+      "comm": "Green Chilli",
+      "buyCity": "Vehari",
+      "sellCity": "Sraialamgir",
+      "buyP": 5350,
+      "predictedSellP": 75000,
+      "actualSellP": 7500,
+      "predictedNet": 69650,
+      "actualNet": 2150,
+      "spPct": 1301.9
+    },
+    {
+      "date": "2026-06-07",
+      "nextDate": "2026-06-08",
+      "comm": "Green Chilli",
+      "buyCity": "DunyaPur",
+      "sellCity": "Sraialamgir",
+      "buyP": 5425,
+      "predictedSellP": 75000,
+      "actualSellP": 7500,
+      "predictedNet": 69575,
+      "actualNet": 2075,
+      "spPct": 1282.5
+    },
+    {
+      "date": "2026-06-07",
+      "nextDate": "2026-06-08",
+      "comm": "Green Chilli",
+      "buyCity": "Abdulhakim",
+      "sellCity": "Sraialamgir",
+      "buyP": 5650,
+      "predictedSellP": 75000,
+      "actualSellP": 7500,
+      "predictedNet": 69350,
+      "actualNet": 1850,
+      "spPct": 1227.4
+    },
+    {
+      "date": "2026-06-07",
+      "nextDate": "2026-06-08",
+      "comm": "Green Chilli",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "Sraialamgir",
+      "buyP": 5664,
+      "predictedSellP": 75000,
+      "actualSellP": 7500,
+      "predictedNet": 69336,
+      "actualNet": 1836,
+      "spPct": 1224.2
+    },
+    {
+      "date": "2026-06-07",
+      "nextDate": "2026-06-08",
+      "comm": "Green Chilli",
+      "buyCity": "Multan",
+      "sellCity": "Sraialamgir",
+      "buyP": 5750,
+      "predictedSellP": 75000,
+      "actualSellP": 7500,
+      "predictedNet": 69250,
+      "actualNet": 1750,
+      "spPct": 1204.3
+    },
+    {
+      "date": "2026-06-07",
+      "nextDate": "2026-06-08",
+      "comm": "Green Chilli",
+      "buyCity": "Lodhran",
+      "sellCity": "Sraialamgir",
+      "buyP": 5800,
+      "predictedSellP": 75000,
+      "actualSellP": 7500,
+      "predictedNet": 69200,
+      "actualNet": 1700,
+      "spPct": 1193.1
+    },
+    {
+      "date": "2026-06-07",
+      "nextDate": "2026-06-08",
+      "comm": "Green Chilli",
+      "buyCity": "Kahrorpacca",
+      "sellCity": "Sraialamgir",
+      "buyP": 5800,
+      "predictedSellP": 75000,
+      "actualSellP": 7500,
+      "predictedNet": 69200,
+      "actualNet": 1700,
+      "spPct": 1193.1
     }
   ]
 }
