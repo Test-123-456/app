@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-08T08:18:32.169Z",
+  "updatedAt": "2026-06-09T07:16:23.961Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -325,6 +325,110 @@
       "predictedNet": 69200,
       "actualNet": 1700,
       "spPct": 1193.1
+    },
+    {
+      "date": "2026-06-08",
+      "nextDate": "2026-06-09",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "HujraShahmuqeem",
+      "sellCity": "JamPur",
+      "buyP": 1375,
+      "predictedSellP": 11000,
+      "actualSellP": 5500,
+      "predictedNet": 9625,
+      "actualNet": 4125,
+      "spPct": 700
+    },
+    {
+      "date": "2026-06-08",
+      "nextDate": "2026-06-09",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Kasur",
+      "sellCity": "PakPattan",
+      "buyP": 3500,
+      "predictedSellP": 20043,
+      "actualSellP": 4750,
+      "predictedNet": 16543,
+      "actualNet": 1250,
+      "spPct": 472.7
+    },
+    {
+      "date": "2026-06-08",
+      "nextDate": "2026-06-09",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Patoki",
+      "sellCity": "PakPattan",
+      "buyP": 3500,
+      "predictedSellP": 20043,
+      "actualSellP": 4750,
+      "predictedNet": 16543,
+      "actualNet": 1250,
+      "spPct": 472.7
+    },
+    {
+      "date": "2026-06-08",
+      "nextDate": "2026-06-09",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "JamPur",
+      "sellCity": "PakPattan",
+      "buyP": 3500,
+      "predictedSellP": 20043,
+      "actualSellP": 4750,
+      "predictedNet": 16543,
+      "actualNet": 1250,
+      "spPct": 472.7
+    },
+    {
+      "date": "2026-06-08",
+      "nextDate": "2026-06-09",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "RajanPur",
+      "sellCity": "PakPattan",
+      "buyP": 3500,
+      "predictedSellP": 20043,
+      "actualSellP": 4750,
+      "predictedNet": 16543,
+      "actualNet": 1250,
+      "spPct": 472.7
+    },
+    {
+      "date": "2026-06-08",
+      "nextDate": "2026-06-09",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Chunian",
+      "sellCity": "PakPattan",
+      "buyP": 3500,
+      "predictedSellP": 20043,
+      "actualSellP": 4750,
+      "predictedNet": 16543,
+      "actualNet": 1250,
+      "spPct": 472.7
+    },
+    {
+      "date": "2026-06-08",
+      "nextDate": "2026-06-09",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Kanganpur",
+      "sellCity": "PakPattan",
+      "buyP": 3500,
+      "predictedSellP": 20043,
+      "actualSellP": 4750,
+      "predictedNet": 16543,
+      "actualNet": 1250,
+      "spPct": 472.7
+    },
+    {
+      "date": "2026-06-08",
+      "nextDate": "2026-06-09",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Khudian",
+      "sellCity": "PakPattan",
+      "buyP": 3500,
+      "predictedSellP": 20043,
+      "actualSellP": 4750,
+      "predictedNet": 16543,
+      "actualNet": 1250,
+      "spPct": 472.7
     }
   ]
 }
