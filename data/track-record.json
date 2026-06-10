@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-09T07:16:23.961Z",
+  "updatedAt": "2026-06-10T07:19:07.566Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -429,6 +429,58 @@
       "predictedNet": 16543,
       "actualNet": 1250,
       "spPct": 472.7
+    },
+    {
+      "date": "2026-06-09",
+      "nextDate": "2026-06-10",
+      "comm": "Peas",
+      "buyCity": "Khudian",
+      "sellCity": "KabirWala",
+      "buyP": 1700,
+      "predictedSellP": 22300,
+      "actualSellP": 21000,
+      "predictedNet": 20600,
+      "actualNet": 19300,
+      "spPct": 1211.8
+    },
+    {
+      "date": "2026-06-09",
+      "nextDate": "2026-06-10",
+      "comm": "Peas",
+      "buyCity": "Khudian",
+      "sellCity": "Khanewal",
+      "buyP": 1700,
+      "predictedSellP": 21750,
+      "actualSellP": 21000,
+      "predictedNet": 20050,
+      "actualNet": 19300,
+      "spPct": 1179.4
+    },
+    {
+      "date": "2026-06-09",
+      "nextDate": "2026-06-10",
+      "comm": "Peas",
+      "buyCity": "Khudian",
+      "sellCity": "DGKHAN",
+      "buyP": 1700,
+      "predictedSellP": 21750,
+      "actualSellP": 21750,
+      "predictedNet": 20050,
+      "actualNet": 20050,
+      "spPct": 1179.4
+    },
+    {
+      "date": "2026-06-09",
+      "nextDate": "2026-06-10",
+      "comm": "Peas",
+      "buyCity": "Khudian",
+      "sellCity": "Jahanian",
+      "buyP": 1700,
+      "predictedSellP": 21750,
+      "actualSellP": 20500,
+      "predictedNet": 20050,
+      "actualNet": 18800,
+      "spPct": 1179.4
     }
   ]
 }
