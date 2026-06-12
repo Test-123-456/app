@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T08:46:48.544Z",
+  "updatedAt": "2026-06-12T07:47:10.544Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -585,6 +585,97 @@
       "predictedNet": 11900,
       "actualNet": 1200,
       "spPct": 457.7
+    },
+    {
+      "date": "2026-06-11",
+      "nextDate": "2026-06-12",
+      "comm": "Peas",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "Khanewal",
+      "buyP": 5010,
+      "predictedSellP": 22300,
+      "actualSellP": 21750,
+      "predictedNet": 17290,
+      "actualNet": 16740,
+      "spPct": 345.1
+    },
+    {
+      "date": "2026-06-11",
+      "nextDate": "2026-06-12",
+      "comm": "Peas",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "DGKHAN",
+      "buyP": 5010,
+      "predictedSellP": 21750,
+      "actualSellP": 21750,
+      "predictedNet": 16740,
+      "actualNet": 16740,
+      "spPct": 334.1
+    },
+    {
+      "date": "2026-06-11",
+      "nextDate": "2026-06-12",
+      "comm": "Peas",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "Jahanian",
+      "buyP": 5010,
+      "predictedSellP": 21750,
+      "actualSellP": 21750,
+      "predictedNet": 16740,
+      "actualNet": 16740,
+      "spPct": 334.1
+    },
+    {
+      "date": "2026-06-11",
+      "nextDate": "2026-06-12",
+      "comm": "Carrot China",
+      "buyCity": "Mailsi",
+      "sellCity": "RajanPur",
+      "buyP": 6500,
+      "predictedSellP": 28000,
+      "actualSellP": 9500,
+      "predictedNet": 21500,
+      "actualNet": 3000,
+      "spPct": 330.8
+    },
+    {
+      "date": "2026-06-11",
+      "nextDate": "2026-06-12",
+      "comm": "Apple (Golden)",
+      "buyCity": "Sillanwali",
+      "sellCity": "Sraialamgir",
+      "buyP": 8500,
+      "predictedSellP": 35200,
+      "actualSellP": 35200,
+      "predictedNet": 26700,
+      "actualNet": 26700,
+      "spPct": 314.1
+    },
+    {
+      "date": "2026-06-11",
+      "nextDate": "2026-06-12",
+      "comm": "Carrot China",
+      "buyCity": "Sahiwal",
+      "sellCity": "RajanPur",
+      "buyP": 6850,
+      "predictedSellP": 28000,
+      "actualSellP": 9500,
+      "predictedNet": 21150,
+      "actualNet": 2650,
+      "spPct": 308.8
+    },
+    {
+      "date": "2026-06-11",
+      "nextDate": "2026-06-12",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "TALAGANG",
+      "buyP": 1350,
+      "predictedSellP": 5500,
+      "actualSellP": 5500,
+      "predictedNet": 4150,
+      "actualNet": 4150,
+      "spPct": 307.4
     }
   ]
 }
