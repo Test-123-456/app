@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T07:47:10.544Z",
+  "updatedAt": "2026-06-13T07:05:25.358Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -676,6 +676,84 @@
       "predictedNet": 4150,
       "actualNet": 4150,
       "spPct": 307.4
+    },
+    {
+      "date": "2026-06-12",
+      "nextDate": "2026-06-13",
+      "comm": "Melon",
+      "buyCity": "ArifWala",
+      "sellCity": "Abdulhakim",
+      "buyP": 2750,
+      "predictedSellP": 12550,
+      "actualSellP": 12550,
+      "predictedNet": 9800,
+      "actualNet": 9800,
+      "spPct": 356.4
+    },
+    {
+      "date": "2026-06-12",
+      "nextDate": "2026-06-13",
+      "comm": "Melon",
+      "buyCity": "ArifWala",
+      "sellCity": "Sraialamgir",
+      "buyP": 2750,
+      "predictedSellP": 12200,
+      "actualSellP": 12200,
+      "predictedNet": 9450,
+      "actualNet": 9450,
+      "spPct": 343.6
+    },
+    {
+      "date": "2026-06-12",
+      "nextDate": "2026-06-13",
+      "comm": "Cabbage",
+      "buyCity": "Kasur",
+      "sellCity": "Bhakhar",
+      "buyP": 2300,
+      "predictedSellP": 10150,
+      "actualSellP": 10150,
+      "predictedNet": 7850,
+      "actualNet": 7850,
+      "spPct": 341.3
+    },
+    {
+      "date": "2026-06-12",
+      "nextDate": "2026-06-13",
+      "comm": "Cabbage",
+      "buyCity": "Patoki",
+      "sellCity": "Bhakhar",
+      "buyP": 2300,
+      "predictedSellP": 10150,
+      "actualSellP": 10150,
+      "predictedNet": 7850,
+      "actualNet": 7850,
+      "spPct": 341.3
+    },
+    {
+      "date": "2026-06-12",
+      "nextDate": "2026-06-13",
+      "comm": "Cabbage",
+      "buyCity": "Khudian",
+      "sellCity": "Bhakhar",
+      "buyP": 2300,
+      "predictedSellP": 10150,
+      "actualSellP": 10150,
+      "predictedNet": 7850,
+      "actualNet": 7850,
+      "spPct": 341.3
+    },
+    {
+      "date": "2026-06-12",
+      "nextDate": "2026-06-13",
+      "comm": "Green Chilli",
+      "buyCity": "Tandlianwala",
+      "sellCity": "JamPur",
+      "buyP": 2500,
+      "predictedSellP": 11000,
+      "actualSellP": 11000,
+      "predictedNet": 8500,
+      "actualNet": 8500,
+      "spPct": 340
     }
   ]
 }
