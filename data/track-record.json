@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-13T07:05:25.358Z",
+  "updatedAt": "2026-06-14T07:41:00.866Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -754,6 +754,97 @@
       "predictedNet": 8500,
       "actualNet": 8500,
       "spPct": 340
+    },
+    {
+      "date": "2026-06-13",
+      "nextDate": "2026-06-14",
+      "comm": "Watermelon",
+      "buyCity": "Kalurkot",
+      "sellCity": "DGKHAN",
+      "buyP": 1700,
+      "predictedSellP": 8500,
+      "actualSellP": 3250,
+      "predictedNet": 6800,
+      "actualNet": 1550,
+      "spPct": 400
+    },
+    {
+      "date": "2026-06-13",
+      "nextDate": "2026-06-14",
+      "comm": "Melon",
+      "buyCity": "KotAdu",
+      "sellCity": "KabirWala",
+      "buyP": 2750,
+      "predictedSellP": 13000,
+      "actualSellP": 14500,
+      "predictedNet": 10250,
+      "actualNet": 11750,
+      "spPct": 372.7
+    },
+    {
+      "date": "2026-06-13",
+      "nextDate": "2026-06-14",
+      "comm": "Melon",
+      "buyCity": "KotAdu",
+      "sellCity": "Abdulhakim",
+      "buyP": 2750,
+      "predictedSellP": 12550,
+      "actualSellP": 13450,
+      "predictedNet": 9800,
+      "actualNet": 10700,
+      "spPct": 356.4
+    },
+    {
+      "date": "2026-06-13",
+      "nextDate": "2026-06-14",
+      "comm": "Melon",
+      "buyCity": "KotAdu",
+      "sellCity": "ArifWala",
+      "buyP": 2750,
+      "predictedSellP": 12500,
+      "actualSellP": 12500,
+      "predictedNet": 9750,
+      "actualNet": 9750,
+      "spPct": 354.5
+    },
+    {
+      "date": "2026-06-13",
+      "nextDate": "2026-06-14",
+      "comm": "Melon",
+      "buyCity": "KotAdu",
+      "sellCity": "Sraialamgir",
+      "buyP": 2750,
+      "predictedSellP": 12200,
+      "actualSellP": 12200,
+      "predictedNet": 9450,
+      "actualNet": 9450,
+      "spPct": 343.6
+    },
+    {
+      "date": "2026-06-13",
+      "nextDate": "2026-06-14",
+      "comm": "Watermelon",
+      "buyCity": "Kalurkot",
+      "sellCity": "Jauharabad",
+      "buyP": 1700,
+      "predictedSellP": 7300,
+      "actualSellP": 2700,
+      "predictedNet": 5600,
+      "actualNet": 1000,
+      "spPct": 329.4
+    },
+    {
+      "date": "2026-06-13",
+      "nextDate": "2026-06-14",
+      "comm": "Watermelon",
+      "buyCity": "Shorkot",
+      "sellCity": "DGKHAN",
+      "buyP": 2000,
+      "predictedSellP": 8500,
+      "actualSellP": 3250,
+      "predictedNet": 6500,
+      "actualNet": 1250,
+      "spPct": 325
     }
   ]
 }
