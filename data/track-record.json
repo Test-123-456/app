@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T07:41:00.866Z",
+  "updatedAt": "2026-06-15T09:32:42.643Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -845,6 +845,110 @@
       "predictedNet": 6500,
       "actualNet": 1250,
       "spPct": 325
+    },
+    {
+      "date": "2026-06-14",
+      "nextDate": "2026-06-15",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "TALAGANG",
+      "buyP": 1400,
+      "predictedSellP": 5500,
+      "actualSellP": 5500,
+      "predictedNet": 4100,
+      "actualNet": 4100,
+      "spPct": 292.9
+    },
+    {
+      "date": "2026-06-14",
+      "nextDate": "2026-06-15",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Taunsasharif",
+      "sellCity": "KabirWala",
+      "buyP": 2750,
+      "predictedSellP": 10500,
+      "actualSellP": 10500,
+      "predictedNet": 7750,
+      "actualNet": 7750,
+      "spPct": 281.8
+    },
+    {
+      "date": "2026-06-14",
+      "nextDate": "2026-06-15",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Taunsasharif",
+      "sellCity": "Mianwali",
+      "buyP": 2750,
+      "predictedSellP": 10400,
+      "actualSellP": 9900,
+      "predictedNet": 7650,
+      "actualNet": 7150,
+      "spPct": 278.2
+    },
+    {
+      "date": "2026-06-14",
+      "nextDate": "2026-06-15",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Taunsasharif",
+      "sellCity": "DunyaPur",
+      "buyP": 2750,
+      "predictedSellP": 10125,
+      "actualSellP": 10125,
+      "predictedNet": 7375,
+      "actualNet": 7375,
+      "spPct": 268.2
+    },
+    {
+      "date": "2026-06-14",
+      "nextDate": "2026-06-15",
+      "comm": "Spinach",
+      "buyCity": "Vehari",
+      "sellCity": "TALAGANG",
+      "buyP": 1500,
+      "predictedSellP": 5500,
+      "actualSellP": 5500,
+      "predictedNet": 4000,
+      "actualNet": 4000,
+      "spPct": 266.7
+    },
+    {
+      "date": "2026-06-14",
+      "nextDate": "2026-06-15",
+      "comm": "Spinach",
+      "buyCity": "BahawalNagar",
+      "sellCity": "TALAGANG",
+      "buyP": 1500,
+      "predictedSellP": 5500,
+      "actualSellP": 5500,
+      "predictedNet": 4000,
+      "actualNet": 4000,
+      "spPct": 266.7
+    },
+    {
+      "date": "2026-06-14",
+      "nextDate": "2026-06-15",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Taunsasharif",
+      "sellCity": "Kahrorpacca",
+      "buyP": 2750,
+      "predictedSellP": 10000,
+      "actualSellP": 10000,
+      "predictedNet": 7250,
+      "actualNet": 7250,
+      "spPct": 263.6
+    },
+    {
+      "date": "2026-06-14",
+      "nextDate": "2026-06-15",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Taunsasharif",
+      "sellCity": "Multan",
+      "buyP": 2750,
+      "predictedSellP": 9750,
+      "actualSellP": 9750,
+      "predictedNet": 7000,
+      "actualNet": 7000,
+      "spPct": 254.5
     }
   ]
 }
