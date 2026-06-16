@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-15T09:32:42.643Z",
+  "updatedAt": "2026-06-16T08:54:48.012Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -949,6 +949,110 @@
       "predictedNet": 7000,
       "actualNet": 7000,
       "spPct": 254.5
+    },
+    {
+      "date": "2026-06-15",
+      "nextDate": "2026-06-16",
+      "comm": "Tomato",
+      "buyCity": "kotmoman",
+      "sellCity": "Abdulhakim",
+      "buyP": 3750,
+      "predictedSellP": 34602,
+      "actualSellP": 6250,
+      "predictedNet": 30852,
+      "actualNet": 2500,
+      "spPct": 822.7
+    },
+    {
+      "date": "2026-06-15",
+      "nextDate": "2026-06-16",
+      "comm": "Tomato",
+      "buyCity": "Kalurkot",
+      "sellCity": "Abdulhakim",
+      "buyP": 3900,
+      "predictedSellP": 34602,
+      "actualSellP": 6250,
+      "predictedNet": 30702,
+      "actualNet": 2350,
+      "spPct": 787.2
+    },
+    {
+      "date": "2026-06-15",
+      "nextDate": "2026-06-16",
+      "comm": "Tomato",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Abdulhakim",
+      "buyP": 4750,
+      "predictedSellP": 34602,
+      "actualSellP": 6250,
+      "predictedNet": 29852,
+      "actualNet": 1500,
+      "spPct": 628.5
+    },
+    {
+      "date": "2026-06-15",
+      "nextDate": "2026-06-16",
+      "comm": "Tomato",
+      "buyCity": "DunyaPur",
+      "sellCity": "Abdulhakim",
+      "buyP": 5375,
+      "predictedSellP": 34602,
+      "actualSellP": 6250,
+      "predictedNet": 29227,
+      "actualNet": 875,
+      "spPct": 543.8
+    },
+    {
+      "date": "2026-06-15",
+      "nextDate": "2026-06-16",
+      "comm": "Tomato",
+      "buyCity": "Burewala",
+      "sellCity": "Abdulhakim",
+      "buyP": 5500,
+      "predictedSellP": 34602,
+      "actualSellP": 6250,
+      "predictedNet": 29102,
+      "actualNet": 750,
+      "spPct": 529.1
+    },
+    {
+      "date": "2026-06-15",
+      "nextDate": "2026-06-16",
+      "comm": "Tomato",
+      "buyCity": "Mailsi",
+      "sellCity": "Abdulhakim",
+      "buyP": 5500,
+      "predictedSellP": 34602,
+      "actualSellP": 6250,
+      "predictedNet": 29102,
+      "actualNet": 750,
+      "spPct": 529.1
+    },
+    {
+      "date": "2026-06-15",
+      "nextDate": "2026-06-16",
+      "comm": "Tomato",
+      "buyCity": "Vehari",
+      "sellCity": "Abdulhakim",
+      "buyP": 5550,
+      "predictedSellP": 34602,
+      "actualSellP": 6250,
+      "predictedNet": 29052,
+      "actualNet": 700,
+      "spPct": 523.5
+    },
+    {
+      "date": "2026-06-15",
+      "nextDate": "2026-06-16",
+      "comm": "Tomato",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "Abdulhakim",
+      "buyP": 5881,
+      "predictedSellP": 34602,
+      "actualSellP": 6250,
+      "predictedNet": 28721,
+      "actualNet": 369,
+      "spPct": 488.4
     }
   ]
 }
