@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-16T08:54:48.012Z",
+  "updatedAt": "2026-06-17T08:36:03.311Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -1053,6 +1053,110 @@
       "predictedNet": 28721,
       "actualNet": 369,
       "spPct": 488.4
+    },
+    {
+      "date": "2026-06-16",
+      "nextDate": "2026-06-17",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Sraialamgir",
+      "buyP": 3500,
+      "predictedSellP": 37750,
+      "actualSellP": 7700,
+      "predictedNet": 34250,
+      "actualNet": 4200,
+      "spPct": 978.6
+    },
+    {
+      "date": "2026-06-16",
+      "nextDate": "2026-06-17",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "DGKHAN",
+      "sellCity": "Sraialamgir",
+      "buyP": 4250,
+      "predictedSellP": 37750,
+      "actualSellP": 7700,
+      "predictedNet": 33500,
+      "actualNet": 3450,
+      "spPct": 788.2
+    },
+    {
+      "date": "2026-06-16",
+      "nextDate": "2026-06-17",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "Sialkot",
+      "sellCity": "Sraialamgir",
+      "buyP": 5250,
+      "predictedSellP": 37750,
+      "actualSellP": 7700,
+      "predictedNet": 32500,
+      "actualNet": 2450,
+      "spPct": 619
+    },
+    {
+      "date": "2026-06-16",
+      "nextDate": "2026-06-17",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "Hasanabdal",
+      "sellCity": "Sraialamgir",
+      "buyP": 5250,
+      "predictedSellP": 37750,
+      "actualSellP": 7700,
+      "predictedNet": 32500,
+      "actualNet": 2450,
+      "spPct": 619
+    },
+    {
+      "date": "2026-06-16",
+      "nextDate": "2026-06-17",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "Hazro",
+      "sellCity": "Sraialamgir",
+      "buyP": 5250,
+      "predictedSellP": 37750,
+      "actualSellP": 7700,
+      "predictedNet": 32500,
+      "actualNet": 2450,
+      "spPct": 619
+    },
+    {
+      "date": "2026-06-16",
+      "nextDate": "2026-06-17",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "Taunsasharif",
+      "sellCity": "Sraialamgir",
+      "buyP": 5250,
+      "predictedSellP": 37750,
+      "actualSellP": 7700,
+      "predictedNet": 32500,
+      "actualNet": 2450,
+      "spPct": 619
+    },
+    {
+      "date": "2026-06-16",
+      "nextDate": "2026-06-17",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Sraialamgir",
+      "buyP": 5650,
+      "predictedSellP": 37750,
+      "actualSellP": 7700,
+      "predictedNet": 32100,
+      "actualNet": 2050,
+      "spPct": 568.1
+    },
+    {
+      "date": "2026-06-16",
+      "nextDate": "2026-06-17",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "Rawalpindi",
+      "sellCity": "Sraialamgir",
+      "buyP": 5700,
+      "predictedSellP": 37750,
+      "actualSellP": 7700,
+      "predictedNet": 32050,
+      "actualNet": 2000,
+      "spPct": 562.3
     }
   ]
 }
