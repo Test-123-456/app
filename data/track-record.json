@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T08:36:03.311Z",
+  "updatedAt": "2026-06-18T08:15:36.070Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -1157,6 +1157,110 @@
       "predictedNet": 32050,
       "actualNet": 2000,
       "spPct": 562.3
+    },
+    {
+      "date": "2026-06-17",
+      "nextDate": "2026-06-18",
+      "comm": "Potato Fresh",
+      "buyCity": "Chiniot",
+      "sellCity": "ArifWala",
+      "buyP": 1500,
+      "predictedSellP": 7500,
+      "actualSellP": 7500,
+      "predictedNet": 6000,
+      "actualNet": 6000,
+      "spPct": 400
+    },
+    {
+      "date": "2026-06-17",
+      "nextDate": "2026-06-18",
+      "comm": "Watermelon",
+      "buyCity": "Kalurkot",
+      "sellCity": "Sillanwali",
+      "buyP": 1550,
+      "predictedSellP": 7500,
+      "actualSellP": 3600,
+      "predictedNet": 5950,
+      "actualNet": 2050,
+      "spPct": 383.9
+    },
+    {
+      "date": "2026-06-17",
+      "nextDate": "2026-06-18",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "ArifWala",
+      "buyP": 1600,
+      "predictedSellP": 7500,
+      "actualSellP": 7500,
+      "predictedNet": 5900,
+      "actualNet": 5900,
+      "spPct": 368.8
+    },
+    {
+      "date": "2026-06-17",
+      "nextDate": "2026-06-18",
+      "comm": "Potato Fresh",
+      "buyCity": "Chistian",
+      "sellCity": "ArifWala",
+      "buyP": 1650,
+      "predictedSellP": 7500,
+      "actualSellP": 7500,
+      "predictedNet": 5850,
+      "actualNet": 5850,
+      "spPct": 354.5
+    },
+    {
+      "date": "2026-06-17",
+      "nextDate": "2026-06-18",
+      "comm": "Potato Fresh",
+      "buyCity": "Fortabas",
+      "sellCity": "ArifWala",
+      "buyP": 1650,
+      "predictedSellP": 7500,
+      "actualSellP": 7500,
+      "predictedNet": 5850,
+      "actualNet": 5850,
+      "spPct": 354.5
+    },
+    {
+      "date": "2026-06-17",
+      "nextDate": "2026-06-18",
+      "comm": "Pumpkin",
+      "buyCity": "Safdarabad",
+      "sellCity": "Layyah",
+      "buyP": 1900,
+      "predictedSellP": 8600,
+      "actualSellP": 8600,
+      "predictedNet": 6700,
+      "actualNet": 6700,
+      "spPct": 352.6
+    },
+    {
+      "date": "2026-06-17",
+      "nextDate": "2026-06-18",
+      "comm": "Potato Fresh",
+      "buyCity": "Chiniot",
+      "sellCity": "JamPur",
+      "buyP": 1500,
+      "predictedSellP": 6700,
+      "actualSellP": 7650,
+      "predictedNet": 5200,
+      "actualNet": 6150,
+      "spPct": 346.7
+    },
+    {
+      "date": "2026-06-17",
+      "nextDate": "2026-06-18",
+      "comm": "Potato Fresh",
+      "buyCity": "Chiniot",
+      "sellCity": "RajanPur",
+      "buyP": 1500,
+      "predictedSellP": 6700,
+      "actualSellP": 2800,
+      "predictedNet": 5200,
+      "actualNet": 1300,
+      "spPct": 346.7
     }
   ]
 }
