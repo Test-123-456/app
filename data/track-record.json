@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T08:15:36.070Z",
+  "updatedAt": "2026-06-19T08:39:29.753Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -1261,6 +1261,110 @@
       "predictedNet": 5200,
       "actualNet": 1300,
       "spPct": 346.7
+    },
+    {
+      "date": "2026-06-18",
+      "nextDate": "2026-06-19",
+      "comm": "Potato Fresh",
+      "buyCity": "Chiniot",
+      "sellCity": "JamPur",
+      "buyP": 1500,
+      "predictedSellP": 7650,
+      "actualSellP": 7500,
+      "predictedNet": 6150,
+      "actualNet": 6000,
+      "spPct": 410
+    },
+    {
+      "date": "2026-06-18",
+      "nextDate": "2026-06-19",
+      "comm": "Potato Fresh",
+      "buyCity": "Chiniot",
+      "sellCity": "ArifWala",
+      "buyP": 1500,
+      "predictedSellP": 7500,
+      "actualSellP": 6500,
+      "predictedNet": 6000,
+      "actualNet": 5000,
+      "spPct": 400
+    },
+    {
+      "date": "2026-06-18",
+      "nextDate": "2026-06-19",
+      "comm": "Potato Fresh",
+      "buyCity": "Kalurkot",
+      "sellCity": "JamPur",
+      "buyP": 1550,
+      "predictedSellP": 7650,
+      "actualSellP": 7500,
+      "predictedNet": 6100,
+      "actualNet": 5950,
+      "spPct": 393.5
+    },
+    {
+      "date": "2026-06-18",
+      "nextDate": "2026-06-19",
+      "comm": "Potato Fresh",
+      "buyCity": "Kalurkot",
+      "sellCity": "ArifWala",
+      "buyP": 1550,
+      "predictedSellP": 7500,
+      "actualSellP": 6500,
+      "predictedNet": 5950,
+      "actualNet": 4950,
+      "spPct": 383.9
+    },
+    {
+      "date": "2026-06-18",
+      "nextDate": "2026-06-19",
+      "comm": "Watermelon",
+      "buyCity": "Kalurkot",
+      "sellCity": "Abdulhakim",
+      "buyP": 1300,
+      "predictedSellP": 6250,
+      "actualSellP": 6250,
+      "predictedNet": 4950,
+      "actualNet": 4950,
+      "spPct": 380.8
+    },
+    {
+      "date": "2026-06-18",
+      "nextDate": "2026-06-19",
+      "comm": "Potato Fresh",
+      "buyCity": "Vehari",
+      "sellCity": "JamPur",
+      "buyP": 1700,
+      "predictedSellP": 7650,
+      "actualSellP": 7500,
+      "predictedNet": 5950,
+      "actualNet": 5800,
+      "spPct": 350
+    },
+    {
+      "date": "2026-06-18",
+      "nextDate": "2026-06-19",
+      "comm": "Potato Fresh",
+      "buyCity": "Burewala",
+      "sellCity": "JamPur",
+      "buyP": 1700,
+      "predictedSellP": 7650,
+      "actualSellP": 7500,
+      "predictedNet": 5950,
+      "actualNet": 5800,
+      "spPct": 350
+    },
+    {
+      "date": "2026-06-18",
+      "nextDate": "2026-06-19",
+      "comm": "Potato Fresh",
+      "buyCity": "Mailsi",
+      "sellCity": "JamPur",
+      "buyP": 1700,
+      "predictedSellP": 7650,
+      "actualSellP": 7500,
+      "predictedNet": 5950,
+      "actualNet": 5800,
+      "spPct": 350
     }
   ]
 }
