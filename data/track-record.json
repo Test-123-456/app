@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T09:18:54.347Z",
+  "updatedAt": "2026-06-23T06:59:11.153Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -1573,6 +1573,110 @@
       "predictedNet": 5600,
       "actualNet": 5600,
       "spPct": 294.7
+    },
+    {
+      "date": "2026-06-22",
+      "nextDate": "2026-06-23",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Patoki",
+      "sellCity": "Khanewal",
+      "buyP": 4500,
+      "predictedSellP": 87500,
+      "actualSellP": 6750,
+      "predictedNet": 83000,
+      "actualNet": 2250,
+      "spPct": 1844.4
+    },
+    {
+      "date": "2026-06-22",
+      "nextDate": "2026-06-23",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Kanganpur",
+      "sellCity": "Khanewal",
+      "buyP": 4500,
+      "predictedSellP": 87500,
+      "actualSellP": 6750,
+      "predictedNet": 83000,
+      "actualNet": 2250,
+      "spPct": 1844.4
+    },
+    {
+      "date": "2026-06-22",
+      "nextDate": "2026-06-23",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Khudian",
+      "sellCity": "Khanewal",
+      "buyP": 4500,
+      "predictedSellP": 87500,
+      "actualSellP": 6750,
+      "predictedNet": 83000,
+      "actualNet": 2250,
+      "spPct": 1844.4
+    },
+    {
+      "date": "2026-06-22",
+      "nextDate": "2026-06-23",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Chunian",
+      "sellCity": "Khanewal",
+      "buyP": 4500,
+      "predictedSellP": 87500,
+      "actualSellP": 6750,
+      "predictedNet": 83000,
+      "actualNet": 2250,
+      "spPct": 1844.4
+    },
+    {
+      "date": "2026-06-22",
+      "nextDate": "2026-06-23",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "Khanewal",
+      "buyP": 5446,
+      "predictedSellP": 87500,
+      "actualSellP": 6750,
+      "predictedNet": 82054,
+      "actualNet": 1304,
+      "spPct": 1506.7
+    },
+    {
+      "date": "2026-06-22",
+      "nextDate": "2026-06-23",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "LiaqatPur",
+      "sellCity": "Khanewal",
+      "buyP": 5625,
+      "predictedSellP": 87500,
+      "actualSellP": 6750,
+      "predictedNet": 81875,
+      "actualNet": 1125,
+      "spPct": 1455.6
+    },
+    {
+      "date": "2026-06-22",
+      "nextDate": "2026-06-23",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Mamunkanjan",
+      "sellCity": "Khanewal",
+      "buyP": 6250,
+      "predictedSellP": 87500,
+      "actualSellP": 6750,
+      "predictedNet": 81250,
+      "actualNet": 500,
+      "spPct": 1300
+    },
+    {
+      "date": "2026-06-22",
+      "nextDate": "2026-06-23",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "ArifWala",
+      "sellCity": "Khanewal",
+      "buyP": 6500,
+      "predictedSellP": 87500,
+      "actualSellP": 6750,
+      "predictedNet": 81000,
+      "actualNet": 250,
+      "spPct": 1246.2
     }
   ]
 }
