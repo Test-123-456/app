@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T06:59:11.153Z",
+  "updatedAt": "2026-06-24T06:56:54.877Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -1677,6 +1677,84 @@
       "predictedNet": 81000,
       "actualNet": 250,
       "spPct": 1246.2
+    },
+    {
+      "date": "2026-06-23",
+      "nextDate": "2026-06-24",
+      "comm": "Peach",
+      "buyCity": "Hafizabad",
+      "sellCity": "Mailsi",
+      "buyP": 1850,
+      "predictedSellP": 45500,
+      "actualSellP": 45500,
+      "predictedNet": 43650,
+      "actualNet": 43650,
+      "spPct": 2359.5
+    },
+    {
+      "date": "2026-06-23",
+      "nextDate": "2026-06-24",
+      "comm": "Peach",
+      "buyCity": "Hafizabad",
+      "sellCity": "DGKHAN",
+      "buyP": 1850,
+      "predictedSellP": 32500,
+      "actualSellP": 32500,
+      "predictedNet": 30650,
+      "actualNet": 30650,
+      "spPct": 1656.8
+    },
+    {
+      "date": "2026-06-23",
+      "nextDate": "2026-06-24",
+      "comm": "Peach",
+      "buyCity": "Hafizabad",
+      "sellCity": "Multan",
+      "buyP": 1850,
+      "predictedSellP": 31500,
+      "actualSellP": 31500,
+      "predictedNet": 29650,
+      "actualNet": 29650,
+      "spPct": 1602.7
+    },
+    {
+      "date": "2026-06-23",
+      "nextDate": "2026-06-24",
+      "comm": "Peach",
+      "buyCity": "Hafizabad",
+      "sellCity": "Kahrorpacca",
+      "buyP": 1850,
+      "predictedSellP": 31500,
+      "actualSellP": 31000,
+      "predictedNet": 29650,
+      "actualNet": 29150,
+      "spPct": 1602.7
+    },
+    {
+      "date": "2026-06-23",
+      "nextDate": "2026-06-24",
+      "comm": "Peach",
+      "buyCity": "Hafizabad",
+      "sellCity": "Burewala",
+      "buyP": 1850,
+      "predictedSellP": 30000,
+      "actualSellP": 28000,
+      "predictedNet": 28150,
+      "actualNet": 26150,
+      "spPct": 1521.6
+    },
+    {
+      "date": "2026-06-23",
+      "nextDate": "2026-06-24",
+      "comm": "Peach",
+      "buyCity": "Hafizabad",
+      "sellCity": "Vehari",
+      "buyP": 1850,
+      "predictedSellP": 27500,
+      "actualSellP": 27500,
+      "predictedNet": 25650,
+      "actualNet": 25650,
+      "spPct": 1386.5
     }
   ]
 }
