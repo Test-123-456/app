@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T06:56:54.877Z",
+  "updatedAt": "2026-06-25T06:57:29.491Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -1755,6 +1755,110 @@
       "predictedNet": 25650,
       "actualNet": 25650,
       "spPct": 1386.5
+    },
+    {
+      "date": "2026-06-24",
+      "nextDate": "2026-06-25",
+      "comm": "Green Chilli",
+      "buyCity": "ArifWala",
+      "sellCity": "Khanewal",
+      "buyP": 7500,
+      "predictedSellP": 87500,
+      "actualSellP": 8750,
+      "predictedNet": 80000,
+      "actualNet": 1250,
+      "spPct": 1066.7
+    },
+    {
+      "date": "2026-06-24",
+      "nextDate": "2026-06-25",
+      "comm": "Green Chilli",
+      "buyCity": "Burewala",
+      "sellCity": "Khanewal",
+      "buyP": 7550,
+      "predictedSellP": 87500,
+      "actualSellP": 8750,
+      "predictedNet": 79950,
+      "actualNet": 1200,
+      "spPct": 1058.9
+    },
+    {
+      "date": "2026-06-24",
+      "nextDate": "2026-06-25",
+      "comm": "Green Chilli",
+      "buyCity": "DunyaPur",
+      "sellCity": "Khanewal",
+      "buyP": 7700,
+      "predictedSellP": 87500,
+      "actualSellP": 8750,
+      "predictedNet": 79800,
+      "actualNet": 1050,
+      "spPct": 1036.4
+    },
+    {
+      "date": "2026-06-24",
+      "nextDate": "2026-06-25",
+      "comm": "Green Chilli",
+      "buyCity": "Mailsi",
+      "sellCity": "Khanewal",
+      "buyP": 7750,
+      "predictedSellP": 87500,
+      "actualSellP": 8750,
+      "predictedNet": 79750,
+      "actualNet": 1000,
+      "spPct": 1029
+    },
+    {
+      "date": "2026-06-24",
+      "nextDate": "2026-06-25",
+      "comm": "Green Chilli",
+      "buyCity": "Vehari",
+      "sellCity": "Khanewal",
+      "buyP": 7800,
+      "predictedSellP": 87500,
+      "actualSellP": 8750,
+      "predictedNet": 79700,
+      "actualNet": 950,
+      "spPct": 1021.8
+    },
+    {
+      "date": "2026-06-24",
+      "nextDate": "2026-06-25",
+      "comm": "Green Chilli",
+      "buyCity": "HujraShahmuqeem",
+      "sellCity": "Khanewal",
+      "buyP": 7800,
+      "predictedSellP": 87500,
+      "actualSellP": 8750,
+      "predictedNet": 79700,
+      "actualNet": 950,
+      "spPct": 1021.8
+    },
+    {
+      "date": "2026-06-24",
+      "nextDate": "2026-06-25",
+      "comm": "Green Chilli",
+      "buyCity": "Bhakhar",
+      "sellCity": "Khanewal",
+      "buyP": 7900,
+      "predictedSellP": 87500,
+      "actualSellP": 8750,
+      "predictedNet": 79600,
+      "actualNet": 850,
+      "spPct": 1007.6
+    },
+    {
+      "date": "2026-06-24",
+      "nextDate": "2026-06-25",
+      "comm": "Green Chilli",
+      "buyCity": "Chiniot",
+      "sellCity": "Khanewal",
+      "buyP": 8150,
+      "predictedSellP": 87500,
+      "actualSellP": 8750,
+      "predictedNet": 79350,
+      "actualNet": 600,
+      "spPct": 973.6
     }
   ]
 }
