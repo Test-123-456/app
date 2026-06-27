@@ -1,165 +1,29 @@
 {
-  "updatedAt": "2026-06-26T07:02:58.398Z",
-  "date": "2026-06-26",
+  "updatedAt": "2026-06-27T06:37:48.949Z",
+  "date": "2026-06-27",
   "records": [
     {
       "city": "Lahore",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 8300,
-      "yesterday": 9250,
-      "change": -950,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 6950,
-      "yesterday": 6050,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Cauliflower",
-      "today": 14850,
-      "yesterday": 15800,
-      "change": -950,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Peas",
-      "today": 16800,
-      "yesterday": 15800,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Grapes (Other)",
-      "today": 24000,
-      "yesterday": 23000,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Mango(Chounsa)",
-      "today": 28100,
-      "yesterday": 28900,
-      "change": -800,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Garlic (Local)",
-      "today": 12750,
-      "yesterday": 12250,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Lahore",
       "commodity": "Cucumber (Kheera)",
-      "today": 8300,
-      "yesterday": 9250,
-      "change": -950,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 17700,
-      "yesterday": 18550,
-      "change": -850,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Grapes Gola",
-      "today": 23500,
-      "yesterday": 22500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Pear",
-      "today": 21900,
-      "yesterday": 23000,
-      "change": -1100,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 5550,
-      "yesterday": 6450,
-      "change": -900,
-      "dir": "down"
-    },
-    {
-      "city": "Khudian",
-      "commodity": "Potato Fresh",
-      "today": 1700,
-      "yesterday": 1900,
-      "change": -200,
+      "today": 4600,
+      "yesterday": 8300,
+      "change": -3700,
       "dir": "down"
     },
     {
       "city": "Khudian",
       "commodity": "Brinjal",
-      "today": 5150,
-      "yesterday": 5350,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Khudian",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 6150,
-      "yesterday": 6650,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Khudian",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 4700,
-      "yesterday": 4900,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Khudian",
-      "commodity": "Apple Kala Kullu (Pahari)",
-      "today": 34250,
-      "yesterday": 34300,
-      "change": -50,
-      "dir": "down"
-    },
-    {
-      "city": "Khudian",
-      "commodity": "Apple Kala Kullu (Madani)",
-      "today": 22250,
-      "yesterday": 22350,
-      "change": -100,
-      "dir": "down"
-    },
-    {
-      "city": "Khudian",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 2900,
-      "yesterday": 2700,
+      "today": 5350,
+      "yesterday": 5150,
       "change": 200,
       "dir": "up"
     },
     {
       "city": "Khudian",
-      "commodity": "Cocoyam(اروی)",
-      "today": 8200,
-      "yesterday": 8400,
-      "change": -200,
+      "commodity": "Peach",
+      "today": 18000,
+      "yesterday": 18500,
+      "change": -500,
       "dir": "down"
     }
   ]
