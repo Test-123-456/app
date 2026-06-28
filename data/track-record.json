@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-27T06:37:51.866Z",
+  "updatedAt": "2026-06-28T07:10:56.341Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -1924,6 +1924,84 @@
       "predictedNet": 1000,
       "actualNet": 1000,
       "spPct": 5.4
+    },
+    {
+      "date": "2026-06-27",
+      "nextDate": "2026-06-28",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Jhang",
+      "buyP": 1100,
+      "predictedSellP": 6750,
+      "actualSellP": 2900,
+      "predictedNet": 5650,
+      "actualNet": 1800,
+      "spPct": 513.6
+    },
+    {
+      "date": "2026-06-27",
+      "nextDate": "2026-06-28",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "TALAGANG",
+      "buyP": 1100,
+      "predictedSellP": 5500,
+      "actualSellP": 5500,
+      "predictedNet": 4400,
+      "actualNet": 4400,
+      "spPct": 400
+    },
+    {
+      "date": "2026-06-27",
+      "nextDate": "2026-06-28",
+      "comm": "Spinach",
+      "buyCity": "Vehari",
+      "sellCity": "Jhang",
+      "buyP": 1500,
+      "predictedSellP": 6750,
+      "actualSellP": 2900,
+      "predictedNet": 5250,
+      "actualNet": 1400,
+      "spPct": 350
+    },
+    {
+      "date": "2026-06-27",
+      "nextDate": "2026-06-28",
+      "comm": "Spinach",
+      "buyCity": "PakPattan",
+      "sellCity": "Jhang",
+      "buyP": 1500,
+      "predictedSellP": 6750,
+      "actualSellP": 2900,
+      "predictedNet": 5250,
+      "actualNet": 1400,
+      "spPct": 350
+    },
+    {
+      "date": "2026-06-27",
+      "nextDate": "2026-06-28",
+      "comm": "Potato Fresh",
+      "buyCity": "DunyaPur",
+      "sellCity": "JamPur",
+      "buyP": 1900,
+      "predictedSellP": 8500,
+      "actualSellP": 9500,
+      "predictedNet": 6600,
+      "actualNet": 7600,
+      "spPct": 347.4
+    },
+    {
+      "date": "2026-06-27",
+      "nextDate": "2026-06-28",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Jhelum",
+      "buyP": 1100,
+      "predictedSellP": 4850,
+      "actualSellP": 4850,
+      "predictedNet": 3750,
+      "actualNet": 3750,
+      "spPct": 340.9
     }
   ]
 }
