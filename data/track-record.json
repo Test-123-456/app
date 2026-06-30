@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T08:24:05.319Z",
+  "updatedAt": "2026-06-30T07:10:08.585Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -2106,6 +2106,110 @@
       "predictedNet": 13200,
       "actualNet": 12200,
       "spPct": 307
+    },
+    {
+      "date": "2026-06-29",
+      "nextDate": "2026-06-30",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "JamPur",
+      "buyP": 1600,
+      "predictedSellP": 9500,
+      "actualSellP": 2800,
+      "predictedNet": 7900,
+      "actualNet": 1200,
+      "spPct": 493.8
+    },
+    {
+      "date": "2026-06-29",
+      "nextDate": "2026-06-30",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "ArifWala",
+      "buyP": 1600,
+      "predictedSellP": 7500,
+      "actualSellP": 7500,
+      "predictedNet": 5900,
+      "actualNet": 5900,
+      "spPct": 368.8
+    },
+    {
+      "date": "2026-06-29",
+      "nextDate": "2026-06-30",
+      "comm": "Potato Fresh",
+      "buyCity": "Vehari",
+      "sellCity": "JamPur",
+      "buyP": 2050,
+      "predictedSellP": 9500,
+      "actualSellP": 2800,
+      "predictedNet": 7450,
+      "actualNet": 750,
+      "spPct": 363.4
+    },
+    {
+      "date": "2026-06-29",
+      "nextDate": "2026-06-30",
+      "comm": "Potato Fresh",
+      "buyCity": "PakPattan",
+      "sellCity": "JamPur",
+      "buyP": 2050,
+      "predictedSellP": 9500,
+      "actualSellP": 2800,
+      "predictedNet": 7450,
+      "actualNet": 750,
+      "spPct": 363.4
+    },
+    {
+      "date": "2026-06-29",
+      "nextDate": "2026-06-30",
+      "comm": "Potato Fresh",
+      "buyCity": "Burewala",
+      "sellCity": "JamPur",
+      "buyP": 2100,
+      "predictedSellP": 9500,
+      "actualSellP": 2800,
+      "predictedNet": 7400,
+      "actualNet": 700,
+      "spPct": 352.4
+    },
+    {
+      "date": "2026-06-29",
+      "nextDate": "2026-06-30",
+      "comm": "Potato Fresh",
+      "buyCity": "Mailsi",
+      "sellCity": "JamPur",
+      "buyP": 2100,
+      "predictedSellP": 9500,
+      "actualSellP": 2800,
+      "predictedNet": 7400,
+      "actualNet": 700,
+      "spPct": 352.4
+    },
+    {
+      "date": "2026-06-29",
+      "nextDate": "2026-06-30",
+      "comm": "Carrot",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Khanewal",
+      "buyP": 3700,
+      "predictedSellP": 16500,
+      "actualSellP": 10500,
+      "predictedNet": 12800,
+      "actualNet": 6800,
+      "spPct": 345.9
+    },
+    {
+      "date": "2026-06-29",
+      "nextDate": "2026-06-30",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "TALAGANG",
+      "buyP": 1300,
+      "predictedSellP": 5500,
+      "actualSellP": 5500,
+      "predictedNet": 4200,
+      "actualNet": 4200,
+      "spPct": 323.1
     }
   ]
 }
