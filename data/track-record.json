@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T07:10:08.585Z",
+  "updatedAt": "2026-07-01T07:19:07.581Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -2210,6 +2210,110 @@
       "predictedNet": 4200,
       "actualNet": 4200,
       "spPct": 323.1
+    },
+    {
+      "date": "2026-06-30",
+      "nextDate": "2026-07-01",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Patoki",
+      "sellCity": "Khanewal",
+      "buyP": 5700,
+      "predictedSellP": 72500,
+      "actualSellP": 8250,
+      "predictedNet": 66800,
+      "actualNet": 2550,
+      "spPct": 1171.9
+    },
+    {
+      "date": "2026-06-30",
+      "nextDate": "2026-07-01",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Chunian",
+      "sellCity": "Khanewal",
+      "buyP": 5700,
+      "predictedSellP": 72500,
+      "actualSellP": 8250,
+      "predictedNet": 66800,
+      "actualNet": 2550,
+      "spPct": 1171.9
+    },
+    {
+      "date": "2026-06-30",
+      "nextDate": "2026-07-01",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Khanewal",
+      "buyP": 6500,
+      "predictedSellP": 72500,
+      "actualSellP": 8250,
+      "predictedNet": 66000,
+      "actualNet": 1750,
+      "spPct": 1015.4
+    },
+    {
+      "date": "2026-06-30",
+      "nextDate": "2026-07-01",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Abdulhakim",
+      "sellCity": "Khanewal",
+      "buyP": 7150,
+      "predictedSellP": 72500,
+      "actualSellP": 8250,
+      "predictedNet": 65350,
+      "actualNet": 1100,
+      "spPct": 914
+    },
+    {
+      "date": "2026-06-30",
+      "nextDate": "2026-07-01",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Lodhran",
+      "sellCity": "Khanewal",
+      "buyP": 7200,
+      "predictedSellP": 72500,
+      "actualSellP": 8250,
+      "predictedNet": 65300,
+      "actualNet": 1050,
+      "spPct": 906.9
+    },
+    {
+      "date": "2026-06-30",
+      "nextDate": "2026-07-01",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Kahrorpacca",
+      "sellCity": "Khanewal",
+      "buyP": 7200,
+      "predictedSellP": 72500,
+      "actualSellP": 8250,
+      "predictedNet": 65300,
+      "actualNet": 1050,
+      "spPct": 906.9
+    },
+    {
+      "date": "2026-06-30",
+      "nextDate": "2026-07-01",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Multan",
+      "sellCity": "Khanewal",
+      "buyP": 7250,
+      "predictedSellP": 72500,
+      "actualSellP": 8250,
+      "predictedNet": 65250,
+      "actualNet": 1000,
+      "spPct": 900
+    },
+    {
+      "date": "2026-06-30",
+      "nextDate": "2026-07-01",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Hafizabad",
+      "sellCity": "Khanewal",
+      "buyP": 7750,
+      "predictedSellP": 72500,
+      "actualSellP": 8250,
+      "predictedNet": 64750,
+      "actualNet": 500,
+      "spPct": 835.5
     }
   ]
 }
