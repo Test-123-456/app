@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T06:49:01.870Z",
+  "updatedAt": "2026-07-03T07:06:34.084Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -2418,6 +2418,110 @@
       "predictedNet": 25750,
       "actualNet": 1150,
       "spPct": 1144.4
+    },
+    {
+      "date": "2026-07-02",
+      "nextDate": "2026-07-03",
+      "comm": "Onion",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Jahanian",
+      "buyP": 5250,
+      "predictedSellP": 82500,
+      "actualSellP": 8250,
+      "predictedNet": 77250,
+      "actualNet": 3000,
+      "spPct": 1471.4
+    },
+    {
+      "date": "2026-07-02",
+      "nextDate": "2026-07-03",
+      "comm": "Onion",
+      "buyCity": "JamPur",
+      "sellCity": "Jahanian",
+      "buyP": 5700,
+      "predictedSellP": 82500,
+      "actualSellP": 8250,
+      "predictedNet": 76800,
+      "actualNet": 2550,
+      "spPct": 1347.4
+    },
+    {
+      "date": "2026-07-02",
+      "nextDate": "2026-07-03",
+      "comm": "Onion",
+      "buyCity": "RajanPur",
+      "sellCity": "Jahanian",
+      "buyP": 5700,
+      "predictedSellP": 82500,
+      "actualSellP": 8250,
+      "predictedNet": 76800,
+      "actualNet": 2550,
+      "spPct": 1347.4
+    },
+    {
+      "date": "2026-07-02",
+      "nextDate": "2026-07-03",
+      "comm": "Onion",
+      "buyCity": "SadiqAbad",
+      "sellCity": "Jahanian",
+      "buyP": 6525,
+      "predictedSellP": 82500,
+      "actualSellP": 8250,
+      "predictedNet": 75975,
+      "actualNet": 1725,
+      "spPct": 1164.4
+    },
+    {
+      "date": "2026-07-02",
+      "nextDate": "2026-07-03",
+      "comm": "Onion",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "Jahanian",
+      "buyP": 6591,
+      "predictedSellP": 82500,
+      "actualSellP": 8250,
+      "predictedNet": 75909,
+      "actualNet": 1659,
+      "spPct": 1151.7
+    },
+    {
+      "date": "2026-07-02",
+      "nextDate": "2026-07-03",
+      "comm": "Onion",
+      "buyCity": "KotAdu",
+      "sellCity": "Jahanian",
+      "buyP": 6750,
+      "predictedSellP": 82500,
+      "actualSellP": 8250,
+      "predictedNet": 75750,
+      "actualNet": 1500,
+      "spPct": 1122.2
+    },
+    {
+      "date": "2026-07-02",
+      "nextDate": "2026-07-03",
+      "comm": "Onion",
+      "buyCity": "Taunsasharif",
+      "sellCity": "Jahanian",
+      "buyP": 6750,
+      "predictedSellP": 82500,
+      "actualSellP": 8250,
+      "predictedNet": 75750,
+      "actualNet": 1500,
+      "spPct": 1122.2
+    },
+    {
+      "date": "2026-07-02",
+      "nextDate": "2026-07-03",
+      "comm": "Onion",
+      "buyCity": "BahawalPur",
+      "sellCity": "Jahanian",
+      "buyP": 6900,
+      "predictedSellP": 82500,
+      "actualSellP": 8250,
+      "predictedNet": 75600,
+      "actualNet": 1350,
+      "spPct": 1095.7
     }
   ]
 }
