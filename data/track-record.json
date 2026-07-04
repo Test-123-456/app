@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-03T07:06:34.084Z",
+  "updatedAt": "2026-07-04T06:28:34.803Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -2522,6 +2522,32 @@
       "predictedNet": 75600,
       "actualNet": 1350,
       "spPct": 1095.7
+    },
+    {
+      "date": "2026-07-03",
+      "nextDate": "2026-07-04",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Kasur",
+      "sellCity": "TALAGANG",
+      "buyP": 5750,
+      "predictedSellP": 45400,
+      "actualSellP": 10100,
+      "predictedNet": 39650,
+      "actualNet": 4350,
+      "spPct": 689.6
+    },
+    {
+      "date": "2026-07-03",
+      "nextDate": "2026-07-04",
+      "comm": "sugarcane(گنڈ یری)",
+      "buyCity": "Patoki",
+      "sellCity": "TALAGANG",
+      "buyP": 5750,
+      "predictedSellP": 45400,
+      "actualSellP": 10100,
+      "predictedNet": 39650,
+      "actualNet": 4350,
+      "spPct": 689.6
     }
   ]
 }
