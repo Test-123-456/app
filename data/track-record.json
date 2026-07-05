@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T06:28:34.803Z",
+  "updatedAt": "2026-07-05T07:03:36.496Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -2548,6 +2548,110 @@
       "predictedNet": 39650,
       "actualNet": 4350,
       "spPct": 689.6
+    },
+    {
+      "date": "2026-07-04",
+      "nextDate": "2026-07-05",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Abdulhakim",
+      "buyP": 1600,
+      "predictedSellP": 10750,
+      "actualSellP": 10750,
+      "predictedNet": 9150,
+      "actualNet": 9150,
+      "spPct": 571.9
+    },
+    {
+      "date": "2026-07-04",
+      "nextDate": "2026-07-05",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Khanewal",
+      "buyP": 1600,
+      "predictedSellP": 10500,
+      "actualSellP": 10500,
+      "predictedNet": 8900,
+      "actualNet": 8900,
+      "spPct": 556.3
+    },
+    {
+      "date": "2026-07-04",
+      "nextDate": "2026-07-05",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Vehari",
+      "buyP": 1600,
+      "predictedSellP": 9250,
+      "actualSellP": 9250,
+      "predictedNet": 7650,
+      "actualNet": 7650,
+      "spPct": 478.1
+    },
+    {
+      "date": "2026-07-04",
+      "nextDate": "2026-07-05",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Abdulhakim",
+      "buyP": 2150,
+      "predictedSellP": 10750,
+      "actualSellP": 10750,
+      "predictedNet": 8600,
+      "actualNet": 8600,
+      "spPct": 400
+    },
+    {
+      "date": "2026-07-04",
+      "nextDate": "2026-07-05",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Khanewal",
+      "buyP": 2150,
+      "predictedSellP": 10500,
+      "actualSellP": 10500,
+      "predictedNet": 8350,
+      "actualNet": 8350,
+      "spPct": 388.4
+    },
+    {
+      "date": "2026-07-04",
+      "nextDate": "2026-07-05",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Vehari",
+      "buyP": 2150,
+      "predictedSellP": 9250,
+      "actualSellP": 9250,
+      "predictedNet": 7100,
+      "actualNet": 7100,
+      "spPct": 330.2
+    },
+    {
+      "date": "2026-07-04",
+      "nextDate": "2026-07-05",
+      "comm": "Potato Fresh",
+      "buyCity": "Kalurkot",
+      "sellCity": "Abdulhakim",
+      "buyP": 2500,
+      "predictedSellP": 10750,
+      "actualSellP": 10750,
+      "predictedNet": 8250,
+      "actualNet": 8250,
+      "spPct": 330
+    },
+    {
+      "date": "2026-07-04",
+      "nextDate": "2026-07-05",
+      "comm": "Potato Fresh",
+      "buyCity": "PakPattan",
+      "sellCity": "Abdulhakim",
+      "buyP": 2500,
+      "predictedSellP": 10750,
+      "actualSellP": 10750,
+      "predictedNet": 8250,
+      "actualNet": 8250,
+      "spPct": 330
     }
   ]
 }
