@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T07:20:47.524Z",
+  "updatedAt": "2026-07-07T06:56:22.281Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -2743,6 +2743,110 @@
       "predictedNet": 9000,
       "actualNet": 9000,
       "spPct": 360
+    },
+    {
+      "date": "2026-07-06",
+      "nextDate": "2026-07-07",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Kalurkot",
+      "buyP": 1600,
+      "predictedSellP": 24700,
+      "actualSellP": 2500,
+      "predictedNet": 23100,
+      "actualNet": 900,
+      "spPct": 1443.8
+    },
+    {
+      "date": "2026-07-06",
+      "nextDate": "2026-07-07",
+      "comm": "Potato Fresh",
+      "buyCity": "PakPattan",
+      "sellCity": "Kalurkot",
+      "buyP": 2500,
+      "predictedSellP": 24700,
+      "actualSellP": 2500,
+      "predictedNet": 22200,
+      "actualNet": 0,
+      "spPct": 888
+    },
+    {
+      "date": "2026-07-06",
+      "nextDate": "2026-07-07",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Kalurkot",
+      "buyP": 2500,
+      "predictedSellP": 24700,
+      "actualSellP": 2500,
+      "predictedNet": 22200,
+      "actualNet": 0,
+      "spPct": 888
+    },
+    {
+      "date": "2026-07-06",
+      "nextDate": "2026-07-07",
+      "comm": "Potato Fresh",
+      "buyCity": "LalaMusa",
+      "sellCity": "Kalurkot",
+      "buyP": 2700,
+      "predictedSellP": 24700,
+      "actualSellP": 2500,
+      "predictedNet": 22000,
+      "actualNet": -200,
+      "spPct": 814.8
+    },
+    {
+      "date": "2026-07-06",
+      "nextDate": "2026-07-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Okara",
+      "sellCity": "Kalurkot",
+      "buyP": 2750,
+      "predictedSellP": 24700,
+      "actualSellP": 2500,
+      "predictedNet": 21950,
+      "actualNet": -250,
+      "spPct": 798.2
+    },
+    {
+      "date": "2026-07-06",
+      "nextDate": "2026-07-07",
+      "comm": "Potato Fresh",
+      "buyCity": "RajanPur",
+      "sellCity": "Kalurkot",
+      "buyP": 2800,
+      "predictedSellP": 24700,
+      "actualSellP": 2500,
+      "predictedNet": 21900,
+      "actualNet": -300,
+      "spPct": 782.1
+    },
+    {
+      "date": "2026-07-06",
+      "nextDate": "2026-07-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Narowal",
+      "sellCity": "Kalurkot",
+      "buyP": 2850,
+      "predictedSellP": 24700,
+      "actualSellP": 2500,
+      "predictedNet": 21850,
+      "actualNet": -350,
+      "spPct": 766.7
+    },
+    {
+      "date": "2026-07-06",
+      "nextDate": "2026-07-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Shakargarh",
+      "sellCity": "Kalurkot",
+      "buyP": 2850,
+      "predictedSellP": 24700,
+      "actualSellP": 2500,
+      "predictedNet": 21850,
+      "actualNet": -350,
+      "spPct": 766.7
     }
   ]
 }
