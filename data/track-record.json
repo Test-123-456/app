@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-08T06:01:02.427Z",
+  "updatedAt": "2026-07-09T06:58:05.266Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -2938,6 +2938,84 @@
       "predictedNet": 18500,
       "actualNet": 18500,
       "spPct": 925
+    },
+    {
+      "date": "2026-07-08",
+      "nextDate": "2026-07-09",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "Sahiwal",
+      "buyP": 1480,
+      "predictedSellP": 14900,
+      "actualSellP": 14850,
+      "predictedNet": 13420,
+      "actualNet": 13370,
+      "spPct": 906.8
+    },
+    {
+      "date": "2026-07-08",
+      "nextDate": "2026-07-09",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "ArifWala",
+      "buyP": 1480,
+      "predictedSellP": 14475,
+      "actualSellP": 14500,
+      "predictedNet": 12995,
+      "actualNet": 13020,
+      "spPct": 878
+    },
+    {
+      "date": "2026-07-08",
+      "nextDate": "2026-07-09",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "Lodhran",
+      "buyP": 1480,
+      "predictedSellP": 14400,
+      "actualSellP": 14400,
+      "predictedNet": 12920,
+      "actualNet": 12920,
+      "spPct": 873
+    },
+    {
+      "date": "2026-07-08",
+      "nextDate": "2026-07-09",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "Faisalabad",
+      "buyP": 1480,
+      "predictedSellP": 14100,
+      "actualSellP": 14150,
+      "predictedNet": 12620,
+      "actualNet": 12670,
+      "spPct": 852.7
+    },
+    {
+      "date": "2026-07-08",
+      "nextDate": "2026-07-09",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "Rawalpindi",
+      "buyP": 1480,
+      "predictedSellP": 14100,
+      "actualSellP": 14100,
+      "predictedNet": 12620,
+      "actualNet": 12620,
+      "spPct": 852.7
+    },
+    {
+      "date": "2026-07-08",
+      "nextDate": "2026-07-09",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "BahawalPur",
+      "buyP": 1480,
+      "predictedSellP": 14000,
+      "actualSellP": 14000,
+      "predictedNet": 12520,
+      "actualNet": 12520,
+      "spPct": 845.9
     }
   ]
 }
