@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-09T06:58:05.266Z",
+  "updatedAt": "2026-07-10T06:53:58.056Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -3016,6 +3016,110 @@
       "predictedNet": 12520,
       "actualNet": 12520,
       "spPct": 845.9
+    },
+    {
+      "date": "2026-07-09",
+      "nextDate": "2026-07-10",
+      "comm": "Pumpkin",
+      "buyCity": "Mamunkanjan",
+      "sellCity": "Jhang",
+      "buyP": 2250,
+      "predictedSellP": 17500,
+      "actualSellP": 16500,
+      "predictedNet": 15250,
+      "actualNet": 14250,
+      "spPct": 677.8
+    },
+    {
+      "date": "2026-07-09",
+      "nextDate": "2026-07-10",
+      "comm": "Pumpkin",
+      "buyCity": "Faisalabad",
+      "sellCity": "Jhang",
+      "buyP": 2300,
+      "predictedSellP": 17500,
+      "actualSellP": 16500,
+      "predictedNet": 15200,
+      "actualNet": 14200,
+      "spPct": 660.9
+    },
+    {
+      "date": "2026-07-09",
+      "nextDate": "2026-07-10",
+      "comm": "Pumpkin",
+      "buyCity": "Tandlianwala",
+      "sellCity": "Jhang",
+      "buyP": 2500,
+      "predictedSellP": 17500,
+      "actualSellP": 16500,
+      "predictedNet": 15000,
+      "actualNet": 14000,
+      "spPct": 600
+    },
+    {
+      "date": "2026-07-09",
+      "nextDate": "2026-07-10",
+      "comm": "Pumpkin",
+      "buyCity": "Shorkot",
+      "sellCity": "Jhang",
+      "buyP": 2500,
+      "predictedSellP": 17500,
+      "actualSellP": 16500,
+      "predictedNet": 15000,
+      "actualNet": 14000,
+      "spPct": 600
+    },
+    {
+      "date": "2026-07-09",
+      "nextDate": "2026-07-10",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Tandlianwala",
+      "sellCity": "Shorkot",
+      "buyP": 2600,
+      "predictedSellP": 18000,
+      "actualSellP": 17000,
+      "predictedNet": 15400,
+      "actualNet": 14400,
+      "spPct": 592.3
+    },
+    {
+      "date": "2026-07-09",
+      "nextDate": "2026-07-10",
+      "comm": "Pumpkin",
+      "buyCity": "kotmoman",
+      "sellCity": "Jhang",
+      "buyP": 2600,
+      "predictedSellP": 17500,
+      "actualSellP": 16500,
+      "predictedNet": 14900,
+      "actualNet": 13900,
+      "spPct": 573.1
+    },
+    {
+      "date": "2026-07-09",
+      "nextDate": "2026-07-10",
+      "comm": "Pumpkin",
+      "buyCity": "Mamunkanjan",
+      "sellCity": "Layyah",
+      "buyP": 2250,
+      "predictedSellP": 14200,
+      "actualSellP": 16150,
+      "predictedNet": 11950,
+      "actualNet": 13900,
+      "spPct": 531.1
+    },
+    {
+      "date": "2026-07-09",
+      "nextDate": "2026-07-10",
+      "comm": "Pumpkin",
+      "buyCity": "Summandri",
+      "sellCity": "Jhang",
+      "buyP": 2790,
+      "predictedSellP": 17500,
+      "actualSellP": 16500,
+      "predictedNet": 14710,
+      "actualNet": 13710,
+      "spPct": 527.2
     }
   ]
 }
