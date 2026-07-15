@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T05:39:08.354Z",
+  "updatedAt": "2026-07-15T05:42:38.943Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -3406,6 +3406,110 @@
       "predictedNet": 12850,
       "actualNet": 12800,
       "spPct": 659
+    },
+    {
+      "date": "2026-07-14",
+      "nextDate": "2026-07-15",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Jhang",
+      "buyP": 1950,
+      "predictedSellP": 17500,
+      "actualSellP": 17500,
+      "predictedNet": 15550,
+      "actualNet": 15550,
+      "spPct": 797.4
+    },
+    {
+      "date": "2026-07-14",
+      "nextDate": "2026-07-15",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Layyah",
+      "buyP": 1950,
+      "predictedSellP": 16150,
+      "actualSellP": 17050,
+      "predictedNet": 14200,
+      "actualNet": 15100,
+      "spPct": 728.2
+    },
+    {
+      "date": "2026-07-14",
+      "nextDate": "2026-07-15",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Kalurkot",
+      "buyP": 1950,
+      "predictedSellP": 15000,
+      "actualSellP": 15900,
+      "predictedNet": 13050,
+      "actualNet": 13950,
+      "spPct": 669.2
+    },
+    {
+      "date": "2026-07-14",
+      "nextDate": "2026-07-15",
+      "comm": "Pumpkin",
+      "buyCity": "Faisalabad",
+      "sellCity": "Jhang",
+      "buyP": 2300,
+      "predictedSellP": 17500,
+      "actualSellP": 17500,
+      "predictedNet": 15200,
+      "actualNet": 15200,
+      "spPct": 660.9
+    },
+    {
+      "date": "2026-07-14",
+      "nextDate": "2026-07-15",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "BahawalPur",
+      "buyP": 1950,
+      "predictedSellP": 14750,
+      "actualSellP": 15750,
+      "predictedNet": 12800,
+      "actualNet": 13800,
+      "spPct": 656.4
+    },
+    {
+      "date": "2026-07-14",
+      "nextDate": "2026-07-15",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "TTSingh",
+      "buyP": 1950,
+      "predictedSellP": 14100,
+      "actualSellP": 14100,
+      "predictedNet": 12150,
+      "actualNet": 12150,
+      "spPct": 623.1
+    },
+    {
+      "date": "2026-07-14",
+      "nextDate": "2026-07-15",
+      "comm": "Pumpkin",
+      "buyCity": "Faisalabad",
+      "sellCity": "Layyah",
+      "buyP": 2300,
+      "predictedSellP": 16150,
+      "actualSellP": 17050,
+      "predictedNet": 13850,
+      "actualNet": 14750,
+      "spPct": 602.2
+    },
+    {
+      "date": "2026-07-14",
+      "nextDate": "2026-07-15",
+      "comm": "Pumpkin",
+      "buyCity": "Gujranwala",
+      "sellCity": "Jhang",
+      "buyP": 2550,
+      "predictedSellP": 17500,
+      "actualSellP": 17500,
+      "predictedNet": 14950,
+      "actualNet": 14950,
+      "spPct": 586.3
     }
   ]
 }
