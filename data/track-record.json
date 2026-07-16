@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T05:42:38.943Z",
+  "updatedAt": "2026-07-16T05:48:35.156Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -3510,6 +3510,110 @@
       "predictedNet": 14950,
       "actualNet": 14950,
       "spPct": 586.3
+    },
+    {
+      "date": "2026-07-15",
+      "nextDate": "2026-07-16",
+      "comm": "Carrot China",
+      "buyCity": "Mamunkanjan",
+      "sellCity": "Sraialamgir",
+      "buyP": 7500,
+      "predictedSellP": 97000,
+      "actualSellP": 9700,
+      "predictedNet": 89500,
+      "actualNet": 2200,
+      "spPct": 1193.3
+    },
+    {
+      "date": "2026-07-15",
+      "nextDate": "2026-07-16",
+      "comm": "Carrot China",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Sraialamgir",
+      "buyP": 7900,
+      "predictedSellP": 97000,
+      "actualSellP": 9700,
+      "predictedNet": 89100,
+      "actualNet": 1800,
+      "spPct": 1127.8
+    },
+    {
+      "date": "2026-07-15",
+      "nextDate": "2026-07-16",
+      "comm": "Carrot China",
+      "buyCity": "Gujranwala",
+      "sellCity": "Sraialamgir",
+      "buyP": 8650,
+      "predictedSellP": 97000,
+      "actualSellP": 9700,
+      "predictedNet": 88350,
+      "actualNet": 1050,
+      "spPct": 1021.4
+    },
+    {
+      "date": "2026-07-15",
+      "nextDate": "2026-07-16",
+      "comm": "Carrot China",
+      "buyCity": "Sambrial",
+      "sellCity": "Sraialamgir",
+      "buyP": 8700,
+      "predictedSellP": 97000,
+      "actualSellP": 9700,
+      "predictedNet": 88300,
+      "actualNet": 1000,
+      "spPct": 1014.9
+    },
+    {
+      "date": "2026-07-15",
+      "nextDate": "2026-07-16",
+      "comm": "Brinjal",
+      "buyCity": "Sraialamgir",
+      "sellCity": "Mianwali",
+      "buyP": 850,
+      "predictedSellP": 9450,
+      "actualSellP": 8550,
+      "predictedNet": 8600,
+      "actualNet": 7700,
+      "spPct": 1011.8
+    },
+    {
+      "date": "2026-07-15",
+      "nextDate": "2026-07-16",
+      "comm": "Carrot China",
+      "buyCity": "Sargodha",
+      "sellCity": "Sraialamgir",
+      "buyP": 8750,
+      "predictedSellP": 97000,
+      "actualSellP": 9700,
+      "predictedNet": 88250,
+      "actualNet": 950,
+      "spPct": 1008.6
+    },
+    {
+      "date": "2026-07-15",
+      "nextDate": "2026-07-16",
+      "comm": "Carrot China",
+      "buyCity": "Sialkot",
+      "sellCity": "Sraialamgir",
+      "buyP": 8750,
+      "predictedSellP": 97000,
+      "actualSellP": 9700,
+      "predictedNet": 88250,
+      "actualNet": 950,
+      "spPct": 1008.6
+    },
+    {
+      "date": "2026-07-15",
+      "nextDate": "2026-07-16",
+      "comm": "Carrot China",
+      "buyCity": "kotmoman",
+      "sellCity": "Sraialamgir",
+      "buyP": 8750,
+      "predictedSellP": 97000,
+      "actualSellP": 9700,
+      "predictedNet": 88250,
+      "actualNet": 950,
+      "spPct": 1008.6
     }
   ]
 }
