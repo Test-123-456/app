@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-17T05:49:37.783Z",
+  "updatedAt": "2026-07-18T05:34:41.107Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -3718,6 +3718,110 @@
       "predictedNet": 51350,
       "actualNet": 51850,
       "spPct": 835
+    },
+    {
+      "date": "2026-07-17",
+      "nextDate": "2026-07-18",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "ArifWala",
+      "sellCity": "Sialkot",
+      "buyP": 5500,
+      "predictedSellP": 58000,
+      "actualSellP": 6750,
+      "predictedNet": 52500,
+      "actualNet": 1250,
+      "spPct": 954.5
+    },
+    {
+      "date": "2026-07-17",
+      "nextDate": "2026-07-18",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "PakPattan",
+      "sellCity": "Sialkot",
+      "buyP": 5650,
+      "predictedSellP": 58000,
+      "actualSellP": 6750,
+      "predictedNet": 52350,
+      "actualNet": 1100,
+      "spPct": 926.5
+    },
+    {
+      "date": "2026-07-17",
+      "nextDate": "2026-07-18",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Hazro",
+      "sellCity": "Sialkot",
+      "buyP": 5700,
+      "predictedSellP": 58000,
+      "actualSellP": 6750,
+      "predictedNet": 52300,
+      "actualNet": 1050,
+      "spPct": 917.5
+    },
+    {
+      "date": "2026-07-17",
+      "nextDate": "2026-07-18",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "HujraShahmuqeem",
+      "sellCity": "Sialkot",
+      "buyP": 5900,
+      "predictedSellP": 58000,
+      "actualSellP": 6750,
+      "predictedNet": 52100,
+      "actualNet": 850,
+      "spPct": 883.1
+    },
+    {
+      "date": "2026-07-17",
+      "nextDate": "2026-07-18",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Nankana",
+      "sellCity": "Sialkot",
+      "buyP": 6000,
+      "predictedSellP": 58000,
+      "actualSellP": 6750,
+      "predictedNet": 52000,
+      "actualNet": 750,
+      "spPct": 866.7
+    },
+    {
+      "date": "2026-07-17",
+      "nextDate": "2026-07-18",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Sambrial",
+      "sellCity": "Sialkot",
+      "buyP": 6000,
+      "predictedSellP": 58000,
+      "actualSellP": 6750,
+      "predictedNet": 52000,
+      "actualNet": 750,
+      "spPct": 866.7
+    },
+    {
+      "date": "2026-07-17",
+      "nextDate": "2026-07-18",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Sanglahill",
+      "sellCity": "Sialkot",
+      "buyP": 6000,
+      "predictedSellP": 58000,
+      "actualSellP": 6750,
+      "predictedNet": 52000,
+      "actualNet": 750,
+      "spPct": 866.7
+    },
+    {
+      "date": "2026-07-17",
+      "nextDate": "2026-07-18",
+      "comm": "Bitter Gourd (کریلا)",
+      "buyCity": "Rawalpindi",
+      "sellCity": "Sialkot",
+      "buyP": 6150,
+      "predictedSellP": 58000,
+      "actualSellP": 6750,
+      "predictedNet": 51850,
+      "actualNet": 600,
+      "spPct": 843.1
     }
   ]
 }
