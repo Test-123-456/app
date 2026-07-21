@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T06:25:15.167Z",
+  "updatedAt": "2026-07-21T05:58:30.561Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -4030,6 +4030,110 @@
       "predictedNet": 14950,
       "actualNet": 14950,
       "spPct": 586.3
+    },
+    {
+      "date": "2026-07-20",
+      "nextDate": "2026-07-21",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "Sahiwal",
+      "buyP": 1480,
+      "predictedSellP": 14850,
+      "actualSellP": 14850,
+      "predictedNet": 13370,
+      "actualNet": 13370,
+      "spPct": 903.4
+    },
+    {
+      "date": "2026-07-20",
+      "nextDate": "2026-07-21",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Layyah",
+      "buyP": 1950,
+      "predictedSellP": 19500,
+      "actualSellP": 19500,
+      "predictedNet": 17550,
+      "actualNet": 17550,
+      "spPct": 900
+    },
+    {
+      "date": "2026-07-20",
+      "nextDate": "2026-07-21",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "ArifWala",
+      "buyP": 1480,
+      "predictedSellP": 14750,
+      "actualSellP": 14750,
+      "predictedNet": 13270,
+      "actualNet": 13270,
+      "spPct": 896.6
+    },
+    {
+      "date": "2026-07-20",
+      "nextDate": "2026-07-21",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "PakPattan",
+      "buyP": 1480,
+      "predictedSellP": 14700,
+      "actualSellP": 14700,
+      "predictedNet": 13220,
+      "actualNet": 13220,
+      "spPct": 893.2
+    },
+    {
+      "date": "2026-07-20",
+      "nextDate": "2026-07-21",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "Lodhran",
+      "buyP": 1480,
+      "predictedSellP": 14400,
+      "actualSellP": 14400,
+      "predictedNet": 12920,
+      "actualNet": 12920,
+      "spPct": 873
+    },
+    {
+      "date": "2026-07-20",
+      "nextDate": "2026-07-21",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "Jauharabad",
+      "buyP": 1480,
+      "predictedSellP": 14350,
+      "actualSellP": 14350,
+      "predictedNet": 12870,
+      "actualNet": 12870,
+      "spPct": 869.6
+    },
+    {
+      "date": "2026-07-20",
+      "nextDate": "2026-07-21",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Kalurkot",
+      "buyP": 1950,
+      "predictedSellP": 18900,
+      "actualSellP": 18100,
+      "predictedNet": 16950,
+      "actualNet": 16150,
+      "spPct": 869.2
+    },
+    {
+      "date": "2026-07-20",
+      "nextDate": "2026-07-21",
+      "comm": "Sugar",
+      "buyCity": "Sialkot",
+      "sellCity": "Faisalabad",
+      "buyP": 1480,
+      "predictedSellP": 14150,
+      "actualSellP": 14150,
+      "predictedNet": 12670,
+      "actualNet": 12670,
+      "spPct": 856.1
     }
   ]
 }
