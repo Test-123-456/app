@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T05:58:30.561Z",
+  "updatedAt": "2026-07-22T05:57:46.424Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -4134,6 +4134,110 @@
       "predictedNet": 12670,
       "actualNet": 12670,
       "spPct": 856.1
+    },
+    {
+      "date": "2026-07-21",
+      "nextDate": "2026-07-22",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "Layyah",
+      "buyP": 2300,
+      "predictedSellP": 19500,
+      "actualSellP": 18100,
+      "predictedNet": 17200,
+      "actualNet": 15800,
+      "spPct": 747.8
+    },
+    {
+      "date": "2026-07-21",
+      "nextDate": "2026-07-22",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "Kalurkot",
+      "buyP": 2300,
+      "predictedSellP": 18100,
+      "actualSellP": 17100,
+      "predictedNet": 15800,
+      "actualNet": 14800,
+      "spPct": 687
+    },
+    {
+      "date": "2026-07-21",
+      "nextDate": "2026-07-22",
+      "comm": "Pumpkin",
+      "buyCity": "Gujranwala",
+      "sellCity": "Layyah",
+      "buyP": 2550,
+      "predictedSellP": 19500,
+      "actualSellP": 18100,
+      "predictedNet": 16950,
+      "actualNet": 15550,
+      "spPct": 664.7
+    },
+    {
+      "date": "2026-07-21",
+      "nextDate": "2026-07-22",
+      "comm": "Pumpkin",
+      "buyCity": "kotmoman",
+      "sellCity": "Layyah",
+      "buyP": 2650,
+      "predictedSellP": 19500,
+      "actualSellP": 18100,
+      "predictedNet": 16850,
+      "actualNet": 15450,
+      "spPct": 635.8
+    },
+    {
+      "date": "2026-07-21",
+      "nextDate": "2026-07-22",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "TTSingh",
+      "buyP": 2300,
+      "predictedSellP": 16900,
+      "actualSellP": 16900,
+      "predictedNet": 14600,
+      "actualNet": 14600,
+      "spPct": 634.8
+    },
+    {
+      "date": "2026-07-21",
+      "nextDate": "2026-07-22",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "BahawalPur",
+      "buyP": 2300,
+      "predictedSellP": 16600,
+      "actualSellP": 17500,
+      "predictedNet": 14300,
+      "actualNet": 15200,
+      "spPct": 621.7
+    },
+    {
+      "date": "2026-07-21",
+      "nextDate": "2026-07-22",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "Jhang",
+      "buyP": 2300,
+      "predictedSellP": 16500,
+      "actualSellP": 17500,
+      "predictedNet": 14200,
+      "actualNet": 15200,
+      "spPct": 617.4
+    },
+    {
+      "date": "2026-07-21",
+      "nextDate": "2026-07-22",
+      "comm": "Pumpkin",
+      "buyCity": "Gujranwala",
+      "sellCity": "Kalurkot",
+      "buyP": 2550,
+      "predictedSellP": 18100,
+      "actualSellP": 17100,
+      "predictedNet": 15550,
+      "actualNet": 14550,
+      "spPct": 609.8
     }
   ]
 }
