@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T06:08:55.924Z",
+  "updatedAt": "2026-07-25T05:50:15.768Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -4316,6 +4316,110 @@
       "predictedNet": 12800,
       "actualNet": 12800,
       "spPct": 656.4
+    },
+    {
+      "date": "2026-07-24",
+      "nextDate": "2026-07-25",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Layyah",
+      "buyP": 1950,
+      "predictedSellP": 18100,
+      "actualSellP": 18100,
+      "predictedNet": 16150,
+      "actualNet": 16150,
+      "spPct": 828.2
+    },
+    {
+      "date": "2026-07-24",
+      "nextDate": "2026-07-25",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "TTSingh",
+      "buyP": 1950,
+      "predictedSellP": 16900,
+      "actualSellP": 16900,
+      "predictedNet": 14950,
+      "actualNet": 14950,
+      "spPct": 766.7
+    },
+    {
+      "date": "2026-07-24",
+      "nextDate": "2026-07-25",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "BahawalPur",
+      "buyP": 1950,
+      "predictedSellP": 15600,
+      "actualSellP": 15150,
+      "predictedNet": 13650,
+      "actualNet": 13200,
+      "spPct": 700
+    },
+    {
+      "date": "2026-07-24",
+      "nextDate": "2026-07-25",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "Layyah",
+      "buyP": 2300,
+      "predictedSellP": 18100,
+      "actualSellP": 18100,
+      "predictedNet": 15800,
+      "actualNet": 15800,
+      "spPct": 687
+    },
+    {
+      "date": "2026-07-24",
+      "nextDate": "2026-07-25",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Kalurkot",
+      "buyP": 1950,
+      "predictedSellP": 15300,
+      "actualSellP": 15200,
+      "predictedNet": 13350,
+      "actualNet": 13250,
+      "spPct": 684.6
+    },
+    {
+      "date": "2026-07-24",
+      "nextDate": "2026-07-25",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Hafizabad",
+      "buyP": 1950,
+      "predictedSellP": 14750,
+      "actualSellP": 14750,
+      "predictedNet": 12800,
+      "actualNet": 12800,
+      "spPct": 656.4
+    },
+    {
+      "date": "2026-07-24",
+      "nextDate": "2026-07-25",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Jhang",
+      "buyP": 1950,
+      "predictedSellP": 14500,
+      "actualSellP": 16500,
+      "predictedNet": 12550,
+      "actualNet": 14550,
+      "spPct": 643.6
+    },
+    {
+      "date": "2026-07-24",
+      "nextDate": "2026-07-25",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "TTSingh",
+      "buyP": 2300,
+      "predictedSellP": 16900,
+      "actualSellP": 16900,
+      "predictedNet": 14600,
+      "actualNet": 14600,
+      "spPct": 634.8
     }
   ]
 }
