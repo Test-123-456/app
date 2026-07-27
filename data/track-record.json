@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26T06:13:34.072Z",
+  "updatedAt": "2026-07-27T06:37:55.228Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -4485,6 +4485,110 @@
       "predictedNet": 14250,
       "actualNet": 14250,
       "spPct": 537.7
+    },
+    {
+      "date": "2026-07-26",
+      "nextDate": "2026-07-27",
+      "comm": "Potato Sugar free",
+      "buyCity": "Okara",
+      "sellCity": "Hazro",
+      "buyP": 2250,
+      "predictedSellP": 32750,
+      "actualSellP": 3100,
+      "predictedNet": 30500,
+      "actualNet": 850,
+      "spPct": 1355.6
+    },
+    {
+      "date": "2026-07-26",
+      "nextDate": "2026-07-27",
+      "comm": "Potato Sugar free",
+      "buyCity": "Mamunkanjan",
+      "sellCity": "Hazro",
+      "buyP": 2600,
+      "predictedSellP": 32750,
+      "actualSellP": 3100,
+      "predictedNet": 30150,
+      "actualNet": 500,
+      "spPct": 1159.6
+    },
+    {
+      "date": "2026-07-26",
+      "nextDate": "2026-07-27",
+      "comm": "Potato Sugar free",
+      "buyCity": "DGKHAN",
+      "sellCity": "Hazro",
+      "buyP": 2750,
+      "predictedSellP": 32750,
+      "actualSellP": 3100,
+      "predictedNet": 30000,
+      "actualNet": 350,
+      "spPct": 1090.9
+    },
+    {
+      "date": "2026-07-26",
+      "nextDate": "2026-07-27",
+      "comm": "Potato Sugar free",
+      "buyCity": "Abdulhakim",
+      "sellCity": "Hazro",
+      "buyP": 2800,
+      "predictedSellP": 32750,
+      "actualSellP": 3100,
+      "predictedNet": 29950,
+      "actualNet": 300,
+      "spPct": 1069.6
+    },
+    {
+      "date": "2026-07-26",
+      "nextDate": "2026-07-27",
+      "comm": "Potato Sugar free",
+      "buyCity": "Multan",
+      "sellCity": "Hazro",
+      "buyP": 2900,
+      "predictedSellP": 32750,
+      "actualSellP": 3100,
+      "predictedNet": 29850,
+      "actualNet": 200,
+      "spPct": 1029.3
+    },
+    {
+      "date": "2026-07-26",
+      "nextDate": "2026-07-27",
+      "comm": "Potato Sugar free",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "Hazro",
+      "buyP": 2955,
+      "predictedSellP": 32750,
+      "actualSellP": 3100,
+      "predictedNet": 29795,
+      "actualNet": 145,
+      "spPct": 1008.3
+    },
+    {
+      "date": "2026-07-26",
+      "nextDate": "2026-07-27",
+      "comm": "Potato Sugar free",
+      "buyCity": "GujarKhan",
+      "sellCity": "Hazro",
+      "buyP": 3020,
+      "predictedSellP": 32750,
+      "actualSellP": 3100,
+      "predictedNet": 29730,
+      "actualNet": 80,
+      "spPct": 984.4
+    },
+    {
+      "date": "2026-07-26",
+      "nextDate": "2026-07-27",
+      "comm": "Potato Sugar free",
+      "buyCity": "Lahore",
+      "sellCity": "Hazro",
+      "buyP": 3050,
+      "predictedSellP": 32750,
+      "actualSellP": 3100,
+      "predictedNet": 29700,
+      "actualNet": 50,
+      "spPct": 973.8
     }
   ]
 }
