@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-28T05:54:57.491Z",
+  "updatedAt": "2026-07-29T06:03:58.532Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -4680,6 +4680,110 @@
       "predictedNet": 14000,
       "actualNet": 12100,
       "spPct": 717.9
+    },
+    {
+      "date": "2026-07-28",
+      "nextDate": "2026-07-29",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Layyah",
+      "buyP": 1950,
+      "predictedSellP": 18100,
+      "actualSellP": 18100,
+      "predictedNet": 16150,
+      "actualNet": 16150,
+      "spPct": 828.2
+    },
+    {
+      "date": "2026-07-28",
+      "nextDate": "2026-07-29",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "TTSingh",
+      "buyP": 1950,
+      "predictedSellP": 16900,
+      "actualSellP": 4700,
+      "predictedNet": 14950,
+      "actualNet": 2750,
+      "spPct": 766.7
+    },
+    {
+      "date": "2026-07-28",
+      "nextDate": "2026-07-29",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Hafizabad",
+      "buyP": 1950,
+      "predictedSellP": 16750,
+      "actualSellP": 16750,
+      "predictedNet": 14800,
+      "actualNet": 14800,
+      "spPct": 759
+    },
+    {
+      "date": "2026-07-28",
+      "nextDate": "2026-07-29",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Jhang",
+      "buyP": 1950,
+      "predictedSellP": 16500,
+      "actualSellP": 13750,
+      "predictedNet": 14550,
+      "actualNet": 11800,
+      "spPct": 746.2
+    },
+    {
+      "date": "2026-07-28",
+      "nextDate": "2026-07-29",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Khanewal",
+      "buyP": 1600,
+      "predictedSellP": 13500,
+      "actualSellP": 13500,
+      "predictedNet": 11900,
+      "actualNet": 11900,
+      "spPct": 743.8
+    },
+    {
+      "date": "2026-07-28",
+      "nextDate": "2026-07-29",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Jahanian",
+      "buyP": 1600,
+      "predictedSellP": 13500,
+      "actualSellP": 13500,
+      "predictedNet": 11900,
+      "actualNet": 11900,
+      "spPct": 743.8
+    },
+    {
+      "date": "2026-07-28",
+      "nextDate": "2026-07-29",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Abdulhakim",
+      "buyP": 1600,
+      "predictedSellP": 13450,
+      "actualSellP": 13450,
+      "predictedNet": 11850,
+      "actualNet": 11850,
+      "spPct": 740.6
+    },
+    {
+      "date": "2026-07-28",
+      "nextDate": "2026-07-29",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Kalurkot",
+      "buyP": 1950,
+      "predictedSellP": 15200,
+      "actualSellP": 15200,
+      "predictedNet": 13250,
+      "actualNet": 13250,
+      "spPct": 679.5
     }
   ]
 }
