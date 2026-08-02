@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T06:03:55.287Z",
+  "updatedAt": "2026-08-02T06:10:27.542Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -4979,6 +4979,71 @@
       "predictedNet": 8900,
       "actualNet": 8900,
       "spPct": 556.3
+    },
+    {
+      "date": "2026-08-01",
+      "nextDate": "2026-08-02",
+      "comm": "Wheat",
+      "buyCity": "Multan",
+      "sellCity": "Faisalabad",
+      "buyP": 937,
+      "predictedSellP": 11750,
+      "actualSellP": 11750,
+      "predictedNet": 10813,
+      "actualNet": 10813,
+      "spPct": 1154
+    },
+    {
+      "date": "2026-08-01",
+      "nextDate": "2026-08-02",
+      "comm": "Wheat",
+      "buyCity": "Multan",
+      "sellCity": "Rawalpindi",
+      "buyP": 937,
+      "predictedSellP": 11750,
+      "actualSellP": 11750,
+      "predictedNet": 10813,
+      "actualNet": 10813,
+      "spPct": 1154
+    },
+    {
+      "date": "2026-08-01",
+      "nextDate": "2026-08-02",
+      "comm": "Wheat",
+      "buyCity": "Multan",
+      "sellCity": "Lodhran",
+      "buyP": 937,
+      "predictedSellP": 11100,
+      "actualSellP": 11100,
+      "predictedNet": 10163,
+      "actualNet": 10163,
+      "spPct": 1084.6
+    },
+    {
+      "date": "2026-08-01",
+      "nextDate": "2026-08-02",
+      "comm": "Wheat",
+      "buyCity": "Multan",
+      "sellCity": "Bhakhar",
+      "buyP": 937,
+      "predictedSellP": 10500,
+      "actualSellP": 10500,
+      "predictedNet": 9563,
+      "actualNet": 9563,
+      "spPct": 1020.6
+    },
+    {
+      "date": "2026-08-01",
+      "nextDate": "2026-08-02",
+      "comm": "Wheat",
+      "buyCity": "Multan",
+      "sellCity": "Pindibhattian",
+      "buyP": 937,
+      "predictedSellP": 10300,
+      "actualSellP": 10300,
+      "predictedNet": 9363,
+      "actualNet": 9363,
+      "spPct": 999.3
     }
   ]
 }
