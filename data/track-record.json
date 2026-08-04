@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-03T06:31:46.044Z",
+  "updatedAt": "2026-08-04T05:56:10.204Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -5148,6 +5148,97 @@
       "predictedNet": 7250,
       "actualNet": 7250,
       "spPct": 315.2
+    },
+    {
+      "date": "2026-08-03",
+      "nextDate": "2026-08-04",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "KotAdu",
+      "buyP": 3500,
+      "predictedSellP": 26500,
+      "actualSellP": 26500,
+      "predictedNet": 23000,
+      "actualNet": 23000,
+      "spPct": 657.1
+    },
+    {
+      "date": "2026-08-03",
+      "nextDate": "2026-08-04",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Jauharabad",
+      "buyP": 3500,
+      "predictedSellP": 24500,
+      "actualSellP": 24500,
+      "predictedNet": 21000,
+      "actualNet": 21000,
+      "spPct": 600
+    },
+    {
+      "date": "2026-08-03",
+      "nextDate": "2026-08-04",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Jhang",
+      "buyP": 3500,
+      "predictedSellP": 23500,
+      "actualSellP": 19500,
+      "predictedNet": 20000,
+      "actualNet": 16000,
+      "spPct": 571.4
+    },
+    {
+      "date": "2026-08-03",
+      "nextDate": "2026-08-04",
+      "comm": "Pumpkin",
+      "buyCity": "Gujranwala",
+      "sellCity": "Hafizabad",
+      "buyP": 2550,
+      "predictedSellP": 16750,
+      "actualSellP": 16750,
+      "predictedNet": 14200,
+      "actualNet": 14200,
+      "spPct": 556.9
+    },
+    {
+      "date": "2026-08-03",
+      "nextDate": "2026-08-04",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Vehari",
+      "buyP": 1600,
+      "predictedSellP": 10500,
+      "actualSellP": 10500,
+      "predictedNet": 8900,
+      "actualNet": 8900,
+      "spPct": 556.3
+    },
+    {
+      "date": "2026-08-03",
+      "nextDate": "2026-08-04",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "JamPur",
+      "buyP": 1600,
+      "predictedSellP": 10500,
+      "actualSellP": 10500,
+      "predictedNet": 8900,
+      "actualNet": 8900,
+      "spPct": 556.3
+    },
+    {
+      "date": "2026-08-03",
+      "nextDate": "2026-08-04",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "RajanPur",
+      "buyP": 1600,
+      "predictedSellP": 10500,
+      "actualSellP": 2950,
+      "predictedNet": 8900,
+      "actualNet": 1350,
+      "spPct": 556.3
     }
   ]
 }
