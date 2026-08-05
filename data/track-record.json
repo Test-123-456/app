@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T05:56:10.204Z",
+  "updatedAt": "2026-08-05T05:53:17.889Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -5239,6 +5239,110 @@
       "predictedNet": 8900,
       "actualNet": 1350,
       "spPct": 556.3
+    },
+    {
+      "date": "2026-08-04",
+      "nextDate": "2026-08-05",
+      "comm": "Potato Sugar free",
+      "buyCity": "Okara",
+      "sellCity": "Jhang",
+      "buyP": 1900,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 27100,
+      "actualNet": 1000,
+      "spPct": 1426.3
+    },
+    {
+      "date": "2026-08-04",
+      "nextDate": "2026-08-05",
+      "comm": "Potato Sugar free",
+      "buyCity": "Pindibhattian",
+      "sellCity": "Jhang",
+      "buyP": 2500,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26500,
+      "actualNet": 400,
+      "spPct": 1060
+    },
+    {
+      "date": "2026-08-04",
+      "nextDate": "2026-08-05",
+      "comm": "Potato Sugar free",
+      "buyCity": "GujarKhan",
+      "sellCity": "Jhang",
+      "buyP": 2540,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26460,
+      "actualNet": 360,
+      "spPct": 1041.7
+    },
+    {
+      "date": "2026-08-04",
+      "nextDate": "2026-08-05",
+      "comm": "Potato Sugar free",
+      "buyCity": "Gujrat",
+      "sellCity": "Jhang",
+      "buyP": 2550,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26450,
+      "actualNet": 350,
+      "spPct": 1037.3
+    },
+    {
+      "date": "2026-08-04",
+      "nextDate": "2026-08-05",
+      "comm": "Potato Sugar free",
+      "buyCity": "Narowal",
+      "sellCity": "Jhang",
+      "buyP": 2550,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26450,
+      "actualNet": 350,
+      "spPct": 1037.3
+    },
+    {
+      "date": "2026-08-04",
+      "nextDate": "2026-08-05",
+      "comm": "Potato Sugar free",
+      "buyCity": "Hafizabad",
+      "sellCity": "Jhang",
+      "buyP": 2550,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26450,
+      "actualNet": 350,
+      "spPct": 1037.3
+    },
+    {
+      "date": "2026-08-04",
+      "nextDate": "2026-08-05",
+      "comm": "Potato Sugar free",
+      "buyCity": "Shakargarh",
+      "sellCity": "Jhang",
+      "buyP": 2550,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26450,
+      "actualNet": 350,
+      "spPct": 1037.3
+    },
+    {
+      "date": "2026-08-04",
+      "nextDate": "2026-08-05",
+      "comm": "Potato Sugar free",
+      "buyCity": "Rawalpindi",
+      "sellCity": "Jhang",
+      "buyP": 2700,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26300,
+      "actualNet": 200,
+      "spPct": 974.1
     }
   ]
 }
