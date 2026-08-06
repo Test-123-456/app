@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T05:53:17.889Z",
+  "updatedAt": "2026-08-06T05:58:54.081Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -5343,6 +5343,110 @@
       "predictedNet": 26300,
       "actualNet": 200,
       "spPct": 974.1
+    },
+    {
+      "date": "2026-08-05",
+      "nextDate": "2026-08-06",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Hafizabad",
+      "buyP": 1950,
+      "predictedSellP": 16750,
+      "actualSellP": 16750,
+      "predictedNet": 14800,
+      "actualNet": 14800,
+      "spPct": 759
+    },
+    {
+      "date": "2026-08-05",
+      "nextDate": "2026-08-06",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "KotAdu",
+      "buyP": 3500,
+      "predictedSellP": 26500,
+      "actualSellP": 24500,
+      "predictedNet": 23000,
+      "actualNet": 21000,
+      "spPct": 657.1
+    },
+    {
+      "date": "2026-08-05",
+      "nextDate": "2026-08-06",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "Hafizabad",
+      "buyP": 2300,
+      "predictedSellP": 16750,
+      "actualSellP": 16750,
+      "predictedNet": 14450,
+      "actualNet": 14450,
+      "spPct": 628.3
+    },
+    {
+      "date": "2026-08-05",
+      "nextDate": "2026-08-06",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Jauharabad",
+      "buyP": 3500,
+      "predictedSellP": 25400,
+      "actualSellP": 25400,
+      "predictedNet": 21900,
+      "actualNet": 21900,
+      "spPct": 625.7
+    },
+    {
+      "date": "2026-08-05",
+      "nextDate": "2026-08-06",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "JamPur",
+      "buyP": 1600,
+      "predictedSellP": 11000,
+      "actualSellP": 14500,
+      "predictedNet": 9400,
+      "actualNet": 12900,
+      "spPct": 587.5
+    },
+    {
+      "date": "2026-08-05",
+      "nextDate": "2026-08-06",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Shorkot",
+      "buyP": 3500,
+      "predictedSellP": 24000,
+      "actualSellP": 21000,
+      "predictedNet": 20500,
+      "actualNet": 17500,
+      "spPct": 585.7
+    },
+    {
+      "date": "2026-08-05",
+      "nextDate": "2026-08-06",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Jhang",
+      "buyP": 3500,
+      "predictedSellP": 23750,
+      "actualSellP": 19500,
+      "predictedNet": 20250,
+      "actualNet": 16000,
+      "spPct": 578.6
+    },
+    {
+      "date": "2026-08-05",
+      "nextDate": "2026-08-06",
+      "comm": "Cucumber (Kheera)",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Abdulhakim",
+      "buyP": 3500,
+      "predictedSellP": 23300,
+      "actualSellP": 19700,
+      "predictedNet": 19800,
+      "actualNet": 16200,
+      "spPct": 565.7
     }
   ]
 }
