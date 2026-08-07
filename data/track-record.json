@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T05:58:54.081Z",
+  "updatedAt": "2026-08-07T05:01:54.663Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -5447,6 +5447,110 @@
       "predictedNet": 19800,
       "actualNet": 16200,
       "spPct": 565.7
+    },
+    {
+      "date": "2026-08-06",
+      "nextDate": "2026-08-07",
+      "comm": "Spinach",
+      "buyCity": "PakPattan",
+      "sellCity": "Jahanian",
+      "buyP": 1750,
+      "predictedSellP": 27500,
+      "actualSellP": 2750,
+      "predictedNet": 25750,
+      "actualNet": 1000,
+      "spPct": 1471.4
+    },
+    {
+      "date": "2026-08-06",
+      "nextDate": "2026-08-07",
+      "comm": "Spinach",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Jahanian",
+      "buyP": 1750,
+      "predictedSellP": 27500,
+      "actualSellP": 2750,
+      "predictedNet": 25750,
+      "actualNet": 1000,
+      "spPct": 1471.4
+    },
+    {
+      "date": "2026-08-06",
+      "nextDate": "2026-08-07",
+      "comm": "Spinach",
+      "buyCity": "SadiqAbad",
+      "sellCity": "Jahanian",
+      "buyP": 1913,
+      "predictedSellP": 27500,
+      "actualSellP": 2750,
+      "predictedNet": 25587,
+      "actualNet": 837,
+      "spPct": 1337.5
+    },
+    {
+      "date": "2026-08-06",
+      "nextDate": "2026-08-07",
+      "comm": "Spinach",
+      "buyCity": "Vehari",
+      "sellCity": "Jahanian",
+      "buyP": 2250,
+      "predictedSellP": 27500,
+      "actualSellP": 2750,
+      "predictedNet": 25250,
+      "actualNet": 500,
+      "spPct": 1122.2
+    },
+    {
+      "date": "2026-08-06",
+      "nextDate": "2026-08-07",
+      "comm": "Spinach",
+      "buyCity": "Mailsi",
+      "sellCity": "Jahanian",
+      "buyP": 2400,
+      "predictedSellP": 27500,
+      "actualSellP": 2750,
+      "predictedNet": 25100,
+      "actualNet": 350,
+      "spPct": 1045.8
+    },
+    {
+      "date": "2026-08-06",
+      "nextDate": "2026-08-07",
+      "comm": "Spinach",
+      "buyCity": "JamPur",
+      "sellCity": "Jahanian",
+      "buyP": 2800,
+      "predictedSellP": 27500,
+      "actualSellP": 2750,
+      "predictedNet": 24700,
+      "actualNet": -50,
+      "spPct": 882.1
+    },
+    {
+      "date": "2026-08-06",
+      "nextDate": "2026-08-07",
+      "comm": "Spinach",
+      "buyCity": "RajanPur",
+      "sellCity": "Jahanian",
+      "buyP": 2800,
+      "predictedSellP": 27500,
+      "actualSellP": 2750,
+      "predictedNet": 24700,
+      "actualNet": -50,
+      "spPct": 882.1
+    },
+    {
+      "date": "2026-08-06",
+      "nextDate": "2026-08-07",
+      "comm": "Spinach",
+      "buyCity": "Abdulhakim",
+      "sellCity": "Jahanian",
+      "buyP": 2800,
+      "predictedSellP": 27500,
+      "actualSellP": 2750,
+      "predictedNet": 24700,
+      "actualNet": -50,
+      "spPct": 882.1
     }
   ]
 }
