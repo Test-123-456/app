@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T04:17:05.773Z",
+  "updatedAt": "2026-08-09T04:24:30.910Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -5629,6 +5629,84 @@
       "predictedNet": 21900,
       "actualNet": 21900,
       "spPct": 625.7
+    },
+    {
+      "date": "2026-08-08",
+      "nextDate": "2026-08-09",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Lodhran",
+      "buyP": 1200,
+      "predictedSellP": 18500,
+      "actualSellP": 18500,
+      "predictedNet": 17300,
+      "actualNet": 17300,
+      "spPct": 1441.7
+    },
+    {
+      "date": "2026-08-08",
+      "nextDate": "2026-08-09",
+      "comm": "Potato Sugar free",
+      "buyCity": "Okara",
+      "sellCity": "Jhang",
+      "buyP": 1900,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 27100,
+      "actualNet": 1000,
+      "spPct": 1426.3
+    },
+    {
+      "date": "2026-08-08",
+      "nextDate": "2026-08-09",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "KotAdu",
+      "buyP": 1200,
+      "predictedSellP": 16500,
+      "actualSellP": 16500,
+      "predictedNet": 15300,
+      "actualNet": 15300,
+      "spPct": 1275
+    },
+    {
+      "date": "2026-08-08",
+      "nextDate": "2026-08-09",
+      "comm": "Potato Sugar free",
+      "buyCity": "Pindibhattian",
+      "sellCity": "Jhang",
+      "buyP": 2500,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26500,
+      "actualNet": 400,
+      "spPct": 1060
+    },
+    {
+      "date": "2026-08-08",
+      "nextDate": "2026-08-09",
+      "comm": "Potato Sugar free",
+      "buyCity": "GujarKhan",
+      "sellCity": "Jhang",
+      "buyP": 2540,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26460,
+      "actualNet": 360,
+      "spPct": 1041.7
+    },
+    {
+      "date": "2026-08-08",
+      "nextDate": "2026-08-09",
+      "comm": "Potato Sugar free",
+      "buyCity": "Hafizabad",
+      "sellCity": "Jhang",
+      "buyP": 2550,
+      "predictedSellP": 29000,
+      "actualSellP": 2900,
+      "predictedNet": 26450,
+      "actualNet": 350,
+      "spPct": 1037.3
     }
   ]
 }
