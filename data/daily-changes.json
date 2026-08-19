@@ -1,690 +1,482 @@
 {
-  "updatedAt": "2026-08-18T03:52:17.640Z",
-  "date": "2026-08-18",
+  "updatedAt": "2026-08-19T03:53:15.920Z",
+  "date": "2026-08-19",
   "records": [
     {
       "city": "Lahore",
       "commodity": "Onion",
-      "today": 15500,
-      "yesterday": 14500,
+      "today": 16500,
+      "yesterday": 15500,
       "change": 1000,
       "dir": "up"
     },
     {
       "city": "Lahore",
-      "commodity": "Ginger(China)",
-      "today": 30750,
-      "yesterday": 31250,
-      "change": -500,
+      "commodity": "Tomato",
+      "today": 19000,
+      "yesterday": 20000,
+      "change": -1000,
       "dir": "down"
     },
     {
       "city": "Lahore",
-      "commodity": "Tomato",
-      "today": 20000,
-      "yesterday": 19750,
-      "change": 250,
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 14850,
+      "yesterday": 13850,
+      "change": 1000,
       "dir": "up"
     },
     {
       "city": "Lahore",
-      "commodity": "Brinjal",
-      "today": 7400,
-      "yesterday": 8300,
-      "change": -900,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
       "commodity": "Bitter Gourd (کریلا)",
-      "today": 10250,
-      "yesterday": 11150,
-      "change": -900,
+      "today": 9250,
+      "yesterday": 10250,
+      "change": -1000,
       "dir": "down"
     },
     {
       "city": "Lahore",
       "commodity": "Cauliflower",
-      "today": 15800,
-      "yesterday": 16800,
-      "change": -1000,
+      "today": 14850,
+      "yesterday": 15800,
+      "change": -950,
       "dir": "down"
     },
     {
       "city": "Lahore",
-      "commodity": "Cabbage",
-      "today": 15800,
-      "yesterday": 14850,
-      "change": 950,
-      "dir": "up"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Jaggery (گڑ)",
-      "today": 21500,
-      "yesterday": 20000,
-      "change": 1500,
-      "dir": "up"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Ginger (Thai)",
-      "today": 31750,
-      "yesterday": 32250,
+      "commodity": "Apple Kala Kullu (Pahari)",
+      "today": 19250,
+      "yesterday": 19750,
       "change": -500,
       "dir": "down"
     },
     {
       "city": "Lahore",
-      "commodity": "Cucumber (Kheera)",
-      "today": 15800,
-      "yesterday": 16800,
-      "change": -1000,
+      "commodity": "Banana(DOZEN)",
+      "today": 178,
+      "yesterday": 177,
+      "change": 1,
+      "dir": "up"
+    },
+    {
+      "city": "Lahore",
+      "commodity": "Apple (Gatcha)",
+      "today": 22350,
+      "yesterday": 27000,
+      "change": -4650,
       "dir": "down"
     },
     {
       "city": "Lahore",
+      "commodity": "Green Chilli",
+      "today": 11150,
+      "yesterday": 10250,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Lahore",
       "commodity": "Capsicum (شملہ مرچ)",
-      "today": 27900,
-      "yesterday": 28750,
-      "change": -850,
+      "today": 26950,
+      "yesterday": 27900,
+      "change": -950,
       "dir": "down"
     },
     {
       "city": "Lahore",
       "commodity": "Lemon (Desi)",
-      "today": 14350,
-      "yesterday": 14850,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Peach",
-      "today": 20500,
-      "yesterday": 19650,
-      "change": 850,
+      "today": 15350,
+      "yesterday": 14350,
+      "change": 1000,
       "dir": "up"
     },
     {
       "city": "Lahore",
-      "commodity": "Grapes Sundekhani",
-      "today": 47950,
-      "yesterday": 47600,
-      "change": 350,
+      "commodity": "Peach",
+      "today": 21500,
+      "yesterday": 20500,
+      "change": 1000,
       "dir": "up"
     },
     {
       "city": "Lahore",
       "commodity": "Pear",
-      "today": 21850,
-      "yesterday": 24100,
-      "change": -2250,
-      "dir": "down"
-    },
-    {
-      "city": "Lahore",
-      "commodity": "Potato Sugar free",
-      "today": 2850,
-      "yesterday": 3050,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Mash Pulse(Imported) washed",
-      "today": 41750,
-      "yesterday": 41250,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Maize",
-      "today": 6418,
-      "yesterday": 6313,
-      "change": 105,
-      "dir": "up"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Onion",
-      "today": 14750,
-      "yesterday": 14250,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Tomato",
-      "today": 20750,
-      "yesterday": 19750,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 13750,
-      "yesterday": 15750,
-      "change": -2000,
-      "dir": "down"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Cucumber (Kheera)",
-      "today": 15750,
-      "yesterday": 17250,
-      "change": -1500,
-      "dir": "down"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Apple (Gatcha)",
-      "today": 26750,
-      "yesterday": 27750,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Green Chilli",
-      "today": 82500,
-      "yesterday": 8750,
-      "change": 73750,
-      "dir": "up"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 24750,
-      "yesterday": 25750,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Okara",
-      "commodity": "Lemon (Desi)",
-      "today": 14500,
-      "yesterday": 14250,
-      "change": 250,
-      "dir": "up"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Potato Store",
-      "today": 1900,
-      "yesterday": 2200,
-      "change": -300,
-      "dir": "down"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Onion",
-      "today": 15250,
-      "yesterday": 14750,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Tomato",
-      "today": 20500,
-      "yesterday": 19500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 12500,
-      "yesterday": 14500,
-      "change": -2000,
-      "dir": "down"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Tinda Desi",
-      "today": 18500,
-      "yesterday": 17500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Banana(DOZEN)",
-      "today": 135,
-      "yesterday": 125,
-      "change": 10,
-      "dir": "up"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Apple (Gatcha)",
-      "today": 28000,
-      "yesterday": 27500,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Green Chilli",
-      "today": 9250,
-      "yesterday": 8750,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Lemon (Desi)",
-      "today": 18000,
-      "yesterday": 17500,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Sargodha",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 15500,
-      "yesterday": 14500,
-      "change": 1000,
+      "today": 24600,
+      "yesterday": 21850,
+      "change": 2750,
       "dir": "up"
     },
     {
       "city": "Rawalpindi",
       "commodity": "Onion",
-      "today": 15000,
-      "yesterday": 14450,
-      "change": 550,
-      "dir": "up"
-    },
-    {
-      "city": "Rawalpindi",
-      "commodity": "Garlic (China)",
-      "today": 31150,
-      "yesterday": 30650,
-      "change": 500,
+      "today": 15700,
+      "yesterday": 15000,
+      "change": 700,
       "dir": "up"
     },
     {
       "city": "Rawalpindi",
       "commodity": "Tomato",
-      "today": 20450,
-      "yesterday": 19550,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Rawalpindi",
-      "commodity": "Mango(Chounsa)",
-      "today": 25700,
-      "yesterday": 24500,
-      "change": 1200,
-      "dir": "up"
-    },
-    {
-      "city": "Rawalpindi",
-      "commodity": "Garlic (Local)",
-      "today": 14650,
-      "yesterday": 16050,
-      "change": -1400,
+      "today": 19800,
+      "yesterday": 20450,
+      "change": -650,
       "dir": "down"
     },
     {
       "city": "Rawalpindi",
-      "commodity": "Cucumber (Kheera)",
-      "today": 16850,
-      "yesterday": 17750,
+      "commodity": "Brinjal",
+      "today": 7500,
+      "yesterday": 8400,
       "change": -900,
       "dir": "down"
     },
     {
       "city": "Rawalpindi",
-      "commodity": "Apple (Gatcha)",
-      "today": 21350,
-      "yesterday": 21800,
-      "change": -450,
+      "commodity": "Red Chilli Whole (Dry)",
+      "today": 54500,
+      "yesterday": 58250,
+      "change": -3750,
       "dir": "down"
     },
     {
       "city": "Rawalpindi",
-      "commodity": "Green Chilli",
-      "today": 10000,
-      "yesterday": 10350,
-      "change": -350,
-      "dir": "down"
-    },
-    {
-      "city": "Rawalpindi",
-      "commodity": "Lemon (Desi)",
-      "today": 14550,
-      "yesterday": 14050,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Rawalpindi",
-      "commodity": "Peach",
-      "today": 18400,
-      "yesterday": 17500,
+      "commodity": "Tinda Desi",
+      "today": 16850,
+      "yesterday": 15950,
       "change": 900,
       "dir": "up"
     },
     {
       "city": "Rawalpindi",
-      "commodity": "Grapes Gola",
-      "today": 24550,
-      "yesterday": 23850,
+      "commodity": "Guava",
+      "today": 16400,
+      "yesterday": 17300,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Rawalpindi",
+      "commodity": "Mango(Chounsa)",
+      "today": 24350,
+      "yesterday": 25700,
+      "change": -1350,
+      "dir": "down"
+    },
+    {
+      "city": "Rawalpindi",
+      "commodity": "Cabbage",
+      "today": 14050,
+      "yesterday": 12250,
+      "change": 1800,
+      "dir": "up"
+    },
+    {
+      "city": "Rawalpindi",
+      "commodity": "Cucumber (Kheera)",
+      "today": 15950,
+      "yesterday": 16850,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Rawalpindi",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 22750,
+      "yesterday": 22250,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Rawalpindi",
+      "commodity": "Lemon (Desi)",
+      "today": 15000,
+      "yesterday": 14550,
+      "change": 450,
+      "dir": "up"
+    },
+    {
+      "city": "Rawalpindi",
+      "commodity": "Peach",
+      "today": 19100,
+      "yesterday": 18400,
+      "change": 700,
+      "dir": "up"
+    },
+    {
+      "city": "Rawalpindi",
+      "commodity": "Plum",
+      "today": 30000,
+      "yesterday": 29300,
       "change": 700,
       "dir": "up"
     },
     {
       "city": "Rawalpindi",
       "commodity": "Grapes Sundekhani",
-      "today": 46150,
-      "yesterday": 45450,
-      "change": 700,
+      "today": 46400,
+      "yesterday": 46150,
+      "change": 250,
       "dir": "up"
     },
     {
       "city": "Rawalpindi",
       "commodity": "Pear",
-      "today": 23200,
-      "yesterday": 22700,
-      "change": 500,
+      "today": 23600,
+      "yesterday": 23200,
+      "change": 400,
       "dir": "up"
     },
     {
       "city": "Rawalpindi",
       "commodity": "Sweet Musk Melon",
-      "today": 16400,
-      "yesterday": 16350,
-      "change": 50,
+      "today": 16800,
+      "yesterday": 16400,
+      "change": 400,
       "dir": "up"
     },
     {
       "city": "Rawalpindi",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 12750,
-      "yesterday": 12250,
-      "change": 500,
-      "dir": "up"
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 6350,
+      "yesterday": 7950,
+      "change": -1600,
+      "dir": "down"
     },
     {
-      "city": "RahimYarKhan",
-      "commodity": "Onion",
-      "today": 12273,
-      "yesterday": 11364,
-      "change": 909,
-      "dir": "up"
-    },
-    {
-      "city": "RahimYarKhan",
-      "commodity": "Tomato",
-      "today": 16991,
-      "yesterday": 17862,
-      "change": -871,
+      "city": "Rawalpindi",
+      "commodity": "Potato Sugar free",
+      "today": 2900,
+      "yesterday": 2950,
+      "change": -50,
       "dir": "down"
     },
     {
       "city": "RahimYarKhan",
-      "commodity": "Brinjal",
-      "today": 7406,
-      "yesterday": 8278,
+      "commodity": "Tomato",
+      "today": 16119,
+      "yesterday": 16991,
       "change": -872,
       "dir": "down"
     },
     {
       "city": "RahimYarKhan",
       "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 13506,
-      "yesterday": 12634,
-      "change": 872,
+      "today": 14813,
+      "yesterday": 13506,
+      "change": 1307,
       "dir": "up"
     },
     {
       "city": "RahimYarKhan",
       "commodity": "Cauliflower",
-      "today": 11763,
-      "yesterday": 12634,
-      "change": -871,
+      "today": 11545,
+      "yesterday": 11763,
+      "change": -218,
       "dir": "down"
     },
     {
       "city": "RahimYarKhan",
       "commodity": "Guava",
-      "today": 12634,
-      "yesterday": 11763,
-      "change": 871,
-      "dir": "up"
-    },
-    {
-      "city": "RahimYarKhan",
-      "commodity": "Cabbage",
-      "today": 12634,
-      "yesterday": 10892,
-      "change": 1742,
-      "dir": "up"
-    },
-    {
-      "city": "RahimYarKhan",
-      "commodity": "Ginger (Thai)",
-      "today": 30455,
-      "yesterday": 30000,
-      "change": 455,
-      "dir": "up"
-    },
-    {
-      "city": "RahimYarKhan",
-      "commodity": "Green Chilli",
-      "today": 10892,
-      "yesterday": 10020,
-      "change": 872,
-      "dir": "up"
-    },
-    {
-      "city": "RahimYarKhan",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 22437,
-      "yesterday": 22219,
-      "change": 218,
-      "dir": "up"
-    },
-    {
-      "city": "RahimYarKhan",
-      "commodity": "Lemon (Desi)",
-      "today": 11819,
-      "yesterday": 11364,
-      "change": 455,
-      "dir": "up"
-    },
-    {
-      "city": "RahimYarKhan",
-      "commodity": "Bottle Gourd (کدو)",
       "today": 13070,
       "yesterday": 12634,
       "change": 436,
       "dir": "up"
     },
     {
-      "city": "Sahiwal",
-      "commodity": "Gram Black Bareek",
-      "today": 18600,
-      "yesterday": 18700,
-      "change": -100,
+      "city": "RahimYarKhan",
+      "commodity": "Ginger (Thai)",
+      "today": 29546,
+      "yesterday": 30455,
+      "change": -909,
       "dir": "down"
     },
     {
-      "city": "Sahiwal",
-      "commodity": "Moong Pulse Kori",
-      "today": 27100,
-      "yesterday": 27115,
-      "change": -15,
+      "city": "RahimYarKhan",
+      "commodity": "Green Chilli",
+      "today": 9149,
+      "yesterday": 10892,
+      "change": -1743,
       "dir": "down"
+    },
+    {
+      "city": "RahimYarKhan",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 20258,
+      "yesterday": 22437,
+      "change": -2179,
+      "dir": "down"
+    },
+    {
+      "city": "RahimYarKhan",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 13506,
+      "yesterday": 13070,
+      "change": 436,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Wheat",
+      "today": 9700,
+      "yesterday": 9650,
+      "change": 50,
+      "dir": "up"
     },
     {
       "city": "Sahiwal",
       "commodity": "Maize",
-      "today": 6100,
-      "yesterday": 6300,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Potato Store",
-      "today": 2000,
-      "yesterday": 1900,
-      "change": 100,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Tomato",
-      "today": 20750,
-      "yesterday": 20000,
-      "change": 750,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Brinjal",
-      "today": 8850,
-      "yesterday": 8650,
-      "change": 200,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 13600,
-      "yesterday": 13850,
-      "change": -250,
-      "dir": "down"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 13850,
-      "yesterday": 15650,
-      "change": -1800,
-      "dir": "down"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Cauliflower",
-      "today": 12850,
-      "yesterday": 14600,
-      "change": -1750,
-      "dir": "down"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Mango(Chounsa)",
-      "today": 29600,
-      "yesterday": 28000,
-      "change": 1600,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Mango(Anwer Ratol)",
-      "today": 23850,
-      "yesterday": 23650,
-      "change": 200,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Cabbage",
-      "today": 16850,
-      "yesterday": 16650,
-      "change": 200,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Jaggery (گڑ)",
-      "today": 16300,
-      "yesterday": 16050,
+      "today": 6350,
+      "yesterday": 6100,
       "change": 250,
       "dir": "up"
     },
     {
       "city": "Sahiwal",
-      "commodity": "Ginger (Thai)",
-      "today": 32600,
-      "yesterday": 32850,
-      "change": -250,
-      "dir": "down"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Garlic (Local)",
-      "today": 14600,
-      "yesterday": 13650,
-      "change": 950,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Cucumber (Kheera)",
-      "today": 15850,
-      "yesterday": 17300,
-      "change": -1450,
-      "dir": "down"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Apple (Gatcha)",
-      "today": 27500,
-      "yesterday": 27850,
+      "commodity": "Potato Store",
+      "today": 1650,
+      "yesterday": 2000,
       "change": -350,
       "dir": "down"
     },
     {
       "city": "Sahiwal",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 25600,
-      "yesterday": 25650,
+      "commodity": "Onion",
+      "today": 15650,
+      "yesterday": 14300,
+      "change": 1350,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Tomato",
+      "today": 19500,
+      "yesterday": 20750,
+      "change": -1250,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Spinach",
+      "today": 3600,
+      "yesterday": 3650,
       "change": -50,
       "dir": "down"
     },
     {
       "city": "Sahiwal",
-      "commodity": "Lemon (Desi)",
-      "today": 14350,
-      "yesterday": 12650,
-      "change": 1700,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Peach",
-      "today": 17650,
-      "yesterday": 17850,
+      "commodity": "Brinjal",
+      "today": 8650,
+      "yesterday": 8850,
       "change": -200,
       "dir": "down"
     },
     {
       "city": "Sahiwal",
-      "commodity": "Peach Special",
-      "today": 29900,
-      "yesterday": 28150,
-      "change": 1750,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Plum",
-      "today": 28000,
-      "yesterday": 28050,
-      "change": -50,
+      "commodity": "Cauliflower",
+      "today": 12605,
+      "yesterday": 12850,
+      "change": -245,
       "dir": "down"
     },
     {
       "city": "Sahiwal",
-      "commodity": "Pomegranate Desi",
+      "commodity": "Guava",
+      "today": 11750,
+      "yesterday": 10850,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Mango(Chounsa)",
+      "today": 29900,
+      "yesterday": 29600,
+      "change": 300,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Mango(Anwer Ratol)",
+      "today": 25450,
+      "yesterday": 23850,
+      "change": 1600,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Jaggery (گڑ)",
+      "today": 16150,
+      "yesterday": 16300,
+      "change": -150,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Garlic (Local)",
+      "today": 14850,
+      "yesterday": 14600,
+      "change": 250,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Cucumber (Kheera)",
+      "today": 15600,
+      "yesterday": 15850,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Dates (Aseel)",
+      "today": 30150,
+      "yesterday": 31850,
+      "change": -1700,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Apple (Gatcha)",
+      "today": 25500,
+      "yesterday": 27500,
+      "change": -2000,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Green Chilli",
+      "today": 8200,
+      "yesterday": 8650,
+      "change": -450,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 24850,
+      "yesterday": 25600,
+      "change": -750,
+      "dir": "down"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Lemon (Desi)",
+      "today": 14450,
+      "yesterday": 14350,
+      "change": 100,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Peach",
+      "today": 17800,
+      "yesterday": 17650,
+      "change": 150,
+      "dir": "up"
+    },
+    {
+      "city": "Sahiwal",
+      "commodity": "Peach Special",
       "today": 31850,
       "yesterday": 29900,
       "change": 1950,
@@ -692,143 +484,199 @@
     },
     {
       "city": "Sahiwal",
-      "commodity": "Pear",
-      "today": 28850,
-      "yesterday": 28450,
-      "change": 400,
-      "dir": "up"
-    },
-    {
-      "city": "Sahiwal",
-      "commodity": "Cocoyam(اروی)",
-      "today": 7850,
-      "yesterday": 8650,
-      "change": -800,
+      "commodity": "Plum",
+      "today": 27850,
+      "yesterday": 28000,
+      "change": -150,
       "dir": "down"
     },
     {
       "city": "Sahiwal",
-      "commodity": "Coriander (دھنیا)",
-      "today": 19650,
-      "yesterday": 17650,
-      "change": 2000,
-      "dir": "up"
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 6650,
+      "yesterday": 6850,
+      "change": -200,
+      "dir": "down"
     },
     {
       "city": "Sahiwal",
-      "commodity": "Mint(پودینہ)",
-      "today": 11600,
-      "yesterday": 11700,
-      "change": -100,
+      "commodity": "Cocoyam(اروی)",
+      "today": 7650,
+      "yesterday": 7850,
+      "change": -200,
       "dir": "down"
     },
     {
       "city": "Sahiwal",
       "commodity": "sugarcane(گنڈ یری)",
-      "today": 12650,
-      "yesterday": 12600,
-      "change": 50,
+      "today": 12910,
+      "yesterday": 12650,
+      "change": 260,
       "dir": "up"
     },
     {
       "city": "Sahiwal",
-      "commodity": "Gram Black Mota",
-      "today": 19100,
-      "yesterday": 19600,
-      "change": -500,
+      "commodity": "Dates(Irani)",
+      "today": 43500,
+      "yesterday": 43850,
+      "change": -350,
       "dir": "down"
     },
     {
-      "city": "Gujrat",
-      "commodity": "Rice Basmati Super (New)",
-      "today": 29000,
-      "yesterday": 28500,
+      "city": "Sahiwal",
+      "commodity": "Gram Black Mota",
+      "today": 19600,
+      "yesterday": 19100,
       "change": 500,
       "dir": "up"
     },
     {
       "city": "Gujrat",
       "commodity": "Onion",
-      "today": 15400,
-      "yesterday": 14450,
-      "change": 950,
+      "today": 16400,
+      "yesterday": 15400,
+      "change": 1000,
       "dir": "up"
     },
     {
       "city": "Gujrat",
       "commodity": "Tomato",
-      "today": 20000,
-      "yesterday": 19000,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Gujrat",
-      "commodity": "Banana(DOZEN)",
-      "today": 170,
-      "yesterday": 185,
-      "change": -15,
+      "today": 19000,
+      "yesterday": 20000,
+      "change": -1000,
       "dir": "down"
     },
     {
       "city": "Gujrat",
-      "commodity": "Guava",
-      "today": 17000,
-      "yesterday": 17500,
+      "commodity": "Brinjal",
+      "today": 8250,
+      "yesterday": 8750,
       "change": -500,
       "dir": "down"
     },
     {
       "city": "Gujrat",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 10500,
+      "yesterday": 11500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Gujrat",
+      "commodity": "Guava",
+      "today": 17500,
+      "yesterday": 17000,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Gujrat",
       "commodity": "Cabbage",
-      "today": 14500,
-      "yesterday": 13500,
-      "change": 1000,
+      "today": 16500,
+      "yesterday": 14500,
+      "change": 2000,
       "dir": "up"
     },
     {
       "city": "Gujrat",
       "commodity": "Masoor Pulse (Imported) Moti",
-      "today": 20500,
-      "yesterday": 21250,
-      "change": -750,
-      "dir": "down"
-    },
-    {
-      "city": "Gujrat",
-      "commodity": "Green Chilli",
-      "today": 8250,
-      "yesterday": 9500,
-      "change": -1250,
-      "dir": "down"
-    },
-    {
-      "city": "Gujrat",
-      "commodity": "Grapes Sundekhani",
-      "today": 48000,
-      "yesterday": 44500,
-      "change": 3500,
+      "today": 21250,
+      "yesterday": 20500,
+      "change": 750,
       "dir": "up"
     },
     {
       "city": "Gujrat",
-      "commodity": "Potato Sugar free",
-      "today": 2550,
-      "yesterday": 2850,
-      "change": -300,
-      "dir": "down"
-    },
-    {
-      "city": "BahawalPur",
-      "commodity": "Mash Pulse(Imported) washed",
-      "today": 41500,
-      "yesterday": 42500,
-      "change": -1000,
-      "dir": "down"
+      "commodity": "Green Chilli",
+      "today": 8750,
+      "yesterday": 8250,
+      "change": 500,
+      "dir": "up"
     },
     {
       "city": "BahawalPur",
       "commodity": "Onion",
+      "today": 13700,
+      "yesterday": 13150,
+      "change": 550,
+      "dir": "up"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Brinjal",
+      "today": 7800,
+      "yesterday": 8350,
+      "change": -550,
+      "dir": "down"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 16500,
+      "yesterday": 15500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 9350,
+      "yesterday": 10250,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Pumpkin",
+      "today": 15050,
+      "yesterday": 14600,
+      "change": 450,
+      "dir": "up"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Banana(DOZEN)",
+      "today": 138,
+      "yesterday": 135,
+      "change": 3,
+      "dir": "up"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Wheat Straw",
+      "today": 2550,
+      "yesterday": 2100,
+      "change": 450,
+      "dir": "up"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Gram White(Imported) Mota",
+      "today": 28000,
+      "yesterday": 29500,
+      "change": -1500,
+      "dir": "down"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Ginger (Thai)",
+      "today": 30750,
+      "yesterday": 32250,
+      "change": -1500,
+      "dir": "down"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Masoor Whole (Imported)",
+      "today": 17500,
+      "yesterday": 16500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Garlic (Local)",
       "today": 13150,
       "yesterday": 12250,
       "change": 900,
@@ -836,423 +684,271 @@
     },
     {
       "city": "BahawalPur",
-      "commodity": "Tomato",
-      "today": 18300,
-      "yesterday": 19300,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "BahawalPur",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 15500,
-      "yesterday": 15150,
-      "change": 350,
-      "dir": "up"
-    },
-    {
-      "city": "BahawalPur",
-      "commodity": "Cabbage",
-      "today": 14600,
-      "yesterday": 14150,
-      "change": 450,
-      "dir": "up"
-    },
-    {
-      "city": "BahawalPur",
-      "commodity": "Masoor Whole (Imported)",
-      "today": 16500,
-      "yesterday": 17500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "BahawalPur",
-      "commodity": "Garlic (Local)",
-      "today": 12250,
-      "yesterday": 11500,
-      "change": 750,
-      "dir": "up"
-    },
-    {
-      "city": "BahawalPur",
       "commodity": "Cucumber (Kheera)",
-      "today": 15000,
-      "yesterday": 15150,
-      "change": -150,
-      "dir": "down"
-    },
-    {
-      "city": "BahawalPur",
-      "commodity": "Apple (Gatcha)",
-      "today": 24000,
-      "yesterday": 23000,
-      "change": 1000,
+      "today": 15250,
+      "yesterday": 15000,
+      "change": 250,
       "dir": "up"
     },
     {
       "city": "BahawalPur",
       "commodity": "Green Chilli",
-      "today": 6900,
-      "yesterday": 8800,
-      "change": -1900,
+      "today": 7800,
+      "yesterday": 6900,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 21950,
+      "yesterday": 24500,
+      "change": -2550,
       "dir": "down"
     },
     {
       "city": "BahawalPur",
-      "commodity": "Gram Flour (بیسن)",
-      "today": 22500,
-      "yesterday": 23500,
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 9350,
+      "yesterday": 7800,
+      "change": 1550,
+      "dir": "up"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Cocoyam(اروی)",
+      "today": 6850,
+      "yesterday": 7350,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "BahawalPur",
+      "commodity": "Gram Pulse(Moti)",
+      "today": 21500,
+      "yesterday": 22500,
       "change": -1000,
       "dir": "down"
     },
     {
       "city": "TTSingh",
       "commodity": "Gram White  Bareek",
-      "today": 19750,
-      "yesterday": 20000,
-      "change": -250,
-      "dir": "down"
+      "today": 20278,
+      "yesterday": 19750,
+      "change": 528,
+      "dir": "up"
     },
     {
       "city": "TTSingh",
-      "commodity": "Potato Store",
-      "today": 2450,
-      "yesterday": 2650,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "TTSingh",
-      "commodity": "Onion",
-      "today": 15200,
-      "yesterday": 13150,
-      "change": 2050,
+      "commodity": "Moong Pulse Kori",
+      "today": 31525,
+      "yesterday": 31500,
+      "change": 25,
       "dir": "up"
     },
     {
       "city": "TTSingh",
       "commodity": "Tomato",
-      "today": 21600,
-      "yesterday": 20700,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "TTSingh",
-      "commodity": "Brinjal",
-      "today": 8450,
-      "yesterday": 7500,
-      "change": 950,
-      "dir": "up"
-    },
-    {
-      "city": "TTSingh",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 14100,
-      "yesterday": 16000,
-      "change": -1900,
+      "today": 20700,
+      "yesterday": 21600,
+      "change": -900,
       "dir": "down"
-    },
-    {
-      "city": "TTSingh",
-      "commodity": "Carrot",
-      "today": 14100,
-      "yesterday": 15050,
-      "change": -950,
-      "dir": "down"
-    },
-    {
-      "city": "TTSingh",
-      "commodity": "Banana(DOZEN)",
-      "today": 151,
-      "yesterday": 141,
-      "change": 10,
-      "dir": "up"
     },
     {
       "city": "TTSingh",
       "commodity": "Guava",
-      "today": 9400,
-      "yesterday": 7500,
+      "today": 11300,
+      "yesterday": 9400,
       "change": 1900,
       "dir": "up"
     },
     {
       "city": "TTSingh",
-      "commodity": "Pomegranate Desi",
-      "today": 32900,
-      "yesterday": 30100,
-      "change": 2800,
+      "commodity": "Cabbage",
+      "today": 13500,
+      "yesterday": 15050,
+      "change": -1550,
+      "dir": "down"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Gram White(Imported) Mota",
+      "today": 25525,
+      "yesterday": 25500,
+      "change": 25,
       "dir": "up"
     },
     {
       "city": "TTSingh",
-      "commodity": "Cocoyam(اروی)",
-      "today": 9400,
-      "yesterday": 8450,
-      "change": 950,
+      "commodity": "Garlic (Local)",
+      "today": 14100,
+      "yesterday": 15200,
+      "change": -1100,
+      "dir": "down"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Cucumber (Kheera)",
+      "today": 18300,
+      "yesterday": 18800,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Dates (Aseel)",
+      "today": 33490,
+      "yesterday": 33450,
+      "change": 40,
+      "dir": "up"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Pomegranate Desi",
+      "today": 37600,
+      "yesterday": 32900,
+      "change": 4700,
+      "dir": "up"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Grapes Gola",
+      "today": 39500,
+      "yesterday": 32900,
+      "change": 6600,
+      "dir": "up"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Grapes Sundekhani",
+      "today": 56400,
+      "yesterday": 47000,
+      "change": 9400,
+      "dir": "up"
+    },
+    {
+      "city": "TTSingh",
+      "commodity": "Rice Kainat Old",
+      "today": 31525,
+      "yesterday": 31500,
+      "change": 25,
       "dir": "up"
     },
     {
       "city": "ArifWala",
-      "commodity": "Gram Pulse(Bareek)",
-      "today": 20500,
-      "yesterday": 21500,
+      "commodity": "Maize",
+      "today": 6375,
+      "yesterday": 6250,
+      "change": 125,
+      "dir": "up"
+    },
+    {
+      "city": "ArifWala",
+      "commodity": "Potato Fresh",
+      "today": 9500,
+      "yesterday": 10500,
       "change": -1000,
       "dir": "down"
     },
     {
       "city": "ArifWala",
-      "commodity": "Maize",
-      "today": 6250,
-      "yesterday": 6338,
-      "change": -88,
-      "dir": "down"
-    },
-    {
-      "city": "ArifWala",
       "commodity": "Onion",
-      "today": 13500,
-      "yesterday": 12500,
+      "today": 14500,
+      "yesterday": 13500,
       "change": 1000,
       "dir": "up"
     },
     {
       "city": "ArifWala",
       "commodity": "Tomato",
-      "today": 19000,
-      "yesterday": 18500,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "ArifWala",
-      "commodity": "Brinjal",
-      "today": 6500,
-      "yesterday": 7500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "ArifWala",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 11500,
-      "yesterday": 12500,
-      "change": -1000,
+      "today": 17000,
+      "yesterday": 19000,
+      "change": -2000,
       "dir": "down"
     },
     {
       "city": "ArifWala",
       "commodity": "Cauliflower",
-      "today": 11000,
-      "yesterday": 13500,
-      "change": -2500,
-      "dir": "down"
+      "today": 12000,
+      "yesterday": 11000,
+      "change": 1000,
+      "dir": "up"
     },
     {
       "city": "ArifWala",
-      "commodity": "Mango(Chounsa)",
-      "today": 23000,
-      "yesterday": 22000,
+      "commodity": "Guava",
+      "today": 11000,
+      "yesterday": 10000,
       "change": 1000,
       "dir": "up"
     },
     {
       "city": "ArifWala",
       "commodity": "Ginger (Thai)",
-      "today": 30500,
-      "yesterday": 31000,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "ArifWala",
-      "commodity": "Cucumber (Kheera)",
-      "today": 14500,
-      "yesterday": 15500,
-      "change": -1000,
-      "dir": "down"
+      "today": 31500,
+      "yesterday": 30500,
+      "change": 1000,
+      "dir": "up"
     },
     {
       "city": "ArifWala",
       "commodity": "Apple (Gatcha)",
-      "today": 21000,
-      "yesterday": 21500,
+      "today": 20500,
+      "yesterday": 21000,
       "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "ArifWala",
-      "commodity": "Green Chilli",
-      "today": 6500,
-      "yesterday": 7500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "ArifWala",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 23500,
-      "yesterday": 24500,
-      "change": -1000,
       "dir": "down"
     },
     {
       "city": "ArifWala",
       "commodity": "Peach Special",
-      "today": 28500,
-      "yesterday": 29000,
+      "today": 28000,
+      "yesterday": 28500,
       "change": -500,
       "dir": "down"
     },
     {
       "city": "ArifWala",
-      "commodity": "Pomegranate Desi",
-      "today": 28500,
-      "yesterday": 28000,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "ArifWala",
-      "commodity": "Zucchini (گھیا توری)",
-      "today": 8000,
-      "yesterday": 6500,
-      "change": 1500,
-      "dir": "up"
+      "commodity": "Cocoyam(اروی)",
+      "today": 6500,
+      "yesterday": 7000,
+      "change": -500,
+      "dir": "down"
     },
     {
       "city": "Lodhran",
       "commodity": "Onion",
-      "today": 12200,
-      "yesterday": 11800,
-      "change": 400,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Tomato",
-      "today": 18000,
-      "yesterday": 17400,
+      "today": 12800,
+      "yesterday": 12200,
       "change": 600,
       "dir": "up"
     },
     {
       "city": "Lodhran",
+      "commodity": "Spinach",
+      "today": 2800,
+      "yesterday": 3200,
+      "change": -400,
+      "dir": "down"
+    },
+    {
+      "city": "Lodhran",
       "commodity": "Brinjal",
-      "today": 7000,
-      "yesterday": 7200,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 13650,
-      "yesterday": 12650,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Apple (Ammre)",
-      "today": 22500,
-      "yesterday": 21500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Guava",
-      "today": 11800,
-      "yesterday": 11400,
-      "change": 400,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Mango(Chounsa)",
-      "today": 21250,
-      "yesterday": 21000,
-      "change": 250,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Mango(Anwer Ratol)",
-      "today": 20500,
-      "yesterday": 19500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Ginger (Thai)",
-      "today": 31000,
-      "yesterday": 31500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Cucumber (Kheera)",
-      "today": 14000,
-      "yesterday": 13150,
-      "change": 850,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Dates (Aseel)",
-      "today": 20750,
-      "yesterday": 21250,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Green Chilli",
       "today": 6800,
-      "yesterday": 7600,
-      "change": -800,
-      "dir": "down"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 21200,
-      "yesterday": 21400,
+      "yesterday": 7000,
       "change": -200,
       "dir": "down"
     },
     {
       "city": "Lodhran",
-      "commodity": "Lemon (Desi)",
-      "today": 14500,
-      "yesterday": 13150,
-      "change": 1350,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Pomegranate Desi",
-      "today": 36500,
-      "yesterday": 36250,
-      "change": 250,
-      "dir": "up"
-    },
-    {
-      "city": "Lodhran",
-      "commodity": "Grapes Gola",
-      "today": 24500,
-      "yesterday": 36250,
-      "change": -11750,
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 7750,
+      "yesterday": 10000,
+      "change": -2250,
       "dir": "down"
     },
     {
       "city": "Lodhran",
-      "commodity": "Bottle Gourd (کدو)",
+      "commodity": "Cauliflower",
       "today": 12800,
       "yesterday": 11800,
       "change": 1000,
@@ -1260,678 +956,254 @@
     },
     {
       "city": "Lodhran",
-      "commodity": "Zucchini (گھیا توری)",
-      "today": 6300,
-      "yesterday": 6800,
-      "change": -500,
+      "commodity": "Apple (Ammre)",
+      "today": 21400,
+      "yesterday": 22500,
+      "change": -1100,
       "dir": "down"
     },
     {
       "city": "Lodhran",
+      "commodity": "Mango(Chounsa)",
+      "today": 21000,
+      "yesterday": 21250,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Mango(Anwer Ratol)",
+      "today": 21500,
+      "yesterday": 20500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Cabbage",
+      "today": 13200,
+      "yesterday": 12800,
+      "change": 400,
+      "dir": "up"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Gram White(Imported) Mota",
+      "today": 27750,
+      "yesterday": 28000,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Ginger (Thai)",
+      "today": 29000,
+      "yesterday": 31000,
+      "change": -2000,
+      "dir": "down"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Garlic (Local)",
+      "today": 13200,
+      "yesterday": 12200,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Cucumber (Kheera)",
+      "today": 13150,
+      "yesterday": 14000,
+      "change": -850,
+      "dir": "down"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 20500,
+      "yesterday": 21200,
+      "change": -700,
+      "dir": "down"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Grapes Gola",
+      "today": 26500,
+      "yesterday": 24500,
+      "change": 2000,
+      "dir": "up"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 13200,
+      "yesterday": 12800,
+      "change": 400,
+      "dir": "up"
+    },
+    {
+      "city": "Lodhran",
       "commodity": "Cocoyam(اروی)",
-      "today": 6200,
-      "yesterday": 6500,
-      "change": -300,
+      "today": 5500,
+      "yesterday": 6200,
+      "change": -700,
+      "dir": "down"
+    },
+    {
+      "city": "Lodhran",
+      "commodity": "Coriander (دھنیا)",
+      "today": 12800,
+      "yesterday": 14500,
+      "change": -1700,
       "dir": "down"
     },
     {
       "city": "Mailsi",
-      "commodity": "Onion",
-      "today": 11000,
-      "yesterday": 10500,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Mailsi",
       "commodity": "Tomato",
-      "today": 17000,
-      "yesterday": 16500,
+      "today": 16500,
+      "yesterday": 17000,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Mailsi",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 8000,
+      "yesterday": 7500,
       "change": 500,
       "dir": "up"
     },
     {
       "city": "Mailsi",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 11500,
-      "yesterday": 10500,
-      "change": 1000,
+      "commodity": "Cauliflower",
+      "today": 13500,
+      "yesterday": 15500,
+      "change": -2000,
+      "dir": "down"
+    },
+    {
+      "city": "Mailsi",
+      "commodity": "Banana(DOZEN)",
+      "today": 115,
+      "yesterday": 100,
+      "change": 15,
       "dir": "up"
     },
     {
       "city": "Mailsi",
       "commodity": "Seed Cotton(Phutti)",
-      "today": 20625,
-      "yesterday": 21000,
-      "change": -375,
+      "today": 20375,
+      "yesterday": 20625,
+      "change": -250,
       "dir": "down"
     },
     {
       "city": "Mailsi",
-      "commodity": "Cucumber (Kheera)",
-      "today": 16000,
-      "yesterday": 16500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Mailsi",
-      "commodity": "Green Chilli",
-      "today": 5750,
-      "yesterday": 6250,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Mailsi",
-      "commodity": "Carrot China",
-      "today": 11500,
-      "yesterday": 9500,
-      "change": 2000,
-      "dir": "up"
-    },
-    {
-      "city": "Mailsi",
-      "commodity": "sugarcane(گنڈ یری)",
-      "today": 8500,
-      "yesterday": 7500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Onion",
-      "today": 12200,
-      "yesterday": 11800,
-      "change": 400,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Tomato",
-      "today": 18000,
-      "yesterday": 17400,
-      "change": 600,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Brinjal",
-      "today": 7000,
-      "yesterday": 7200,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Cauliflower",
-      "today": 11800,
-      "yesterday": 12000,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Apple (Ammre)",
-      "today": 22000,
-      "yesterday": 21000,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Guava",
-      "today": 12500,
-      "yesterday": 12400,
-      "change": 100,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Mango(Chounsa)",
-      "today": 26500,
-      "yesterday": 27000,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Mango(Anwer Ratol)",
-      "today": 20500,
-      "yesterday": 19500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
       "commodity": "Ginger (Thai)",
-      "today": 31000,
-      "yesterday": 31500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Cucumber (Kheera)",
-      "today": 13500,
-      "yesterday": 14000,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Green Chilli",
-      "today": 6800,
-      "yesterday": 7400,
-      "change": -600,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 21000,
-      "yesterday": 21500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Lemon (Desi)",
-      "today": 14500,
-      "yesterday": 12200,
-      "change": 2300,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Plum",
-      "today": 22500,
-      "yesterday": 22000,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Pomegranate Desi",
-      "today": 39000,
-      "yesterday": 38500,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Grapes Gola",
-      "today": 24500,
-      "yesterday": 39000,
-      "change": -14500,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Sweet Musk Melon",
-      "today": 19000,
-      "yesterday": 19500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 12500,
-      "yesterday": 12000,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Zucchini (گھیا توری)",
-      "today": 6400,
-      "yesterday": 6800,
-      "change": -400,
-      "dir": "down"
-    },
-    {
-      "city": "Kahrorpacca",
-      "commodity": "Cocoyam(اروی)",
-      "today": 6400,
-      "yesterday": 6500,
-      "change": -100,
-      "dir": "down"
-    },
-    {
-      "city": "DGKHAN",
-      "commodity": "Masoor Pulse (Imported) Moti",
-      "today": 19750,
-      "yesterday": 22150,
-      "change": -2400,
-      "dir": "down"
-    },
-    {
-      "city": "DGKHAN",
-      "commodity": "Green Chilli",
-      "today": 8250,
-      "yesterday": 6750,
-      "change": 1500,
-      "dir": "up"
-    },
-    {
-      "city": "DGKHAN",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 13500,
-      "yesterday": 10500,
-      "change": 3000,
-      "dir": "up"
-    },
-    {
-      "city": "Jahanian",
-      "commodity": "Onion",
-      "today": 12500,
-      "yesterday": 11500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Jahanian",
-      "commodity": "Tomato",
-      "today": 20500,
-      "yesterday": 19500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Moong",
-      "today": 30250,
-      "yesterday": 29750,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Onion",
-      "today": 15250,
-      "yesterday": 14250,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Ginger(China)",
-      "today": 28750,
-      "yesterday": 27750,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Tomato",
-      "today": 19750,
-      "yesterday": 19250,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Brinjal",
-      "today": 4600,
-      "yesterday": 9250,
-      "change": -4650,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 11750,
-      "yesterday": 14250,
-      "change": -2500,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 6750,
-      "yesterday": 8750,
-      "change": -2000,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Tinda Desi",
-      "today": 16250,
-      "yesterday": 16750,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Cauliflower",
-      "today": 11750,
-      "yesterday": 16750,
-      "change": -5000,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Guava",
-      "today": 16250,
-      "yesterday": 16750,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Cabbage",
-      "today": 10250,
-      "yesterday": 11250,
+      "today": 26500,
+      "yesterday": 27500,
       "change": -1000,
       "dir": "down"
     },
     {
-      "city": "Sialkot",
-      "commodity": "Ginger (Thai)",
-      "today": 33250,
-      "yesterday": 28750,
-      "change": 4500,
+      "city": "Mailsi",
+      "commodity": "Cocoyam(اروی)",
+      "today": 7000,
+      "yesterday": 8000,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Chichawatni",
+      "commodity": "Wheat",
+      "today": 11125,
+      "yesterday": 11150,
+      "change": -25,
+      "dir": "down"
+    },
+    {
+      "city": "Chichawatni",
+      "commodity": "Moong",
+      "today": 15750,
+      "yesterday": 15625,
+      "change": 125,
       "dir": "up"
     },
     {
-      "city": "Sialkot",
-      "commodity": "Masoor Pulse (Imported) Moti",
-      "today": 21100,
-      "yesterday": 20850,
-      "change": 250,
+      "city": "Chichawatni",
+      "commodity": "Maize",
+      "today": 6500,
+      "yesterday": 6338,
+      "change": 162,
       "dir": "up"
     },
     {
-      "city": "Sialkot",
-      "commodity": "Cucumber (Kheera)",
-      "today": 6750,
-      "yesterday": 16750,
-      "change": -10000,
+      "city": "Chichawatni",
+      "commodity": "Potato Store",
+      "today": 1800,
+      "yesterday": 2150,
+      "change": -350,
       "dir": "down"
     },
     {
-      "city": "Sialkot",
-      "commodity": "Green Chilli",
-      "today": 5800,
-      "yesterday": 7750,
-      "change": -1950,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 19250,
-      "yesterday": 21250,
-      "change": -2000,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Pomegranate Desi",
-      "today": 23750,
-      "yesterday": 28600,
-      "change": -4850,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Grapes Sundekhani",
-      "today": 44750,
-      "yesterday": 45250,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Pear",
-      "today": 21750,
-      "yesterday": 21250,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 10250,
-      "yesterday": 12750,
-      "change": -2500,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Carrot China",
-      "today": 10750,
-      "yesterday": 11250,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Sialkot",
-      "commodity": "Potato Sugar free",
-      "today": 2700,
-      "yesterday": 2975,
-      "change": -275,
-      "dir": "down"
-    },
-    {
-      "city": "Narowal",
-      "commodity": "Rice Basmati Super (New)",
-      "today": 29000,
-      "yesterday": 28500,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Narowal",
+      "city": "Chichawatni",
       "commodity": "Onion",
-      "today": 15400,
-      "yesterday": 14450,
-      "change": 950,
+      "today": 15250,
+      "yesterday": 14000,
+      "change": 1250,
       "dir": "up"
     },
     {
-      "city": "Narowal",
-      "commodity": "Tomato",
-      "today": 20000,
-      "yesterday": 19000,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Narowal",
-      "commodity": "Banana(DOZEN)",
-      "today": 170,
-      "yesterday": 185,
-      "change": -15,
-      "dir": "down"
-    },
-    {
-      "city": "Narowal",
+      "city": "Chichawatni",
       "commodity": "Guava",
-      "today": 17000,
-      "yesterday": 17500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Narowal",
-      "commodity": "Cabbage",
-      "today": 14500,
-      "yesterday": 13500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Narowal",
-      "commodity": "Masoor Pulse (Imported) Moti",
-      "today": 20500,
-      "yesterday": 21250,
+      "today": 6500,
+      "yesterday": 7250,
       "change": -750,
       "dir": "down"
     },
     {
-      "city": "Narowal",
-      "commodity": "Green Chilli",
-      "today": 8250,
-      "yesterday": 9500,
-      "change": -1250,
+      "city": "Chichawatni",
+      "commodity": "Seed Cotton(Phutti)",
+      "today": 22438,
+      "yesterday": 22125,
+      "change": 313,
+      "dir": "up"
+    },
+    {
+      "city": "Chichawatni",
+      "commodity": "Dates (Aseel)",
+      "today": 30500,
+      "yesterday": 32750,
+      "change": -2250,
       "dir": "down"
     },
     {
-      "city": "Narowal",
-      "commodity": "Grapes Sundekhani",
-      "today": 48000,
-      "yesterday": 44500,
-      "change": 3500,
-      "dir": "up"
-    },
-    {
-      "city": "Narowal",
-      "commodity": "Potato Sugar free",
-      "today": 2550,
-      "yesterday": 2850,
-      "change": -300,
-      "dir": "down"
-    },
-    {
-      "city": "Chakwal",
-      "commodity": "Potato Store",
-      "today": 2650,
-      "yesterday": 2700,
-      "change": -50,
-      "dir": "down"
-    },
-    {
-      "city": "Chakwal",
-      "commodity": "Onion",
-      "today": 15250,
-      "yesterday": 13750,
-      "change": 1500,
-      "dir": "up"
-    },
-    {
-      "city": "Chakwal",
-      "commodity": "Tomato",
-      "today": 20500,
-      "yesterday": 19750,
-      "change": 750,
-      "dir": "up"
-    },
-    {
-      "city": "Chakwal",
-      "commodity": "Banana(DOZEN)",
-      "today": 163,
-      "yesterday": 165,
-      "change": -2,
-      "dir": "down"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Potato Store",
-      "today": 2850,
-      "yesterday": 3050,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Onion",
-      "today": 15100,
-      "yesterday": 14200,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Tomato",
-      "today": 20250,
-      "yesterday": 19350,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Brinjal",
-      "today": 7450,
-      "yesterday": 7000,
-      "change": 450,
-      "dir": "up"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 9700,
-      "yesterday": 9850,
-      "change": -150,
-      "dir": "down"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Peas",
-      "today": 31550,
-      "yesterday": 31050,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Guava",
-      "today": 7900,
-      "yesterday": 7650,
-      "change": 250,
-      "dir": "up"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Cucumber (Kheera)",
-      "today": 18450,
-      "yesterday": 17550,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Jhelum",
+      "city": "Chichawatni",
       "commodity": "Peach",
-      "today": 17550,
-      "yesterday": 16650,
-      "change": 900,
-      "dir": "up"
+      "today": 23000,
+      "yesterday": 24000,
+      "change": -1000,
+      "dir": "down"
     },
     {
-      "city": "Jhelum",
-      "commodity": "Sweet Musk Melon",
-      "today": 12650,
-      "yesterday": 12150,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Jhelum",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 12400,
-      "yesterday": 11950,
-      "change": 450,
-      "dir": "up"
-    },
-    {
-      "city": "Jhelum",
+      "city": "Chichawatni",
       "commodity": "Cocoyam(اروی)",
-      "today": 8800,
-      "yesterday": 8550,
+      "today": 8250,
+      "yesterday": 8000,
       "change": 250,
       "dir": "up"
     },
     {
-      "city": "Jhelum",
-      "commodity": "Carrot China",
-      "today": 13050,
-      "yesterday": 13150,
-      "change": -100,
+      "city": "Chichawatni",
+      "commodity": "Sesame(تِل)",
+      "today": 25375,
+      "yesterday": 25500,
+      "change": -125,
       "dir": "down"
     },
     {
-      "city": "RajanPur",
+      "city": "DGKHAN",
       "commodity": "Onion",
       "today": 10500,
       "yesterday": 9500,
@@ -1939,1199 +1211,79 @@
       "dir": "up"
     },
     {
-      "city": "RajanPur",
-      "commodity": "Cauliflower",
-      "today": 9300,
-      "yesterday": 12500,
-      "change": -3200,
-      "dir": "down"
-    },
-    {
-      "city": "RajanPur",
-      "commodity": "Garlic (Local)",
-      "today": 11000,
+      "city": "DGKHAN",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 12500,
       "yesterday": 11500,
-      "change": -500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "DGKHAN",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 8500,
+      "yesterday": 8750,
+      "change": -250,
       "dir": "down"
     },
     {
-      "city": "RajanPur",
-      "commodity": "Bottle Gourd (کدو)",
+      "city": "DGKHAN",
+      "commodity": "Peas",
+      "today": 42000,
+      "yesterday": 41000,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "DGKHAN",
+      "commodity": "Cabbage",
       "today": 11000,
       "yesterday": 10500,
       "change": 500,
       "dir": "up"
     },
     {
-      "city": "Jhang",
-      "commodity": "Rice (IRRI)",
-      "today": 9500,
-      "yesterday": 8500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Gram White  Bareek",
-      "today": 18500,
-      "yesterday": 22500,
-      "change": -4000,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Gram Pulse(Bareek)",
-      "today": 17000,
-      "yesterday": 16500,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Moong Pulse Kori",
-      "today": 23500,
-      "yesterday": 24500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Mash Pulse(Imported) washed",
-      "today": 38000,
-      "yesterday": 38500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Masoor Pulse(local) Bareek",
-      "today": 18500,
-      "yesterday": 31500,
-      "change": -13000,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Potato Store",
-      "today": 1900,
-      "yesterday": 2350,
-      "change": -450,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Onion",
-      "today": 14500,
-      "yesterday": 13750,
-      "change": 750,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Garlic (China)",
-      "today": 33000,
-      "yesterday": 33500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Ginger(China)",
-      "today": 33000,
-      "yesterday": 29000,
-      "change": 4000,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Tomato",
-      "today": 21500,
-      "yesterday": 19500,
-      "change": 2000,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Spinach",
-      "today": 5750,
-      "yesterday": 6450,
-      "change": -700,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Brinjal",
-      "today": 6250,
-      "yesterday": 6450,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 8500,
-      "yesterday": 9500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Pumpkin",
-      "today": 15500,
-      "yesterday": 14500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Cauliflower",
-      "today": 10550,
-      "yesterday": 15500,
-      "change": -4950,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Mango(Chounsa)",
-      "today": 27000,
-      "yesterday": 27500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Mango(Anwer Ratol)",
-      "today": 23500,
-      "yesterday": 23750,
-      "change": -250,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Gram White(Imported) Mota",
-      "today": 22500,
-      "yesterday": 18000,
-      "change": 4500,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Masoor Pulse (Imported) Moti",
-      "today": 29000,
-      "yesterday": 18500,
-      "change": 10500,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Cucumber (Kheera)",
-      "today": 17000,
-      "yesterday": 17500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Dates (Aseel)",
-      "today": 26500,
-      "yesterday": 31500,
-      "change": -5000,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Apple (Gatcha)",
-      "today": 24000,
-      "yesterday": 24500,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Green Chilli",
-      "today": 6500,
-      "yesterday": 9500,
-      "change": -3000,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 24500,
-      "yesterday": 27500,
-      "change": -3000,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Peach",
-      "today": 13500,
-      "yesterday": 13750,
-      "change": -250,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Peach Special",
-      "today": 21750,
-      "yesterday": 21500,
-      "change": 250,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Plum",
-      "today": 24250,
-      "yesterday": 24500,
-      "change": -250,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Mango Desi",
-      "today": 13750,
-      "yesterday": 13500,
-      "change": 250,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Pomegranate Desi",
-      "today": 13750,
-      "yesterday": 29500,
-      "change": -15750,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Grapes Gola",
-      "today": 32000,
-      "yesterday": 29000,
-      "change": 3000,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Grapes Sundekhani",
-      "today": 43500,
-      "yesterday": 41500,
-      "change": 2000,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Gram Flour (بیسن)",
-      "today": 17000,
-      "yesterday": 17750,
-      "change": -750,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Sweet Musk Melon",
-      "today": 13750,
-      "yesterday": 15000,
-      "change": -1250,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 15000,
-      "yesterday": 14500,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Zucchini (گھیا توری)",
-      "today": 10550,
-      "yesterday": 7500,
-      "change": 3050,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Cocoyam(اروی)",
-      "today": 6450,
-      "yesterday": 6500,
-      "change": -50,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Potato Sugar free",
-      "today": 2900,
-      "yesterday": 3100,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Gram Pulse(Moti)",
-      "today": 18600,
-      "yesterday": 18500,
-      "change": 100,
-      "dir": "up"
-    },
-    {
-      "city": "Jhang",
-      "commodity": "Gram Black Mota",
-      "today": 18000,
-      "yesterday": 17750,
-      "change": 250,
-      "dir": "up"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Potato Fresh",
-      "today": 2900,
-      "yesterday": 3300,
-      "change": -400,
-      "dir": "down"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Onion",
-      "today": 11250,
+      "city": "DGKHAN",
+      "commodity": "Garlic (Local)",
+      "today": 12500,
       "yesterday": 11500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "DGKHAN",
+      "commodity": "Apple (Gatcha)",
+      "today": 23500,
+      "yesterday": 22500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "DGKHAN",
+      "commodity": "Green Chilli",
+      "today": 7750,
+      "yesterday": 8250,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "DGKHAN",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 13250,
+      "yesterday": 13500,
       "change": -250,
       "dir": "down"
     },
     {
-      "city": "KotAdu",
-      "commodity": "Tomato",
-      "today": 16900,
-      "yesterday": 15900,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 17500,
-      "yesterday": 15500,
-      "change": 2000,
-      "dir": "up"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Mango(Anwer Ratol)",
-      "today": 22500,
-      "yesterday": 23500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Cucumber (Kheera)",
-      "today": 18500,
-      "yesterday": 17500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Apple (Gatcha)",
-      "today": 32500,
-      "yesterday": 33000,
+      "city": "Sialkot",
+      "commodity": "Moong",
+      "today": 29750,
+      "yesterday": 30250,
       "change": -500,
       "dir": "down"
     },
     {
-      "city": "KotAdu",
-      "commodity": "Green Chilli",
-      "today": 6500,
-      "yesterday": 8500,
-      "change": -2000,
-      "dir": "down"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 26500,
-      "yesterday": 25500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Lemon (Desi)",
-      "today": 14500,
-      "yesterday": 15500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Peach Special",
-      "today": 26500,
-      "yesterday": 25500,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Grapes Gola",
-      "today": 34500,
-      "yesterday": 27500,
-      "change": 7000,
-      "dir": "up"
-    },
-    {
-      "city": "KotAdu",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 19500,
-      "yesterday": 16500,
-      "change": 3000,
-      "dir": "up"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Onion",
-      "today": 14850,
-      "yesterday": 15000,
-      "change": -150,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Ginger(China)",
-      "today": 29250,
-      "yesterday": 32250,
-      "change": -3000,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Tomato",
-      "today": 19075,
-      "yesterday": 21000,
-      "change": -1925,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Spinach",
-      "today": 5100,
-      "yesterday": 5500,
-      "change": -400,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Brinjal",
-      "today": 7800,
-      "yesterday": 8500,
-      "change": -700,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 13150,
-      "yesterday": 14200,
-      "change": -1050,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 9450,
-      "yesterday": 11250,
-      "change": -1800,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Cauliflower",
-      "today": 14850,
-      "yesterday": 17000,
-      "change": -2150,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Banana(DOZEN)",
-      "today": 120,
-      "yesterday": 190,
-      "change": -70,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Guava",
-      "today": 10400,
-      "yesterday": 11250,
-      "change": -850,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Cabbage",
-      "today": 14850,
-      "yesterday": 15200,
-      "change": -350,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Ginger (Thai)",
-      "today": 30150,
-      "yesterday": 33250,
-      "change": -3100,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Garlic (Local)",
-      "today": 13950,
-      "yesterday": 15000,
-      "change": -1050,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Cucumber (Kheera)",
-      "today": 14850,
-      "yesterday": 17000,
-      "change": -2150,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Apple (Gatcha)",
-      "today": 26550,
-      "yesterday": 28500,
-      "change": -1950,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Green Chilli",
-      "today": 9450,
-      "yesterday": 10250,
-      "change": -800,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 26550,
-      "yesterday": 29750,
-      "change": -3200,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Lemon (Desi)",
-      "today": 14850,
-      "yesterday": 16000,
-      "change": -1150,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Peach",
-      "today": 22950,
-      "yesterday": 19000,
-      "change": 3950,
-      "dir": "up"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Peach Special",
-      "today": 26550,
-      "yesterday": 28500,
-      "change": -1950,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Grapes Gola",
-      "today": 22450,
-      "yesterday": 24250,
-      "change": -1800,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Pear",
-      "today": 22950,
-      "yesterday": 25000,
-      "change": -2050,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 12150,
-      "yesterday": 13400,
-      "change": -1250,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Zucchini (گھیا توری)",
-      "today": 8700,
-      "yesterday": 9500,
-      "change": -800,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Cocoyam(اروی)",
-      "today": 8700,
-      "yesterday": 9500,
-      "change": -800,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Sweet Potato(شکر قندی)",
-      "today": 8700,
-      "yesterday": 9500,
-      "change": -800,
-      "dir": "down"
-    },
-    {
-      "city": "Nankana",
-      "commodity": "Papaya(پپیتا)",
-      "today": 27450,
-      "yesterday": 29750,
-      "change": -2300,
-      "dir": "down"
-    },
-    {
-      "city": "ChackJhumra",
-      "commodity": "Potato Store",
-      "today": 2100,
-      "yesterday": 2300,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "ChackJhumra",
-      "commodity": "Onion",
-      "today": 15500,
-      "yesterday": 15000,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "ChackJhumra",
-      "commodity": "Tomato",
-      "today": 21500,
-      "yesterday": 21000,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "ChackJhumra",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 12500,
-      "yesterday": 14500,
-      "change": -2000,
-      "dir": "down"
-    },
-    {
-      "city": "ChackJhumra",
-      "commodity": "Pumpkin",
-      "today": 5250,
-      "yesterday": 4000,
-      "change": 1250,
-      "dir": "up"
-    },
-    {
-      "city": "ChackJhumra",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 16500,
-      "yesterday": 14500,
-      "change": 2000,
-      "dir": "up"
-    },
-    {
-      "city": "ChackJhumra",
-      "commodity": "Cocoyam(اروی)",
-      "today": 8000,
-      "yesterday": 7750,
-      "change": 250,
-      "dir": "up"
-    },
-    {
-      "city": "ChackJhumra",
-      "commodity": "Potato Sugar free",
-      "today": 2900,
-      "yesterday": 3100,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Chiniot",
-      "commodity": "Potato Store",
-      "today": 2450,
-      "yesterday": 2850,
-      "change": -400,
-      "dir": "down"
-    },
-    {
-      "city": "Chiniot",
-      "commodity": "Onion",
-      "today": 15000,
-      "yesterday": 14050,
-      "change": 950,
-      "dir": "up"
-    },
-    {
-      "city": "Chiniot",
-      "commodity": "Tomato",
-      "today": 20450,
-      "yesterday": 19550,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Chiniot",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 12250,
-      "yesterday": 13150,
-      "change": -900,
-      "dir": "down"
-    },
-    {
-      "city": "Chiniot",
-      "commodity": "Pumpkin",
-      "today": 15950,
-      "yesterday": 14050,
-      "change": 1900,
-      "dir": "up"
-    },
-    {
-      "city": "Chiniot",
-      "commodity": "Zucchini (گھیا توری)",
-      "today": 8650,
-      "yesterday": 7750,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Wheat",
-      "today": 11550,
-      "yesterday": 11600,
-      "change": -50,
-      "dir": "down"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Potato Store",
-      "today": 2100,
-      "yesterday": 2500,
-      "change": -400,
-      "dir": "down"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Garlic (China)",
-      "today": 29700,
-      "yesterday": 29800,
-      "change": -100,
-      "dir": "down"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Cauliflower",
-      "today": 12500,
-      "yesterday": 14100,
-      "change": -1600,
-      "dir": "down"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Cabbage",
-      "today": 14200,
-      "yesterday": 14300,
-      "change": -100,
-      "dir": "down"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Cucumber (Kheera)",
-      "today": 18300,
-      "yesterday": 17700,
-      "change": 600,
-      "dir": "up"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Apple (Gatcha)",
-      "today": 27300,
-      "yesterday": 26800,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 27300,
-      "yesterday": 27100,
-      "change": 200,
-      "dir": "up"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Gram Flour (بیسن)",
-      "today": 19250,
-      "yesterday": 19750,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Cocoyam(اروی)",
-      "today": 6300,
-      "yesterday": 6600,
-      "change": -300,
-      "dir": "down"
-    },
-    {
-      "city": "Kalurkot",
-      "commodity": "Canola",
-      "today": 19350,
-      "yesterday": 19000,
-      "change": 350,
-      "dir": "up"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Onion",
-      "today": 13450,
-      "yesterday": 13050,
-      "change": 400,
-      "dir": "up"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Tomato",
-      "today": 20300,
-      "yesterday": 21050,
-      "change": -750,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Brinjal",
-      "today": 9700,
-      "yesterday": 9400,
-      "change": 300,
-      "dir": "up"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Lady Finger/Okra (بھنڈی توری)",
-      "today": 17200,
-      "yesterday": 14600,
-      "change": 2600,
-      "dir": "up"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 12400,
-      "yesterday": 12000,
-      "change": 400,
-      "dir": "up"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Cauliflower",
-      "today": 14100,
-      "yesterday": 13750,
-      "change": 350,
-      "dir": "up"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Banana(DOZEN)",
-      "today": 135,
-      "yesterday": 160,
-      "change": -25,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Guava",
-      "today": 7750,
-      "yesterday": 17250,
-      "change": -9500,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Cabbage",
-      "today": 15400,
-      "yesterday": 14600,
-      "change": 800,
-      "dir": "up"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Ginger (Thai)",
-      "today": 33900,
-      "yesterday": 33850,
-      "change": 50,
-      "dir": "up"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Garlic (Local)",
-      "today": 11200,
-      "yesterday": 11650,
-      "change": -450,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Apple (Gatcha)",
-      "today": 24650,
-      "yesterday": 25000,
-      "change": -350,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Green Chilli",
-      "today": 6700,
-      "yesterday": 7700,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 25650,
-      "yesterday": 26000,
-      "change": -350,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Grapes Gola",
-      "today": 35750,
-      "yesterday": 38000,
-      "change": -2250,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Grapes Sundekhani",
-      "today": 47250,
-      "yesterday": 49500,
-      "change": -2250,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Zucchini (گھیا توری)",
-      "today": 8700,
-      "yesterday": 9600,
-      "change": -900,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Cocoyam(اروی)",
-      "today": 5050,
-      "yesterday": 5700,
-      "change": -650,
-      "dir": "down"
-    },
-    {
-      "city": "Fortabas",
-      "commodity": "Coriander (دھنیا)",
-      "today": 24000,
-      "yesterday": 27000,
-      "change": -3000,
-      "dir": "down"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Onion",
-      "today": 12550,
-      "yesterday": 11650,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Tomato",
-      "today": 19700,
-      "yesterday": 18850,
-      "change": 850,
-      "dir": "up"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 9750,
-      "yesterday": 10750,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Cabbage",
-      "today": 16150,
-      "yesterday": 17950,
-      "change": -1800,
-      "dir": "down"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Green Chilli",
-      "today": 6400,
-      "yesterday": 7600,
-      "change": -1200,
-      "dir": "down"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 26950,
-      "yesterday": 23300,
-      "change": 3650,
-      "dir": "up"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Grapes Gola",
-      "today": 32300,
-      "yesterday": 38600,
-      "change": -6300,
-      "dir": "down"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 17950,
-      "yesterday": 14350,
-      "change": 3600,
-      "dir": "up"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Cocoyam(اروی)",
-      "today": 7600,
-      "yesterday": 8050,
-      "change": -450,
-      "dir": "down"
-    },
-    {
-      "city": "Abdulhakim",
-      "commodity": "Dates(Irani)",
-      "today": 40400,
-      "yesterday": 40250,
-      "change": 150,
-      "dir": "up"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Potato Store",
-      "today": 2700,
-      "yesterday": 2900,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Onion",
-      "today": 14850,
-      "yesterday": 13950,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Ginger(China)",
-      "today": 29250,
-      "yesterday": 29650,
-      "change": -400,
-      "dir": "down"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Tomato",
-      "today": 19050,
-      "yesterday": 18250,
-      "change": 800,
-      "dir": "up"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 9450,
-      "yesterday": 10400,
-      "change": -950,
-      "dir": "down"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Cauliflower",
-      "today": 14850,
-      "yesterday": 15750,
-      "change": -900,
-      "dir": "down"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Cabbage",
-      "today": 14850,
-      "yesterday": 13950,
-      "change": 900,
-      "dir": "up"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Ginger (Thai)",
-      "today": 30150,
-      "yesterday": 30500,
-      "change": -350,
-      "dir": "down"
-    },
-    {
-      "city": "Sanglahill",
-      "commodity": "Cucumber (Kheera)",
-      "today": 14850,
-      "yesterday": 15750,
-      "change": -900,
-      "dir": "down"
-    },
-    {
-      "city": "Hasanabdal",
-      "commodity": "Onion",
-      "today": 15050,
-      "yesterday": 14550,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Hasanabdal",
-      "commodity": "Tomato",
-      "today": 19250,
-      "yesterday": 18500,
-      "change": 750,
-      "dir": "up"
-    },
-    {
-      "city": "Hasanabdal",
-      "commodity": "Apple (Gatcha)",
-      "today": 28000,
-      "yesterday": 28200,
-      "change": -200,
-      "dir": "down"
-    },
-    {
-      "city": "Hafizabad",
+      "city": "Sialkot",
       "commodity": "Onion",
       "today": 15750,
       "yesterday": 15250,
@@ -3139,159 +1291,239 @@
       "dir": "up"
     },
     {
-      "city": "Hafizabad",
-      "commodity": "Tomato",
-      "today": 20500,
-      "yesterday": 18250,
-      "change": 2250,
-      "dir": "up"
-    },
-    {
-      "city": "Hafizabad",
-      "commodity": "Tinda Desi",
-      "today": 12750,
-      "yesterday": 11750,
+      "city": "Sialkot",
+      "commodity": "Ginger(China)",
+      "today": 29750,
+      "yesterday": 28750,
       "change": 1000,
       "dir": "up"
     },
     {
-      "city": "Hafizabad",
-      "commodity": "Grapes Gola",
-      "today": 39500,
-      "yesterday": 29500,
-      "change": 10000,
-      "dir": "up"
-    },
-    {
-      "city": "Hafizabad",
-      "commodity": "Grapes Sundekhani",
-      "today": 29500,
-      "yesterday": 39500,
-      "change": -10000,
+      "city": "Sialkot",
+      "commodity": "Tomato",
+      "today": 18750,
+      "yesterday": 19750,
+      "change": -1000,
       "dir": "down"
     },
     {
-      "city": "Hafizabad",
-      "commodity": "Potato Sugar free",
-      "today": 2850,
-      "yesterday": 2800,
-      "change": 50,
+      "city": "Sialkot",
+      "commodity": "Brinjal",
+      "today": 4750,
+      "yesterday": 4600,
+      "change": 150,
       "dir": "up"
     },
     {
-      "city": "Shakargarh",
-      "commodity": "Rice Basmati Super (New)",
-      "today": 29000,
-      "yesterday": 28500,
+      "city": "Sialkot",
+      "commodity": "Tinda Desi",
+      "today": 16750,
+      "yesterday": 16250,
       "change": 500,
       "dir": "up"
     },
     {
-      "city": "Shakargarh",
-      "commodity": "Onion",
-      "today": 15400,
-      "yesterday": 14450,
-      "change": 950,
+      "city": "Sialkot",
+      "commodity": "Guava",
+      "today": 17100,
+      "yesterday": 16250,
+      "change": 850,
       "dir": "up"
     },
     {
-      "city": "Shakargarh",
-      "commodity": "Tomato",
-      "today": 20000,
-      "yesterday": 19000,
+      "city": "Sialkot",
+      "commodity": "Cabbage",
+      "today": 10750,
+      "yesterday": 10250,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Sialkot",
+      "commodity": "Masoor Pulse (Imported) Moti",
+      "today": 20850,
+      "yesterday": 21100,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Sialkot",
+      "commodity": "Cucumber (Kheera)",
+      "today": 16250,
+      "yesterday": 6750,
+      "change": 9500,
+      "dir": "up"
+    },
+    {
+      "city": "Sialkot",
+      "commodity": "Apple (Gatcha)",
+      "today": 17750,
+      "yesterday": 18750,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Sialkot",
+      "commodity": "Peach",
+      "today": 17750,
+      "yesterday": 16750,
       "change": 1000,
       "dir": "up"
     },
     {
-      "city": "Shakargarh",
-      "commodity": "Banana(DOZEN)",
-      "today": 170,
-      "yesterday": 185,
-      "change": -15,
-      "dir": "down"
+      "city": "Sialkot",
+      "commodity": "Grapes Sundekhani",
+      "today": 45250,
+      "yesterday": 44750,
+      "change": 500,
+      "dir": "up"
     },
     {
-      "city": "Shakargarh",
-      "commodity": "Guava",
-      "today": 17000,
-      "yesterday": 17500,
+      "city": "Sialkot",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 11750,
+      "yesterday": 10250,
+      "change": 1500,
+      "dir": "up"
+    },
+    {
+      "city": "Sialkot",
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 7250,
+      "yesterday": 7750,
       "change": -500,
       "dir": "down"
     },
     {
-      "city": "Shakargarh",
-      "commodity": "Cabbage",
-      "today": 14500,
-      "yesterday": 13500,
+      "city": "Sialkot",
+      "commodity": "Cocoyam(اروی)",
+      "today": 7250,
+      "yesterday": 7750,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Sialkot",
+      "commodity": "Coriander (دھنیا)",
+      "today": 14250,
+      "yesterday": 12750,
+      "change": 1500,
+      "dir": "up"
+    },
+    {
+      "city": "Sialkot",
+      "commodity": "Potato Sugar free",
+      "today": 2600,
+      "yesterday": 2700,
+      "change": -100,
+      "dir": "down"
+    },
+    {
+      "city": "Narowal",
+      "commodity": "Onion",
+      "today": 16400,
+      "yesterday": 15400,
       "change": 1000,
       "dir": "up"
     },
     {
-      "city": "Shakargarh",
-      "commodity": "Masoor Pulse (Imported) Moti",
-      "today": 20500,
-      "yesterday": 21250,
-      "change": -750,
-      "dir": "down"
-    },
-    {
-      "city": "Shakargarh",
-      "commodity": "Green Chilli",
-      "today": 8250,
-      "yesterday": 9500,
-      "change": -1250,
-      "dir": "down"
-    },
-    {
-      "city": "Shakargarh",
-      "commodity": "Grapes Sundekhani",
-      "today": 48000,
-      "yesterday": 44500,
-      "change": 3500,
-      "dir": "up"
-    },
-    {
-      "city": "Shakargarh",
-      "commodity": "Potato Sugar free",
-      "today": 2550,
-      "yesterday": 2850,
-      "change": -300,
-      "dir": "down"
-    },
-    {
-      "city": "Hazro",
-      "commodity": "Onion",
-      "today": 15050,
-      "yesterday": 14500,
-      "change": 550,
-      "dir": "up"
-    },
-    {
-      "city": "Hazro",
+      "city": "Narowal",
       "commodity": "Tomato",
-      "today": 19300,
-      "yesterday": 18500,
-      "change": 800,
+      "today": 19000,
+      "yesterday": 20000,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Narowal",
+      "commodity": "Brinjal",
+      "today": 8250,
+      "yesterday": 8750,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Narowal",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 10500,
+      "yesterday": 11500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Narowal",
+      "commodity": "Guava",
+      "today": 17500,
+      "yesterday": 17000,
+      "change": 500,
       "dir": "up"
     },
     {
-      "city": "Hazro",
-      "commodity": "Apple (Gatcha)",
-      "today": 28000,
-      "yesterday": 28200,
-      "change": -200,
-      "dir": "down"
+      "city": "Narowal",
+      "commodity": "Cabbage",
+      "today": 16500,
+      "yesterday": 14500,
+      "change": 2000,
+      "dir": "up"
     },
     {
-      "city": "Hazro",
+      "city": "Narowal",
+      "commodity": "Masoor Pulse (Imported) Moti",
+      "today": 21250,
+      "yesterday": 20500,
+      "change": 750,
+      "dir": "up"
+    },
+    {
+      "city": "Narowal",
       "commodity": "Green Chilli",
-      "today": 9100,
-      "yesterday": 9550,
-      "change": -450,
+      "today": 8750,
+      "yesterday": 8250,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Chakwal",
+      "commodity": "Potato Store",
+      "today": 2550,
+      "yesterday": 2650,
+      "change": -100,
       "dir": "down"
     },
     {
-      "city": "Sraialamgir",
+      "city": "Chakwal",
+      "commodity": "Onion",
+      "today": 16250,
+      "yesterday": 15250,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Chakwal",
+      "commodity": "Tomato",
+      "today": 19500,
+      "yesterday": 20500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Rice Basmati Super (New)",
+      "today": 27500,
+      "yesterday": 27750,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Potato Store",
+      "today": 2750,
+      "yesterday": 2850,
+      "change": -100,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
       "commodity": "Onion",
       "today": 16000,
       "yesterday": 15100,
@@ -3299,88 +1531,1696 @@
       "dir": "up"
     },
     {
-      "city": "Sraialamgir",
-      "commodity": "Ginger(China)",
-      "today": 33650,
-      "yesterday": 33700,
-      "change": -50,
+      "city": "Jhelum",
+      "commodity": "Garlic (China)",
+      "today": 31050,
+      "yesterday": 32450,
+      "change": -1400,
       "dir": "down"
     },
     {
-      "city": "Sraialamgir",
+      "city": "Jhelum",
       "commodity": "Tomato",
+      "today": 19350,
+      "yesterday": 20250,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Brinjal",
+      "today": 7000,
+      "yesterday": 7450,
+      "change": -450,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Mango(Chounsa)",
+      "today": 26550,
+      "yesterday": 25650,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Banola Cake",
+      "today": 12250,
+      "yesterday": 11625,
+      "change": 625,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Apple (Gatcha)",
+      "today": 23450,
+      "yesterday": 22950,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Green Chilli",
+      "today": 8800,
+      "yesterday": 7900,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Lemon (China)",
+      "today": 10350,
+      "yesterday": 14850,
+      "change": -4500,
+      "dir": "down"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Peach Special",
+      "today": 26150,
+      "yesterday": 25250,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Grapes Sundekhani",
+      "today": 44550,
+      "yesterday": 44150,
+      "change": 400,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Pear",
+      "today": 21150,
+      "yesterday": 20250,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 14650,
+      "yesterday": 12400,
+      "change": 2250,
+      "dir": "up"
+    },
+    {
+      "city": "Jhelum",
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 8800,
+      "yesterday": 9700,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "RajanPur",
+      "commodity": "Potato Fresh",
+      "today": 12500,
+      "yesterday": 13500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "RajanPur",
+      "commodity": "Potato Store",
+      "today": 2950,
+      "yesterday": 3400,
+      "change": -450,
+      "dir": "down"
+    },
+    {
+      "city": "RajanPur",
+      "commodity": "Tomato",
+      "today": 12650,
+      "yesterday": 15000,
+      "change": -2350,
+      "dir": "down"
+    },
+    {
+      "city": "RajanPur",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 8300,
+      "yesterday": 12500,
+      "change": -4200,
+      "dir": "down"
+    },
+    {
+      "city": "RajanPur",
+      "commodity": "Cauliflower",
+      "today": 10500,
+      "yesterday": 9300,
+      "change": 1200,
+      "dir": "up"
+    },
+    {
+      "city": "RajanPur",
+      "commodity": "Cabbage",
+      "today": 14500,
+      "yesterday": 9300,
+      "change": 5200,
+      "dir": "up"
+    },
+    {
+      "city": "RajanPur",
+      "commodity": "Plum",
+      "today": 25500,
+      "yesterday": 18750,
+      "change": 6750,
+      "dir": "up"
+    },
+    {
+      "city": "RajanPur",
+      "commodity": "Grapes Gola",
+      "today": 28000,
+      "yesterday": 31000,
+      "change": -3000,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Rice (IRRI)",
+      "today": 10100,
+      "yesterday": 9500,
+      "change": 600,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Gram Pulse(Bareek)",
+      "today": 16500,
+      "yesterday": 17000,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Masoor Pulse(local) Bareek",
+      "today": 19000,
+      "yesterday": 18500,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Potato Store",
+      "today": 2100,
+      "yesterday": 1900,
+      "change": 200,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Onion",
+      "today": 15000,
+      "yesterday": 14500,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Ginger(China)",
+      "today": 31000,
+      "yesterday": 33000,
+      "change": -2000,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Tomato",
+      "today": 17500,
+      "yesterday": 21500,
+      "change": -4000,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Spinach",
+      "today": 6750,
+      "yesterday": 5750,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 7500,
+      "yesterday": 8500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Pumpkin",
+      "today": 19000,
+      "yesterday": 15500,
+      "change": 3500,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Cauliflower",
+      "today": 12750,
+      "yesterday": 10550,
+      "change": 2200,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Mango(Chounsa)",
+      "today": 27500,
+      "yesterday": 27000,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Cabbage",
+      "today": 13500,
+      "yesterday": 12750,
+      "change": 750,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Ginger (Thai)",
+      "today": 31500,
+      "yesterday": 33000,
+      "change": -1500,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Masoor Pulse (Imported) Moti",
+      "today": 29500,
+      "yesterday": 29000,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Cucumber (Kheera)",
+      "today": 16500,
+      "yesterday": 17000,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Dates (Aseel)",
+      "today": 27500,
+      "yesterday": 26500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Apple (Gatcha)",
+      "today": 23500,
+      "yesterday": 24000,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 23500,
+      "yesterday": 24500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Lemon (Desi)",
+      "today": 13500,
+      "yesterday": 17500,
+      "change": -4000,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Peach Special",
+      "today": 21500,
+      "yesterday": 21750,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Plum",
+      "today": 24500,
+      "yesterday": 24250,
+      "change": 250,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Mango Desi",
+      "today": 13500,
+      "yesterday": 13750,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Pomegranate Desi",
+      "today": 29000,
+      "yesterday": 13750,
+      "change": 15250,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Grapes Gola",
+      "today": 33500,
+      "yesterday": 32000,
+      "change": 1500,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Sweet Musk Melon",
+      "today": 14500,
+      "yesterday": 13750,
+      "change": 750,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 9500,
+      "yesterday": 10550,
+      "change": -1050,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Cocoyam(اروی)",
+      "today": 6250,
+      "yesterday": 6450,
+      "change": -200,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Sweet Potato(شکر قندی)",
+      "today": 10050,
+      "yesterday": 10550,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Rice Kainat (New)",
+      "today": 9500,
+      "yesterday": 27500,
+      "change": -18000,
+      "dir": "down"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Potato Sugar free",
+      "today": 29000,
+      "yesterday": 2900,
+      "change": 26100,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Gram Pulse(Moti)",
+      "today": 18750,
+      "yesterday": 18600,
+      "change": 150,
+      "dir": "up"
+    },
+    {
+      "city": "Jhang",
+      "commodity": "Gram Black Mota",
+      "today": 17500,
+      "yesterday": 18000,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Potato Store",
+      "today": 2300,
+      "yesterday": 2500,
+      "change": -200,
+      "dir": "down"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Onion",
+      "today": 10750,
+      "yesterday": 11250,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Spinach",
+      "today": 3500,
+      "yesterday": 2750,
+      "change": 750,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Cauliflower",
+      "today": 12500,
+      "yesterday": 11500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Guava",
+      "today": 6500,
+      "yesterday": 5500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Cabbage",
+      "today": 12500,
+      "yesterday": 11500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Cucumber (Kheera)",
       "today": 20500,
-      "yesterday": 20200,
+      "yesterday": 18500,
+      "change": 2000,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 25500,
+      "yesterday": 26500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Lemon (Desi)",
+      "today": 15500,
+      "yesterday": 14500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Peach Special",
+      "today": 25500,
+      "yesterday": 26500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Plum",
+      "today": 24500,
+      "yesterday": 23500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Grapes Gola",
+      "today": 35500,
+      "yesterday": 34500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Grapes Sundekhani",
+      "today": 49500,
+      "yesterday": 47500,
+      "change": 2000,
+      "dir": "up"
+    },
+    {
+      "city": "KotAdu",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 18500,
+      "yesterday": 19500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Onion",
+      "today": 17000,
+      "yesterday": 14850,
+      "change": 2150,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Ginger(China)",
+      "today": 31750,
+      "yesterday": 29250,
+      "change": 2500,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Tomato",
+      "today": 21000,
+      "yesterday": 19075,
+      "change": 1925,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Spinach",
+      "today": 5500,
+      "yesterday": 5100,
+      "change": 400,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Brinjal",
+      "today": 8500,
+      "yesterday": 7800,
+      "change": 700,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 15000,
+      "yesterday": 13150,
+      "change": 1850,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 9500,
+      "yesterday": 9450,
+      "change": 50,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Cauliflower",
+      "today": 16000,
+      "yesterday": 14850,
+      "change": 1150,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Banana(DOZEN)",
+      "today": 190,
+      "yesterday": 120,
+      "change": 70,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Guava",
+      "today": 11250,
+      "yesterday": 10400,
+      "change": 850,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Cabbage",
+      "today": 16000,
+      "yesterday": 14850,
+      "change": 1150,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Ginger (Thai)",
+      "today": 32500,
+      "yesterday": 30150,
+      "change": 2350,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Garlic (Local)",
+      "today": 15000,
+      "yesterday": 13950,
+      "change": 1050,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Cucumber (Kheera)",
+      "today": 16000,
+      "yesterday": 14850,
+      "change": 1150,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Apple (Gatcha)",
+      "today": 28500,
+      "yesterday": 26550,
+      "change": 1950,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Green Chilli",
+      "today": 10250,
+      "yesterday": 9450,
+      "change": 800,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 27500,
+      "yesterday": 26550,
+      "change": 950,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Lemon (Desi)",
+      "today": 16000,
+      "yesterday": 14850,
+      "change": 1150,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Peach",
+      "today": 19000,
+      "yesterday": 22950,
+      "change": -3950,
+      "dir": "down"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Peach Special",
+      "today": 28500,
+      "yesterday": 26550,
+      "change": 1950,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Grapes Gola",
+      "today": 24250,
+      "yesterday": 22450,
+      "change": 1800,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Pear",
+      "today": 25000,
+      "yesterday": 22950,
+      "change": 2050,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 13400,
+      "yesterday": 12150,
+      "change": 1250,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 9500,
+      "yesterday": 8700,
+      "change": 800,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Cocoyam(اروی)",
+      "today": 9500,
+      "yesterday": 8700,
+      "change": 800,
+      "dir": "up"
+    },
+    {
+      "city": "Nankana",
+      "commodity": "Sweet Potato(شکر قندی)",
+      "today": 9000,
+      "yesterday": 8700,
       "change": 300,
       "dir": "up"
     },
     {
-      "city": "Sraialamgir",
+      "city": "Nankana",
+      "commodity": "Papaya(پپیتا)",
+      "today": 29750,
+      "yesterday": 27450,
+      "change": 2300,
+      "dir": "up"
+    },
+    {
+      "city": "ChackJhumra",
+      "commodity": "Onion",
+      "today": 16500,
+      "yesterday": 15500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "ChackJhumra",
+      "commodity": "Tomato",
+      "today": 20500,
+      "yesterday": 21500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "ChackJhumra",
       "commodity": "Spinach",
-      "today": 4900,
-      "yesterday": 6200,
-      "change": -1300,
-      "dir": "down"
+      "today": 6750,
+      "yesterday": 6250,
+      "change": 500,
+      "dir": "up"
     },
     {
-      "city": "Sraialamgir",
+      "city": "ChackJhumra",
       "commodity": "Brinjal",
-      "today": 10430,
-      "yesterday": 10500,
-      "change": -70,
+      "today": 7250,
+      "yesterday": 8250,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "ChackJhumra",
+      "commodity": "Guava",
+      "today": 5000,
+      "yesterday": 5250,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "ChackJhumra",
+      "commodity": "Cabbage",
+      "today": 15500,
+      "yesterday": 13250,
+      "change": 2250,
+      "dir": "up"
+    },
+    {
+      "city": "ChackJhumra",
+      "commodity": "Ginger (Thai)",
+      "today": 32500,
+      "yesterday": 33500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "ChackJhumra",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 27500,
+      "yesterday": 28500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "ChackJhumra",
+      "commodity": "Cocoyam(اروی)",
+      "today": 7250,
+      "yesterday": 8000,
+      "change": -750,
+      "dir": "down"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Onion",
+      "today": 15950,
+      "yesterday": 15000,
+      "change": 950,
+      "dir": "up"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Tomato",
+      "today": 19550,
+      "yesterday": 20450,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Spinach",
+      "today": 6200,
+      "yesterday": 5650,
+      "change": 550,
+      "dir": "up"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Brinjal",
+      "today": 6850,
+      "yesterday": 7750,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Cabbage",
+      "today": 15000,
+      "yesterday": 12250,
+      "change": 2750,
+      "dir": "up"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Ginger (Thai)",
+      "today": 30450,
+      "yesterday": 30950,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Green Chilli",
+      "today": 6850,
+      "yesterday": 7250,
+      "change": -400,
+      "dir": "down"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 25950,
+      "yesterday": 26850,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Cocoyam(اروی)",
+      "today": 6850,
+      "yesterday": 7750,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Chiniot",
+      "commodity": "Coriander (دھنیا)",
+      "today": 23150,
+      "yesterday": 22250,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Onion",
+      "today": 14350,
+      "yesterday": 13450,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Tomato",
+      "today": 20400,
+      "yesterday": 20300,
+      "change": 100,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Brinjal",
+      "today": 8700,
+      "yesterday": 9700,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 17800,
+      "yesterday": 17200,
+      "change": 600,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 12250,
+      "yesterday": 12400,
+      "change": -150,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Cauliflower",
+      "today": 13850,
+      "yesterday": 14100,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Banana(DOZEN)",
+      "today": 136,
+      "yesterday": 135,
+      "change": 1,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Guava",
+      "today": 7700,
+      "yesterday": 7750,
+      "change": -50,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Cabbage",
+      "today": 15600,
+      "yesterday": 15400,
+      "change": 200,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Ginger (Thai)",
+      "today": 33250,
+      "yesterday": 33900,
+      "change": -650,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Garlic (Local)",
+      "today": 14500,
+      "yesterday": 11200,
+      "change": 3300,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Cucumber (Kheera)",
+      "today": 16200,
+      "yesterday": 16750,
+      "change": -550,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Apple (Gatcha)",
+      "today": 26000,
+      "yesterday": 24650,
+      "change": 1350,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Green Chilli",
+      "today": 6250,
+      "yesterday": 6700,
+      "change": -450,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 23500,
+      "yesterday": 25650,
+      "change": -2150,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Grapes Gola",
+      "today": 33000,
+      "yesterday": 35750,
+      "change": -2750,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Grapes Sundekhani",
+      "today": 54000,
+      "yesterday": 47250,
+      "change": 6750,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 16300,
+      "yesterday": 16400,
+      "change": -100,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 10600,
+      "yesterday": 8700,
+      "change": 1900,
+      "dir": "up"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Cocoyam(اروی)",
+      "today": 4750,
+      "yesterday": 5050,
+      "change": -300,
+      "dir": "down"
+    },
+    {
+      "city": "Fortabas",
+      "commodity": "Dates(Irani)",
+      "today": 47500,
+      "yesterday": 47800,
+      "change": -300,
+      "dir": "down"
+    },
+    {
+      "city": "Abdulhakim",
+      "commodity": "Tomato",
+      "today": 17950,
+      "yesterday": 19700,
+      "change": -1750,
+      "dir": "down"
+    },
+    {
+      "city": "Abdulhakim",
+      "commodity": "Spinach",
+      "today": 2650,
+      "yesterday": 2800,
+      "change": -150,
+      "dir": "down"
+    },
+    {
+      "city": "Abdulhakim",
+      "commodity": "Brinjal",
+      "today": 8050,
+      "yesterday": 9750,
+      "change": -1700,
+      "dir": "down"
+    },
+    {
+      "city": "Abdulhakim",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 17950,
+      "yesterday": 19700,
+      "change": -1750,
+      "dir": "down"
+    },
+    {
+      "city": "Abdulhakim",
+      "commodity": "Ginger (Thai)",
+      "today": 28700,
+      "yesterday": 30500,
+      "change": -1800,
+      "dir": "down"
+    },
+    {
+      "city": "Abdulhakim",
+      "commodity": "Cucumber (Kheera)",
+      "today": 16150,
+      "yesterday": 17950,
+      "change": -1800,
+      "dir": "down"
+    },
+    {
+      "city": "Abdulhakim",
+      "commodity": "Grapes Gola",
+      "today": 28700,
+      "yesterday": 32300,
+      "change": -3600,
+      "dir": "down"
+    },
+    {
+      "city": "Abdulhakim",
+      "commodity": "Cocoyam(اروی)",
+      "today": 6250,
+      "yesterday": 7600,
+      "change": -1350,
+      "dir": "down"
+    },
+    {
+      "city": "Sanglahill",
+      "commodity": "Onion",
+      "today": 15750,
+      "yesterday": 14850,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Sanglahill",
+      "commodity": "Tomato",
+      "today": 18250,
+      "yesterday": 19050,
+      "change": -800,
+      "dir": "down"
+    },
+    {
+      "city": "Sanglahill",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 13950,
+      "yesterday": 13150,
+      "change": 800,
+      "dir": "up"
+    },
+    {
+      "city": "Sanglahill",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 8700,
+      "yesterday": 9450,
+      "change": -750,
+      "dir": "down"
+    },
+    {
+      "city": "Sanglahill",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 25650,
+      "yesterday": 26500,
+      "change": -850,
+      "dir": "down"
+    },
+    {
+      "city": "Sanglahill",
+      "commodity": "Sweet Potato(شکر قندی)",
+      "today": 7800,
+      "yesterday": 8700,
+      "change": -900,
+      "dir": "down"
+    },
+    {
+      "city": "Hasanabdal",
+      "commodity": "Onion",
+      "today": 15700,
+      "yesterday": 15050,
+      "change": 650,
+      "dir": "up"
+    },
+    {
+      "city": "Hasanabdal",
+      "commodity": "Tomato",
+      "today": 18750,
+      "yesterday": 19250,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Hafizabad",
+      "commodity": "Onion",
+      "today": 16750,
+      "yesterday": 15750,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Hafizabad",
+      "commodity": "Tomato",
+      "today": 19500,
+      "yesterday": 20500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Hafizabad",
+      "commodity": "Grapes Gola",
+      "today": 29500,
+      "yesterday": 39500,
+      "change": -10000,
+      "dir": "down"
+    },
+    {
+      "city": "Hafizabad",
+      "commodity": "Grapes Sundekhani",
+      "today": 39500,
+      "yesterday": 29500,
+      "change": 10000,
+      "dir": "up"
+    },
+    {
+      "city": "Hafizabad",
+      "commodity": "Mint(پودینہ)",
+      "today": 600,
+      "yesterday": 650,
+      "change": -50,
+      "dir": "down"
+    },
+    {
+      "city": "Kanganpur",
+      "commodity": "Onion",
+      "today": 16500,
+      "yesterday": 15500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Kanganpur",
+      "commodity": "Tomato",
+      "today": 19000,
+      "yesterday": 20000,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Kanganpur",
+      "commodity": "Banana(DOZEN)",
+      "today": 178,
+      "yesterday": 176,
+      "change": 2,
+      "dir": "up"
+    },
+    {
+      "city": "Kanganpur",
+      "commodity": "Apple (Gatcha)",
+      "today": 22150,
+      "yesterday": 22500,
+      "change": -350,
+      "dir": "down"
+    },
+    {
+      "city": "Kanganpur",
+      "commodity": "Green Chilli",
+      "today": 9250,
+      "yesterday": 9000,
+      "change": 250,
+      "dir": "up"
+    },
+    {
+      "city": "Kanganpur",
+      "commodity": "Lemon (Desi)",
+      "today": 13850,
+      "yesterday": 14350,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Kanganpur",
+      "commodity": "Cocoyam(اروی)",
+      "today": 5450,
+      "yesterday": 5750,
+      "change": -300,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Onion",
+      "today": 15350,
+      "yesterday": 14000,
+      "change": 1350,
+      "dir": "up"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Ginger(China)",
+      "today": 30450,
+      "yesterday": 29450,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Tomato",
+      "today": 20550,
+      "yesterday": 17550,
+      "change": 3000,
+      "dir": "up"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Brinjal",
+      "today": 4750,
+      "yesterday": 7950,
+      "change": -3200,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Lady Finger/Okra (بھنڈی توری)",
+      "today": 12650,
+      "yesterday": 13450,
+      "change": -800,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 6950,
+      "yesterday": 7950,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Cauliflower",
+      "today": 12150,
+      "yesterday": 16450,
+      "change": -4300,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Guava",
+      "today": 16200,
+      "yesterday": 15700,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Mango(Chounsa)",
+      "today": 28450,
+      "yesterday": 28950,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Cabbage",
+      "today": 10700,
+      "yesterday": 11900,
+      "change": -1200,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Cucumber (Kheera)",
+      "today": 17450,
+      "yesterday": 19200,
+      "change": -1750,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Apple (Gatcha)",
+      "today": 27450,
+      "yesterday": 27950,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Green Chilli",
+      "today": 6200,
+      "yesterday": 7950,
+      "change": -1750,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 20400,
+      "yesterday": 20200,
+      "change": 200,
+      "dir": "up"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Pomegranate Desi",
+      "today": 25450,
+      "yesterday": 25950,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 10350,
+      "yesterday": 12450,
+      "change": -2100,
+      "dir": "down"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Coriander (دھنیا)",
+      "today": 13450,
+      "yesterday": 12400,
+      "change": 1050,
+      "dir": "up"
+    },
+    {
+      "city": "Sambrial",
+      "commodity": "Potato Sugar free",
+      "today": 2800,
+      "yesterday": 3050,
+      "change": -250,
+      "dir": "down"
+    },
+    {
+      "city": "Shakargarh",
+      "commodity": "Onion",
+      "today": 16400,
+      "yesterday": 15400,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Shakargarh",
+      "commodity": "Tomato",
+      "today": 19000,
+      "yesterday": 20000,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Shakargarh",
+      "commodity": "Brinjal",
+      "today": 8250,
+      "yesterday": 8750,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Shakargarh",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 10500,
+      "yesterday": 11500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Shakargarh",
+      "commodity": "Guava",
+      "today": 17500,
+      "yesterday": 17000,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Shakargarh",
+      "commodity": "Cabbage",
+      "today": 16500,
+      "yesterday": 14500,
+      "change": 2000,
+      "dir": "up"
+    },
+    {
+      "city": "Shakargarh",
+      "commodity": "Masoor Pulse (Imported) Moti",
+      "today": 21250,
+      "yesterday": 20500,
+      "change": 750,
+      "dir": "up"
+    },
+    {
+      "city": "Shakargarh",
+      "commodity": "Green Chilli",
+      "today": 8750,
+      "yesterday": 8250,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Hazro",
+      "commodity": "Onion",
+      "today": 15700,
+      "yesterday": 15050,
+      "change": 650,
+      "dir": "up"
+    },
+    {
+      "city": "Hazro",
+      "commodity": "Tomato",
+      "today": 18750,
+      "yesterday": 19300,
+      "change": -550,
       "dir": "down"
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 13200,
-      "yesterday": 12500,
+      "commodity": "Onion",
+      "today": 17000,
+      "yesterday": 16000,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Ginger(China)",
+      "today": 34500,
+      "yesterday": 33650,
+      "change": 850,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Tomato",
+      "today": 21200,
+      "yesterday": 20500,
       "change": 700,
       "dir": "up"
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Tinda Desi",
-      "today": 16750,
-      "yesterday": 16600,
-      "change": 150,
+      "commodity": "Spinach",
+      "today": 6200,
+      "yesterday": 4900,
+      "change": 1300,
       "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Brinjal",
+      "today": 9500,
+      "yesterday": 10430,
+      "change": -930,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Bitter Gourd (کریلا)",
+      "today": 12500,
+      "yesterday": 13200,
+      "change": -700,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Tinda Desi",
+      "today": 16600,
+      "yesterday": 16750,
+      "change": -150,
+      "dir": "down"
     },
     {
       "city": "Sraialamgir",
       "commodity": "Cauliflower",
-      "today": 17700,
-      "yesterday": 15200,
-      "change": 2500,
-      "dir": "up"
+      "today": 15200,
+      "yesterday": 17700,
+      "change": -2500,
+      "dir": "down"
     },
     {
       "city": "Sraialamgir",
       "commodity": "Apple Kala Kullu (Pahari)",
-      "today": 36500,
-      "yesterday": 38200,
-      "change": -1700,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Apple (Golden)",
-      "today": 34200,
-      "yesterday": 35200,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Banana(DOZEN)",
-      "today": 200,
-      "yesterday": 198,
-      "change": 2,
+      "today": 38200,
+      "yesterday": 36500,
+      "change": 1700,
       "dir": "up"
     },
     {
       "city": "Sraialamgir",
+      "commodity": "Apple (Golden)",
+      "today": 35200,
+      "yesterday": 34200,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Banana(DOZEN)",
+      "today": 180,
+      "yesterday": 200,
+      "change": -20,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
       "commodity": "Guava",
+      "today": 14200,
+      "yesterday": 17200,
+      "change": -3000,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Mango(Chounsa)",
+      "today": 26200,
+      "yesterday": 29200,
+      "change": -3000,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Grapefruit(100Pcs)",
+      "today": 3700,
+      "yesterday": 3400,
+      "change": 300,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Ginger (Thai)",
+      "today": 33700,
+      "yesterday": 34100,
+      "change": -400,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Cucumber (Kheera)",
+      "today": 24200,
+      "yesterday": 17700,
+      "change": 6500,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Dates (Aseel)",
+      "today": 36700,
+      "yesterday": 36200,
+      "change": 500,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Apple (Gatcha)",
+      "today": 26200,
+      "yesterday": 28200,
+      "change": -2000,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Green Chilli",
+      "today": 8500,
+      "yesterday": 9700,
+      "change": -1200,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 28600,
+      "yesterday": 30200,
+      "change": -1600,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Lemon (Desi)",
       "today": 17200,
       "yesterday": 15200,
       "change": 2000,
@@ -3388,55 +3228,79 @@
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Mango(Chounsa)",
-      "today": 29200,
-      "yesterday": 26200,
-      "change": 3000,
+      "commodity": "Peach",
+      "today": 18200,
+      "yesterday": 19200,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Plum",
+      "today": 44200,
+      "yesterday": 40700,
+      "change": 3500,
       "dir": "up"
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Grapefruit(100Pcs)",
-      "today": 3400,
-      "yesterday": 3700,
-      "change": -300,
+      "commodity": "Pomegranate Desi",
+      "today": 27700,
+      "yesterday": 26450,
+      "change": 1250,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Pear",
+      "today": 24200,
+      "yesterday": 25200,
+      "change": -1000,
       "dir": "down"
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Mango(Anwer Ratol)",
-      "today": 32200,
-      "yesterday": 34200,
-      "change": -2000,
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 13200,
+      "yesterday": 13900,
+      "change": -700,
       "dir": "down"
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Ginger (Thai)",
-      "today": 34100,
-      "yesterday": 35700,
-      "change": -1600,
+      "commodity": "Zucchini (گھیا توری)",
+      "today": 10100,
+      "yesterday": 7500,
+      "change": 2600,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Carrot China",
+      "today": 13400,
+      "yesterday": 11700,
+      "change": 1700,
+      "dir": "up"
+    },
+    {
+      "city": "Sraialamgir",
+      "commodity": "Coriander (دھنیا)",
+      "today": 13200,
+      "yesterday": 15400,
+      "change": -2200,
       "dir": "down"
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Cucumber (Kheera)",
-      "today": 17700,
-      "yesterday": 18200,
-      "change": -500,
-      "dir": "down"
+      "commodity": "Cocunut",
+      "today": 46200,
+      "yesterday": 45200,
+      "change": 1000,
+      "dir": "up"
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Dates (Aseel)",
-      "today": 36200,
-      "yesterday": 36700,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Apple (Gatcha)",
+      "commodity": "Papaya(پپیتا)",
       "today": 28200,
       "yesterday": 27200,
       "change": 1000,
@@ -3444,267 +3308,251 @@
     },
     {
       "city": "Sraialamgir",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 30200,
-      "yesterday": 28600,
-      "change": 1600,
-      "dir": "up"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Lemon (Desi)",
-      "today": 15200,
-      "yesterday": 17200,
-      "change": -2000,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Peach Special",
-      "today": 27200,
-      "yesterday": 28200,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Plum",
-      "today": 40700,
-      "yesterday": 43200,
-      "change": -2500,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Pomegranate Desi",
-      "today": 26450,
-      "yesterday": 27700,
-      "change": -1250,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Pear",
-      "today": 25200,
-      "yesterday": 24200,
-      "change": 1000,
-      "dir": "up"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Sweet Musk Melon",
-      "today": 15200,
-      "yesterday": 14100,
-      "change": 1100,
-      "dir": "up"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 13900,
-      "yesterday": 9500,
-      "change": 4400,
-      "dir": "up"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Zucchini (گھیا توری)",
-      "today": 7500,
-      "yesterday": 10500,
-      "change": -3000,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Carrot China",
-      "today": 11700,
-      "yesterday": 13335,
-      "change": -1635,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Coriander (دھنیا)",
-      "today": 15400,
-      "yesterday": 12500,
-      "change": 2900,
-      "dir": "up"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Mint(پودینہ)",
-      "today": 14,
-      "yesterday": 15,
-      "change": -1,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Cocunut",
-      "today": 45200,
-      "yesterday": 46200,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
-      "commodity": "Papaya(پپیتا)",
-      "today": 27200,
-      "yesterday": 28200,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Sraialamgir",
       "commodity": "Potato Sugar free",
-      "today": 3200,
-      "yesterday": 3400,
+      "today": 3000,
+      "yesterday": 3200,
       "change": -200,
       "dir": "down"
     },
     {
       "city": "Sraialamgir",
       "commodity": "Dates(Irani)",
-      "today": 45700,
-      "yesterday": 46200,
-      "change": -500,
-      "dir": "down"
-    },
-    {
-      "city": "Jauharabad",
-      "commodity": "Onion",
-      "today": 14500,
-      "yesterday": 12700,
-      "change": 1800,
+      "today": 46200,
+      "yesterday": 45700,
+      "change": 500,
       "dir": "up"
     },
     {
       "city": "Jauharabad",
+      "commodity": "Rice Basmati Super (New)",
+      "today": 34500,
+      "yesterday": 32500,
+      "change": 2000,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Sugar",
+      "today": 14000,
+      "yesterday": 14300,
+      "change": -300,
+      "dir": "down"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Gram White  Bareek",
+      "today": 22500,
+      "yesterday": 23500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Gram Pulse(Bareek)",
+      "today": 23250,
+      "yesterday": 22250,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Moong",
+      "today": 36500,
+      "yesterday": 34000,
+      "change": 2500,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Masoor Pulse(local) Bareek",
+      "today": 37500,
+      "yesterday": 35250,
+      "change": 2250,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Millet",
+      "today": 9750,
+      "yesterday": 10500,
+      "change": -750,
+      "dir": "down"
+    },
+    {
+      "city": "Jauharabad",
       "commodity": "Tomato",
-      "today": 21800,
-      "yesterday": 22700,
+      "today": 20900,
+      "yesterday": 21800,
       "change": -900,
       "dir": "down"
     },
     {
       "city": "Jauharabad",
-      "commodity": "Banana(DOZEN)",
-      "today": 120,
-      "yesterday": 122,
-      "change": -2,
-      "dir": "down"
-    },
-    {
-      "city": "Jauharabad",
-      "commodity": "Ginger (Thai)",
-      "today": 32700,
-      "yesterday": 31800,
+      "commodity": "Brinjal",
+      "today": 10000,
+      "yesterday": 9100,
       "change": 900,
       "dir": "up"
     },
     {
       "city": "Jauharabad",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 11800,
-      "yesterday": 12700,
+      "commodity": "Red Chilli Whole (Dry)",
+      "today": 76000,
+      "yesterday": 80250,
+      "change": -4250,
+      "dir": "down"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Rice Basmati Super (Old)",
+      "today": 40500,
+      "yesterday": 39500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Gram White(Imported) Mota",
+      "today": 34500,
+      "yesterday": 33000,
+      "change": 1500,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Ginger (Thai)",
+      "today": 33600,
+      "yesterday": 32700,
+      "change": 900,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Masoor Pulse (Imported) Moti",
+      "today": 22500,
+      "yesterday": 22250,
+      "change": 250,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Lemon (Desi)",
+      "today": 6400,
+      "yesterday": 21800,
+      "change": -15400,
+      "dir": "down"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Plum",
+      "today": 30900,
+      "yesterday": 31800,
       "change": -900,
       "dir": "down"
     },
     {
       "city": "Jauharabad",
-      "commodity": "Coriander (دھنیا)",
+      "commodity": "Pear",
+      "today": 21800,
+      "yesterday": 20000,
+      "change": 1800,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Gram Flour (بیسن)",
+      "today": 24500,
+      "yesterday": 23000,
+      "change": 1500,
+      "dir": "up"
+    },
+    {
+      "city": "Jauharabad",
+      "commodity": "Bottle Gourd (کدو)",
       "today": 12700,
       "yesterday": 11800,
       "change": 900,
       "dir": "up"
     },
     {
-      "city": "Taunsasharif",
-      "commodity": "Onion",
-      "today": 9750,
-      "yesterday": 9250,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Taunsasharif",
-      "commodity": "Tomato",
-      "today": 18750,
-      "yesterday": 16750,
-      "change": 2000,
-      "dir": "up"
-    },
-    {
-      "city": "Taunsasharif",
-      "commodity": "Bitter Gourd (کریلا)",
-      "today": 9250,
-      "yesterday": 8750,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Taunsasharif",
-      "commodity": "Banana(DOZEN)",
-      "today": 125,
-      "yesterday": 135,
-      "change": -10,
+      "city": "Jauharabad",
+      "commodity": "Mint(پودینہ)",
+      "today": 1200,
+      "yesterday": 1300,
+      "change": -100,
       "dir": "down"
     },
     {
-      "city": "Taunsasharif",
-      "commodity": "Guava",
-      "today": 12500,
-      "yesterday": 13500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Taunsasharif",
-      "commodity": "Cabbage",
-      "today": 11750,
-      "yesterday": 11250,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Taunsasharif",
-      "commodity": "Cucumber (Kheera)",
-      "today": 15750,
-      "yesterday": 14500,
-      "change": 1250,
-      "dir": "up"
-    },
-    {
-      "city": "Taunsasharif",
-      "commodity": "Apple (Gatcha)",
-      "today": 23500,
-      "yesterday": 24500,
-      "change": -1000,
-      "dir": "down"
-    },
-    {
-      "city": "Taunsasharif",
-      "commodity": "Green Chilli",
-      "today": 7750,
-      "yesterday": 7250,
-      "change": 500,
-      "dir": "up"
-    },
-    {
-      "city": "Taunsasharif",
-      "commodity": "Capsicum (شملہ مرچ)",
-      "today": 21500,
-      "yesterday": 20500,
+      "city": "Jauharabad",
+      "commodity": "Gram Black Mota",
+      "today": 22000,
+      "yesterday": 21000,
       "change": 1000,
       "dir": "up"
     },
     {
       "city": "Taunsasharif",
-      "commodity": "Bottle Gourd (کدو)",
-      "today": 14500,
-      "yesterday": 8500,
-      "change": 6000,
+      "commodity": "Cauliflower",
+      "today": 12500,
+      "yesterday": 11500,
+      "change": 1000,
       "dir": "up"
+    },
+    {
+      "city": "Taunsasharif",
+      "commodity": "Cabbage",
+      "today": 11250,
+      "yesterday": 11750,
+      "change": -500,
+      "dir": "down"
+    },
+    {
+      "city": "Taunsasharif",
+      "commodity": "Cucumber (Kheera)",
+      "today": 16500,
+      "yesterday": 15750,
+      "change": 750,
+      "dir": "up"
+    },
+    {
+      "city": "Taunsasharif",
+      "commodity": "Green Chilli",
+      "today": 8750,
+      "yesterday": 7750,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Taunsasharif",
+      "commodity": "Capsicum (شملہ مرچ)",
+      "today": 20500,
+      "yesterday": 21500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Taunsasharif",
+      "commodity": "Lemon (Desi)",
+      "today": 15500,
+      "yesterday": 14500,
+      "change": 1000,
+      "dir": "up"
+    },
+    {
+      "city": "Taunsasharif",
+      "commodity": "Peach",
+      "today": 22500,
+      "yesterday": 23500,
+      "change": -1000,
+      "dir": "down"
+    },
+    {
+      "city": "Taunsasharif",
+      "commodity": "Bottle Gourd (کدو)",
+      "today": 12750,
+      "yesterday": 14500,
+      "change": -1750,
+      "dir": "down"
     }
   ]
 }
