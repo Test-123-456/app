@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T03:53:24.482Z",
+  "updatedAt": "2026-09-01T08:31:25.579Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -6474,6 +6474,97 @@
       "predictedNet": 26450,
       "actualNet": 350,
       "spPct": 1037.3
+    },
+    {
+      "date": "2026-08-31",
+      "nextDate": "2026-09-01",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "BahawalPur",
+      "buyP": 1100,
+      "predictedSellP": 20500,
+      "actualSellP": 20500,
+      "predictedNet": 19400,
+      "actualNet": 19400,
+      "spPct": 1763.6
+    },
+    {
+      "date": "2026-08-31",
+      "nextDate": "2026-09-01",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Lodhran",
+      "buyP": 1100,
+      "predictedSellP": 16500,
+      "actualSellP": 17500,
+      "predictedNet": 15400,
+      "actualNet": 16400,
+      "spPct": 1400
+    },
+    {
+      "date": "2026-08-31",
+      "nextDate": "2026-09-01",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Faisalabad",
+      "buyP": 1100,
+      "predictedSellP": 15500,
+      "actualSellP": 15500,
+      "predictedNet": 14400,
+      "actualNet": 14400,
+      "spPct": 1309.1
+    },
+    {
+      "date": "2026-08-31",
+      "nextDate": "2026-09-01",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "KotAdu",
+      "buyP": 1100,
+      "predictedSellP": 14500,
+      "actualSellP": 15500,
+      "predictedNet": 13400,
+      "actualNet": 14400,
+      "spPct": 1218.2
+    },
+    {
+      "date": "2026-08-31",
+      "nextDate": "2026-09-01",
+      "comm": "Onion",
+      "buyCity": "Abdulhakim",
+      "sellCity": "Faisalabad",
+      "buyP": 1700,
+      "predictedSellP": 19500,
+      "actualSellP": 20500,
+      "predictedNet": 17800,
+      "actualNet": 18800,
+      "spPct": 1047.1
+    },
+    {
+      "date": "2026-08-31",
+      "nextDate": "2026-09-01",
+      "comm": "Onion",
+      "buyCity": "Abdulhakim",
+      "sellCity": "Mamunkanjan",
+      "buyP": 1700,
+      "predictedSellP": 19500,
+      "actualSellP": 19500,
+      "predictedNet": 17800,
+      "actualNet": 17800,
+      "spPct": 1047.1
+    },
+    {
+      "date": "2026-08-31",
+      "nextDate": "2026-09-01",
+      "comm": "Onion",
+      "buyCity": "Abdulhakim",
+      "sellCity": "TALAGANG",
+      "buyP": 1700,
+      "predictedSellP": 19400,
+      "actualSellP": 20400,
+      "predictedNet": 17700,
+      "actualNet": 18700,
+      "spPct": 1041.2
     }
   ]
 }
