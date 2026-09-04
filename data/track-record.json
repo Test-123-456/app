@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T07:59:09.183Z",
+  "updatedAt": "2026-09-04T07:57:52.650Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -6747,6 +6747,84 @@
       "predictedNet": 7900,
       "actualNet": 7900,
       "spPct": 493.8
+    },
+    {
+      "date": "2026-09-03",
+      "nextDate": "2026-09-04",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "BahawalPur",
+      "buyP": 1200,
+      "predictedSellP": 20750,
+      "actualSellP": 20750,
+      "predictedNet": 19550,
+      "actualNet": 19550,
+      "spPct": 1629.2
+    },
+    {
+      "date": "2026-09-03",
+      "nextDate": "2026-09-04",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Faisalabad",
+      "buyP": 1200,
+      "predictedSellP": 18500,
+      "actualSellP": 18500,
+      "predictedNet": 17300,
+      "actualNet": 17300,
+      "spPct": 1441.7
+    },
+    {
+      "date": "2026-09-03",
+      "nextDate": "2026-09-04",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Lodhran",
+      "buyP": 1200,
+      "predictedSellP": 16750,
+      "actualSellP": 16500,
+      "predictedNet": 15550,
+      "actualNet": 15300,
+      "spPct": 1295.8
+    },
+    {
+      "date": "2026-09-03",
+      "nextDate": "2026-09-04",
+      "comm": "Potato Fresh",
+      "buyCity": "Kalurkot",
+      "sellCity": "Abdulhakim",
+      "buyP": 2300,
+      "predictedSellP": 13450,
+      "actualSellP": 13450,
+      "predictedNet": 11150,
+      "actualNet": 11150,
+      "spPct": 484.8
+    },
+    {
+      "date": "2026-09-03",
+      "nextDate": "2026-09-04",
+      "comm": "Potato Fresh",
+      "buyCity": "Kalurkot",
+      "sellCity": "Jahanian",
+      "buyP": 2300,
+      "predictedSellP": 12500,
+      "actualSellP": 12500,
+      "predictedNet": 10200,
+      "actualNet": 10200,
+      "spPct": 443.5
+    },
+    {
+      "date": "2026-09-03",
+      "nextDate": "2026-09-04",
+      "comm": "Potato Fresh",
+      "buyCity": "Kalurkot",
+      "sellCity": "Vehari",
+      "buyP": 2300,
+      "predictedSellP": 11800,
+      "actualSellP": 11800,
+      "predictedNet": 9500,
+      "actualNet": 9500,
+      "spPct": 413
     }
   ]
 }
