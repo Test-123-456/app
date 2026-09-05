@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T07:57:52.650Z",
+  "updatedAt": "2026-09-05T07:36:20.343Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -6825,6 +6825,58 @@
       "predictedNet": 9500,
       "actualNet": 9500,
       "spPct": 413
+    },
+    {
+      "date": "2026-09-04",
+      "nextDate": "2026-09-05",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "BahawalPur",
+      "buyP": 1200,
+      "predictedSellP": 20750,
+      "actualSellP": 21000,
+      "predictedNet": 19550,
+      "actualNet": 19800,
+      "spPct": 1629.2
+    },
+    {
+      "date": "2026-09-04",
+      "nextDate": "2026-09-05",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Faisalabad",
+      "buyP": 1200,
+      "predictedSellP": 18500,
+      "actualSellP": 18500,
+      "predictedNet": 17300,
+      "actualNet": 17300,
+      "spPct": 1441.7
+    },
+    {
+      "date": "2026-09-04",
+      "nextDate": "2026-09-05",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Lodhran",
+      "buyP": 1200,
+      "predictedSellP": 16500,
+      "actualSellP": 16250,
+      "predictedNet": 15300,
+      "actualNet": 15050,
+      "spPct": 1275
+    },
+    {
+      "date": "2026-09-04",
+      "nextDate": "2026-09-05",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Hafizabad",
+      "buyP": 1900,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 10350,
+      "actualNet": 10350,
+      "spPct": 544.7
     }
   ]
 }
