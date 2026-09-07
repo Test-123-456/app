@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T07:49:39.922Z",
+  "updatedAt": "2026-09-07T08:09:21.022Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -6929,6 +6929,110 @@
       "predictedNet": 10350,
       "actualNet": 10350,
       "spPct": 544.7
+    },
+    {
+      "date": "2026-09-06",
+      "nextDate": "2026-09-07",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Chiniot",
+      "buyP": 1900,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 10350,
+      "actualNet": 10350,
+      "spPct": 544.7
+    },
+    {
+      "date": "2026-09-06",
+      "nextDate": "2026-09-07",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Hafizabad",
+      "buyP": 1900,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 10350,
+      "actualNet": 10350,
+      "spPct": 544.7
+    },
+    {
+      "date": "2026-09-06",
+      "nextDate": "2026-09-07",
+      "comm": "Pumpkin",
+      "buyCity": "Sheikhupura",
+      "sellCity": "Jhang",
+      "buyP": 1900,
+      "predictedSellP": 9500,
+      "actualSellP": 12250,
+      "predictedNet": 7600,
+      "actualNet": 10350,
+      "spPct": 400
+    },
+    {
+      "date": "2026-09-06",
+      "nextDate": "2026-09-07",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Sraialamgir",
+      "buyP": 1800,
+      "predictedSellP": 8400,
+      "actualSellP": 7000,
+      "predictedNet": 6600,
+      "actualNet": 5200,
+      "spPct": 366.7
+    },
+    {
+      "date": "2026-09-06",
+      "nextDate": "2026-09-07",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Faisalabad",
+      "buyP": 1800,
+      "predictedSellP": 8250,
+      "actualSellP": 8250,
+      "predictedNet": 6450,
+      "actualNet": 6450,
+      "spPct": 358.3
+    },
+    {
+      "date": "2026-09-06",
+      "nextDate": "2026-09-07",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "ChackJhumra",
+      "buyP": 1800,
+      "predictedSellP": 8250,
+      "actualSellP": 8250,
+      "predictedNet": 6450,
+      "actualNet": 6450,
+      "spPct": 358.3
+    },
+    {
+      "date": "2026-09-06",
+      "nextDate": "2026-09-07",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "Chiniot",
+      "buyP": 2800,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 9450,
+      "actualNet": 9450,
+      "spPct": 337.5
+    },
+    {
+      "date": "2026-09-06",
+      "nextDate": "2026-09-07",
+      "comm": "Pumpkin",
+      "buyCity": "Nankana",
+      "sellCity": "Hafizabad",
+      "buyP": 2800,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 9450,
+      "actualNet": 9450,
+      "spPct": 337.5
     }
   ]
 }
