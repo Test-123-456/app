@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:00:16.797Z",
+  "updatedAt": "2026-09-09T08:08:55.142Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -7124,6 +7124,84 @@
       "predictedNet": 10200,
       "actualNet": 10200,
       "spPct": 637.5
+    },
+    {
+      "date": "2026-09-08",
+      "nextDate": "2026-09-09",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "BahawalPur",
+      "buyP": 1200,
+      "predictedSellP": 19500,
+      "actualSellP": 19500,
+      "predictedNet": 18300,
+      "actualNet": 18300,
+      "spPct": 1525
+    },
+    {
+      "date": "2026-09-08",
+      "nextDate": "2026-09-09",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Lodhran",
+      "buyP": 1200,
+      "predictedSellP": 17500,
+      "actualSellP": 16500,
+      "predictedNet": 16300,
+      "actualNet": 15300,
+      "spPct": 1358.3
+    },
+    {
+      "date": "2026-09-08",
+      "nextDate": "2026-09-09",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Sheikhupura",
+      "buyP": 1200,
+      "predictedSellP": 16750,
+      "actualSellP": 16750,
+      "predictedNet": 15550,
+      "actualNet": 15550,
+      "spPct": 1295.8
+    },
+    {
+      "date": "2026-09-08",
+      "nextDate": "2026-09-09",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "KotAdu",
+      "buyP": 1200,
+      "predictedSellP": 15500,
+      "actualSellP": 13500,
+      "predictedNet": 14300,
+      "actualNet": 12300,
+      "spPct": 1191.7
+    },
+    {
+      "date": "2026-09-08",
+      "nextDate": "2026-09-09",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Abdulhakim",
+      "buyP": 1600,
+      "predictedSellP": 13450,
+      "actualSellP": 13450,
+      "predictedNet": 11850,
+      "actualNet": 11850,
+      "spPct": 740.6
+    },
+    {
+      "date": "2026-09-08",
+      "nextDate": "2026-09-09",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Jahanian",
+      "buyP": 1600,
+      "predictedSellP": 12500,
+      "actualSellP": 12500,
+      "predictedNet": 10900,
+      "actualNet": 10900,
+      "spPct": 681.3
     }
   ]
 }
