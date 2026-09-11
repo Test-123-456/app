@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T08:05:31.961Z",
+  "updatedAt": "2026-09-11T08:02:01.792Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -7306,6 +7306,84 @@
       "predictedNet": 10200,
       "actualNet": 10200,
       "spPct": 637.5
+    },
+    {
+      "date": "2026-09-10",
+      "nextDate": "2026-09-11",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "BahawalPur",
+      "buyP": 1200,
+      "predictedSellP": 19500,
+      "actualSellP": 19500,
+      "predictedNet": 18300,
+      "actualNet": 18300,
+      "spPct": 1525
+    },
+    {
+      "date": "2026-09-10",
+      "nextDate": "2026-09-11",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Lodhran",
+      "buyP": 1200,
+      "predictedSellP": 17000,
+      "actualSellP": 16250,
+      "predictedNet": 15800,
+      "actualNet": 15050,
+      "spPct": 1316.7
+    },
+    {
+      "date": "2026-09-10",
+      "nextDate": "2026-09-11",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Sheikhupura",
+      "buyP": 1200,
+      "predictedSellP": 16750,
+      "actualSellP": 17750,
+      "predictedNet": 15550,
+      "actualNet": 16550,
+      "spPct": 1295.8
+    },
+    {
+      "date": "2026-09-10",
+      "nextDate": "2026-09-11",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Mianwali",
+      "buyP": 2700,
+      "predictedSellP": 14250,
+      "actualSellP": 11250,
+      "predictedNet": 11550,
+      "actualNet": 8550,
+      "spPct": 427.8
+    },
+    {
+      "date": "2026-09-10",
+      "nextDate": "2026-09-11",
+      "comm": "Potato Fresh",
+      "buyCity": "DunyaPur",
+      "sellCity": "Mianwali",
+      "buyP": 2750,
+      "predictedSellP": 14250,
+      "actualSellP": 11250,
+      "predictedNet": 11500,
+      "actualNet": 8500,
+      "spPct": 418.2
+    },
+    {
+      "date": "2026-09-10",
+      "nextDate": "2026-09-11",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Abdulhakim",
+      "buyP": 2700,
+      "predictedSellP": 13450,
+      "actualSellP": 13450,
+      "predictedNet": 10750,
+      "actualNet": 10750,
+      "spPct": 398.1
     }
   ]
 }
