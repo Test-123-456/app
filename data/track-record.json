@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T08:11:36.342Z",
+  "updatedAt": "2026-09-14T08:52:07.531Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -7527,6 +7527,71 @@
       "predictedNet": 10200,
       "actualNet": 10200,
       "spPct": 637.5
+    },
+    {
+      "date": "2026-09-13",
+      "nextDate": "2026-09-14",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Abdulhakim",
+      "buyP": 2700,
+      "predictedSellP": 13450,
+      "actualSellP": 13450,
+      "predictedNet": 10750,
+      "actualNet": 10750,
+      "spPct": 398.1
+    },
+    {
+      "date": "2026-09-13",
+      "nextDate": "2026-09-14",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "RajanPur",
+      "buyP": 2700,
+      "predictedSellP": 12500,
+      "actualSellP": 12500,
+      "predictedNet": 9800,
+      "actualNet": 9800,
+      "spPct": 363
+    },
+    {
+      "date": "2026-09-13",
+      "nextDate": "2026-09-14",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Mianwali",
+      "buyP": 2700,
+      "predictedSellP": 12150,
+      "actualSellP": 11250,
+      "predictedNet": 9450,
+      "actualNet": 8550,
+      "spPct": 350
+    },
+    {
+      "date": "2026-09-13",
+      "nextDate": "2026-09-14",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Vehari",
+      "buyP": 2700,
+      "predictedSellP": 11800,
+      "actualSellP": 11800,
+      "predictedNet": 9100,
+      "actualNet": 9100,
+      "spPct": 337
+    },
+    {
+      "date": "2026-09-13",
+      "nextDate": "2026-09-14",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Jauharabad",
+      "buyP": 2700,
+      "predictedSellP": 10900,
+      "actualSellP": 10900,
+      "predictedNet": 8200,
+      "actualNet": 8200,
+      "spPct": 303.7
     }
   ]
 }
