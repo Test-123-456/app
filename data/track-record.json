@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T08:52:07.531Z",
+  "updatedAt": "2026-09-16T08:30:10.352Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -7592,6 +7592,110 @@
       "predictedNet": 8200,
       "actualNet": 8200,
       "spPct": 303.7
+    },
+    {
+      "date": "2026-09-15",
+      "nextDate": "2026-09-16",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Sheikhupura",
+      "buyP": 1200,
+      "predictedSellP": 17750,
+      "actualSellP": 17750,
+      "predictedNet": 16550,
+      "actualNet": 16550,
+      "spPct": 1379.2
+    },
+    {
+      "date": "2026-09-15",
+      "nextDate": "2026-09-16",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Lodhran",
+      "buyP": 1200,
+      "predictedSellP": 17250,
+      "actualSellP": 17250,
+      "predictedNet": 16050,
+      "actualNet": 16050,
+      "spPct": 1337.5
+    },
+    {
+      "date": "2026-09-15",
+      "nextDate": "2026-09-16",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "KotAdu",
+      "buyP": 1200,
+      "predictedSellP": 15500,
+      "actualSellP": 15500,
+      "predictedNet": 14300,
+      "actualNet": 14300,
+      "spPct": 1191.7
+    },
+    {
+      "date": "2026-09-15",
+      "nextDate": "2026-09-16",
+      "comm": "Tomato",
+      "buyCity": "Mailsi",
+      "sellCity": "Nankana",
+      "buyP": 1700,
+      "predictedSellP": 18500,
+      "actualSellP": 15675,
+      "predictedNet": 16800,
+      "actualNet": 13975,
+      "spPct": 988.2
+    },
+    {
+      "date": "2026-09-15",
+      "nextDate": "2026-09-16",
+      "comm": "Tomato",
+      "buyCity": "Mailsi",
+      "sellCity": "Lahore",
+      "buyP": 1700,
+      "predictedSellP": 18000,
+      "actualSellP": 17500,
+      "predictedNet": 16300,
+      "actualNet": 15800,
+      "spPct": 958.8
+    },
+    {
+      "date": "2026-09-15",
+      "nextDate": "2026-09-16",
+      "comm": "Tomato",
+      "buyCity": "Mailsi",
+      "sellCity": "Faisalabad",
+      "buyP": 1700,
+      "predictedSellP": 18000,
+      "actualSellP": 18000,
+      "predictedNet": 16300,
+      "actualNet": 16300,
+      "spPct": 958.8
+    },
+    {
+      "date": "2026-09-15",
+      "nextDate": "2026-09-16",
+      "comm": "Tomato",
+      "buyCity": "Mailsi",
+      "sellCity": "Patoki",
+      "buyP": 1700,
+      "predictedSellP": 18000,
+      "actualSellP": 17500,
+      "predictedNet": 16300,
+      "actualNet": 15800,
+      "spPct": 958.8
+    },
+    {
+      "date": "2026-09-15",
+      "nextDate": "2026-09-16",
+      "comm": "Tomato",
+      "buyCity": "Mailsi",
+      "sellCity": "Jaranwala",
+      "buyP": 1700,
+      "predictedSellP": 18000,
+      "actualSellP": 17000,
+      "predictedNet": 16300,
+      "actualNet": 15300,
+      "spPct": 958.8
     }
   ]
 }
