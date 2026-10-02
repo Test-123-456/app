@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-16T08:30:10.352Z",
+  "updatedAt": "2026-10-02T09:35:25.057Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -7696,6 +7696,110 @@
       "predictedNet": 16300,
       "actualNet": 15300,
       "spPct": 958.8
+    },
+    {
+      "date": "2026-10-01",
+      "nextDate": "2026-10-02",
+      "comm": "Brinjal",
+      "buyCity": "Kanganpur",
+      "sellCity": "Sraialamgir",
+      "buyP": 3900,
+      "predictedSellP": 72650,
+      "actualSellP": 8500,
+      "predictedNet": 68750,
+      "actualNet": 4600,
+      "spPct": 1762.8
+    },
+    {
+      "date": "2026-10-01",
+      "nextDate": "2026-10-02",
+      "comm": "Brinjal",
+      "buyCity": "Khudian",
+      "sellCity": "Sraialamgir",
+      "buyP": 3900,
+      "predictedSellP": 72650,
+      "actualSellP": 8500,
+      "predictedNet": 68750,
+      "actualNet": 4600,
+      "spPct": 1762.8
+    },
+    {
+      "date": "2026-10-01",
+      "nextDate": "2026-10-02",
+      "comm": "Brinjal",
+      "buyCity": "Patoki",
+      "sellCity": "Sraialamgir",
+      "buyP": 3900,
+      "predictedSellP": 72650,
+      "actualSellP": 8500,
+      "predictedNet": 68750,
+      "actualNet": 4600,
+      "spPct": 1762.8
+    },
+    {
+      "date": "2026-10-01",
+      "nextDate": "2026-10-02",
+      "comm": "Brinjal",
+      "buyCity": "Tandlianwala",
+      "sellCity": "Sraialamgir",
+      "buyP": 4500,
+      "predictedSellP": 72650,
+      "actualSellP": 8500,
+      "predictedNet": 68150,
+      "actualNet": 4000,
+      "spPct": 1514.4
+    },
+    {
+      "date": "2026-10-01",
+      "nextDate": "2026-10-02",
+      "comm": "Brinjal",
+      "buyCity": "Sahiwal",
+      "sellCity": "Sraialamgir",
+      "buyP": 4650,
+      "predictedSellP": 72650,
+      "actualSellP": 8500,
+      "predictedNet": 68000,
+      "actualNet": 3850,
+      "spPct": 1462.4
+    },
+    {
+      "date": "2026-10-01",
+      "nextDate": "2026-10-02",
+      "comm": "Brinjal",
+      "buyCity": "ArifWala",
+      "sellCity": "Sraialamgir",
+      "buyP": 5500,
+      "predictedSellP": 72650,
+      "actualSellP": 8500,
+      "predictedNet": 67150,
+      "actualNet": 3000,
+      "spPct": 1220.9
+    },
+    {
+      "date": "2026-10-01",
+      "nextDate": "2026-10-02",
+      "comm": "Brinjal",
+      "buyCity": "Mamunkanjan",
+      "sellCity": "Sraialamgir",
+      "buyP": 5500,
+      "predictedSellP": 72650,
+      "actualSellP": 8500,
+      "predictedNet": 67150,
+      "actualNet": 3000,
+      "spPct": 1220.9
+    },
+    {
+      "date": "2026-10-01",
+      "nextDate": "2026-10-02",
+      "comm": "Brinjal",
+      "buyCity": "Bhakhar",
+      "sellCity": "Sraialamgir",
+      "buyP": 5650,
+      "predictedSellP": 72650,
+      "actualSellP": 8500,
+      "predictedNet": 67000,
+      "actualNet": 2850,
+      "spPct": 1185.8
     }
   ]
 }
