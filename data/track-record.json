@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T09:03:03.121Z",
+  "updatedAt": "2026-10-04T09:33:41.681Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -7852,6 +7852,84 @@
       "predictedNet": 9800,
       "actualNet": 9800,
       "spPct": 363
+    },
+    {
+      "date": "2026-10-03",
+      "nextDate": "2026-10-04",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Lodhran",
+      "buyP": 1700,
+      "predictedSellP": 19400,
+      "actualSellP": 19400,
+      "predictedNet": 17700,
+      "actualNet": 17700,
+      "spPct": 1041.2
+    },
+    {
+      "date": "2026-10-03",
+      "nextDate": "2026-10-04",
+      "comm": "Sweet Musk Melon (Shireen)",
+      "buyCity": "Shorkot",
+      "sellCity": "Sheikhupura",
+      "buyP": 1700,
+      "predictedSellP": 17750,
+      "actualSellP": 17750,
+      "predictedNet": 16050,
+      "actualNet": 16050,
+      "spPct": 944.1
+    },
+    {
+      "date": "2026-10-03",
+      "nextDate": "2026-10-04",
+      "comm": "Potato Fresh",
+      "buyCity": "Bhalwal",
+      "sellCity": "Taunsasharif",
+      "buyP": 1900,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 10350,
+      "actualNet": 10350,
+      "spPct": 544.7
+    },
+    {
+      "date": "2026-10-03",
+      "nextDate": "2026-10-04",
+      "comm": "Potato Fresh",
+      "buyCity": "Bhalwal",
+      "sellCity": "Vehari",
+      "buyP": 1900,
+      "predictedSellP": 12000,
+      "actualSellP": 12000,
+      "predictedNet": 10100,
+      "actualNet": 10100,
+      "spPct": 531.6
+    },
+    {
+      "date": "2026-10-03",
+      "nextDate": "2026-10-04",
+      "comm": "Potato Fresh",
+      "buyCity": "Bhalwal",
+      "sellCity": "Mailsi",
+      "buyP": 1900,
+      "predictedSellP": 12000,
+      "actualSellP": 12000,
+      "predictedNet": 10100,
+      "actualNet": 10100,
+      "spPct": 531.6
+    },
+    {
+      "date": "2026-10-03",
+      "nextDate": "2026-10-04",
+      "comm": "Potato Fresh",
+      "buyCity": "Bhalwal",
+      "sellCity": "DGKHAN",
+      "buyP": 1900,
+      "predictedSellP": 11500,
+      "actualSellP": 11500,
+      "predictedNet": 9600,
+      "actualNet": 9600,
+      "spPct": 505.3
     }
   ]
 }
