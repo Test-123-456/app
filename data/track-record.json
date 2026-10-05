@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T09:33:41.681Z",
+  "updatedAt": "2026-10-05T10:16:00.705Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -7930,6 +7930,84 @@
       "predictedNet": 9600,
       "actualNet": 9600,
       "spPct": 505.3
+    },
+    {
+      "date": "2026-10-04",
+      "nextDate": "2026-10-05",
+      "comm": "Ginger(China)",
+      "buyCity": "Sraialamgir",
+      "sellCity": "Hafizabad",
+      "buyP": 343,
+      "predictedSellP": 34750,
+      "actualSellP": 34750,
+      "predictedNet": 34407,
+      "actualNet": 34407,
+      "spPct": 10031.2
+    },
+    {
+      "date": "2026-10-04",
+      "nextDate": "2026-10-05",
+      "comm": "Ginger(China)",
+      "buyCity": "Sraialamgir",
+      "sellCity": "Bhakhar",
+      "buyP": 343,
+      "predictedSellP": 34000,
+      "actualSellP": 34000,
+      "predictedNet": 33657,
+      "actualNet": 33657,
+      "spPct": 9812.5
+    },
+    {
+      "date": "2026-10-04",
+      "nextDate": "2026-10-05",
+      "comm": "Ginger(China)",
+      "buyCity": "Sraialamgir",
+      "sellCity": "Lahore",
+      "buyP": 343,
+      "predictedSellP": 32750,
+      "actualSellP": 32250,
+      "predictedNet": 32407,
+      "actualNet": 31907,
+      "spPct": 9448.1
+    },
+    {
+      "date": "2026-10-04",
+      "nextDate": "2026-10-05",
+      "comm": "Ginger(China)",
+      "buyCity": "Sraialamgir",
+      "sellCity": "Rawalpindi",
+      "buyP": 343,
+      "predictedSellP": 32550,
+      "actualSellP": 32550,
+      "predictedNet": 32207,
+      "actualNet": 32207,
+      "spPct": 9389.8
+    },
+    {
+      "date": "2026-10-04",
+      "nextDate": "2026-10-05",
+      "comm": "Ginger(China)",
+      "buyCity": "Sraialamgir",
+      "sellCity": "Jhang",
+      "buyP": 343,
+      "predictedSellP": 32500,
+      "actualSellP": 39000,
+      "predictedNet": 32157,
+      "actualNet": 38657,
+      "spPct": 9375.2
+    },
+    {
+      "date": "2026-10-04",
+      "nextDate": "2026-10-05",
+      "comm": "Ginger(China)",
+      "buyCity": "Sraialamgir",
+      "sellCity": "ChackJhumra",
+      "buyP": 343,
+      "predictedSellP": 32500,
+      "actualSellP": 32500,
+      "predictedNet": 32157,
+      "actualNet": 32157,
+      "spPct": 9375.2
     }
   ]
 }
