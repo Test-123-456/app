@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T10:05:47.870Z",
+  "updatedAt": "2026-10-07T10:10:44.068Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8112,6 +8112,84 @@
       "predictedNet": 9900,
       "actualNet": 9900,
       "spPct": 618.8
+    },
+    {
+      "date": "2026-10-06",
+      "nextDate": "2026-10-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Khudian",
+      "sellCity": "Abdulhakim",
+      "buyP": 2400,
+      "predictedSellP": 12550,
+      "actualSellP": 10750,
+      "predictedNet": 10150,
+      "actualNet": 8350,
+      "spPct": 422.9
+    },
+    {
+      "date": "2026-10-06",
+      "nextDate": "2026-10-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Khudian",
+      "sellCity": "Taunsasharif",
+      "buyP": 2400,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 9850,
+      "actualNet": 9850,
+      "spPct": 410.4
+    },
+    {
+      "date": "2026-10-06",
+      "nextDate": "2026-10-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Khudian",
+      "sellCity": "Vehari",
+      "buyP": 2400,
+      "predictedSellP": 12000,
+      "actualSellP": 10300,
+      "predictedNet": 9600,
+      "actualNet": 7900,
+      "spPct": 400
+    },
+    {
+      "date": "2026-10-06",
+      "nextDate": "2026-10-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Khudian",
+      "sellCity": "Mailsi",
+      "buyP": 2400,
+      "predictedSellP": 12000,
+      "actualSellP": 12000,
+      "predictedNet": 9600,
+      "actualNet": 9600,
+      "spPct": 400
+    },
+    {
+      "date": "2026-10-06",
+      "nextDate": "2026-10-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Khudian",
+      "sellCity": "Jahanian",
+      "buyP": 2400,
+      "predictedSellP": 12000,
+      "actualSellP": 10000,
+      "predictedNet": 9600,
+      "actualNet": 7600,
+      "spPct": 400
+    },
+    {
+      "date": "2026-10-06",
+      "nextDate": "2026-10-07",
+      "comm": "Potato Fresh",
+      "buyCity": "Khudian",
+      "sellCity": "DGKHAN",
+      "buyP": 2400,
+      "predictedSellP": 11500,
+      "actualSellP": 11500,
+      "predictedNet": 9100,
+      "actualNet": 9100,
+      "spPct": 379.2
     }
   ]
 }
