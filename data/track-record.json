@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T10:10:44.068Z",
+  "updatedAt": "2026-10-08T10:21:29.724Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8190,6 +8190,84 @@
       "predictedNet": 9100,
       "actualNet": 9100,
       "spPct": 379.2
+    },
+    {
+      "date": "2026-10-07",
+      "nextDate": "2026-10-08",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Taunsasharif",
+      "buyP": 1600,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 10650,
+      "actualNet": 10650,
+      "spPct": 665.6
+    },
+    {
+      "date": "2026-10-07",
+      "nextDate": "2026-10-08",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Mailsi",
+      "buyP": 1600,
+      "predictedSellP": 12000,
+      "actualSellP": 10000,
+      "predictedNet": 10400,
+      "actualNet": 8400,
+      "spPct": 650
+    },
+    {
+      "date": "2026-10-07",
+      "nextDate": "2026-10-08",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "DGKHAN",
+      "buyP": 1600,
+      "predictedSellP": 11500,
+      "actualSellP": 11500,
+      "predictedNet": 9900,
+      "actualNet": 9900,
+      "spPct": 618.8
+    },
+    {
+      "date": "2026-10-07",
+      "nextDate": "2026-10-08",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "JamPur",
+      "buyP": 1600,
+      "predictedSellP": 11500,
+      "actualSellP": 11500,
+      "predictedNet": 9900,
+      "actualNet": 9900,
+      "spPct": 618.8
+    },
+    {
+      "date": "2026-10-07",
+      "nextDate": "2026-10-08",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Lodhran",
+      "buyP": 1600,
+      "predictedSellP": 10900,
+      "actualSellP": 10900,
+      "predictedNet": 9300,
+      "actualNet": 9300,
+      "spPct": 581.3
+    },
+    {
+      "date": "2026-10-07",
+      "nextDate": "2026-10-08",
+      "comm": "Potato Fresh",
+      "buyCity": "AhmadPurEast",
+      "sellCity": "Kahrorpacca",
+      "buyP": 1600,
+      "predictedSellP": 10800,
+      "actualSellP": 10800,
+      "predictedNet": 9200,
+      "actualNet": 9200,
+      "spPct": 575
     }
   ]
 }
