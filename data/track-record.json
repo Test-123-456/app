@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T10:21:29.724Z",
+  "updatedAt": "2026-10-09T10:23:58.819Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8268,6 +8268,97 @@
       "predictedNet": 9200,
       "actualNet": 9200,
       "spPct": 575
+    },
+    {
+      "date": "2026-10-08",
+      "nextDate": "2026-10-09",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "TALAGANG",
+      "buyP": 1500,
+      "predictedSellP": 7400,
+      "actualSellP": 7400,
+      "predictedNet": 5900,
+      "actualNet": 5900,
+      "spPct": 393.3
+    },
+    {
+      "date": "2026-10-08",
+      "nextDate": "2026-10-09",
+      "comm": "Potato Fresh",
+      "buyCity": "jalalpurpirwala",
+      "sellCity": "Taunsasharif",
+      "buyP": 2500,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 9750,
+      "actualNet": 9750,
+      "spPct": 390
+    },
+    {
+      "date": "2026-10-08",
+      "nextDate": "2026-10-09",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Pindibhattian",
+      "buyP": 1500,
+      "predictedSellP": 7300,
+      "actualSellP": 7300,
+      "predictedNet": 5800,
+      "actualNet": 5800,
+      "spPct": 386.7
+    },
+    {
+      "date": "2026-10-08",
+      "nextDate": "2026-10-09",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Mianwali",
+      "buyP": 1500,
+      "predictedSellP": 7000,
+      "actualSellP": 7000,
+      "predictedNet": 5500,
+      "actualNet": 5500,
+      "spPct": 366.7
+    },
+    {
+      "date": "2026-10-08",
+      "nextDate": "2026-10-09",
+      "comm": "Cauliflower",
+      "buyCity": "jalalpurpirwala",
+      "sellCity": "Layyah",
+      "buyP": 11000,
+      "predictedSellP": 50800,
+      "actualSellP": 9500,
+      "predictedNet": 39800,
+      "actualNet": -1500,
+      "spPct": 361.8
+    },
+    {
+      "date": "2026-10-08",
+      "nextDate": "2026-10-09",
+      "comm": "Potato Fresh",
+      "buyCity": "jalalpurpirwala",
+      "sellCity": "DGKHAN",
+      "buyP": 2500,
+      "predictedSellP": 11500,
+      "actualSellP": 11500,
+      "predictedNet": 9000,
+      "actualNet": 9000,
+      "spPct": 360
+    },
+    {
+      "date": "2026-10-08",
+      "nextDate": "2026-10-09",
+      "comm": "Potato Fresh",
+      "buyCity": "jalalpurpirwala",
+      "sellCity": "JamPur",
+      "buyP": 2500,
+      "predictedSellP": 11500,
+      "actualSellP": 11500,
+      "predictedNet": 9000,
+      "actualNet": 9000,
+      "spPct": 360
     }
   ]
 }
