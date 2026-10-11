@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T09:40:12.020Z",
+  "updatedAt": "2026-10-11T09:56:37.379Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8463,6 +8463,110 @@
       "predictedNet": 9350,
       "actualNet": 9350,
       "spPct": 322.4
+    },
+    {
+      "date": "2026-10-10",
+      "nextDate": "2026-10-11",
+      "comm": "Potato Fresh",
+      "buyCity": "DunyaPur",
+      "sellCity": "Taunsasharif",
+      "buyP": 2550,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 9700,
+      "actualNet": 9700,
+      "spPct": 380.4
+    },
+    {
+      "date": "2026-10-10",
+      "nextDate": "2026-10-11",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Taunsasharif",
+      "buyP": 2700,
+      "predictedSellP": 12250,
+      "actualSellP": 12250,
+      "predictedNet": 9550,
+      "actualNet": 9550,
+      "spPct": 353.7
+    },
+    {
+      "date": "2026-10-10",
+      "nextDate": "2026-10-11",
+      "comm": "Potato Fresh",
+      "buyCity": "DunyaPur",
+      "sellCity": "DGKHAN",
+      "buyP": 2550,
+      "predictedSellP": 11500,
+      "actualSellP": 11500,
+      "predictedNet": 8950,
+      "actualNet": 8950,
+      "spPct": 351
+    },
+    {
+      "date": "2026-10-10",
+      "nextDate": "2026-10-11",
+      "comm": "Potato Fresh",
+      "buyCity": "DunyaPur",
+      "sellCity": "JamPur",
+      "buyP": 2550,
+      "predictedSellP": 11500,
+      "actualSellP": 11500,
+      "predictedNet": 8950,
+      "actualNet": 8950,
+      "spPct": 351
+    },
+    {
+      "date": "2026-10-10",
+      "nextDate": "2026-10-11",
+      "comm": "Potato Fresh",
+      "buyCity": "DunyaPur",
+      "sellCity": "Hafizabad",
+      "buyP": 2550,
+      "predictedSellP": 11250,
+      "actualSellP": 11250,
+      "predictedNet": 8700,
+      "actualNet": 8700,
+      "spPct": 341.2
+    },
+    {
+      "date": "2026-10-10",
+      "nextDate": "2026-10-11",
+      "comm": "Pumpkin",
+      "buyCity": "Gujranwala",
+      "sellCity": "Jhang",
+      "buyP": 3550,
+      "predictedSellP": 15500,
+      "actualSellP": 15500,
+      "predictedNet": 11950,
+      "actualNet": 11950,
+      "spPct": 336.6
+    },
+    {
+      "date": "2026-10-10",
+      "nextDate": "2026-10-11",
+      "comm": "Potato Fresh",
+      "buyCity": "DunyaPur",
+      "sellCity": "Lodhran",
+      "buyP": 2550,
+      "predictedSellP": 10900,
+      "actualSellP": 10800,
+      "predictedNet": 8350,
+      "actualNet": 8250,
+      "spPct": 327.5
+    },
+    {
+      "date": "2026-10-10",
+      "nextDate": "2026-10-11",
+      "comm": "Potato Fresh",
+      "buyCity": "DunyaPur",
+      "sellCity": "Jauharabad",
+      "buyP": 2550,
+      "predictedSellP": 10900,
+      "actualSellP": 10900,
+      "predictedNet": 8350,
+      "actualNet": 8350,
+      "spPct": 327.5
     }
   ]
 }
