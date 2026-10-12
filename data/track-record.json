@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T09:56:37.379Z",
+  "updatedAt": "2026-10-12T10:36:19.869Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8567,6 +8567,110 @@
       "predictedNet": 8350,
       "actualNet": 8350,
       "spPct": 327.5
+    },
+    {
+      "date": "2026-10-11",
+      "nextDate": "2026-10-12",
+      "comm": "Potato Store",
+      "buyCity": "KotAdu",
+      "sellCity": "Chiniot",
+      "buyP": 1900,
+      "predictedSellP": 33650,
+      "actualSellP": 2350,
+      "predictedNet": 31750,
+      "actualNet": 450,
+      "spPct": 1671.1
+    },
+    {
+      "date": "2026-10-11",
+      "nextDate": "2026-10-12",
+      "comm": "Potato Store",
+      "buyCity": "Tandlianwala",
+      "sellCity": "Chiniot",
+      "buyP": 1900,
+      "predictedSellP": 33650,
+      "actualSellP": 2350,
+      "predictedNet": 31750,
+      "actualNet": 450,
+      "spPct": 1671.1
+    },
+    {
+      "date": "2026-10-11",
+      "nextDate": "2026-10-12",
+      "comm": "Potato Store",
+      "buyCity": "kotmoman",
+      "sellCity": "Chiniot",
+      "buyP": 1900,
+      "predictedSellP": 33650,
+      "actualSellP": 2350,
+      "predictedNet": 31750,
+      "actualNet": 450,
+      "spPct": 1671.1
+    },
+    {
+      "date": "2026-10-11",
+      "nextDate": "2026-10-12",
+      "comm": "Potato Store",
+      "buyCity": "Kalurkot",
+      "sellCity": "Chiniot",
+      "buyP": 1900,
+      "predictedSellP": 33650,
+      "actualSellP": 2350,
+      "predictedNet": 31750,
+      "actualNet": 450,
+      "spPct": 1671.1
+    },
+    {
+      "date": "2026-10-11",
+      "nextDate": "2026-10-12",
+      "comm": "Potato Store",
+      "buyCity": "ArifWala",
+      "sellCity": "Chiniot",
+      "buyP": 1950,
+      "predictedSellP": 33650,
+      "actualSellP": 2350,
+      "predictedNet": 31700,
+      "actualNet": 400,
+      "spPct": 1625.6
+    },
+    {
+      "date": "2026-10-11",
+      "nextDate": "2026-10-12",
+      "comm": "Potato Store",
+      "buyCity": "Chichawatni",
+      "sellCity": "Chiniot",
+      "buyP": 2000,
+      "predictedSellP": 33650,
+      "actualSellP": 2350,
+      "predictedNet": 31650,
+      "actualNet": 350,
+      "spPct": 1582.5
+    },
+    {
+      "date": "2026-10-11",
+      "nextDate": "2026-10-12",
+      "comm": "Potato Store",
+      "buyCity": "RahimYarKhan",
+      "sellCity": "Chiniot",
+      "buyP": 2046,
+      "predictedSellP": 33650,
+      "actualSellP": 2350,
+      "predictedNet": 31604,
+      "actualNet": 304,
+      "spPct": 1544.7
+    },
+    {
+      "date": "2026-10-11",
+      "nextDate": "2026-10-12",
+      "comm": "Potato Store",
+      "buyCity": "Jhang",
+      "sellCity": "Chiniot",
+      "buyP": 2150,
+      "predictedSellP": 33650,
+      "actualSellP": 2350,
+      "predictedNet": 31500,
+      "actualNet": 200,
+      "spPct": 1465.1
     }
   ]
 }
