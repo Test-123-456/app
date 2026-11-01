@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T10:36:19.869Z",
+  "updatedAt": "2026-11-01T10:18:27.775Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8671,6 +8671,84 @@
       "predictedNet": 31500,
       "actualNet": 200,
       "spPct": 1465.1
+    },
+    {
+      "date": "2026-10-31",
+      "nextDate": "2026-11-01",
+      "comm": "Pumpkin",
+      "buyCity": "Kasur",
+      "sellCity": "Hafizabad",
+      "buyP": 2900,
+      "predictedSellP": 15750,
+      "actualSellP": 15750,
+      "predictedNet": 12850,
+      "actualNet": 12850,
+      "spPct": 443.1
+    },
+    {
+      "date": "2026-10-31",
+      "nextDate": "2026-11-01",
+      "comm": "Pumpkin",
+      "buyCity": "Lahore",
+      "sellCity": "Hafizabad",
+      "buyP": 3100,
+      "predictedSellP": 15750,
+      "actualSellP": 15750,
+      "predictedNet": 12650,
+      "actualNet": 12650,
+      "spPct": 408.1
+    },
+    {
+      "date": "2026-10-31",
+      "nextDate": "2026-11-01",
+      "comm": "Pumpkin",
+      "buyCity": "Gujranwala",
+      "sellCity": "Hafizabad",
+      "buyP": 3650,
+      "predictedSellP": 15750,
+      "actualSellP": 15750,
+      "predictedNet": 12100,
+      "actualNet": 12100,
+      "spPct": 331.5
+    },
+    {
+      "date": "2026-10-31",
+      "nextDate": "2026-11-01",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Kasur",
+      "sellCity": "Sraialamgir",
+      "buyP": 2900,
+      "predictedSellP": 12200,
+      "actualSellP": 12200,
+      "predictedNet": 9300,
+      "actualNet": 9300,
+      "spPct": 320.7
+    },
+    {
+      "date": "2026-10-31",
+      "nextDate": "2026-11-01",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Kotradhakishan",
+      "sellCity": "Sraialamgir",
+      "buyP": 2900,
+      "predictedSellP": 12200,
+      "actualSellP": 12200,
+      "predictedNet": 9300,
+      "actualNet": 9300,
+      "spPct": 320.7
+    },
+    {
+      "date": "2026-10-31",
+      "nextDate": "2026-11-01",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Mianwali",
+      "buyP": 3300,
+      "predictedSellP": 13750,
+      "actualSellP": 14200,
+      "predictedNet": 10450,
+      "actualNet": 10900,
+      "spPct": 316.7
     }
   ]
 }
