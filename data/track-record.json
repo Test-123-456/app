@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T10:18:27.775Z",
+  "updatedAt": "2026-11-02T10:48:39.581Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8749,6 +8749,110 @@
       "predictedNet": 10450,
       "actualNet": 10900,
       "spPct": 316.7
+    },
+    {
+      "date": "2026-11-01",
+      "nextDate": "2026-11-02",
+      "comm": "Brinjal",
+      "buyCity": "Okara",
+      "sellCity": "Bhakhar",
+      "buyP": 2350,
+      "predictedSellP": 83500,
+      "actualSellP": 6200,
+      "predictedNet": 81150,
+      "actualNet": 3850,
+      "spPct": 3453.2
+    },
+    {
+      "date": "2026-11-01",
+      "nextDate": "2026-11-02",
+      "comm": "Brinjal",
+      "buyCity": "Sahiwal",
+      "sellCity": "Bhakhar",
+      "buyP": 2350,
+      "predictedSellP": 83500,
+      "actualSellP": 6200,
+      "predictedNet": 81150,
+      "actualNet": 3850,
+      "spPct": 3453.2
+    },
+    {
+      "date": "2026-11-01",
+      "nextDate": "2026-11-02",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Sraialamgir",
+      "buyP": 1300,
+      "predictedSellP": 43300,
+      "actualSellP": 4800,
+      "predictedNet": 42000,
+      "actualNet": 3500,
+      "spPct": 3230.8
+    },
+    {
+      "date": "2026-11-01",
+      "nextDate": "2026-11-02",
+      "comm": "Brinjal",
+      "buyCity": "ArifWala",
+      "sellCity": "Bhakhar",
+      "buyP": 2750,
+      "predictedSellP": 83500,
+      "actualSellP": 6200,
+      "predictedNet": 80750,
+      "actualNet": 3450,
+      "spPct": 2936.4
+    },
+    {
+      "date": "2026-11-01",
+      "nextDate": "2026-11-02",
+      "comm": "Spinach",
+      "buyCity": "Vehari",
+      "sellCity": "Sraialamgir",
+      "buyP": 2000,
+      "predictedSellP": 43300,
+      "actualSellP": 4800,
+      "predictedNet": 41300,
+      "actualNet": 2800,
+      "spPct": 2065
+    },
+    {
+      "date": "2026-11-01",
+      "nextDate": "2026-11-02",
+      "comm": "Spinach",
+      "buyCity": "Mailsi",
+      "sellCity": "Sraialamgir",
+      "buyP": 2000,
+      "predictedSellP": 43300,
+      "actualSellP": 4800,
+      "predictedNet": 41300,
+      "actualNet": 2800,
+      "spPct": 2065
+    },
+    {
+      "date": "2026-11-01",
+      "nextDate": "2026-11-02",
+      "comm": "Brinjal",
+      "buyCity": "Chichawatni",
+      "sellCity": "Bhakhar",
+      "buyP": 4250,
+      "predictedSellP": 83500,
+      "actualSellP": 6200,
+      "predictedNet": 79250,
+      "actualNet": 1950,
+      "spPct": 1864.7
+    },
+    {
+      "date": "2026-11-01",
+      "nextDate": "2026-11-02",
+      "comm": "Spinach",
+      "buyCity": "RajanPur",
+      "sellCity": "Sraialamgir",
+      "buyP": 2300,
+      "predictedSellP": 43300,
+      "actualSellP": 4800,
+      "predictedNet": 41000,
+      "actualNet": 2500,
+      "spPct": 1782.6
     }
   ]
 }
