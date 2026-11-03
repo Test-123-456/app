@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T10:48:39.581Z",
+  "updatedAt": "2026-11-03T10:40:34.662Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8853,6 +8853,110 @@
       "predictedNet": 41000,
       "actualNet": 2500,
       "spPct": 1782.6
+    },
+    {
+      "date": "2026-11-02",
+      "nextDate": "2026-11-03",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Vehari",
+      "sellCity": "Sahiwal",
+      "buyP": 4100,
+      "predictedSellP": 44600,
+      "actualSellP": 5650,
+      "predictedNet": 40500,
+      "actualNet": 1550,
+      "spPct": 987.8
+    },
+    {
+      "date": "2026-11-02",
+      "nextDate": "2026-11-03",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Mailsi",
+      "sellCity": "Sahiwal",
+      "buyP": 4100,
+      "predictedSellP": 44600,
+      "actualSellP": 5650,
+      "predictedNet": 40500,
+      "actualNet": 1550,
+      "spPct": 987.8
+    },
+    {
+      "date": "2026-11-02",
+      "nextDate": "2026-11-03",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Kasur",
+      "sellCity": "Sahiwal",
+      "buyP": 4600,
+      "predictedSellP": 44600,
+      "actualSellP": 5650,
+      "predictedNet": 40000,
+      "actualNet": 1050,
+      "spPct": 869.6
+    },
+    {
+      "date": "2026-11-02",
+      "nextDate": "2026-11-03",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Patoki",
+      "sellCity": "Sahiwal",
+      "buyP": 4600,
+      "predictedSellP": 44600,
+      "actualSellP": 5650,
+      "predictedNet": 40000,
+      "actualNet": 1050,
+      "spPct": 869.6
+    },
+    {
+      "date": "2026-11-02",
+      "nextDate": "2026-11-03",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Khudian",
+      "sellCity": "Sahiwal",
+      "buyP": 4600,
+      "predictedSellP": 44600,
+      "actualSellP": 5650,
+      "predictedNet": 40000,
+      "actualNet": 1050,
+      "spPct": 869.6
+    },
+    {
+      "date": "2026-11-02",
+      "nextDate": "2026-11-03",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "PhoolNagar",
+      "sellCity": "Sahiwal",
+      "buyP": 4600,
+      "predictedSellP": 44600,
+      "actualSellP": 5650,
+      "predictedNet": 40000,
+      "actualNet": 1050,
+      "spPct": 869.6
+    },
+    {
+      "date": "2026-11-02",
+      "nextDate": "2026-11-03",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "Kanganpur",
+      "sellCity": "Sahiwal",
+      "buyP": 4650,
+      "predictedSellP": 44600,
+      "actualSellP": 5650,
+      "predictedNet": 39950,
+      "actualNet": 1000,
+      "spPct": 859.1
+    },
+    {
+      "date": "2026-11-02",
+      "nextDate": "2026-11-03",
+      "comm": "Bottle Gourd (کدو)",
+      "buyCity": "RajanPur",
+      "sellCity": "Sahiwal",
+      "buyP": 5500,
+      "predictedSellP": 44600,
+      "actualSellP": 5650,
+      "predictedNet": 39100,
+      "actualNet": 150,
+      "spPct": 710.9
     }
   ]
 }
