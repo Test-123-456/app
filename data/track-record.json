@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T10:40:34.662Z",
+  "updatedAt": "2026-11-04T10:52:22.719Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -8957,6 +8957,110 @@
       "predictedNet": 39100,
       "actualNet": 150,
       "spPct": 710.9
+    },
+    {
+      "date": "2026-11-03",
+      "nextDate": "2026-11-04",
+      "comm": "Brinjal",
+      "buyCity": "Okara",
+      "sellCity": "KotAdu",
+      "buyP": 2350,
+      "predictedSellP": 33500,
+      "actualSellP": 6500,
+      "predictedNet": 31150,
+      "actualNet": 4150,
+      "spPct": 1325.5
+    },
+    {
+      "date": "2026-11-03",
+      "nextDate": "2026-11-04",
+      "comm": "Brinjal",
+      "buyCity": "Depalpur",
+      "sellCity": "KotAdu",
+      "buyP": 2350,
+      "predictedSellP": 33500,
+      "actualSellP": 6500,
+      "predictedNet": 31150,
+      "actualNet": 4150,
+      "spPct": 1325.5
+    },
+    {
+      "date": "2026-11-03",
+      "nextDate": "2026-11-04",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "TALAGANG",
+      "buyP": 1300,
+      "predictedSellP": 18300,
+      "actualSellP": 18300,
+      "predictedNet": 17000,
+      "actualNet": 17000,
+      "spPct": 1307.7
+    },
+    {
+      "date": "2026-11-03",
+      "nextDate": "2026-11-04",
+      "comm": "Brinjal",
+      "buyCity": "Sahiwal",
+      "sellCity": "KotAdu",
+      "buyP": 2400,
+      "predictedSellP": 33500,
+      "actualSellP": 6500,
+      "predictedNet": 31100,
+      "actualNet": 4100,
+      "spPct": 1295.8
+    },
+    {
+      "date": "2026-11-03",
+      "nextDate": "2026-11-04",
+      "comm": "Brinjal",
+      "buyCity": "ArifWala",
+      "sellCity": "KotAdu",
+      "buyP": 2750,
+      "predictedSellP": 33500,
+      "actualSellP": 6500,
+      "predictedNet": 30750,
+      "actualNet": 3750,
+      "spPct": 1118.2
+    },
+    {
+      "date": "2026-11-03",
+      "nextDate": "2026-11-04",
+      "comm": "Brinjal",
+      "buyCity": "PakPattan",
+      "sellCity": "KotAdu",
+      "buyP": 2800,
+      "predictedSellP": 33500,
+      "actualSellP": 6500,
+      "predictedNet": 30700,
+      "actualNet": 3700,
+      "spPct": 1096.4
+    },
+    {
+      "date": "2026-11-03",
+      "nextDate": "2026-11-04",
+      "comm": "Spinach",
+      "buyCity": "SadiqAbad",
+      "sellCity": "TALAGANG",
+      "buyP": 1913,
+      "predictedSellP": 18300,
+      "actualSellP": 18300,
+      "predictedNet": 16387,
+      "actualNet": 16387,
+      "spPct": 856.6
+    },
+    {
+      "date": "2026-11-03",
+      "nextDate": "2026-11-04",
+      "comm": "Spinach",
+      "buyCity": "Vehari",
+      "sellCity": "TALAGANG",
+      "buyP": 2000,
+      "predictedSellP": 18300,
+      "actualSellP": 18300,
+      "predictedNet": 16300,
+      "actualNet": 16300,
+      "spPct": 815
     }
   ]
 }
