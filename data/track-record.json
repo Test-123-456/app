@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T10:40:22.308Z",
+  "updatedAt": "2026-11-06T10:40:09.510Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -9165,6 +9165,110 @@
       "predictedNet": 27150,
       "actualNet": 600,
       "spPct": 1155.3
+    },
+    {
+      "date": "2026-11-05",
+      "nextDate": "2026-11-06",
+      "comm": "Spinach",
+      "buyCity": "Vehari",
+      "sellCity": "Sraialamgir",
+      "buyP": 1550,
+      "predictedSellP": 48000,
+      "actualSellP": 4800,
+      "predictedNet": 46450,
+      "actualNet": 3250,
+      "spPct": 2996.8
+    },
+    {
+      "date": "2026-11-05",
+      "nextDate": "2026-11-06",
+      "comm": "Spinach",
+      "buyCity": "SadiqAbad",
+      "sellCity": "Sraialamgir",
+      "buyP": 1913,
+      "predictedSellP": 48000,
+      "actualSellP": 4800,
+      "predictedNet": 46087,
+      "actualNet": 2887,
+      "spPct": 2409.1
+    },
+    {
+      "date": "2026-11-05",
+      "nextDate": "2026-11-06",
+      "comm": "Spinach",
+      "buyCity": "Mailsi",
+      "sellCity": "Sraialamgir",
+      "buyP": 2000,
+      "predictedSellP": 48000,
+      "actualSellP": 4800,
+      "predictedNet": 46000,
+      "actualNet": 2800,
+      "spPct": 2300
+    },
+    {
+      "date": "2026-11-05",
+      "nextDate": "2026-11-06",
+      "comm": "Spinach",
+      "buyCity": "PirMahal",
+      "sellCity": "Sraialamgir",
+      "buyP": 2125,
+      "predictedSellP": 48000,
+      "actualSellP": 4800,
+      "predictedNet": 45875,
+      "actualNet": 2675,
+      "spPct": 2158.8
+    },
+    {
+      "date": "2026-11-05",
+      "nextDate": "2026-11-06",
+      "comm": "Spinach",
+      "buyCity": "Jahanian",
+      "sellCity": "Sraialamgir",
+      "buyP": 2250,
+      "predictedSellP": 48000,
+      "actualSellP": 4800,
+      "predictedNet": 45750,
+      "actualNet": 2550,
+      "spPct": 2033.3
+    },
+    {
+      "date": "2026-11-05",
+      "nextDate": "2026-11-06",
+      "comm": "Spinach",
+      "buyCity": "JamPur",
+      "sellCity": "Sraialamgir",
+      "buyP": 2300,
+      "predictedSellP": 48000,
+      "actualSellP": 4800,
+      "predictedNet": 45700,
+      "actualNet": 2500,
+      "spPct": 1987
+    },
+    {
+      "date": "2026-11-05",
+      "nextDate": "2026-11-06",
+      "comm": "Spinach",
+      "buyCity": "RajanPur",
+      "sellCity": "Sraialamgir",
+      "buyP": 2300,
+      "predictedSellP": 48000,
+      "actualSellP": 4800,
+      "predictedNet": 45700,
+      "actualNet": 2500,
+      "spPct": 1987
+    },
+    {
+      "date": "2026-11-05",
+      "nextDate": "2026-11-06",
+      "comm": "Spinach",
+      "buyCity": "Chichawatni",
+      "sellCity": "Sraialamgir",
+      "buyP": 2500,
+      "predictedSellP": 48000,
+      "actualSellP": 4800,
+      "predictedNet": 45500,
+      "actualNet": 2300,
+      "spPct": 1820
     }
   ]
 }
