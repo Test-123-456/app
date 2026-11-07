@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T10:40:09.510Z",
+  "updatedAt": "2026-11-07T09:51:05.021Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -9269,6 +9269,71 @@
       "predictedNet": 45500,
       "actualNet": 2300,
       "spPct": 1820
+    },
+    {
+      "date": "2026-11-06",
+      "nextDate": "2026-11-07",
+      "comm": "Peas",
+      "buyCity": "Jhang",
+      "sellCity": "Vehari",
+      "buyP": 3400,
+      "predictedSellP": 38000,
+      "actualSellP": 38000,
+      "predictedNet": 34600,
+      "actualNet": 34600,
+      "spPct": 1017.6
+    },
+    {
+      "date": "2026-11-06",
+      "nextDate": "2026-11-07",
+      "comm": "Peas",
+      "buyCity": "Jhang",
+      "sellCity": "Mailsi",
+      "buyP": 3400,
+      "predictedSellP": 38000,
+      "actualSellP": 38000,
+      "predictedNet": 34600,
+      "actualNet": 34600,
+      "spPct": 1017.6
+    },
+    {
+      "date": "2026-11-06",
+      "nextDate": "2026-11-07",
+      "comm": "Peas",
+      "buyCity": "Jhang",
+      "sellCity": "Hafizabad",
+      "buyP": 3400,
+      "predictedSellP": 36000,
+      "actualSellP": 36000,
+      "predictedNet": 32600,
+      "actualNet": 32600,
+      "spPct": 958.8
+    },
+    {
+      "date": "2026-11-06",
+      "nextDate": "2026-11-07",
+      "comm": "Peas",
+      "buyCity": "Jhang",
+      "sellCity": "Jauharabad",
+      "buyP": 3400,
+      "predictedSellP": 35400,
+      "actualSellP": 33600,
+      "predictedNet": 32000,
+      "actualNet": 30200,
+      "spPct": 941.2
+    },
+    {
+      "date": "2026-11-06",
+      "nextDate": "2026-11-07",
+      "comm": "Peas",
+      "buyCity": "Jhang",
+      "sellCity": "KotAdu",
+      "buyP": 3400,
+      "predictedSellP": 34500,
+      "actualSellP": 33500,
+      "predictedNet": 31100,
+      "actualNet": 30100,
+      "spPct": 914.7
     }
   ]
 }
