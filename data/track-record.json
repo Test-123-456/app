@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T09:51:05.021Z",
+  "updatedAt": "2026-11-08T10:03:05.098Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -9334,6 +9334,110 @@
       "predictedNet": 31100,
       "actualNet": 30100,
       "spPct": 914.7
+    },
+    {
+      "date": "2026-11-07",
+      "nextDate": "2026-11-08",
+      "comm": "Pumpkin",
+      "buyCity": "Lahore",
+      "sellCity": "Hafizabad",
+      "buyP": 3100,
+      "predictedSellP": 15750,
+      "actualSellP": 13750,
+      "predictedNet": 12650,
+      "actualNet": 10650,
+      "spPct": 408.1
+    },
+    {
+      "date": "2026-11-07",
+      "nextDate": "2026-11-08",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Mianwali",
+      "buyP": 1300,
+      "predictedSellP": 6550,
+      "actualSellP": 7000,
+      "predictedNet": 5250,
+      "actualNet": 5700,
+      "spPct": 403.8
+    },
+    {
+      "date": "2026-11-07",
+      "nextDate": "2026-11-08",
+      "comm": "Pumpkin",
+      "buyCity": "Gujranwala",
+      "sellCity": "Hafizabad",
+      "buyP": 3350,
+      "predictedSellP": 15750,
+      "actualSellP": 13750,
+      "predictedNet": 12400,
+      "actualNet": 10400,
+      "spPct": 370.1
+    },
+    {
+      "date": "2026-11-07",
+      "nextDate": "2026-11-08",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "TALAGANG",
+      "buyP": 3100,
+      "predictedSellP": 13500,
+      "actualSellP": 13500,
+      "predictedNet": 10400,
+      "actualNet": 10400,
+      "spPct": 335.5
+    },
+    {
+      "date": "2026-11-07",
+      "nextDate": "2026-11-08",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "TALAGANG",
+      "buyP": 1300,
+      "predictedSellP": 5500,
+      "actualSellP": 5500,
+      "predictedNet": 4200,
+      "actualNet": 4200,
+      "spPct": 323.1
+    },
+    {
+      "date": "2026-11-07",
+      "nextDate": "2026-11-08",
+      "comm": "Spinach",
+      "buyCity": "Vehari",
+      "sellCity": "Mianwali",
+      "buyP": 1550,
+      "predictedSellP": 6550,
+      "actualSellP": 7000,
+      "predictedNet": 5000,
+      "actualNet": 5450,
+      "spPct": 322.6
+    },
+    {
+      "date": "2026-11-07",
+      "nextDate": "2026-11-08",
+      "comm": "Spinach",
+      "buyCity": "Mailsi",
+      "sellCity": "Mianwali",
+      "buyP": 1550,
+      "predictedSellP": 6550,
+      "actualSellP": 7000,
+      "predictedNet": 5000,
+      "actualNet": 5450,
+      "spPct": 322.6
+    },
+    {
+      "date": "2026-11-07",
+      "nextDate": "2026-11-08",
+      "comm": "Potato Fresh",
+      "buyCity": "KotAdu",
+      "sellCity": "Mianwali",
+      "buyP": 3100,
+      "predictedSellP": 13050,
+      "actualSellP": 13050,
+      "predictedNet": 9950,
+      "actualNet": 9950,
+      "spPct": 321
     }
   ]
 }
