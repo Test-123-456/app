@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T10:03:05.098Z",
+  "updatedAt": "2026-11-09T11:11:24.904Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -9438,6 +9438,97 @@
       "predictedNet": 9950,
       "actualNet": 9950,
       "spPct": 321
+    },
+    {
+      "date": "2026-11-08",
+      "nextDate": "2026-11-09",
+      "comm": "Spinach",
+      "buyCity": "Vehari",
+      "sellCity": "Mianwali",
+      "buyP": 1550,
+      "predictedSellP": 7000,
+      "actualSellP": 6550,
+      "predictedNet": 5450,
+      "actualNet": 5000,
+      "spPct": 351.6
+    },
+    {
+      "date": "2026-11-08",
+      "nextDate": "2026-11-09",
+      "comm": "Spinach",
+      "buyCity": "Mailsi",
+      "sellCity": "Mianwali",
+      "buyP": 1550,
+      "predictedSellP": 7000,
+      "actualSellP": 6550,
+      "predictedNet": 5450,
+      "actualNet": 5000,
+      "spPct": 351.6
+    },
+    {
+      "date": "2026-11-08",
+      "nextDate": "2026-11-09",
+      "comm": "Pumpkin",
+      "buyCity": "Lahore",
+      "sellCity": "Hafizabad",
+      "buyP": 3100,
+      "predictedSellP": 13750,
+      "actualSellP": 13750,
+      "predictedNet": 10650,
+      "actualNet": 10650,
+      "spPct": 343.5
+    },
+    {
+      "date": "2026-11-08",
+      "nextDate": "2026-11-09",
+      "comm": "Brinjal",
+      "buyCity": "Sahiwal",
+      "sellCity": "DGKHAN",
+      "buyP": 2000,
+      "predictedSellP": 8250,
+      "actualSellP": 8250,
+      "predictedNet": 6250,
+      "actualNet": 6250,
+      "spPct": 312.5
+    },
+    {
+      "date": "2026-11-08",
+      "nextDate": "2026-11-09",
+      "comm": "Brinjal",
+      "buyCity": "Sahiwal",
+      "sellCity": "Sialkot",
+      "buyP": 2000,
+      "predictedSellP": 8250,
+      "actualSellP": 8250,
+      "predictedNet": 6250,
+      "actualNet": 6250,
+      "spPct": 312.5
+    },
+    {
+      "date": "2026-11-08",
+      "nextDate": "2026-11-09",
+      "comm": "Pumpkin",
+      "buyCity": "Gujranwala",
+      "sellCity": "Hafizabad",
+      "buyP": 3350,
+      "predictedSellP": 13750,
+      "actualSellP": 13750,
+      "predictedNet": 10400,
+      "actualNet": 10400,
+      "spPct": 310.4
+    },
+    {
+      "date": "2026-11-08",
+      "nextDate": "2026-11-09",
+      "comm": "Brinjal",
+      "buyCity": "Sahiwal",
+      "sellCity": "Sraialamgir",
+      "buyP": 2000,
+      "predictedSellP": 8200,
+      "actualSellP": 8200,
+      "predictedNet": 6200,
+      "actualNet": 6200,
+      "spPct": 310
     }
   ]
 }
