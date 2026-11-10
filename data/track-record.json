@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T11:11:24.904Z",
+  "updatedAt": "2026-11-10T10:58:09.210Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -9529,6 +9529,110 @@
       "predictedNet": 6200,
       "actualNet": 6200,
       "spPct": 310
+    },
+    {
+      "date": "2026-11-09",
+      "nextDate": "2026-11-10",
+      "comm": "Onion",
+      "buyCity": "Sahiwal",
+      "sellCity": "Sraialamgir",
+      "buyP": 3650,
+      "predictedSellP": 18600,
+      "actualSellP": 17400,
+      "predictedNet": 14950,
+      "actualNet": 13750,
+      "spPct": 409.6
+    },
+    {
+      "date": "2026-11-09",
+      "nextDate": "2026-11-10",
+      "comm": "Spinach",
+      "buyCity": "Burewala",
+      "sellCity": "Mianwali",
+      "buyP": 1300,
+      "predictedSellP": 6550,
+      "actualSellP": 6100,
+      "predictedNet": 5250,
+      "actualNet": 4800,
+      "spPct": 403.8
+    },
+    {
+      "date": "2026-11-09",
+      "nextDate": "2026-11-10",
+      "comm": "Onion",
+      "buyCity": "Sahiwal",
+      "sellCity": "Lahore",
+      "buyP": 3650,
+      "predictedSellP": 18000,
+      "actualSellP": 17000,
+      "predictedNet": 14350,
+      "actualNet": 13350,
+      "spPct": 393.2
+    },
+    {
+      "date": "2026-11-09",
+      "nextDate": "2026-11-10",
+      "comm": "Onion",
+      "buyCity": "Sahiwal",
+      "sellCity": "Khudian",
+      "buyP": 3650,
+      "predictedSellP": 18000,
+      "actualSellP": 18000,
+      "predictedNet": 14350,
+      "actualNet": 14350,
+      "spPct": 393.2
+    },
+    {
+      "date": "2026-11-09",
+      "nextDate": "2026-11-10",
+      "comm": "Onion",
+      "buyCity": "Sahiwal",
+      "sellCity": "Hafizabad",
+      "buyP": 3650,
+      "predictedSellP": 17750,
+      "actualSellP": 16750,
+      "predictedNet": 14100,
+      "actualNet": 13100,
+      "spPct": 386.3
+    },
+    {
+      "date": "2026-11-09",
+      "nextDate": "2026-11-10",
+      "comm": "Onion",
+      "buyCity": "Sahiwal",
+      "sellCity": "Sialkot",
+      "buyP": 3650,
+      "predictedSellP": 17700,
+      "actualSellP": 16250,
+      "predictedNet": 14050,
+      "actualNet": 12600,
+      "spPct": 384.9
+    },
+    {
+      "date": "2026-11-09",
+      "nextDate": "2026-11-10",
+      "comm": "Onion",
+      "buyCity": "Sahiwal",
+      "sellCity": "Gujranwala",
+      "buyP": 3650,
+      "predictedSellP": 17650,
+      "actualSellP": 16600,
+      "predictedNet": 14000,
+      "actualNet": 12950,
+      "spPct": 383.6
+    },
+    {
+      "date": "2026-11-09",
+      "nextDate": "2026-11-10",
+      "comm": "Onion",
+      "buyCity": "Sahiwal",
+      "sellCity": "ChackJhumra",
+      "buyP": 3650,
+      "predictedSellP": 17500,
+      "actualSellP": 16500,
+      "predictedNet": 13850,
+      "actualNet": 12850,
+      "spPct": 379.5
     }
   ]
 }
