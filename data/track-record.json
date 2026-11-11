@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T10:58:09.210Z",
+  "updatedAt": "2026-11-11T10:37:04.319Z",
   "outcomes": [
     {
       "date": "2026-06-02",
@@ -9633,6 +9633,71 @@
       "predictedNet": 13850,
       "actualNet": 12850,
       "spPct": 379.5
+    },
+    {
+      "date": "2026-11-10",
+      "nextDate": "2026-11-11",
+      "comm": "Pumpkin",
+      "buyCity": "Rawalpindi",
+      "sellCity": "Hafizabad",
+      "buyP": 2900,
+      "predictedSellP": 13750,
+      "actualSellP": 13750,
+      "predictedNet": 10850,
+      "actualNet": 10850,
+      "spPct": 374.1
+    },
+    {
+      "date": "2026-11-10",
+      "nextDate": "2026-11-11",
+      "comm": "Pumpkin",
+      "buyCity": "Lahore",
+      "sellCity": "Hafizabad",
+      "buyP": 3100,
+      "predictedSellP": 13750,
+      "actualSellP": 13750,
+      "predictedNet": 10650,
+      "actualNet": 10650,
+      "spPct": 343.5
+    },
+    {
+      "date": "2026-11-10",
+      "nextDate": "2026-11-11",
+      "comm": "Brinjal",
+      "buyCity": "Okara",
+      "sellCity": "DGKHAN",
+      "buyP": 1900,
+      "predictedSellP": 8250,
+      "actualSellP": 8250,
+      "predictedNet": 6350,
+      "actualNet": 6350,
+      "spPct": 334.2
+    },
+    {
+      "date": "2026-11-10",
+      "nextDate": "2026-11-11",
+      "comm": "Brinjal",
+      "buyCity": "Okara",
+      "sellCity": "Narowal",
+      "buyP": 1900,
+      "predictedSellP": 8250,
+      "actualSellP": 8250,
+      "predictedNet": 6350,
+      "actualNet": 6350,
+      "spPct": 334.2
+    },
+    {
+      "date": "2026-11-10",
+      "nextDate": "2026-11-11",
+      "comm": "Brinjal",
+      "buyCity": "Okara",
+      "sellCity": "Shakargarh",
+      "buyP": 1900,
+      "predictedSellP": 8250,
+      "actualSellP": 8250,
+      "predictedNet": 6350,
+      "actualNet": 6350,
+      "spPct": 334.2
     }
   ]
 }
